@@ -1,0 +1,19 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	
+		<div class="bottom__top">
+			<p class="logo"> PvPTowerDefence </p>
+		</div>
+		<p class="hend">
+			MAIN MENU
+		</p>
+		<div class="js-scoreboard bottom__menu">
+			<a href="#scoreboard" class="textButton">Score Board</a>
+		</div>
+		<div class="js-start-game bottom__menu">
+				<a href="#game" class="textButton">Start Game</a>
+		</div>
+		<div class="js-login bottom__menu">
+			<a href="#login" class="textButton">Login</a>
+		</div>
+	
+</fest:template>

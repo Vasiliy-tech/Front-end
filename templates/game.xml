@@ -1,0 +1,10 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+
+		<!--<div class="js-back backButton">
+			<a href="#"class="textButton">&#9668; Back</a>
+		</div>-->
+
+	<div class="js-back backButton">
+			<a href="#"class="textButton">&#9668; Back</a>
+	</div>
+</fest:template>
