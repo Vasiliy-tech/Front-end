@@ -9,7 +9,6 @@ define([
 			this.views = {};
 		},
 		addViews : function(views){
-
 			_.forEach(views, function(view,name){
 				 console.log("Add view:",name);
 				 this.views[name] = view;

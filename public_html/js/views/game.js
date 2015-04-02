@@ -21,12 +21,11 @@ define([
             this.$el.html(this.template());
             var game = new Phaser.Game(800,480, Phaser.AUTO,'gamefield');
             
-           /**************************************************/
-            var BootGameState = new Phaser.State();
-            var PreloaderGameState = new Phaser.State();
-            var GameState = new Phaser.State();
-            var GameOverState = new Phaser.State();
-            BootGameState.create = function() {
+            var bootGameState = new Phaser.State();
+            var preloaderGameState = new Phaser.State();
+            var gameState = new Phaser.State();
+            var gameOverState = new Phaser.State();
+            bootGameState.create = function() {
                 LoadingText = game.add.text(game.world.width / 2, game.world.height / 2, "Loading...", {
                     font: '32px "Press Start 2P"',
                     fill: '#FFFFFF',
@@ -38,19 +37,19 @@ define([
                 game.state.start('Preloader', false, false);
             };
             
-             var loadAssets = function loadAssets() {
+            var loadAssets = function loadAssets() {
                 game.load.image('background', '../img/background.png');
                 game.load.image('bullet','../img/bullet.png');
                 game.load.image('ground', '../img/ground.png');
                 game.load.spritesheet('myhero', '../img/2.gif', 25,38);
                 game.load.spritesheet('explosion', '../img/explosion.png', 35,31);
-                //game.load.spritesheet('myheroVertical', '../img/3.gif',27,48);
+               
             };
-            PreloaderGameState.preload = function() {
+            preloaderGameState.preload = function() {
                 loadAssets();
             };
 
-            PreloaderGameState.create = function(){
+            preloaderGameState.create = function(){
                 var tween = game.add.tween(LoadingText).to({
                     alpha: 0
                 }, 1000, Phaser.Easing.Linear.None, true);
@@ -60,38 +59,43 @@ define([
                 }, this);
             };
             /**************************************************/
-            GameState.create = function() {
+            gameState.create = function() {
+                this.game.add.sprite(0,0,'background');
+                
+                this.MAX_SPEED = 350;
+                this.NUMBER_OF_BULLETS = 20;
+                this.BULLET_SPEED = 800;
+
+            this.player = this.game.add.sprite(32, this.game.height-100, 'myhero');
             
-              this.game.add.sprite(0,0,'background');
-              this.MAX_SPEED = 350;
-              this.NUMBER_OF_BULLETS = 20;
-              this.BULLET_SPEED = 800;
-              this.player = this.game.add.sprite(32, this.game.height-100, 'myhero');
-              this.enemy = this.game.add.sprite(this.game.width-32, this.game.height-100,'myhero');
-              this.game.physics.arcade.enable(this.player);
-               this.player.body.bounce.y = 0.2;
-                this.player.body.gravity.y = 900;
-                this.player.body.collideWorldBounds = true;
-              this.game.physics.arcade.enable(this.enemy);
-               this.enemy.body.bounce.y = 0.2;
-               this.enemy.body.gravity.y = 900;
-               this.enemy.body.collideWorldBounds = true;
-              this.player.animations.add('right', [5,6,7,8,9],10, true);
-              this.player.animations.add('left', [4,3,2,1,0],10,true);
-              
-              this.ground = this.game.add.group();
-              this.game.physics.arcade.collide(this.player, this.ground);
-              this.game.physics.arcade.collide(this.enemy, this.ground);
+            this.game.physics.arcade.enable(this.player);
+
+            this.player.body.bounce.y = 0.2;
+            this.player.body.gravity.y = 900;
+            this.player.body.collideWorldBounds = true;
+            this.player.animations.add('right', [5,6,7,8,9],10, true);
+            this.player.animations.add('left', [4,3,2,1,0],10,true);
+            
+
+            this.enemy = this.game.add.sprite(this.game.width-32, this.game.height-100,'myhero');  
+            
+            this.game.physics.arcade.enable(this.enemy);
+
+            this.enemy.body.bounce.y = 0.2;
+            this.enemy.body.gravity.y = 900;
+            this.enemy.body.collideWorldBounds = true;
+            
+            this.ground = this.game.add.group();
+            this.game.physics.arcade.collide(this.player, this.ground);
+            this.game.physics.arcade.collide(this.enemy, this.ground);
                 for(var x = 0; x < this.game.width; x += 32) {
-                    
                     var groundBlock = this.game.add.sprite(x, this.game.height - 32, 'ground');
                     this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
                     groundBlock.body.immovable = true;
                     groundBlock.body.allowGravity = false;
                     this.ground.add(groundBlock);
                  }
-                for(var x = 32; x < this.game.width/2.5; x += 32) {
-                    
+                for(var x = 32; x < this.game.width/2.5; x += 32) {  
                     var groundBlock = this.game.add.sprite(x, this.game.height - 132, 'ground');
                     this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
                     groundBlock.body.immovable = true;
@@ -99,7 +103,6 @@ define([
                     this.ground.add(groundBlock);
                  }
                  for(var x = 0; x < this.game.width/3.5; x += 32) {
-                    
                     var groundBlock = this.game.add.sprite(x, this.game.height - 232, 'ground');
                     this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
                     groundBlock.body.immovable = true;
@@ -107,9 +110,7 @@ define([
                     this.ground.add(groundBlock);
                  }
                 this.bulletPool = this.game.add.group();
-                // console.log(this.bulletPool);
                 for(var i = 0; i < this.NUMBER_OF_BULLETS; i++) {
-                    
                     var bullet = this.game.add.sprite(0, 0, 'bullet');
                     this.game.physics.arcade.enable(bullet);
                     bullet.body.gravity.y = 980;
@@ -123,7 +124,6 @@ define([
                     bullet.kill();
                 }
                 this.explosionGroup = this.game.add.group();
-                // console.log(Phaser.Keyboard);
                 this.game.input.keyboard.addKeyCapture([
                 Phaser.Keyboard.LEFT,
                 Phaser.Keyboard.RIGHT,
@@ -133,10 +133,13 @@ define([
             ]);
                 
             };
-            GameState.shootBullet = function() {
 
-            if (this.lastBulletShotAt === undefined) this.lastBulletShotAt = 0;
-            if (this.game.time.now - this.lastBulletShotAt < this.SHOT_DELAY) return;
+            gameState.shootBullet = function() {
+
+            if (this.lastBulletShotAt === undefined) 
+                this.lastBulletShotAt = 0;
+            if (this.game.time.now - this.lastBulletShotAt < this.SHOT_DELAY) 
+                return;
             this.lastBulletShotAt = this.game.time.now;
             var bullet = this.bulletPool.getFirstDead();
             if (bullet === null || bullet === undefined) 
@@ -150,22 +153,21 @@ define([
             bullet.body.velocity.x = Math.cos(bullet.rotation) * this.BULLET_SPEED;
             bullet.body.velocity.y = Math.sin(bullet.rotation) * this.BULLET_SPEED;
             };
-            GameState.update = function() {
-                
-                this.game.physics.arcade.collide(this.player, this.ground);
-                this.game.physics.arcade.collide(this.enemy, this.ground);
-                this.game.physics.arcade.collide(this.bulletPool, this.ground, function(bullet, ground) {
-                  
+
+            gameState.update = function() {
+                    this.game.physics.arcade.collide(this.player, this.ground);
+                    this.game.physics.arcade.collide(this.enemy, this.ground);
+                    this.game.physics.arcade.collide(this.bulletPool, this.ground, function(bullet, ground) {
+                      
                     this.getExplosion(bullet.x, bullet.y);
 
-                    
+                        
                     bullet.kill();
                 }, null, this);
                 this.game.physics.arcade.collide(this.bulletPool, this.enemy, function(bullet, enemy) {
                   
                     this.getExplosion(bullet.x, bullet.y);
 
-                    
                     bullet.kill();
                     enemy.kill();
                 }, null, this);
@@ -174,7 +176,6 @@ define([
                     this.player.body.velocity.x = -this.MAX_SPEED;
                     this.player.animations.play('left');
                 } else if (this.rightInputIsActive()) {
-                    
                     this.player.body.velocity.x = this.MAX_SPEED;
                     this.player.animations.play('right');
                 } else if(this.upInputIsActive()){
@@ -186,7 +187,6 @@ define([
                 } else if (this.spaceInputIsActive()){
                     this.shootBullet();
                 } else {
-                    
                     this.player.animations.stop();
                     this.player.body.velocity.x = 0;
                    
@@ -199,14 +199,12 @@ define([
 
                 
             };
-            GameState.getExplosion = function(x,y){
+            gameState.getExplosion = function(x,y){
                 var explosion = this.explosionGroup.getFirstDead();
 
                 if (explosion === null){
                     explosion = this.game.add.sprite(0, 0, 'explosion');
                     explosion.anchor.setTo(0.5, 0.5);
-
-                    
                     var animation = explosion.animations.add('boom', [0,1], 60, false);
                     animation.killOnComplete = true;
 
@@ -224,14 +222,14 @@ define([
 
                 return explosion;
             };
-            GameState.spaceInputIsActive = function() {
+            gameState.spaceInputIsActive = function() {
                 var isActive = false;
 
             isActive = this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
             this.input.keyboard.removeKey(Phaser.Keyboard.SPACEBAR);
             return isActive;
             };
-            GameState.leftInputIsActive = function() {
+            gameState.leftInputIsActive = function() {
             var isActive = false;
 
             isActive = this.input.keyboard.isDown(Phaser.Keyboard.LEFT);
@@ -239,7 +237,7 @@ define([
 
             return isActive;
             };
-            GameState.upInputIsActive = function() {
+            gameState.upInputIsActive = function() {
             var isActive = false;
 
             isActive = this.input.keyboard.isDown(Phaser.Keyboard.UP);
@@ -247,16 +245,14 @@ define([
 
             return isActive;
             };
-            GameState.rightInputIsActive = function() {
+            gameState.rightInputIsActive = function() {
                 var isActive = false;
 
                 isActive = this.input.keyboard.isDown(Phaser.Keyboard.RIGHT) && this.player.body.x < 350;
-                // isActive |= (this.game.input.activePointer.isDown &&
-                //     this.game.input.activePointer.x > 10000);
-
+    
                 return isActive;
             };
-            GameState.downInputIsActive = function() {
+            gameState.downInputIsActive = function() {
                 var isActive = false;
 
                 isActive = this.input.keyboard.isDown(Phaser.Keyboard.DOWN);
@@ -264,10 +260,10 @@ define([
 
                 return isActive;
             };
-            game.state.add('Boot', BootGameState, false);
-            game.state.add('Preloader', PreloaderGameState, false);
-            game.state.add('Game', GameState, false);
-            game.state.add('GameOver', GameOverState, false);
+            game.state.add('Boot', bootGameState, false);
+            game.state.add('Preloader', preloaderGameState, false);
+            game.state.add('Game', gameState, false);
+            game.state.add('GameOver', gameOverState, false);
             game.state.start('Boot');
             
             return this;
