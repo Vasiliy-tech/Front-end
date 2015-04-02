@@ -178,7 +178,7 @@ define([
                     this.player.body.velocity.x = this.MAX_SPEED;
                     this.player.animations.play('right');
                 } else if(this.upInputIsActive()){
-                    this.player.body.velocity.y = -this.MAX_SPEED;
+                    this.player.body.velocity.y = -this.MAX_SPEED*1.3;
                    
                 } else if(this.downInputIsActive()){
                     this.player.body.velocity.y = this.MAX_SPEED;
@@ -243,7 +243,7 @@ define([
             var isActive = false;
 
             isActive = this.input.keyboard.isDown(Phaser.Keyboard.UP);
-            
+            this.input.keyboard.removeKey(Phaser.Keyboard.UP);
 
             return isActive;
             };
@@ -260,7 +260,7 @@ define([
                 var isActive = false;
 
                 isActive = this.input.keyboard.isDown(Phaser.Keyboard.DOWN);
-               
+                this.input.keyboard.removeKey(Phaser.Keyboard.DOWN);
 
                 return isActive;
             };
