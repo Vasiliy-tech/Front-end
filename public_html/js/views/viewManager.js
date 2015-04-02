@@ -16,8 +16,8 @@ define([
 				 console.log("Add view:",name);
 				 this.views[name] = view;
 				 this.listenTo(this.views[name], 'show', this.hide);
+				 this.$el.append(view.$el);
 				 
-
 			}, this);
 		},
 		get: function(name){
@@ -25,7 +25,6 @@ define([
 			console.log("Get view:",name);
 			var view = this.views[name];
 			this.views[name].render();
-			this.$el.append(view.$el);
 			return view;
 		},
 		hide: function(view){

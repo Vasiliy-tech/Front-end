@@ -4,7 +4,7 @@
 			<a href="#"class="textButton">&#9668; Back</a>
 		</div>-->
 
-	<div class="js-back backButton">
+	<div class="js-back backButton backButton__inGame">
 			<a href="#"class="textButton">&#9668; Back</a>
 	</div>
 </fest:template>
