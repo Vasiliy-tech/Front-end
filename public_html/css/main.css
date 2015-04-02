@@ -1,4 +1,4 @@
-.bottom__top {
+.button__top {
     background-color:#000000;
     margin: auto;
     margin-bottom: 40px;
@@ -9,7 +9,7 @@
     border-radius: 5px;
 }
 
-.bottom__menu {
+.button__menu {
 	background-color:#4A4947;
     margin: auto;
     margin-bottom: 15px;

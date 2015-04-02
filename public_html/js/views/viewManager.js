@@ -17,7 +17,7 @@ define([
 				 this.views[name] = view;
 				 this.listenTo(this.views[name], 'show', this.hide);
 				 this.$el.append(view.$el);
-				 
+
 			}, this);
 		},
 		get: function(name){
@@ -28,7 +28,6 @@ define([
 			return view;
 		},
 		hide: function(view){
-			
 			  _.forEach(this.views, function (v) {
                 if (view !== v) {
                     v.hide();
