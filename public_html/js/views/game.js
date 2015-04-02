@@ -107,7 +107,7 @@ define([
                     this.ground.add(groundBlock);
                  }
                 this.bulletPool = this.game.add.group();
-                console.log(this.bulletPool);
+                // console.log(this.bulletPool);
                 for(var i = 0; i < this.NUMBER_OF_BULLETS; i++) {
                     
                     var bullet = this.game.add.sprite(0, 0, 'bullet');
@@ -123,7 +123,7 @@ define([
                     bullet.kill();
                 }
                 this.explosionGroup = this.game.add.group();
-                console.log(Phaser.Keyboard);
+                // console.log(Phaser.Keyboard);
                 this.game.input.keyboard.addKeyCapture([
                 Phaser.Keyboard.LEFT,
                 Phaser.Keyboard.RIGHT,

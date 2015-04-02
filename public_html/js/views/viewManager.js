@@ -5,10 +5,8 @@ define([
 	var ViewManager = Backbone.View.extend({
 		initialize: function(){
 			console.log("Init viewManager");
-			this.listenTo(Backbone.Events, 'error', this.showError);
 			this.$el = $('.page');
 			this.views = {};
-			this.inLoad = false;
 		},
 		addViews : function(views){
 
