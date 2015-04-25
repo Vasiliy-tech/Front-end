@@ -27,16 +27,16 @@ define([
             '*default': 'defaultActions'
         },
         defaultActions: function () {
-            manager.get('main').show();
+            main.show();
         },
         scoreboardAction: function () {
-            manager.get('scoreboard').show();
+            scoreboard.show();
         },
         gameAction: function () {
-            manager.get('game').show();
+            game.show();
         },
         loginAction: function () {
-            manager.get('login').show();
+            login.show();
         }
     });
 

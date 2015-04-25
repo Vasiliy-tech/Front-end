@@ -14,14 +14,13 @@ define([
 				 this.views[name] = view;
 				 this.listenTo(this.views[name], 'show', this.hide);
 				 this.$el.append(view.$el);
-
+				 this.views[name].render();
 			}, this);
 		},
 		get: function(name){
-			this.trigger('stopall');
 			console.log("Get view:",name);
 			var view = this.views[name];
-			this.views[name].render();
+			
 			return view;
 		},
 		hide: function(view){

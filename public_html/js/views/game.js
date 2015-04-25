@@ -12,14 +12,12 @@ define([
     var View = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
-        id: 'gamefield',
-        initialize: function () {
-            
-            
+        className: 'gamefield',
+        initialize: function () { 
         },
         render: function () {
             this.$el.html(this.template());
-            var game = new Phaser.Game(800,480, Phaser.AUTO,'gamefield');
+            var game = new Phaser.Game(800,480, Phaser.AUTO,this.el);
             
             var bootGameState = new Phaser.State();
             var preloaderGameState = new Phaser.State();

@@ -30,7 +30,7 @@
 	margin: auto;
 	position: relative;
 }
-#gamefield{
+.gamefield{
 	width: 800px;
 	height: 480px;
 	margin: auto;
