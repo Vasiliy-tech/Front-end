@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Authorization</title>
+
+    <script type="text/javascript" src="/js/lib/jquery.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#goHome').click(function () {
+                var data = {"login": $('#login').val(),
+                    "password": $('#password').val(),
+                    "email": $('#email').val()};
+                $.ajax({
+                    data: JSON.stringify(data),
+                    url: "/api/v1/auth/signup",
+                    contentType: "application/json",
+                    type: "post"
+                });
+                document.location.href='/';
+                return false;
+            });
+        })
+    </script>
+</head>
+<body>
+<p>${signUpStatus}</p>
+<form action="/" method="GET">
+    Login: <input type="text" id="login" name="login" required /><br>
+    Password: <input type="password" id="password" name="password" required /><br>
+    Email: <input type="text" id="email" name="email" required /><br>
+    <input type="submit" id="goHome" value="Ok">
+</form>
+</body>
+</html>

@@ -1,0 +1,550 @@
+[04-26 17:30:25,108, 4117] resource.ResourceFactory ResourceFactory was created
+[04-26 17:30:25,212, 4221] sax.SaxHandler Start Document
+[04-26 17:30:25,226, 4235] sax.SaxHandler Class name: resource.ServerSettings
+[04-26 17:30:25,244, 4253] sax.SaxHandler port = 8080
+[04-26 17:30:25,261, 4270] sax.SaxHandler End document
+[04-26 17:30:25,262, 4271] resource.ResourceFactory Resource serverSettings was parsed
+[04-26 17:30:25,269, 4278] sax.SaxHandler Start Document
+[04-26 17:30:25,270, 4279] sax.SaxHandler Class name: resource.LoggerMessages
+[04-26 17:30:25,271, 4280] sax.SaxHandler doPostStart = doPost Start
+[04-26 17:30:25,272, 4281] sax.SaxHandler doPostFinish = doPost Success
+[04-26 17:30:25,274, 4283] sax.SaxHandler doGetStart = doGet Start
+[04-26 17:30:25,276, 4285] sax.SaxHandler doGetFinish = doGet Success
+[04-26 17:30:25,278, 4287] sax.SaxHandler isAdmin = User:{} is admin
+[04-26 17:30:25,280, 4289] sax.SaxHandler isNotAdmin = User:{} is not admin
+[04-26 17:30:25,281, 4290] sax.SaxHandler wrongAction = Wrong action
+[04-26 17:30:25,282, 4291] sax.SaxHandler statistic = Getting Statistic
+[04-26 17:30:25,283, 4292] sax.SaxHandler stop = Stopping server
+[04-26 17:30:25,285, 4294] sax.SaxHandler notAuthorised = Not Authorised
+[04-26 17:30:25,288, 4297] sax.SaxHandler authorised = User:{} is Authorised
+[04-26 17:30:25,291, 4300] sax.SaxHandler hasAuthorised = User:{} has Authorised
+[04-26 17:30:25,293, 4302] sax.SaxHandler lackOfParam = No param "{}" in request
+[04-26 17:30:25,315, 4324] sax.SaxHandler paramHasWrongType = Param:"{}" has wrong type
+[04-26 17:30:25,318, 4327] sax.SaxHandler signUp = New user is signing up
+[04-26 17:30:25,326, 4335] sax.SaxHandler signIn = User is signing in
+[04-26 17:30:25,327, 4336] sax.SaxHandler alreadyLoggedIn = User:{} is already Logged In
+[04-26 17:30:25,329, 4338] sax.SaxHandler block = Authorization and signing up is blocked
+[04-26 17:30:25,330, 4339] sax.SaxHandler wrongPasOrLogin = Wrong password:"{}" or login:"{}"
+[04-26 17:30:25,332, 4341] sax.SaxHandler loggedOut = User:{} logged out
+[04-26 17:30:25,335, 4344] sax.SaxHandler loginIsAlreadyExist = User with such login "{}" is already exist
+[04-26 17:30:25,338, 4347] sax.SaxHandler wrongSignUpData = Wrong login:"{}" or email:"{}" or password:"{}"
+[04-26 17:30:25,339, 4348] sax.SaxHandler onMessage = User:{} has sent Message:{}
+[04-26 17:30:25,340, 4349] sax.SaxHandler onOpen = User:{} is opening connection
+[04-26 17:30:25,346, 4355] sax.SaxHandler onClose = User:{} has closed connection
+[04-26 17:30:25,348, 4357] sax.SaxHandler configure = Configure
+[04-26 17:30:25,351, 4360] sax.SaxHandler setBlock = Signing in and Signing up are blocked
+[04-26 17:30:25,355, 4364] sax.SaxHandler unsetBlock = Signing in and Signing up are released
+[04-26 17:30:25,379, 4388] sax.SaxHandler startGame = Start game
+[04-26 17:30:25,381, 4390] sax.SaxHandler firstPlayer = First player
+[04-26 17:30:25,382, 4391] sax.SaxHandler secondPlayer = Second player
+[04-26 17:30:25,383, 4392] sax.SaxHandler sessionFinished = Session finished
+[04-26 17:30:25,385, 4394] sax.SaxHandler draw = Draw between {}, {}
+[04-26 17:30:25,387, 4396] sax.SaxHandler isWinner = {} is winner
+[04-26 17:30:25,388, 4397] sax.SaxHandler isLoser = {} is loser
+[04-26 17:30:25,389, 4398] sax.SaxHandler signUpSuccess = User {} was successfully signed up
+[04-26 17:30:25,390, 4399] sax.SaxHandler newSocket = Start creating New socket 
+[04-26 17:30:25,391, 4400] sax.SaxHandler newSocketSuccess = New Socket Successfully constructed
+[04-26 17:30:25,391, 4400] sax.SaxHandler requestGetParams = Request params {}
+[04-26 17:30:25,392, 4401] sax.SaxHandler jsonGotFromRequest = JSON from request: {}
+[04-26 17:30:25,393, 4402] sax.SaxHandler errorXML = Error while reading XML
+[04-26 17:30:25,394, 4403] sax.SaxHandler startXML = Start Document
+[04-26 17:30:25,394, 4403] sax.SaxHandler endXML = End document
+[04-26 17:30:25,395, 4404] sax.SaxHandler className = Class name: {}
+[04-26 17:30:25,396, 4405] sax.SaxHandler aEqualB = {} = {}
+[04-26 17:30:25,397, 4406] sax.SaxHandler resourceWasParsed = Resource {} was parsed
+[04-26 17:30:25,397, 4406] sax.SaxHandler End document
+[04-26 17:30:25,399, 4408] resource.ResourceFactory Resource loggerMessages was parsed
+[04-26 17:30:25,400, 4409] main.Main Starting at port: 8080
+
+[04-26 17:30:25,688, 4697] sax.SaxHandler Start Document
+[04-26 17:30:25,688, 4697] sax.SaxHandler Class name: resource.Messages
+[04-26 17:30:25,689, 4698] sax.SaxHandler adminPage = Admin page
+[04-26 17:30:25,689, 4698] sax.SaxHandler notFound = 404: Not Found.
+[04-26 17:30:25,689, 4698] sax.SaxHandler wrongParamAction = Wrong 'action'
+[04-26 17:30:25,690, 4699] sax.SaxHandler notAuthorised = Not Authorised
+[04-26 17:30:25,690, 4699] sax.SaxHandler logInStatus = Log In:
+[04-26 17:30:25,692, 4701] sax.SaxHandler alreadyLoggedIn = You has already Logged In
+[04-26 17:30:25,692, 4701] sax.SaxHandler block = Authorization and signing up is blocked
+[04-26 17:30:25,692, 4701] sax.SaxHandler wrongPasOrLogin = Wrong password or login
+[04-26 17:30:25,692, 4701] sax.SaxHandler fillAllTheGaps = Fill all the gaps, please:
+[04-26 17:30:25,692, 4701] sax.SaxHandler logOutFirst = You have to logout before signing up.
+[04-26 17:30:25,692, 4701] sax.SaxHandler exist = Such user already exists
+[04-26 17:30:25,692, 4701] sax.SaxHandler wrongSignUpData = Wrong sign Up data
+[04-26 17:30:25,692, 4701] sax.SaxHandler wrongLimit = WrongLimit
+[04-26 17:30:25,693, 4702] sax.SaxHandler End document
+[04-26 17:30:25,693, 4702] resource.ResourceFactory Resource messages was parsed
+[04-26 17:30:25,709, 4718] sax.SaxHandler Start Document
+[04-26 17:30:25,709, 4718] sax.SaxHandler Class name: resource.GameMechanicsSettings
+[04-26 17:30:25,710, 4719] sax.SaxHandler timeLimit = 15
+[04-26 17:30:25,710, 4719] sax.SaxHandler numAmount = 10
+[04-26 17:30:25,710, 4719] sax.SaxHandler weight = 10
+[04-26 17:30:25,710, 4719] sax.SaxHandler minDelta = 10
+[04-26 17:30:25,710, 4719] sax.SaxHandler End document
+[04-26 17:30:25,710, 4719] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[04-26 17:30:26,208, 5217] frontend.game.WebSocketGameServlet Configure
+[04-26 17:30:26,390, 5399] main.AppServer Start
+[04-26 17:30:52,042, 31051] frontend.ProfileServlet doGet Start
+[04-26 17:30:52,067, 31076] frontend.ProfileServlet Request params {}
+[04-26 17:30:52,290, 31299] frontend.ProfileServlet Not Authorised
+[04-26 17:30:52,321, 31330] frontend.ProfileServlet doGet Success
+[04-26 17:31:27,092, 66101] frontend.SignUpServlet doPost Start
+[04-26 17:31:27,094, 66103] frontend.SignUpServlet Request params {}
+[04-26 17:31:27,126, 66135] utils.JsonInterpreterFromRequest JSON from request: {"password":"qaz","login":"qaz","email":"qaz@mail.ru"}
+[04-26 17:31:27,127, 66136] frontend.SignUpServlet Wrong login:"qaz" or email:"qaz@mail.ru" or password:"qaz"
+[04-26 17:31:27,128, 66137] frontend.SignUpServlet doPost Success
+[04-26 17:31:57,758, 96767] frontend.SignUpServlet doPost Start
+[04-26 17:31:57,758, 96767] frontend.SignUpServlet Request params {}
+[04-26 17:31:57,758, 96767] utils.JsonInterpreterFromRequest JSON from request: {"password":"12345678","login":"qaz","email":"qaz@mail.ru"}
+[04-26 17:31:57,758, 96767] frontend.SignUpServlet Wrong login:"qaz" or email:"qaz@mail.ru" or password:"12345678"
+[04-26 17:31:57,759, 96768] frontend.SignUpServlet doPost Success
+[04-26 17:32:22,685, 121694] frontend.SignUpServlet doPost Start
+[04-26 17:32:22,687, 121696] frontend.SignUpServlet Request params {}
+[04-26 17:32:22,688, 121697] utils.JsonInterpreterFromRequest JSON from request: {"password":"vanyhasem1S","login":"Vanyha007","email":"vanyha-sem@mail.ru"}
+[04-26 17:32:22,973, 121982] frontend.SignUpServlet User {} was successfully signed up
+[04-26 17:32:22,974, 121983] frontend.SignUpServlet User:Vanyha007 has Authorised
+[04-26 17:32:22,976, 121985] frontend.SignUpServlet doPost Success
+[04-26 17:32:31,850, 130859] frontend.ProfileServlet doGet Start
+[04-26 17:32:31,850, 130859] frontend.ProfileServlet Request params {}
+[04-26 17:32:31,850, 130859] frontend.ProfileServlet User:Vanyha007 has Authorised
+[04-26 17:32:31,851, 130860] frontend.ProfileServlet doGet Success
+[04-26 17:33:29,723, 188732] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:33:29,732, 188741] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:33:30,057, 189066] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:33:30,059, 189068] Interface.GameMechanics First player
+[04-26 17:34:30,072, 249081] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:46:19,951, 958960] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:46:19,952, 958961] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:46:20,004, 959013] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:46:20,075, 959084] Interface.GameMechanics Second player
+[04-26 17:46:20,075, 959084] Interface.GameMechanics Start game
+[04-26 17:46:35,691, 974700] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 17:46:35,725, 974734] Interface.GameMechanics Session finished
+[04-26 17:47:35,700, 1034709] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:48:08,334, 1067343] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:48:08,334, 1067343] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:48:08,341, 1067350] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:48:08,341, 1067350] Interface.GameMechanics First player
+[04-26 17:48:14,063, 1073072] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:48:17,296, 1076305] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:48:17,297, 1076306] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:48:17,298, 1076307] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:48:17,298, 1076307] Interface.GameMechanics Second player
+[04-26 17:48:17,298, 1076307] Interface.GameMechanics Start game
+[04-26 17:48:32,381, 1091390] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 17:48:32,383, 1091392] Interface.GameMechanics Session finished
+[04-26 17:48:35,547, 1094556] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:48:38,323, 1097332] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:48:38,324, 1097333] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:48:38,332, 1097341] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:48:38,334, 1097343] Interface.GameMechanics First player
+[04-26 17:49:13,410, 1132419] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:49:18,901, 1137910] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:49:18,901, 1137910] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:49:18,904, 1137913] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:49:18,904, 1137913] Interface.GameMechanics Second player
+[04-26 17:49:18,904, 1137913] Interface.GameMechanics Start game
+[04-26 17:49:33,994, 1153003] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 17:49:33,995, 1153004] Interface.GameMechanics Session finished
+[04-26 17:49:59,463, 1178472] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:50:01,110, 1180119] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:50:01,111, 1180120] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:50:01,144, 1180153] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:50:01,144, 1180153] Interface.GameMechanics First player
+[04-26 17:50:22,642, 1201651] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:50:24,349, 1203358] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:50:24,349, 1203358] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:50:24,352, 1203361] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:50:24,352, 1203361] Interface.GameMechanics Second player
+[04-26 17:50:24,352, 1203361] Interface.GameMechanics Start game
+[04-26 17:50:39,420, 1218429] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 17:50:39,423, 1218432] Interface.GameMechanics Session finished
+[04-26 17:51:39,432, 1278441] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:57:06,639, 1605648] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:57:06,639, 1605648] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:57:06,643, 1605652] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:57:06,643, 1605652] Interface.GameMechanics First player
+[04-26 17:57:56,966, 1655975] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:58:00,730, 1659739] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:58:00,730, 1659739] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:58:00,735, 1659744] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:58:00,735, 1659744] Interface.GameMechanics Second player
+[04-26 17:58:00,735, 1659744] Interface.GameMechanics Start game
+[04-26 17:58:15,802, 1674811] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 17:58:15,804, 1674813] Interface.GameMechanics Session finished
+[04-26 17:59:15,808, 1734817] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 17:59:50,535, 1769544] frontend.game.GameWebSocket Start creating New socket 
+[04-26 17:59:50,535, 1769544] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 17:59:50,541, 1769550] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 17:59:50,541, 1769550] Interface.GameMechanics First player
+[04-26 18:00:11,648, 1790657] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:00:14,022, 1793031] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:00:14,023, 1793032] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:00:14,034, 1793043] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:00:14,034, 1793043] Interface.GameMechanics Second player
+[04-26 18:00:14,034, 1793043] Interface.GameMechanics Start game
+[04-26 18:00:25,630, 1804639] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:00:29,024, 1808033] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:00:29,024, 1808033] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:00:29,029, 1808038] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:00:29,029, 1808038] Interface.GameMechanics First player
+[04-26 18:00:29,112, 1808121] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:00:29,113, 1808122] Interface.GameMechanics Session finished
+[04-26 18:00:38,871, 1817880] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:00:40,845, 1819854] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:00:40,845, 1819854] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:00:40,898, 1819907] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:00:40,898, 1819907] Interface.GameMechanics Second player
+[04-26 18:00:40,898, 1819907] Interface.GameMechanics Start game
+[04-26 18:00:52,181, 1831190] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:00:53,868, 1832877] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:00:53,868, 1832877] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:00:53,872, 1832881] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:00:53,872, 1832881] Interface.GameMechanics First player
+[04-26 18:00:56,000, 1835009] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:00:56,000, 1835009] Interface.GameMechanics Session finished
+[04-26 18:01:04,008, 1843017] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:01:05,693, 1844702] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:01:05,693, 1844702] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:01:05,722, 1844731] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:01:05,722, 1844731] Interface.GameMechanics Second player
+[04-26 18:01:05,722, 1844731] Interface.GameMechanics Start game
+[04-26 18:01:20,758, 1859767] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:01:20,759, 1859768] Interface.GameMechanics Session finished
+[04-26 18:01:24,204, 1863213] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:01:25,870, 1864879] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:01:25,870, 1864879] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:01:25,871, 1864880] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:01:25,871, 1864880] Interface.GameMechanics First player
+[04-26 18:02:25,873, 1924882] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:02:38,546, 1937555] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:02:38,548, 1937557] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:02:38,551, 1937560] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:02:38,551, 1937560] Interface.GameMechanics Second player
+[04-26 18:02:38,551, 1937560] Interface.GameMechanics Start game
+[04-26 18:02:50,212, 1949221] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:02:51,994, 1951003] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:02:51,994, 1951003] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:02:51,998, 1951007] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:02:51,998, 1951007] Interface.GameMechanics First player
+[04-26 18:02:53,572, 1952581] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:02:53,573, 1952582] Interface.GameMechanics Session finished
+[04-26 18:03:05,599, 1964608] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:03:06,832, 1965841] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:03:06,832, 1965841] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:03:06,833, 1965842] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:03:06,833, 1965842] Interface.GameMechanics Second player
+[04-26 18:03:06,833, 1965842] Interface.GameMechanics Start game
+[04-26 18:03:21,894, 1980903] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:03:21,897, 1980906] Interface.GameMechanics Session finished
+[04-26 18:04:05,364, 2024373] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:04:07,086, 2026095] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:04:07,086, 2026095] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:04:07,088, 2026097] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:04:07,088, 2026097] Interface.GameMechanics First player
+[04-26 18:04:57,516, 2076525] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:04:59,661, 2078670] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:04:59,663, 2078672] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:04:59,667, 2078676] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:04:59,667, 2078676] Interface.GameMechanics Second player
+[04-26 18:04:59,667, 2078676] Interface.GameMechanics Start game
+[04-26 18:05:14,696, 2093705] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:05:14,699, 2093708] Interface.GameMechanics Session finished
+[04-26 18:05:19,788, 2098797] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:05:21,959, 2100968] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:05:21,959, 2100968] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:05:21,961, 2100970] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:05:21,961, 2100970] Interface.GameMechanics First player
+[04-26 18:05:33,918, 2112927] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:05:35,738, 2114747] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:05:35,738, 2114747] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:05:35,739, 2114748] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:05:35,739, 2114748] Interface.GameMechanics Second player
+[04-26 18:05:35,739, 2114748] Interface.GameMechanics Start game
+[04-26 18:05:50,760, 2129769] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:05:50,762, 2129771] Interface.GameMechanics Session finished
+[04-26 18:06:50,768, 2189777] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:16:25,321, 2764330] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:16:25,323, 2764332] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:16:25,386, 2764395] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:16:25,386, 2764395] Interface.GameMechanics First player
+[04-26 18:17:25,392, 2824401] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:17:37,683, 2836692] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:17:37,684, 2836693] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:17:37,689, 2836698] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:17:37,689, 2836698] Interface.GameMechanics Second player
+[04-26 18:17:37,689, 2836698] Interface.GameMechanics Start game
+[04-26 18:17:52,739, 2851748] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:17:52,745, 2851754] Interface.GameMechanics Session finished
+[04-26 18:18:52,752, 2911761] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:19:37,020, 2956029] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:19:37,021, 2956030] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:19:37,027, 2956036] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:19:37,027, 2956036] Interface.GameMechanics First player
+[04-26 18:20:28,650, 3007659] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:20:31,504, 3010513] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:20:31,505, 3010514] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:20:31,512, 3010521] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:20:31,512, 3010521] Interface.GameMechanics Second player
+[04-26 18:20:31,512, 3010521] Interface.GameMechanics Start game
+[04-26 18:20:43,607, 3022616] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:20:45,364, 3024373] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:20:45,379, 3024388] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:20:45,382, 3024391] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:20:45,382, 3024391] Interface.GameMechanics First player
+[04-26 18:20:46,556, 3025565] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:20:46,557, 3025566] Interface.GameMechanics Session finished
+[04-26 18:21:12,074, 3051083] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:21:13,846, 3052855] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:21:13,846, 3052855] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:21:13,849, 3052858] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:21:13,849, 3052858] Interface.GameMechanics Second player
+[04-26 18:21:13,849, 3052858] Interface.GameMechanics Start game
+[04-26 18:21:28,917, 3067926] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:21:28,922, 3067931] Interface.GameMechanics Session finished
+[04-26 18:21:44,264, 3083273] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:21:46,247, 3085256] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:21:46,248, 3085257] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:21:46,254, 3085263] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:21:46,254, 3085263] Interface.GameMechanics First player
+[04-26 18:21:53,894, 3092903] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:21:55,668, 3094677] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:21:55,668, 3094677] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:21:55,669, 3094678] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:21:55,669, 3094678] Interface.GameMechanics Second player
+[04-26 18:21:55,669, 3094678] Interface.GameMechanics Start game
+[04-26 18:22:10,734, 3109743] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:22:10,743, 3109752] Interface.GameMechanics Session finished
+[04-26 18:22:41,185, 3140194] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:22:43,145, 3142154] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:22:43,145, 3142154] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:22:43,147, 3142156] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:22:43,147, 3142156] Interface.GameMechanics First player
+[04-26 18:23:43,151, 3202160] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:24:24,386, 3243395] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:24:24,387, 3243396] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:24:24,391, 3243400] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:24:24,391, 3243400] Interface.GameMechanics Second player
+[04-26 18:24:24,391, 3243400] Interface.GameMechanics Start game
+[04-26 18:24:39,470, 3258479] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:24:39,471, 3258480] Interface.GameMechanics Session finished
+[04-26 18:25:14,351, 3293360] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:25:17,324, 3296333] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:25:17,325, 3296334] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:25:17,328, 3296337] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:25:17,328, 3296337] Interface.GameMechanics First player
+[04-26 18:25:30,415, 3309424] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:25:32,004, 3311013] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:25:32,004, 3311013] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:25:32,007, 3311016] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:25:32,007, 3311016] Interface.GameMechanics Second player
+[04-26 18:25:32,007, 3311016] Interface.GameMechanics Start game
+[04-26 18:25:36,313, 3315322] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:25:38,614, 3317623] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:25:38,614, 3317623] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:25:38,615, 3317624] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:25:38,615, 3317624] Interface.GameMechanics First player
+[04-26 18:25:47,044, 3326053] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:25:47,046, 3326055] Interface.GameMechanics Session finished
+[04-26 18:26:03,804, 3342813] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:26:06,126, 3345135] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:26:06,140, 3345149] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:26:06,149, 3345158] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:26:06,149, 3345158] Interface.GameMechanics Second player
+[04-26 18:26:06,149, 3345158] Interface.GameMechanics Start game
+[04-26 18:26:15,647, 3354656] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:26:17,591, 3356600] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:26:17,591, 3356600] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:26:17,592, 3356601] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:26:17,592, 3356601] Interface.GameMechanics First player
+[04-26 18:26:21,218, 3360227] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:26:21,218, 3360227] Interface.GameMechanics Session finished
+[04-26 18:26:57,193, 3396202] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:26:59,032, 3398041] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:26:59,032, 3398041] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:26:59,045, 3398054] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:26:59,045, 3398054] Interface.GameMechanics Second player
+[04-26 18:26:59,045, 3398054] Interface.GameMechanics Start game
+[04-26 18:27:14,101, 3413110] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:27:14,105, 3413114] Interface.GameMechanics Session finished
+[04-26 18:27:35,496, 3434505] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:27:37,625, 3436634] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:27:37,625, 3436634] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:27:37,626, 3436635] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:27:37,626, 3436635] Interface.GameMechanics First player
+[04-26 18:28:37,629, 3496638] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:29:21,259, 3540268] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:29:21,259, 3540268] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:29:21,307, 3540316] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:29:21,307, 3540316] Interface.GameMechanics Second player
+[04-26 18:29:21,307, 3540316] Interface.GameMechanics Start game
+[04-26 18:29:36,407, 3555416] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:29:36,408, 3555417] Interface.GameMechanics Session finished
+[04-26 18:30:36,414, 3615423] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:30:41,930, 3620939] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:30:41,931, 3620940] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:30:41,937, 3620946] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:30:41,937, 3620946] Interface.GameMechanics First player
+[04-26 18:31:02,313, 3641322] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:31:04,607, 3643616] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:31:04,607, 3643616] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:31:04,610, 3643619] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:31:04,610, 3643619] Interface.GameMechanics Second player
+[04-26 18:31:04,610, 3643619] Interface.GameMechanics Start game
+[04-26 18:31:19,623, 3658632] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:31:19,624, 3658633] Interface.GameMechanics Session finished
+[04-26 18:32:12,786, 3711795] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:32:14,768, 3713777] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:32:14,769, 3713778] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:32:14,816, 3713825] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:32:14,817, 3713826] Interface.GameMechanics First player
+[04-26 18:32:45,634, 3744643] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:32:48,278, 3747287] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:32:48,279, 3747288] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:32:48,286, 3747295] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:32:48,286, 3747295] Interface.GameMechanics Second player
+[04-26 18:32:48,286, 3747295] Interface.GameMechanics Start game
+[04-26 18:33:03,289, 3762298] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:33:03,297, 3762306] Interface.GameMechanics Session finished
+[04-26 18:34:03,302, 3822311] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:36:41,137, 3980146] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:36:41,137, 3980146] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:36:41,141, 3980150] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:36:41,141, 3980150] Interface.GameMechanics First player
+[04-26 18:37:41,145, 4040154] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:37:42,631, 4041640] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:37:42,631, 4041640] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:37:42,632, 4041641] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:37:42,632, 4041641] Interface.GameMechanics Second player
+[04-26 18:37:42,632, 4041641] Interface.GameMechanics Start game
+[04-26 18:37:57,712, 4056721] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:37:57,714, 4056723] Interface.GameMechanics Session finished
+[04-26 18:38:26,156, 4085165] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:38:27,233, 4086242] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:38:27,233, 4086242] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:38:27,234, 4086243] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:38:27,234, 4086243] Interface.GameMechanics First player
+[04-26 18:38:31,409, 4090418] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:38:32,066, 4091075] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:38:32,066, 4091075] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:38:32,069, 4091078] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:38:32,069, 4091078] Interface.GameMechanics Second player
+[04-26 18:38:32,069, 4091078] Interface.GameMechanics Start game
+[04-26 18:38:47,163, 4106172] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:38:47,167, 4106176] Interface.GameMechanics Session finished
+[04-26 18:39:47,170, 4166179] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:43:31,321, 4390330] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:43:31,321, 4390330] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:43:31,345, 4390354] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:43:31,349, 4390358] Interface.GameMechanics First player
+[04-26 18:43:45,788, 4404797] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:43:48,328, 4407337] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:43:48,328, 4407337] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:43:48,333, 4407342] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:43:48,333, 4407342] Interface.GameMechanics Second player
+[04-26 18:43:48,333, 4407342] Interface.GameMechanics Start game
+[04-26 18:44:03,345, 4422354] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:44:03,351, 4422360] Interface.GameMechanics Session finished
+[04-26 18:44:08,634, 4427643] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:44:11,315, 4430324] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:44:11,315, 4430324] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:44:11,322, 4430331] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:44:11,322, 4430331] Interface.GameMechanics First player
+[04-26 18:44:55,131, 4474140] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:44:56,989, 4475998] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:44:56,989, 4475998] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:44:56,994, 4476003] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:44:56,994, 4476003] Interface.GameMechanics Second player
+[04-26 18:44:56,994, 4476003] Interface.GameMechanics Start game
+[04-26 18:45:12,062, 4491071] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:45:12,063, 4491072] Interface.GameMechanics Session finished
+[04-26 18:45:26,827, 4505836] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:45:27,957, 4506966] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:45:27,957, 4506966] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:45:27,958, 4506967] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:45:27,958, 4506967] Interface.GameMechanics First player
+[04-26 18:46:27,962, 4566971] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:46:59,173, 4598182] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:46:59,173, 4598182] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:46:59,177, 4598186] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:46:59,177, 4598186] Interface.GameMechanics Second player
+[04-26 18:46:59,177, 4598186] Interface.GameMechanics Start game
+[04-26 18:47:05,766, 4604775] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:47:06,688, 4605697] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:47:06,688, 4605697] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:47:06,688, 4605697] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:47:06,688, 4605697] Interface.GameMechanics First player
+[04-26 18:47:14,255, 4613264] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:47:14,256, 4613265] Interface.GameMechanics Session finished
+[04-26 18:47:30,752, 4629761] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:47:31,567, 4630576] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:47:31,567, 4630576] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:47:31,569, 4630578] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:47:31,569, 4630578] Interface.GameMechanics Second player
+[04-26 18:47:31,569, 4630578] Interface.GameMechanics Start game
+[04-26 18:47:35,906, 4634915] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:47:37,035, 4636044] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:47:37,035, 4636044] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:47:37,035, 4636044] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:47:37,035, 4636044] Interface.GameMechanics First player
+[04-26 18:47:46,594, 4645603] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:47:46,595, 4645604] Interface.GameMechanics Session finished
+[04-26 18:48:38,046, 4697055] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:48:39,464, 4698473] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:48:39,464, 4698473] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:48:39,466, 4698475] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:48:39,466, 4698475] Interface.GameMechanics Second player
+[04-26 18:48:39,466, 4698475] Interface.GameMechanics Start game
+[04-26 18:48:54,558, 4713567] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:48:54,559, 4713568] Interface.GameMechanics Session finished
+[04-26 18:49:41,317, 4760326] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:49:46,500, 4765509] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:49:46,500, 4765509] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:49:46,503, 4765512] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:49:46,503, 4765512] Interface.GameMechanics First player
+[04-26 18:50:46,506, 4825515] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:51:48,417, 4887426] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:51:48,417, 4887426] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:51:48,443, 4887452] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:51:48,444, 4887453] Interface.GameMechanics Second player
+[04-26 18:51:48,445, 4887454] Interface.GameMechanics Start game
+[04-26 18:52:03,464, 4902473] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:52:03,470, 4902479] Interface.GameMechanics Session finished
+[04-26 18:52:55,697, 4954706] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:52:57,322, 4956331] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:52:57,322, 4956331] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:52:57,325, 4956334] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:52:57,325, 4956334] Interface.GameMechanics First player
+[04-26 18:53:06,840, 4965849] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:53:08,143, 4967152] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:53:08,144, 4967153] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:53:08,145, 4967154] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:53:08,145, 4967154] Interface.GameMechanics Second player
+[04-26 18:53:08,145, 4967154] Interface.GameMechanics Start game
+[04-26 18:53:23,238, 4982247] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:53:23,240, 4982249] Interface.GameMechanics Session finished
+[04-26 18:53:29,453, 4988462] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:53:30,960, 4989969] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:53:30,960, 4989969] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:53:30,961, 4989970] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:53:30,961, 4989970] Interface.GameMechanics First player
+[04-26 18:53:36,487, 4995496] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:53:37,893, 4996902] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:53:37,893, 4996902] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:53:37,903, 4996912] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:53:37,903, 4996912] Interface.GameMechanics Second player
+[04-26 18:53:37,903, 4996912] Interface.GameMechanics Start game
+[04-26 18:53:43,655, 5002664] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:53:44,925, 5003934] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:53:44,925, 5003934] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:53:44,927, 5003936] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:53:44,928, 5003937] Interface.GameMechanics First player
+[04-26 18:53:50,458, 5009467] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-26 18:53:51,737, 5010746] frontend.game.GameWebSocket Start creating New socket 
+[04-26 18:53:51,737, 5010746] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-26 18:53:51,738, 5010747] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-26 18:53:51,738, 5010747] Interface.GameMechanics Second player
+[04-26 18:53:51,738, 5010747] Interface.GameMechanics Start game
+[04-26 18:53:52,999, 5012008] Interface.GameMechanics Draw between Vanyha007, Vanyha007
+[04-26 18:53:53,000, 5012009] Interface.GameMechanics Session finished
+[04-26 18:53:53,134, 5012143] main.AppServer There is an error in Server.Start()
+[04-26 18:53:53,268, 5012277] main.AppServer java.util.ConcurrentModificationException

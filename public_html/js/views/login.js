@@ -72,7 +72,16 @@ define([
             }
         },
         submitForm: function(){
-            //render new template
+            var data = {"login": myLogin,
+                "password": password,
+                "email": email};
+            console.log(data);
+            /*$.ajax({
+                data: JSON.stringify(data),
+                url: "/api/v1/auth/signup",
+                contentType: "application/json",
+                type: "post"
+            });*/
         }
 
     });

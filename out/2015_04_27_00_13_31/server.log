@@ -1,0 +1,209 @@
+[04-27 00:13:32,274, 5023] resource.ResourceFactory ResourceFactory was created
+[04-27 00:13:32,363, 5112] sax.SaxHandler Start Document
+[04-27 00:13:32,370, 5119] sax.SaxHandler Class name: resource.ServerSettings
+[04-27 00:13:32,377, 5126] sax.SaxHandler port = 8080
+[04-27 00:13:32,416, 5165] sax.SaxHandler End document
+[04-27 00:13:32,431, 5180] resource.ResourceFactory Resource serverSettings was parsed
+[04-27 00:13:32,455, 5204] sax.SaxHandler Start Document
+[04-27 00:13:32,459, 5208] sax.SaxHandler Class name: resource.LoggerMessages
+[04-27 00:13:32,460, 5209] sax.SaxHandler doPostStart = doPost Start
+[04-27 00:13:32,461, 5210] sax.SaxHandler doPostFinish = doPost Success
+[04-27 00:13:32,462, 5211] sax.SaxHandler doGetStart = doGet Start
+[04-27 00:13:32,462, 5211] sax.SaxHandler doGetFinish = doGet Success
+[04-27 00:13:32,463, 5212] sax.SaxHandler isAdmin = User:{} is admin
+[04-27 00:13:32,464, 5213] sax.SaxHandler isNotAdmin = User:{} is not admin
+[04-27 00:13:32,465, 5214] sax.SaxHandler wrongAction = Wrong action
+[04-27 00:13:32,466, 5215] sax.SaxHandler statistic = Getting Statistic
+[04-27 00:13:32,466, 5215] sax.SaxHandler stop = Stopping server
+[04-27 00:13:32,467, 5216] sax.SaxHandler notAuthorised = Not Authorised
+[04-27 00:13:32,470, 5219] sax.SaxHandler authorised = User:{} is Authorised
+[04-27 00:13:32,471, 5220] sax.SaxHandler hasAuthorised = User:{} has Authorised
+[04-27 00:13:32,473, 5222] sax.SaxHandler lackOfParam = No param "{}" in request
+[04-27 00:13:32,474, 5223] sax.SaxHandler paramHasWrongType = Param:"{}" has wrong type
+[04-27 00:13:32,475, 5224] sax.SaxHandler signUp = New user is signing up
+[04-27 00:13:32,477, 5226] sax.SaxHandler signIn = User is signing in
+[04-27 00:13:32,478, 5227] sax.SaxHandler alreadyLoggedIn = User:{} is already Logged In
+[04-27 00:13:32,479, 5228] sax.SaxHandler block = Authorization and signing up is blocked
+[04-27 00:13:32,480, 5229] sax.SaxHandler wrongPasOrLogin = Wrong password:"{}" or login:"{}"
+[04-27 00:13:32,481, 5230] sax.SaxHandler loggedOut = User:{} logged out
+[04-27 00:13:32,482, 5231] sax.SaxHandler loginIsAlreadyExist = User with such login "{}" is already exist
+[04-27 00:13:32,484, 5233] sax.SaxHandler wrongSignUpData = Wrong login:"{}" or email:"{}" or password:"{}"
+[04-27 00:13:32,485, 5234] sax.SaxHandler onMessage = User:{} has sent Message:{}
+[04-27 00:13:32,486, 5235] sax.SaxHandler onOpen = User:{} is opening connection
+[04-27 00:13:32,487, 5236] sax.SaxHandler onClose = User:{} has closed connection
+[04-27 00:13:32,488, 5237] sax.SaxHandler configure = Configure
+[04-27 00:13:32,489, 5238] sax.SaxHandler setBlock = Signing in and Signing up are blocked
+[04-27 00:13:32,491, 5240] sax.SaxHandler unsetBlock = Signing in and Signing up are released
+[04-27 00:13:32,493, 5242] sax.SaxHandler startGame = Start game
+[04-27 00:13:32,496, 5245] sax.SaxHandler firstPlayer = First player
+[04-27 00:13:32,499, 5248] sax.SaxHandler secondPlayer = Second player
+[04-27 00:13:32,501, 5250] sax.SaxHandler sessionFinished = Session finished
+[04-27 00:13:32,502, 5251] sax.SaxHandler draw = Draw between {}, {}
+[04-27 00:13:32,502, 5251] sax.SaxHandler isWinner = {} is winner
+[04-27 00:13:32,504, 5253] sax.SaxHandler isLoser = {} is loser
+[04-27 00:13:32,509, 5258] sax.SaxHandler signUpSuccess = User {} was successfully signed up
+[04-27 00:13:32,536, 5285] sax.SaxHandler newSocket = Start creating New socket 
+[04-27 00:13:32,537, 5286] sax.SaxHandler newSocketSuccess = New Socket Successfully constructed
+[04-27 00:13:32,544, 5293] sax.SaxHandler requestGetParams = Request params {}
+[04-27 00:13:32,546, 5295] sax.SaxHandler jsonGotFromRequest = JSON from request: {}
+[04-27 00:13:32,568, 5317] sax.SaxHandler errorXML = Error while reading XML
+[04-27 00:13:32,568, 5317] sax.SaxHandler startXML = Start Document
+[04-27 00:13:32,569, 5318] sax.SaxHandler endXML = End document
+[04-27 00:13:32,570, 5319] sax.SaxHandler className = Class name: {}
+[04-27 00:13:32,571, 5320] sax.SaxHandler aEqualB = {} = {}
+[04-27 00:13:32,571, 5320] sax.SaxHandler resourceWasParsed = Resource {} was parsed
+[04-27 00:13:32,571, 5320] sax.SaxHandler End document
+[04-27 00:13:32,573, 5322] resource.ResourceFactory Resource loggerMessages was parsed
+[04-27 00:13:32,579, 5328] main.Main Starting at port: 8080
+
+[04-27 00:13:32,870, 5619] sax.SaxHandler Start Document
+[04-27 00:13:32,871, 5620] sax.SaxHandler Class name: resource.Messages
+[04-27 00:13:32,873, 5622] sax.SaxHandler adminPage = Admin page
+[04-27 00:13:32,873, 5622] sax.SaxHandler notFound = 404: Not Found.
+[04-27 00:13:32,874, 5623] sax.SaxHandler wrongParamAction = Wrong 'action'
+[04-27 00:13:32,875, 5624] sax.SaxHandler notAuthorised = Not Authorised
+[04-27 00:13:32,875, 5624] sax.SaxHandler logInStatus = Log In:
+[04-27 00:13:32,877, 5626] sax.SaxHandler alreadyLoggedIn = You has already Logged In
+[04-27 00:13:32,878, 5627] sax.SaxHandler block = Authorization and signing up is blocked
+[04-27 00:13:32,878, 5627] sax.SaxHandler wrongPasOrLogin = Wrong password or login
+[04-27 00:13:32,878, 5627] sax.SaxHandler fillAllTheGaps = Fill all the gaps, please:
+[04-27 00:13:32,879, 5628] sax.SaxHandler logOutFirst = You have to logout before signing up.
+[04-27 00:13:32,879, 5628] sax.SaxHandler exist = Such user already exists
+[04-27 00:13:32,880, 5629] sax.SaxHandler wrongSignUpData = Wrong sign Up data
+[04-27 00:13:32,880, 5629] sax.SaxHandler wrongLimit = WrongLimit
+[04-27 00:13:32,880, 5629] sax.SaxHandler End document
+[04-27 00:13:32,881, 5630] resource.ResourceFactory Resource messages was parsed
+[04-27 00:13:32,899, 5648] sax.SaxHandler Start Document
+[04-27 00:13:32,900, 5649] sax.SaxHandler Class name: resource.GameMechanicsSettings
+[04-27 00:13:32,902, 5651] sax.SaxHandler timeLimit = 15
+[04-27 00:13:32,903, 5652] sax.SaxHandler numAmount = 10
+[04-27 00:13:32,904, 5653] sax.SaxHandler weight = 10
+[04-27 00:13:32,904, 5653] sax.SaxHandler minDelta = 10
+[04-27 00:13:32,908, 5657] sax.SaxHandler End document
+[04-27 00:13:32,909, 5658] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[04-27 00:13:33,318, 6067] frontend.game.WebSocketGameServlet Configure
+[04-27 00:13:33,466, 6215] main.AppServer Start
+[04-27 00:13:33,467, 6216] main.AppServer With resending actions
+[04-27 00:13:37,581, 10330] frontend.ProfileServlet doGet Start
+[04-27 00:13:37,583, 10332] frontend.ProfileServlet Request params {}
+[04-27 00:13:37,650, 10399] frontend.ProfileServlet Not Authorised
+[04-27 00:13:37,672, 10421] frontend.ProfileServlet doGet Success
+[04-27 00:13:50,645, 23394] frontend.SignUpServlet doPost Start
+[04-27 00:13:50,645, 23394] frontend.SignUpServlet Request params {}
+[04-27 00:13:50,702, 23451] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty","login":"qwerty","email":"qwerty@mail.ru"}
+[04-27 00:13:50,889, 23638] frontend.SignUpServlet User qwerty was successfully signed up
+[04-27 00:13:50,889, 23638] frontend.SignUpServlet User:qwerty has Authorised
+[04-27 00:13:50,891, 23640] frontend.SignUpServlet doPost Success
+[04-27 00:13:58,471, 31220] frontend.SignInServlet doPost Start
+[04-27 00:13:58,472, 31221] frontend.SignInServlet Request params {}
+[04-27 00:13:58,472, 31221] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty","login":"qwerty"}
+[04-27 00:13:58,472, 31221] frontend.SignInServlet User:qwerty is already Logged In
+[04-27 00:13:58,472, 31221] frontend.SignInServlet doPost Success
+[04-27 00:14:06,500, 39249] frontend.ProfileServlet doGet Start
+[04-27 00:14:06,501, 39250] frontend.ProfileServlet Request params {}
+[04-27 00:14:06,501, 39250] frontend.ProfileServlet User:qwerty has Authorised
+[04-27 00:14:06,511, 39260] frontend.ProfileServlet doGet Success
+[04-27 00:14:22,127, 54876] frontend.SignUpServlet doPost Start
+[04-27 00:14:22,127, 54876] frontend.SignUpServlet Request params {}
+[04-27 00:14:22,127, 54876] utils.JsonInterpreterFromRequest JSON from request: {"password":"vanyhasem1S","login":"Vanyha007","email":"vanyha-sem@mail.ru"}
+[04-27 00:14:22,140, 54889] frontend.SignUpServlet User Vanyha007 was successfully signed up
+[04-27 00:14:22,140, 54889] frontend.SignUpServlet User:Vanyha007 has Authorised
+[04-27 00:14:22,140, 54889] frontend.SignUpServlet doPost Success
+[04-27 00:14:30,823, 63572] frontend.SignInServlet doPost Start
+[04-27 00:14:30,823, 63572] frontend.SignInServlet Request params {}
+[04-27 00:14:30,824, 63573] utils.JsonInterpreterFromRequest JSON from request: {"password":"vanyhasem1S","login":"Vanyha007"}
+[04-27 00:14:30,824, 63573] frontend.SignInServlet User:Vanyha007 is already Logged In
+[04-27 00:14:30,824, 63573] frontend.SignInServlet doPost Success
+[04-27 00:14:34,904, 67653] frontend.ProfileServlet doGet Start
+[04-27 00:14:34,904, 67653] frontend.ProfileServlet Request params {}
+[04-27 00:14:34,904, 67653] frontend.ProfileServlet User:Vanyha007 has Authorised
+[04-27 00:14:34,905, 67654] frontend.ProfileServlet doGet Success
+[04-27 00:14:35,043, 67792] frontend.ProfileServlet doGet Start
+[04-27 00:14:35,043, 67792] frontend.ProfileServlet Request params {}
+[04-27 00:14:35,043, 67792] frontend.ProfileServlet User:Vanyha007 has Authorised
+[04-27 00:14:35,048, 67797] frontend.ProfileServlet doGet Success
+[04-27 00:14:41,159, 73908] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:14:41,159, 73908] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:14:41,360, 74109] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-27 00:14:41,361, 74110] Interface.GameMechanics First player
+[04-27 00:14:43,611, 76360] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:14:43,611, 76360] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:14:43,613, 76362] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 00:14:43,613, 76362] Interface.GameMechanics Second player
+[04-27 00:14:43,613, 76362] Interface.GameMechanics Start game
+[04-27 00:14:43,619, 76368] Interface.GameMechanics null
+[04-27 00:14:43,619, 76368] Interface.GameMechanics null
+[04-27 00:14:58,644, 91393] Interface.GameMechanics Draw between Vanyha007, qwerty
+[04-27 00:14:58,647, 91396] Interface.GameMechanics Session finished
+[04-27 00:15:03,886, 96635] frontend.game.GameWebSocket User:Vanyha007 has sent Message:{"Player":"1","action":"3"}
+[04-27 00:15:03,887, 96636] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"3"}
+[04-27 00:15:03,888, 96637] frontend.game.GameWebSocket User:Vanyha007 has sent Message:{"Player":"1","action":"3"}
+[04-27 00:15:03,888, 96637] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"3"}
+[04-27 00:15:03,902, 96651] frontend.game.GameWebSocket User:Vanyha007 has sent Message:{"Player":"1","action":"3"}
+[04-27 00:15:03,906, 96655] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"3"}
+[04-27 00:15:12,959, 105708] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 00:15:12,960, 105709] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 00:15:13,039, 105788] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 00:15:13,041, 105790] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 00:15:13,043, 105792] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 00:15:13,044, 105793] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 00:15:13,047, 105796] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 00:15:13,047, 105796] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 00:16:13,060, 165809] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-27 00:16:13,061, 165810] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-27 00:24:43,104, 675853] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:24:43,104, 675853] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:24:43,110, 675859] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 00:24:43,111, 675860] Interface.GameMechanics First player
+[04-27 00:24:44,057, 676806] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:24:44,057, 676806] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:24:44,060, 676809] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-27 00:24:44,060, 676809] Interface.GameMechanics Second player
+[04-27 00:24:44,060, 676809] Interface.GameMechanics Start game
+[04-27 00:24:44,060, 676809] Interface.GameMechanics null
+[04-27 00:24:44,060, 676809] Interface.GameMechanics null
+[04-27 00:24:59,130, 691879] Interface.GameMechanics Draw between qwerty, Vanyha007
+[04-27 00:24:59,132, 691881] Interface.GameMechanics Session finished
+[04-27 00:25:02,591, 695340] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-27 00:25:02,645, 695394] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-27 00:25:04,041, 696790] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:25:04,041, 696790] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:25:04,042, 696791] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 00:25:04,042, 696791] Interface.GameMechanics First player
+[04-27 00:25:06,479, 699228] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:25:06,479, 699228] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:25:06,480, 699229] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-27 00:25:06,480, 699229] Interface.GameMechanics Second player
+[04-27 00:25:06,480, 699229] Interface.GameMechanics Start game
+[04-27 00:25:06,480, 699229] Interface.GameMechanics null
+[04-27 00:25:06,480, 699229] Interface.GameMechanics null
+[04-27 00:25:12,970, 705719] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-27 00:25:13,040, 705789] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-27 00:25:14,698, 707447] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:25:14,698, 707447] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:25:14,699, 707448] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 00:25:14,699, 707448] Interface.GameMechanics First player
+[04-27 00:25:15,983, 708732] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:25:15,983, 708732] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:25:15,987, 708736] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-27 00:25:15,987, 708736] Interface.GameMechanics Second player
+[04-27 00:25:15,987, 708736] Interface.GameMechanics Start game
+[04-27 00:25:15,987, 708736] Interface.GameMechanics null
+[04-27 00:25:15,987, 708736] Interface.GameMechanics null
+[04-27 00:25:16,803, 709552] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-27 00:25:17,433, 710182] frontend.game.GameWebSocket User:Vanyha007 has closed connection
+[04-27 00:25:18,558, 711307] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:25:18,558, 711307] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:25:18,559, 711308] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 00:25:18,559, 711308] Interface.GameMechanics First player
+[04-27 00:25:19,876, 712625] frontend.game.GameWebSocket Start creating New socket 
+[04-27 00:25:19,876, 712625] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 00:25:20,010, 712759] frontend.game.GameWebSocket User:Vanyha007 is opening connection
+[04-27 00:25:20,010, 712759] Interface.GameMechanics Second player
+[04-27 00:25:20,010, 712759] Interface.GameMechanics Start game
+[04-27 00:25:20,010, 712759] Interface.GameMechanics null
+[04-27 00:25:20,010, 712759] Interface.GameMechanics null
+[04-27 00:25:21,577, 714326] Interface.GameMechanics Draw between qwerty, Vanyha007
+[04-27 00:25:21,578, 714327] Interface.GameMechanics Session finished
+[04-27 00:25:21,612, 714361] main.AppServer There is an error in Server.Start()
+[04-27 00:25:21,635, 714384] main.AppServer java.util.ConcurrentModificationException

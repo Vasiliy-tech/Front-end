@@ -25,6 +25,7 @@ define([
         },
         show: function () {
             this.trigger('show',this);
+            
             game.start();
             console.log(game.get());
             this.$el.show();

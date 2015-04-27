@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		shell: {
 			server: { /* Подзадача */
-    			command: 'java -cp L1.2-1.0-jar-with-dependencies.jar main.Main 8080'
+    			command: 'java -jar Game-1.0-jar-with-dependencies.jar'
  			   	/* запуск сервера */
 			}
 		},
