@@ -13,7 +13,13 @@
 				<a href="#game" class="textButton">Start Game</a>
 		</div>
 		<div class="js-login button__menu">
-			<a href="#login" class="textButton">Login</a>
+			<a href="#login" class="textButton">Registration</a>
+		</div>
+		<div class="js-signin button__menu">
+			<a href="#signin" class="textButton">Authorization</a>
+		</div>
+		<div class="js-exit button__menu">
+			<a href="#" class="textButton">Exit</a>
 		</div>
 	
 </fest:template>

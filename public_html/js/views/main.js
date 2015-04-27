@@ -11,7 +11,7 @@ define([
         tagName: 'div',
         className: 'menu',
         initialize: function () {
-        
+            $('.autorizationLabel').hide();
         },
         render: function () {
             this.$el.html(this.template());
@@ -23,6 +23,30 @@ define([
         },
         hide: function () {
             this.$el.hide();
+        },
+        exitLogin: function () {
+            //alert('1');
+            $.ajax({
+                type: 'POST',
+                url: '/api/v1/auth/signout',
+                contentType:'json', 
+                data: '{}',
+                dataType:'json',
+                success: function(result, code){
+                    console.log(result);
+                    if (result.status === 200)
+                    {
+                        $('.autorizationLabel').hide();
+                    } 
+                    else 
+                    {
+                       alert("You are not autorization, maybe!")              
+                    }
+                },
+                error:  function(xhr, str){
+                     $('.content').html('Критическая ошибка'); 
+                },
+            });
         }
 
     });
