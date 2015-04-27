@@ -43,6 +43,7 @@ define([
                         $('a.signin__href').removeClass('disabled__href');
                         $('a.login__href').removeClass('disabled__href');
                         $('a.start-game__href').addClass('disabled__href');
+                        //
                     } 
                     else 
                     {
