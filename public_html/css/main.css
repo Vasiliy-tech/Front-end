@@ -167,3 +167,9 @@
 .butMy{
 	color: #800000;
 }
+
+.disabled__href {
+    pointer-events: none; /* делаем ссылку некликабельной */
+    cursor: default;  /* устанавливаем курсор в виде стрелки */
+    color: #999; 
+}

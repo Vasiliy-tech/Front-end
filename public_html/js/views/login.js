@@ -100,6 +100,10 @@ define([
                     if (result.status === 200)
                     {
                         $('.autorizationLabel').show();
+                        $('a.signin__href').addClass('disabled__href');
+                        $('a.login__href').addClass('disabled__href');
+                        $('a.start-game__href').removeClass('disabled__href');
+                        //$('a.exit__href').removeClass('disabled__href');
                         window.location.href = '#'
                     } 
                     else 
