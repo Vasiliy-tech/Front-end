@@ -10,6 +10,9 @@ define([
         template: tmpl,
         tagName: 'div',
         className: 'menu',
+        events: { 
+                  "click .js-exit": "exitLogin",                 
+        },
         initialize: function () {
             $('.autorizationLabel').hide();
         },

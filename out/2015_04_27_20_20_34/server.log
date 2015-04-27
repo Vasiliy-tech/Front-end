@@ -444,3 +444,26 @@
 [04-27 20:23:16,778, 165878] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"3"}
 [04-27 20:24:16,789, 225889] frontend.game.GameWebSocket User:qwerty2 has closed connection
 [04-27 20:24:16,791, 225891] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-27 20:26:53,622, 382722] frontend.SignInServlet doPost Start
+[04-27 20:26:53,623, 382723] frontend.SignInServlet Request params {}
+[04-27 20:26:53,643, 382743] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty2","login":"qwerty2"}
+[04-27 20:26:53,644, 382744] frontend.SignInServlet User:qwerty2 is already Logged In
+[04-27 20:26:53,646, 382746] frontend.SignInServlet doPost Success
+[04-27 20:27:01,136, 390236] frontend.SignInServlet doPost Start
+[04-27 20:27:01,136, 390236] frontend.SignInServlet Request params {}
+[04-27 20:27:01,139, 390239] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty2","login":"qwerty2"}
+[04-27 20:27:01,140, 390240] frontend.SignInServlet User:qwerty2 is already Logged In
+[04-27 20:27:01,146, 390246] frontend.SignInServlet doPost Success
+[04-27 20:27:14,550, 403650] frontend.game.GameWebSocket Start creating New socket 
+[04-27 20:27:14,550, 403650] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 20:27:14,553, 403653] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-27 20:27:14,553, 403653] Interface.GameMechanics First player
+[04-27 20:28:14,560, 463660] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-27 20:35:02,775, 871875] frontend.SignOutServlet doPost Start
+[04-27 20:35:02,783, 871883] frontend.SignOutServlet Request params {}
+[04-27 20:35:02,783, 871883] frontend.SignOutServlet User:qwerty logged out
+[04-27 20:35:02,799, 871899] frontend.SignOutServlet doPost Success
+[04-27 20:35:07,528, 876628] frontend.SignOutServlet doPost Start
+[04-27 20:35:07,528, 876628] frontend.SignOutServlet Request params {}
+[04-27 20:35:07,528, 876628] frontend.SignOutServlet User:qwerty2 logged out
+[04-27 20:35:07,528, 876628] frontend.SignOutServlet doPost Success
