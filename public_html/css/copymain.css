@@ -1,0 +1,143 @@
+.button {
+	margin: auto;
+	position: relative;
+    border-radius: 5px;
+}
+.button__top {
+    background-color:#000000;
+    
+    margin-bottom: 40px;
+    top: 5px;
+    width: 240px;
+    height: 60px;
+    
+}
+
+.button__menu {
+	background-color:#4A4947;
+    margin-bottom: 15px;
+    width: 180px;
+    height: 50px;
+}
+
+.bg {
+	background-image: url("../bg.jpg");
+}
+
+.menu {
+	background-color: rgba(143,137,124,0.5);
+	width: 400px;
+	height: 500px;
+	margin: auto;
+	position: relative;
+}
+.gamefield{
+	width: 800px;
+	height: 480px;
+	margin: auto;
+	position: relative;
+}
+.logo {
+	font-family: 'Open Sans',monospace;
+	font-size: 26px;
+	color: #fff;
+	text-decoration:none;
+	text-align: center;
+	position: inherit;
+	top:25%;
+}
+.hend {
+	font-family: 'Open Sans',monospace;
+	font-size: 26px;
+	text-decoration:none;
+	text-align: center;
+	margin-bottom: 25px;
+
+}
+.textButton {
+	color: #fff;
+	font-family: 'Open Sans',monospace;
+	font-size: 20px;
+	text-decoration:none;
+	position: absolute;
+	top:15px;
+	left: 10%;
+	right: 10%;
+}
+.label {
+	color: #FFF;
+	font-family: 'Open Sans',monospace;
+	font-size: 20px;
+	margin-right: 10px;
+	position: relative;
+	top: 10px;
+}
+
+.input {
+	font-family: 'Open Sans',monospace;
+	font-size: 20px;
+	border-radius: 5px;
+	position: absolute;
+	position: 0px;
+	top: 0px;
+	right: 45px;
+	width: 240px;
+	height: 30px;
+}
+.cusInput{
+	position: relative;
+	left: 5%;
+	margin-bottom: 30px;
+
+}
+.scoreboard{
+	font-family: 'Open Sans',monospace;
+	font-size: 20px;
+	color: #FFFFFF;
+	border-radius: 5px;
+	position: relative;
+	text-decoration:none;
+}
+.scoreboard__name {
+	left: 5%;
+	top: 25%;
+	margin: 0px;
+	width: 240px;
+	height: 30px;
+}
+.scoreboard__scores {
+	text-align: right;
+	right: 5%;
+	top: -115%;
+	width: 240px;
+	height: 30px;
+}
+.scoreboard__button {
+	background-color: rgba(120,160,240,0.9);
+    width: 240px;
+    height: 35px;
+    margin: auto;
+    margin-bottom: 20px;
+    position:relative;
+    bottom: 10px;
+    border-radius: 5px;
+}
+.backButton{
+	background-color:#7C0708;
+    width: 100px;
+    height: 50px;
+    position:absolute;
+    bottom: 50px;
+    left: 5%;
+    border-radius: 5px;
+}
+.backButton__inGame{
+	left: -130px;
+}
+
+
+.disabled {
+    pointer-events: none; /* делаем ссылку некликабельной */
+    cursor: default;  /* устанавливаем курсор в виде стрелки */
+    color: #999; 
+}

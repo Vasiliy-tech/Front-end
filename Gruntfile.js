@@ -39,6 +39,13 @@ module.exports = function(grunt) {
 			    options: {
 			        livereload: true /* автоматическая перезагрузка */
 				}
+			},
+			sass:{
+				files: ['public_html/css/*.scss'],
+				tasks: ['sass'],
+				options:{
+					livereload: true
+				}
 			}	
 		},
 		concurrent:{
@@ -46,11 +53,22 @@ module.exports = function(grunt) {
 			options: {
 			        logConcurrentOutput: true, /* Вывод процесса */
 			}
+		},
+		sass:{
+			css:{
+				files: [{
+		        expand: true,
+		        cwd: 'public_html/css',
+		        src: '*.scss',
+		        dest: 'public_html/css', 
+		        ext:  '.css'
+		    }]}
 		}
 	});
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-fest');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.registerTask('default', ['concurrent',]);
   };
