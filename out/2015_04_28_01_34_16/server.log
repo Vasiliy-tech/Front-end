@@ -1,0 +1,130 @@
+[04-28 01:34:17,686, 5259] resource.ResourceFactory ResourceFactory was created
+[04-28 01:34:17,901, 5474] sax.SaxHandler Start Document
+[04-28 01:34:17,915, 5488] sax.SaxHandler Class name: resource.ServerSettings
+[04-28 01:34:17,916, 5489] sax.SaxHandler port = 8080
+[04-28 01:34:17,929, 5502] sax.SaxHandler End document
+[04-28 01:34:17,929, 5502] resource.ResourceFactory Resource serverSettings was parsed
+[04-28 01:34:17,933, 5506] sax.SaxHandler Start Document
+[04-28 01:34:17,933, 5506] sax.SaxHandler Class name: resource.LoggerMessages
+[04-28 01:34:17,933, 5506] sax.SaxHandler doPostStart = doPost Start
+[04-28 01:34:17,934, 5507] sax.SaxHandler doPostFinish = doPost Success
+[04-28 01:34:17,934, 5507] sax.SaxHandler doGetStart = doGet Start
+[04-28 01:34:17,934, 5507] sax.SaxHandler doGetFinish = doGet Success
+[04-28 01:34:17,934, 5507] sax.SaxHandler isAdmin = User:{} is admin
+[04-28 01:34:17,934, 5507] sax.SaxHandler isNotAdmin = User:{} is not admin
+[04-28 01:34:17,935, 5508] sax.SaxHandler wrongAction = Wrong action
+[04-28 01:34:17,935, 5508] sax.SaxHandler statistic = Getting Statistic
+[04-28 01:34:17,935, 5508] sax.SaxHandler stop = Stopping server
+[04-28 01:34:17,935, 5508] sax.SaxHandler notAuthorised = Not Authorised
+[04-28 01:34:17,935, 5508] sax.SaxHandler authorised = User:{} is Authorised
+[04-28 01:34:17,935, 5508] sax.SaxHandler hasAuthorised = User:{} has Authorised
+[04-28 01:34:17,936, 5509] sax.SaxHandler lackOfParam = No param "{}" in request
+[04-28 01:34:17,936, 5509] sax.SaxHandler paramHasWrongType = Param:"{}" has wrong type
+[04-28 01:34:17,936, 5509] sax.SaxHandler signUp = New user is signing up
+[04-28 01:34:17,937, 5510] sax.SaxHandler signIn = User is signing in
+[04-28 01:34:17,937, 5510] sax.SaxHandler alreadyLoggedIn = User:{} is already Logged In
+[04-28 01:34:17,937, 5510] sax.SaxHandler block = Authorization and signing up is blocked
+[04-28 01:34:17,937, 5510] sax.SaxHandler wrongPasOrLogin = Wrong password:"{}" or login:"{}"
+[04-28 01:34:17,937, 5510] sax.SaxHandler loggedOut = User:{} logged out
+[04-28 01:34:17,937, 5510] sax.SaxHandler loginIsAlreadyExist = User with such login "{}" is already exist
+[04-28 01:34:17,937, 5510] sax.SaxHandler wrongSignUpData = Wrong login:"{}" or email:"{}" or password:"{}"
+[04-28 01:34:17,938, 5511] sax.SaxHandler onMessage = User:{} has sent Message:{}
+[04-28 01:34:17,940, 5513] sax.SaxHandler onOpen = User:{} is opening connection
+[04-28 01:34:17,940, 5513] sax.SaxHandler onClose = User:{} has closed connection
+[04-28 01:34:17,940, 5513] sax.SaxHandler configure = Configure
+[04-28 01:34:17,940, 5513] sax.SaxHandler setBlock = Signing in and Signing up are blocked
+[04-28 01:34:17,941, 5514] sax.SaxHandler unsetBlock = Signing in and Signing up are released
+[04-28 01:34:17,941, 5514] sax.SaxHandler startGame = Start game
+[04-28 01:34:17,941, 5514] sax.SaxHandler firstPlayer = First player
+[04-28 01:34:17,941, 5514] sax.SaxHandler secondPlayer = Second player
+[04-28 01:34:17,941, 5514] sax.SaxHandler sessionFinished = Session finished
+[04-28 01:34:17,941, 5514] sax.SaxHandler draw = Draw between {}, {}
+[04-28 01:34:17,941, 5514] sax.SaxHandler isWinner = {} is winner
+[04-28 01:34:17,941, 5514] sax.SaxHandler isLoser = {} is loser
+[04-28 01:34:17,941, 5514] sax.SaxHandler signUpSuccess = User {} was successfully signed up
+[04-28 01:34:17,941, 5514] sax.SaxHandler newSocket = Start creating New socket 
+[04-28 01:34:17,942, 5515] sax.SaxHandler newSocketSuccess = New Socket Successfully constructed
+[04-28 01:34:17,942, 5515] sax.SaxHandler requestGetParams = Request params {}
+[04-28 01:34:17,942, 5515] sax.SaxHandler jsonGotFromRequest = JSON from request: {}
+[04-28 01:34:17,943, 5516] sax.SaxHandler errorXML = Error while reading XML
+[04-28 01:34:17,943, 5516] sax.SaxHandler startXML = Start Document
+[04-28 01:34:17,943, 5516] sax.SaxHandler endXML = End document
+[04-28 01:34:17,943, 5516] sax.SaxHandler className = Class name: {}
+[04-28 01:34:17,943, 5516] sax.SaxHandler aEqualB = {} = {}
+[04-28 01:34:17,943, 5516] sax.SaxHandler resourceWasParsed = Resource {} was parsed
+[04-28 01:34:17,943, 5516] sax.SaxHandler End document
+[04-28 01:34:17,944, 5517] resource.ResourceFactory Resource loggerMessages was parsed
+[04-28 01:34:17,944, 5517] main.Main Starting at port: 8080
+
+[04-28 01:34:18,378, 5951] sax.SaxHandler Start Document
+[04-28 01:34:18,380, 5953] sax.SaxHandler Class name: resource.Messages
+[04-28 01:34:18,383, 5956] sax.SaxHandler adminPage = Admin page
+[04-28 01:34:18,384, 5957] sax.SaxHandler notFound = 404: Not Found.
+[04-28 01:34:18,385, 5958] sax.SaxHandler wrongParamAction = Wrong 'action'
+[04-28 01:34:18,387, 5960] sax.SaxHandler notAuthorised = Not Authorised
+[04-28 01:34:18,388, 5961] sax.SaxHandler logInStatus = Log In:
+[04-28 01:34:18,389, 5962] sax.SaxHandler alreadyLoggedIn = You has already Logged In
+[04-28 01:34:18,390, 5963] sax.SaxHandler block = Authorization and signing up is blocked
+[04-28 01:34:18,391, 5964] sax.SaxHandler wrongPasOrLogin = Wrong password or login
+[04-28 01:34:18,392, 5965] sax.SaxHandler fillAllTheGaps = Fill all the gaps, please:
+[04-28 01:34:18,394, 5967] sax.SaxHandler logOutFirst = You have to logout before signing up.
+[04-28 01:34:18,396, 5969] sax.SaxHandler exist = Such user already exists
+[04-28 01:34:18,398, 5971] sax.SaxHandler wrongSignUpData = Wrong sign Up data
+[04-28 01:34:18,399, 5972] sax.SaxHandler wrongLimit = WrongLimit
+[04-28 01:34:18,402, 5975] sax.SaxHandler End document
+[04-28 01:34:18,403, 5976] resource.ResourceFactory Resource messages was parsed
+[04-28 01:34:18,458, 6031] sax.SaxHandler Start Document
+[04-28 01:34:18,459, 6032] sax.SaxHandler Class name: resource.GameMechanicsSettings
+[04-28 01:34:18,460, 6033] sax.SaxHandler timeLimit = 15
+[04-28 01:34:18,461, 6034] sax.SaxHandler numAmount = 10
+[04-28 01:34:18,462, 6035] sax.SaxHandler weight = 10
+[04-28 01:34:18,462, 6035] sax.SaxHandler minDelta = 10
+[04-28 01:34:18,463, 6036] sax.SaxHandler End document
+[04-28 01:34:18,463, 6036] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[04-28 01:34:19,236, 6809] frontend.game.WebSocketGameServlet Configure
+[04-28 01:34:19,394, 6967] main.AppServer Start
+[04-28 01:34:19,394, 6967] main.AppServer With resending actions
+[04-28 01:34:45,827, 33400] frontend.SignUpServlet doPost Start
+[04-28 01:34:45,831, 33404] frontend.SignUpServlet Request params {}
+[04-28 01:34:45,851, 33424] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty","login":"qwerty","email":"qwerty@mail.ru"}
+[04-28 01:34:45,997, 33570] frontend.SignUpServlet User qwerty was successfully signed up
+[04-28 01:34:45,997, 33570] frontend.SignUpServlet User:qwerty has Authorised
+[04-28 01:34:46,001, 33574] frontend.SignUpServlet doPost Success
+[04-28 01:35:24,351, 71924] frontend.SignUpServlet doPost Start
+[04-28 01:35:24,351, 71924] frontend.SignUpServlet Request params {}
+[04-28 01:35:24,357, 71930] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty2","login":"qwerty2","email":"qwerty2@mail.ru"}
+[04-28 01:35:24,365, 71938] frontend.SignUpServlet User qwerty2 was successfully signed up
+[04-28 01:35:24,365, 71938] frontend.SignUpServlet User:qwerty2 has Authorised
+[04-28 01:35:24,366, 71939] frontend.SignUpServlet doPost Success
+[04-28 01:36:21,359, 128932] frontend.game.GameWebSocket Start creating New socket 
+[04-28 01:36:21,359, 128932] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 01:36:21,676, 129249] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 01:36:21,678, 129251] Interface.GameMechanics First player
+[04-28 01:36:27,021, 134594] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 01:36:29,519, 137092] frontend.game.GameWebSocket Start creating New socket 
+[04-28 01:36:29,519, 137092] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 01:36:29,523, 137096] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 01:36:29,523, 137096] Interface.GameMechanics Second player
+[04-28 01:36:29,523, 137096] Interface.GameMechanics Start game
+[04-28 01:36:29,531, 137104] Interface.GameMechanics null
+[04-28 01:36:29,531, 137104] Interface.GameMechanics null
+[04-28 01:36:29,532, 137105] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-28 01:36:32,241, 139814] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 01:36:39,063, 146636] frontend.game.GameWebSocket Start creating New socket 
+[04-28 01:36:39,063, 146636] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 01:36:39,065, 146638] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 01:36:39,065, 146638] Interface.GameMechanics First player
+[04-28 01:36:42,030, 149603] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 01:36:44,098, 151671] frontend.game.GameWebSocket Start creating New socket 
+[04-28 01:36:44,098, 151671] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 01:36:44,100, 151673] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 01:36:44,100, 151673] Interface.GameMechanics Second player
+[04-28 01:36:44,100, 151673] Interface.GameMechanics Start game
+[04-28 01:36:44,100, 151673] Interface.GameMechanics null
+[04-28 01:36:44,100, 151673] Interface.GameMechanics null
+[04-28 01:36:44,100, 151673] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-28 01:36:44,618, 152191] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 01:36:44,619, 152192] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-28 01:36:44,644, 152217] Interface.GameMechanics Session finished
+[04-28 01:36:44,644, 152217] main.AppServer There is an error in Server.Start()
+[04-28 01:36:44,644, 152217] main.AppServer java.util.ConcurrentModificationException

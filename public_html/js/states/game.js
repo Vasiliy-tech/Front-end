@@ -6,12 +6,30 @@ define([
     game
 ){
 	var gameState;
+	var data;
+	var flag;
+	var score;
+	var scoreText;
+	var timer;
+	var timerEvent;
 	return {
 		init: function(game, position,ws) {
 			gameState = new Phaser.State();
+			function minusScore(){
+			    	score -= 1;
+	    			scoreText.text = 'Score: ' + score;
+	    			console.log(score);
+			 }
 			gameState.create = function() {
 		        this.game.add.sprite(0,0,'background');
-		        
+
+		        score = 100;
+				
+				
+
+				timer = this.game.time.create();
+				timerEvent = timer.add(Phaser.Timer.SECOND*100,this.minusScore,this);
+				timer.start();
 		        this.MAX_SPEED = 350;
 		        this.NUMBER_OF_BULLETS = 20;
 		        this.BULLET_SPEED = 800;
@@ -23,7 +41,7 @@ define([
 		        	this.player.frame = 4;
 		        }
 		   		
-		    
+		    	
 		    	this.game.physics.arcade.enable(this.player);
 
 			    this.player.body.bounce.y = 0.2;
@@ -32,11 +50,13 @@ define([
 			    if (position === 1){
 				    this.player.animations.add('left', [4,3,2,1,0],10,true);
 				    this.player.animations.add('right', [5,6,7,8,9],10, true);
+				    this.enemy = this.game.add.sprite(this.game.width-32, this.game.height-100,'myhero');
 			    } else {
 			    	this.player.animations.add('right', [5,6,7,8,9],10, true);
 			    	this.player.animations.add('left', [4,3,2,1,0],10,true);
+			    	this.enemy = this.game.add.sprite(32, this.game.height-100, 'myhero');
 			    }
-			    this.enemy = this.game.add.sprite(this.game.width-32, this.game.height-100,'myhero');  
+			      
 			    this.game.physics.arcade.enable(this.enemy);
 
 			    this.enemy.body.bounce.y = 0.2;
@@ -116,18 +136,11 @@ define([
 		    };
 
 		    gameState.update = function() {
-		    	ws.onmessage = function(event){
-		    		var data = JSON.parse(event.data);
-		    		console.log(data);
-		    		console.log(position);
-		    		if(data.Player !== position){
-		    			console.log("TADA");
-		    			console.log(data);
-		    		if(data.action == "1"){	    				
-		    				this.enemy.body.velocity.y=-this.MAX_SPEED*1.3;
-		    			}
-		    		}
-		    	}
+		    	var sendData = {
+		    		player:'',
+		    		action:''
+		    	};
+		    	
 		        this.game.physics.arcade.collide(this.player, this.ground);
 		        this.game.physics.arcade.collide(this.enemy, this.ground);
 		        this.game.physics.arcade.collide(this.bulletPool, this.ground, function(bullet, ground) {
@@ -140,53 +153,149 @@ define([
 		            enemy.kill();
 		        }, null, this);
 		        var onTheGround = this.player.body.touching.down;
+		        
+
+
+
 		        if (this.leftInputIsActive()) {
-		        	var action = 3;
-		        	var message = "{\"Player\":\""+position+"\",\"action\":\""+action+"\"}";
-		        	ws.send(message);
-		            this.player.body.velocity.x = -this.MAX_SPEED;
-		            this.player.animations.play('left');
+		        	sendData.player=position;
+		        	sendData.action=3;
+		        	var jsonData = JSON.stringify(sendData);
+		        	ws.send(jsonData);
+		            
 		        } else if (this.rightInputIsActive()) {
-		        	var action = 1;
-		        	var message = "{\"Player\":\""+position+"\",\"action\":\""+action+"\"}";
-		        	ws.send(message);
-		            this.player.body.velocity.x = this.MAX_SPEED;
-		            this.player.animations.play('right');
+		        	sendData.player=position;
+		        	sendData.action=1;
+		        	var jsonData = JSON.stringify(sendData);
+		        	ws.send(jsonData);
+		            
 
 		        } else if(onTheGround && this.upInputIsActive()){
-		        	var action = 0;
-		        	var message = "{\"Player\":\""+position+"\",\"action\":\""+action+"\"}";
-		        	ws.send(message);
-		            this.player.body.velocity.y = -this.MAX_SPEED*1.3;
+		        	sendData.player=position;
+		        	sendData.action=0;
+		        	var jsonData = JSON.stringify(sendData);
+		        	ws.send(jsonData);
+		            
 		           
 		        } else if(this.downInputIsActive()){
-		        	var action = 2;
-		        	var message = "{\"Player\":\""+position+"\",\"action\":\""+action+"\"}";
-		        	ws.send(message);
-		            this.player.body.velocity.y = this.MAX_SPEED;
+		        	sendData.player=position;
+		        	sendData.action=2;
+		        	var jsonData = JSON.stringify(sendData);
+		        	ws.send(jsonData);
+		            
 		            
 		        } else if (this.spaceInputIsActive()){
-		        	var action = 5;
-		        	var message = "{\"Player\":\""+position+"\",\"action\":\""+action+"\"}";
-		        	ws.send(message);
+		        	sendData.player=position;
+		        	sendData.action=5;
+		        	var jsonData = JSON.stringify(sendData);
+		        	ws.send(jsonData);
 		            this.shootBullet();
-		        } else { 	
-	        		/*var action = 4;
-		        	var message = "{\"Player\":\""+position+"\",\"action\":\""+action+"\"}";
-		        	ws.send(message);*/
-		            this.player.animations.stop();
-		            this.player.body.velocity.x = 0;
-		            
-		            if(this.player.animations.name == "right")
-		           		this.player.frame = 5;
-		           	else
-		           		this.player.frame = 4;
+		        } else { 
+		        	if( (data === undefined) || (data.player != position)){
 
-		        }
+		        		this.player.animations.stop();
+		            	this.player.body.velocity.x = 0;
+		            	if(this.player.animations.name == "right")
+			           		this.player.frame = 5;
+			           	else
+			           		this.player.frame = 4;
+		        	}
+	        		/*if(data !== undefined){
+	        			if(data.player == position){
+	        				if(data.action == 0){	    
+				    			//console.log(this.player);			
+				    			this.player.body.velocity.y = -this.MAX_SPEED*1.3;
+				    		} else if (data.action == 1){
+				    			this.player.body.velocity.x = this.MAX_SPEED;
+			            		this.player.animations.play('right');
+				    		} else if (data.action == 2){
+				    			this.player.body.velocity.y = this.MAX_SPEED;
+							} else if (data.action == 3){
+								this.player.body.velocity.x = -this.MAX_SPEED;
+			           			this.player.animations.play('left');
+							}
+	        			} else {
+	        				if(data.action == 0){	    
+			    			//console.log(this.player);			
+				    			this.enemy.body.velocity.y=-this.MAX_SPEED*1.3;
+				    		} else if (data.action == 1){
+				    			this.enemy.body.velocity.x = this.MAX_SPEED;
+				    		} else if (data.action == 2){
+				    			this.enemy.body.velocity.y = this.MAX_SPEED;
+							} else if (data.action == 3){
+								this.enemy.body.velocity.x = -this.MAX_SPEED;
+							}
+	        			}
+	        			data=undefined;
+	        		} else {
+	        			this.player.animations.stop();
+		            	this.player.body.velocity.x = 0;
+		            	this.enemy.body.velocity.x = 0;
+		            	if(this.player.animations.name == "right")
+			           		this.player.frame = 5;
+			           	else
+			           		this.player.frame = 4;
+	        		}*/
+	        	}
+	        	 ws.onmessage = function(event){
+		    		data = JSON.parse(event.data);
+		    		//console.log(data);
+		    	}
+		    	//console.log(data);
+	        	if(data !== undefined){
+		        	if(data.player == position){
+        				if(data.action == 0){	    
+			    			//console.log(this.player);			
+			    			this.player.body.velocity.y = -this.MAX_SPEED*1.3;
+			    		} else if (data.action == 1){
+			    			this.player.body.velocity.x = this.MAX_SPEED;
+		            		this.player.animations.play('right');
+			    		} else if (data.action == 2){
+			    			this.player.body.velocity.y = this.MAX_SPEED;
+						} else if (data.action == 3){
+							this.player.body.velocity.x = -this.MAX_SPEED;
+		           			this.player.animations.play('left');
+						}
+	        		} else {
+	        			if(data.action == 0){	    
+		    			//console.log(this.player);			
+			    			this.enemy.body.velocity.y = -this.MAX_SPEED*1.3;
+	
+			    		} else if (data.action == 1){
+			    			this.enemy.body.velocity.x = this.MAX_SPEED;
 
+			    		} else if (data.action == 2){
+			    			this.enemy.body.velocity.y = this.MAX_SPEED;
+						} else if (data.action == 3){
+							this.enemy.body.velocity.x = -this.MAX_SPEED;
+						}
+						
+	        		}
+	        		data=undefined;
+	        	} else {
+	        		this.enemy.body.velocity.x=0;
+	        	}
+
+		    	//console.log(data);
+		    	
 		        this.bulletPool.forEachAlive(function(bullet) {
 		            bullet.rotation = Math.atan2(bullet.body.velocity.y, bullet.body.velocity.x);
 		        }, this);
+		        
+		    	
+		    };
+		   
+		    gameState.render = function(){
+		    	if (timer.running){
+	    			score = Math.round((timerEvent.delay - timer.ms) / 1000);
+	    			
+	    			var minutes = "0" + Math.floor(score / 60);
+			        var seconds = "0" + (score - minutes * 60);
+			        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
+	    			this.game.debug.text(str,2, 18, "#ff0");
+		    	}  else {
+		    		timer.stop();
+		    	}
 		    };
 		    gameState.getExplosion = function(x,y){
 		        var explosion = this.explosionGroup.getFirstDead();
@@ -247,6 +356,9 @@ define([
 		        return isActive;
 		    };
 			return gameState;
+		},
+		stopScores: function(){
+			timer.stop();
 		}
 	};   
 });

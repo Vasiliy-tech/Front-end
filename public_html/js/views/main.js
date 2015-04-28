@@ -40,6 +40,10 @@ define([
                     if (result.status === 200)
                     {
                         $('.autorizationLabel').hide();
+                        $('a.signin__href').removeClass('disabled');
+                        $('a.login__href').removeClass('disabled');
+                        $('a.start-game__href').addClass('disabled');
+                        //
                     } 
                     else 
                     {

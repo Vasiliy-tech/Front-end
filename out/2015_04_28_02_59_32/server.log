@@ -1,0 +1,355 @@
+[04-28 02:59:34,202, 6550] resource.ResourceFactory ResourceFactory was created
+[04-28 02:59:34,379, 6727] sax.SaxHandler Start Document
+[04-28 02:59:34,428, 6776] sax.SaxHandler Class name: resource.ServerSettings
+[04-28 02:59:34,433, 6781] sax.SaxHandler port = 8080
+[04-28 02:59:34,456, 6804] sax.SaxHandler End document
+[04-28 02:59:34,459, 6807] resource.ResourceFactory Resource serverSettings was parsed
+[04-28 02:59:34,550, 6898] sax.SaxHandler Start Document
+[04-28 02:59:34,554, 6902] sax.SaxHandler Class name: resource.LoggerMessages
+[04-28 02:59:34,589, 6937] sax.SaxHandler doPostStart = doPost Start
+[04-28 02:59:34,595, 6943] sax.SaxHandler doPostFinish = doPost Success
+[04-28 02:59:34,595, 6943] sax.SaxHandler doGetStart = doGet Start
+[04-28 02:59:34,597, 6945] sax.SaxHandler doGetFinish = doGet Success
+[04-28 02:59:34,597, 6945] sax.SaxHandler isAdmin = User:{} is admin
+[04-28 02:59:34,598, 6946] sax.SaxHandler isNotAdmin = User:{} is not admin
+[04-28 02:59:34,598, 6946] sax.SaxHandler wrongAction = Wrong action
+[04-28 02:59:34,599, 6947] sax.SaxHandler statistic = Getting Statistic
+[04-28 02:59:34,599, 6947] sax.SaxHandler stop = Stopping server
+[04-28 02:59:34,599, 6947] sax.SaxHandler notAuthorised = Not Authorised
+[04-28 02:59:34,600, 6948] sax.SaxHandler authorised = User:{} is Authorised
+[04-28 02:59:34,600, 6948] sax.SaxHandler hasAuthorised = User:{} has Authorised
+[04-28 02:59:34,602, 6950] sax.SaxHandler lackOfParam = No param "{}" in request
+[04-28 02:59:34,603, 6951] sax.SaxHandler paramHasWrongType = Param:"{}" has wrong type
+[04-28 02:59:34,604, 6952] sax.SaxHandler signUp = New user is signing up
+[04-28 02:59:34,605, 6953] sax.SaxHandler signIn = User is signing in
+[04-28 02:59:34,606, 6954] sax.SaxHandler alreadyLoggedIn = User:{} is already Logged In
+[04-28 02:59:34,608, 6956] sax.SaxHandler block = Authorization and signing up is blocked
+[04-28 02:59:34,610, 6958] sax.SaxHandler wrongPasOrLogin = Wrong password:"{}" or login:"{}"
+[04-28 02:59:34,610, 6958] sax.SaxHandler loggedOut = User:{} logged out
+[04-28 02:59:34,611, 6959] sax.SaxHandler loginIsAlreadyExist = User with such login "{}" is already exist
+[04-28 02:59:34,611, 6959] sax.SaxHandler wrongSignUpData = Wrong login:"{}" or email:"{}" or password:"{}"
+[04-28 02:59:34,612, 6960] sax.SaxHandler onMessage = User:{} has sent Message:{}
+[04-28 02:59:34,612, 6960] sax.SaxHandler onOpen = User:{} is opening connection
+[04-28 02:59:34,613, 6961] sax.SaxHandler onClose = User:{} has closed connection
+[04-28 02:59:34,613, 6961] sax.SaxHandler configure = Configure
+[04-28 02:59:34,614, 6962] sax.SaxHandler setBlock = Signing in and Signing up are blocked
+[04-28 02:59:34,614, 6962] sax.SaxHandler unsetBlock = Signing in and Signing up are released
+[04-28 02:59:34,615, 6963] sax.SaxHandler startGame = Start game
+[04-28 02:59:34,615, 6963] sax.SaxHandler firstPlayer = First player
+[04-28 02:59:34,616, 6964] sax.SaxHandler secondPlayer = Second player
+[04-28 02:59:34,616, 6964] sax.SaxHandler sessionFinished = Session finished
+[04-28 02:59:34,616, 6964] sax.SaxHandler errorInReadingJSON = Error while getting the JSON: {}
+[04-28 02:59:34,620, 6968] sax.SaxHandler draw = Draw between {}, {}
+[04-28 02:59:34,622, 6970] sax.SaxHandler isWinner = {} is winner
+[04-28 02:59:34,622, 6970] sax.SaxHandler isLoser = {} is loser
+[04-28 02:59:34,622, 6970] sax.SaxHandler signUpSuccess = User {} was successfully signed up
+[04-28 02:59:34,623, 6971] sax.SaxHandler gameUserPosition = User {} is the {}
+[04-28 02:59:34,626, 6974] sax.SaxHandler newSocket = Start creating New socket 
+[04-28 02:59:34,627, 6975] sax.SaxHandler newSocketSuccess = New Socket Successfully constructed
+[04-28 02:59:34,627, 6975] sax.SaxHandler requestGetParams = Request params {}
+[04-28 02:59:34,627, 6975] sax.SaxHandler jsonGotFromRequest = JSON from request: {}
+[04-28 02:59:34,629, 6977] sax.SaxHandler errorXML = Error while reading XML
+[04-28 02:59:34,630, 6978] sax.SaxHandler startXML = Start Document
+[04-28 02:59:34,630, 6978] sax.SaxHandler endXML = End document
+[04-28 02:59:34,630, 6978] sax.SaxHandler className = Class name: {}
+[04-28 02:59:34,631, 6979] sax.SaxHandler aEqualB = {} = {}
+[04-28 02:59:34,631, 6979] sax.SaxHandler resourceWasParsed = Resource {} was parsed
+[04-28 02:59:34,632, 6980] sax.SaxHandler End document
+[04-28 02:59:34,634, 6982] resource.ResourceFactory Resource loggerMessages was parsed
+[04-28 02:59:34,636, 6984] main.Main Starting at port: 8080
+
+[04-28 02:59:35,777, 8125] sax.SaxHandler Start Document
+[04-28 02:59:35,777, 8125] sax.SaxHandler Class name: resource.Messages
+[04-28 02:59:35,779, 8127] sax.SaxHandler adminPage = Admin page
+[04-28 02:59:35,780, 8128] sax.SaxHandler notFound = 404: Not Found.
+[04-28 02:59:35,780, 8128] sax.SaxHandler wrongParamAction = Wrong 'action'
+[04-28 02:59:35,780, 8128] sax.SaxHandler notAuthorised = Not Authorised
+[04-28 02:59:35,780, 8128] sax.SaxHandler logInStatus = Log In:
+[04-28 02:59:35,780, 8128] sax.SaxHandler alreadyLoggedIn = You has already Logged In
+[04-28 02:59:35,780, 8128] sax.SaxHandler block = Authorization and signing up is blocked
+[04-28 02:59:35,780, 8128] sax.SaxHandler wrongPasOrLogin = Wrong password or login
+[04-28 02:59:35,780, 8128] sax.SaxHandler fillAllTheGaps = Fill all the gaps, please:
+[04-28 02:59:35,781, 8129] sax.SaxHandler logOutFirst = You have to logout before signing up.
+[04-28 02:59:35,781, 8129] sax.SaxHandler exist = Such user already exists
+[04-28 02:59:35,781, 8129] sax.SaxHandler wrongSignUpData = Wrong sign Up data
+[04-28 02:59:35,781, 8129] sax.SaxHandler wrongLimit = WrongLimit
+[04-28 02:59:35,781, 8129] sax.SaxHandler End document
+[04-28 02:59:35,781, 8129] resource.ResourceFactory Resource messages was parsed
+[04-28 02:59:35,988, 8336] sax.SaxHandler Start Document
+[04-28 02:59:35,988, 8336] sax.SaxHandler Class name: resource.GameMechanicsSettings
+[04-28 02:59:35,989, 8337] sax.SaxHandler timeLimit = 15
+[04-28 02:59:35,989, 8337] sax.SaxHandler numAmount = 10
+[04-28 02:59:35,989, 8337] sax.SaxHandler weight = 10
+[04-28 02:59:35,989, 8337] sax.SaxHandler minDelta = 10
+[04-28 02:59:35,990, 8338] sax.SaxHandler End document
+[04-28 02:59:35,997, 8345] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[04-28 02:59:37,866, 10214] frontend.game.WebSocketGameServlet Configure
+[04-28 02:59:38,773, 11121] main.AppServer Start
+[04-28 02:59:38,773, 11121] main.AppServer Tuesday night version
+[04-28 02:59:52,884, 25232] frontend.SignInServlet doPost Start
+[04-28 02:59:52,887, 25235] frontend.SignInServlet Request params {}
+[04-28 02:59:52,917, 25265] frontend.SignInServlet JSON from request: {"password":"qwerty","login":"qwerty"}
+[04-28 02:59:52,977, 25325] frontend.SignInServlet User:qwerty has Authorised
+[04-28 02:59:52,980, 25328] frontend.SignInServlet doPost Success
+[04-28 03:00:13,018, 45366] frontend.SignUpServlet doPost Start
+[04-28 03:00:13,018, 45366] frontend.SignUpServlet Request params {}
+[04-28 03:00:13,019, 45367] frontend.SignUpServlet JSON from request: {"password":"qwerty2","login":"qwerty2","email":"qwerty2@mail.ru"}
+[04-28 03:00:13,139, 45487] frontend.SignUpServlet User qwerty2 was successfully signed up
+[04-28 03:00:13,139, 45487] frontend.SignUpServlet User:qwerty2 has Authorised
+[04-28 03:00:13,140, 45488] frontend.SignUpServlet doPost Success
+[04-28 03:00:17,462, 49810] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:00:17,464, 49812] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:00:17,565, 49913] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:00:17,566, 49914] Interface.GameMechanics First player
+[04-28 03:00:20,990, 53338] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:00:20,990, 53338] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:00:20,991, 53339] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:00:20,991, 53339] Interface.GameMechanics Second player
+[04-28 03:00:20,991, 53339] Interface.GameMechanics Start game
+[04-28 03:00:20,993, 53341] Interface.GameMechanics User qwerty is the 1
+[04-28 03:00:20,994, 53342] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:00:36,068, 68416] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:00:36,080, 68428] Interface.GameMechanics Session finished
+[04-28 03:00:57,158, 89506] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:01:00,026, 92374] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:01:08,534, 100882] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:01:08,535, 100883] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:01:08,537, 100885] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:01:08,537, 100885] Interface.GameMechanics First player
+[04-28 03:01:10,116, 102464] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:01:10,116, 102464] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:01:10,119, 102467] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:01:10,119, 102467] Interface.GameMechanics Second player
+[04-28 03:01:10,119, 102467] Interface.GameMechanics Start game
+[04-28 03:01:10,119, 102467] Interface.GameMechanics User qwerty2 is the 1
+[04-28 03:01:10,120, 102468] Interface.GameMechanics User qwerty is the 2
+[04-28 03:01:14,311, 106659] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:01:17,201, 109549] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:01:25,163, 117511] Interface.GameMechanics Draw between qwerty2, qwerty
+[04-28 03:01:25,163, 117511] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:01:25,163, 117511] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:01:25,163, 117511] Interface.GameMechanics Session finished
+[04-28 03:02:00,164, 152512] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:02:00,165, 152513] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:02:00,170, 152518] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:02:00,170, 152518] Interface.GameMechanics First player
+[04-28 03:02:02,237, 154585] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:02:02,237, 154585] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:02:02,238, 154586] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:02:02,238, 154586] Interface.GameMechanics Second player
+[04-28 03:02:02,238, 154586] Interface.GameMechanics Start game
+[04-28 03:02:02,238, 154586] Interface.GameMechanics User qwerty is the 1
+[04-28 03:02:02,238, 154586] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:02:08,892, 161240] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:02:11,378, 163726] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:02:17,332, 169680] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:02:17,333, 169681] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:02:17,333, 169681] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:02:17,333, 169681] Interface.GameMechanics Session finished
+[04-28 03:02:22,008, 174356] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:02:22,022, 174370] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:02:22,027, 174375] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:02:22,027, 174375] Interface.GameMechanics First player
+[04-28 03:02:23,853, 176201] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:02:23,853, 176201] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:02:23,854, 176202] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:02:23,854, 176202] Interface.GameMechanics Second player
+[04-28 03:02:23,854, 176202] Interface.GameMechanics Start game
+[04-28 03:02:23,855, 176203] Interface.GameMechanics User qwerty is the 1
+[04-28 03:02:23,855, 176203] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:02:38,862, 191210] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:02:38,863, 191211] Interface.GameMechanics Session finished
+[04-28 03:02:48,034, 200382] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:02:53,451, 205799] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:03:36,682, 249030] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:03:36,683, 249031] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:03:36,712, 249060] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:03:36,718, 249066] Interface.GameMechanics First player
+[04-28 03:03:38,099, 250447] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:03:38,099, 250447] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:03:38,100, 250448] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:03:38,101, 250449] Interface.GameMechanics Second player
+[04-28 03:03:38,101, 250449] Interface.GameMechanics Start game
+[04-28 03:03:38,101, 250449] Interface.GameMechanics User qwerty2 is the 1
+[04-28 03:03:38,101, 250449] Interface.GameMechanics User qwerty is the 2
+[04-28 03:03:45,788, 258136] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:03:47,556, 259904] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:03:53,201, 265549] Interface.GameMechanics Draw between qwerty2, qwerty
+[04-28 03:03:53,202, 265550] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:03:53,202, 265550] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:03:53,202, 265550] Interface.GameMechanics Session finished
+[04-28 03:06:40,275, 432623] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:06:40,277, 432625] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:06:40,290, 432638] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:06:40,295, 432643] Interface.GameMechanics First player
+[04-28 03:06:42,032, 434380] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:06:42,032, 434380] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:06:42,034, 434382] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:06:42,036, 434384] Interface.GameMechanics Second player
+[04-28 03:06:42,037, 434385] Interface.GameMechanics Start game
+[04-28 03:06:42,037, 434385] Interface.GameMechanics User qwerty is the 1
+[04-28 03:06:42,037, 434385] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:06:57,093, 449441] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:06:57,095, 449443] Interface.GameMechanics Session finished
+[04-28 03:07:15,288, 467636] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:07:18,615, 470963] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:07:32,217, 484565] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:07:32,221, 484569] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:07:32,224, 484572] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:07:32,225, 484573] Interface.GameMechanics First player
+[04-28 03:07:34,101, 486449] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:07:34,101, 486449] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:07:34,105, 486453] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:07:34,105, 486453] Interface.GameMechanics Second player
+[04-28 03:07:34,105, 486453] Interface.GameMechanics Start game
+[04-28 03:07:34,105, 486453] Interface.GameMechanics User qwerty is the 1
+[04-28 03:07:34,105, 486453] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:07:49,123, 501471] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:07:49,140, 501488] Interface.GameMechanics Session finished
+[04-28 03:08:07,581, 519929] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:08:09,856, 522204] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:08:20,431, 532779] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:08:20,432, 532780] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:08:20,439, 532787] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:08:20,439, 532787] Interface.GameMechanics First player
+[04-28 03:08:21,895, 534243] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:08:21,895, 534243] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:08:21,897, 534245] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:08:21,897, 534245] Interface.GameMechanics Second player
+[04-28 03:08:21,897, 534245] Interface.GameMechanics Start game
+[04-28 03:08:21,897, 534245] Interface.GameMechanics User qwerty is the 1
+[04-28 03:08:21,897, 534245] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:08:35,140, 547488] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:08:36,927, 549275] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:08:36,927, 549275] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:08:36,927, 549275] Interface.GameMechanics Session finished
+[04-28 03:08:37,775, 550123] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:10:30,435, 662783] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:10:30,442, 662790] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:10:30,443, 662791] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:10:30,443, 662791] Interface.GameMechanics First player
+[04-28 03:10:31,873, 664221] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:10:31,873, 664221] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:10:31,876, 664224] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:10:31,876, 664224] Interface.GameMechanics Second player
+[04-28 03:10:31,876, 664224] Interface.GameMechanics Start game
+[04-28 03:10:31,876, 664224] Interface.GameMechanics User qwerty is the 1
+[04-28 03:10:31,876, 664224] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:10:46,972, 679320] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:10:46,986, 679334] Interface.GameMechanics Session finished
+[04-28 03:10:48,687, 681035] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:10:51,138, 683486] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:22:12,773, 1365121] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:22:12,810, 1365158] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:22:12,854, 1365202] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:22:12,854, 1365202] Interface.GameMechanics First player
+[04-28 03:22:14,117, 1366465] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:22:14,117, 1366465] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:22:14,121, 1366469] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:22:14,122, 1366470] Interface.GameMechanics Second player
+[04-28 03:22:14,122, 1366470] Interface.GameMechanics Start game
+[04-28 03:22:14,122, 1366470] Interface.GameMechanics User qwerty is the 1
+[04-28 03:22:14,122, 1366470] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:22:23,183, 1375531] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:22:29,126, 1381474] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:22:29,128, 1381476] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:22:29,128, 1381476] Interface.GameMechanics Session finished
+[04-28 03:22:52,714, 1405062] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:24:35,768, 1508116] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:24:35,769, 1508117] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:24:35,787, 1508135] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:24:35,788, 1508136] Interface.GameMechanics First player
+[04-28 03:24:37,134, 1509482] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:24:37,134, 1509482] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:24:37,135, 1509483] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:24:37,135, 1509483] Interface.GameMechanics Second player
+[04-28 03:24:37,135, 1509483] Interface.GameMechanics Start game
+[04-28 03:24:37,135, 1509483] Interface.GameMechanics User qwerty is the 1
+[04-28 03:24:37,135, 1509483] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:24:52,181, 1524529] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:24:52,183, 1524531] Interface.GameMechanics Session finished
+[04-28 03:24:56,954, 1529302] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:25:00,182, 1532530] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:25:09,467, 1541815] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:25:09,468, 1541816] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:25:09,470, 1541818] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:25:09,471, 1541819] Interface.GameMechanics First player
+[04-28 03:25:11,340, 1543688] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:25:11,340, 1543688] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:25:11,342, 1543690] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:25:11,342, 1543690] Interface.GameMechanics Second player
+[04-28 03:25:11,342, 1543690] Interface.GameMechanics Start game
+[04-28 03:25:11,342, 1543690] Interface.GameMechanics User qwerty is the 1
+[04-28 03:25:11,342, 1543690] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:25:26,421, 1558769] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:25:26,422, 1558770] Interface.GameMechanics Session finished
+[04-28 03:25:57,546, 1589894] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:26:00,858, 1593206] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:27:09,005, 1661353] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:27:09,006, 1661354] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:27:09,012, 1661360] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:27:09,012, 1661360] Interface.GameMechanics First player
+[04-28 03:27:10,916, 1663264] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:27:10,916, 1663264] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:27:10,917, 1663265] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:27:10,917, 1663265] Interface.GameMechanics Second player
+[04-28 03:27:10,917, 1663265] Interface.GameMechanics Start game
+[04-28 03:27:10,917, 1663265] Interface.GameMechanics User qwerty2 is the 1
+[04-28 03:27:10,917, 1663265] Interface.GameMechanics User qwerty is the 2
+[04-28 03:27:22,703, 1675051] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:27:24,906, 1677254] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:27:25,990, 1678338] Interface.GameMechanics Draw between qwerty2, qwerty
+[04-28 03:27:25,990, 1678338] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:27:25,990, 1678338] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:27:25,990, 1678338] Interface.GameMechanics Session finished
+[04-28 03:27:56,431, 1708779] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:27:56,432, 1708780] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:27:56,433, 1708781] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:27:56,433, 1708781] Interface.GameMechanics First player
+[04-28 03:27:58,381, 1710729] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:27:58,381, 1710729] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:27:58,407, 1710755] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:27:58,407, 1710755] Interface.GameMechanics Second player
+[04-28 03:27:58,407, 1710755] Interface.GameMechanics Start game
+[04-28 03:27:58,407, 1710755] Interface.GameMechanics User qwerty is the 1
+[04-28 03:27:58,407, 1710755] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:28:06,409, 1718757] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:28:08,782, 1721130] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:28:13,457, 1725805] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:28:13,457, 1725805] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:28:13,457, 1725805] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:28:13,457, 1725805] Interface.GameMechanics Session finished
+[04-28 03:29:25,453, 1797801] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:29:25,455, 1797803] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:29:25,464, 1797812] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:29:25,465, 1797813] Interface.GameMechanics First player
+[04-28 03:29:27,057, 1799405] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:29:27,057, 1799405] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:29:27,119, 1799467] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:29:27,119, 1799467] Interface.GameMechanics Second player
+[04-28 03:29:27,119, 1799467] Interface.GameMechanics Start game
+[04-28 03:29:27,119, 1799467] Interface.GameMechanics User qwerty is the 1
+[04-28 03:29:27,119, 1799467] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:29:34,573, 1806921] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:29:36,894, 1809242] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:29:42,223, 1814571] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:29:42,223, 1814571] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:29:42,223, 1814571] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:29:42,223, 1814571] Interface.GameMechanics Session finished
+[04-28 03:30:23,675, 1856023] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:30:23,675, 1856023] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:30:23,681, 1856029] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 03:30:23,681, 1856029] Interface.GameMechanics First player
+[04-28 03:30:25,302, 1857650] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 03:30:25,302, 1857650] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 03:30:25,324, 1857672] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 03:30:25,325, 1857673] Interface.GameMechanics Second player
+[04-28 03:30:25,325, 1857673] Interface.GameMechanics Start game
+[04-28 03:30:25,326, 1857674] Interface.GameMechanics User qwerty is the 1
+[04-28 03:30:25,326, 1857674] Interface.GameMechanics User qwerty2 is the 2
+[04-28 03:30:30,498, 1862846] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 03:30:32,300, 1864648] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 03:30:40,347, 1872695] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 03:30:40,347, 1872695] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:30:40,347, 1872695] frontend.game.GameWebSocket Socket has been already closed
+[04-28 03:30:40,347, 1872695] Interface.GameMechanics Session finished

@@ -11,10 +11,26 @@ define([
         className: 'login menu',
         events: { 
                   "input input": "chekLogin",
-                  "submit form": "submitForm"                  
+                  "submit form": "submitForm",
+                  "change input": "saveData"                  
         },
         initialize: function () {
-            // this.listenTo(this.collection, "change", this.render);
+            var sendData ={
+                login: '',
+                email: ''
+            }
+            sendData.login="";
+            sendData.email="";
+        if(localStorage["signup"] === undefined)
+            localStorage["signup"]=JSON.stringify(sendData);
+        /*else {
+            var currentData = this.getJSON("signup");
+            console.log(currentData);    
+            $('#login').val(currentData.login);
+            $('#email').val(currentData.email);
+            debugger;
+        }*/
+
         },
         render: function () {
             this.$el.html(this.template(this.attributes));
@@ -22,6 +38,11 @@ define([
         },
         show: function () {
             this.trigger('show',this);
+            console.log(localStorage);
+            var currentData = this.getJSON("signup");
+            console.log(currentData);    
+            $('#login').val(currentData.login);
+            $('#email').val(currentData.email);
             this.$el.show();
         },
         hide: function () {
@@ -100,6 +121,10 @@ define([
                     if (result.status === 200)
                     {
                         $('.autorizationLabel').show();
+                        $('a.signin__href').addClass('disabled');
+                        $('a.login__href').addClass('disabled');
+                        $('a.start-game__href').removeClass('disabled');
+                        //$('a.exit__href').removeClass('disabled__href');
                         window.location.href = '#'
                     } 
                     else 
@@ -114,6 +139,23 @@ define([
                      $('.content').html('Критическая ошибка'); 
                 },
             });
+        },
+        setJSON: function(key, value){
+            localStorage[key]=JSON.stringify(value);
+            console.log(localStorage);
+        },
+        getJSON: function(key){
+            var value = localStorage[key];
+            return value ? JSON.parse(value) : null;
+        },
+        saveData: function(e){
+            var sendData = {
+                login:'',
+                email:''
+            }
+            sendData.login=$('#login').val();
+            sendData.email=$('#email').val();
+            this.setJSON("signup",sendData);
         }
 
     });

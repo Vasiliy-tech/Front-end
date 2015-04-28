@@ -28,11 +28,11 @@ define([
         },
         chekLogin: function () {
 
-            var password = $(this.el).find("input:password").val();
+            var password = $(this.el).find("#password-signin").val();
             var password_pattern = /[\W]/;
             var isItCorrectlyPassword = password_pattern.test(password);
 
-            var myLogin = $(this.el).find("#login").val()
+            var myLogin = $(this.el).find("#login-signin").val()
             var myLogin_pattern = /[\W]/; 
             var isItCorrectlyLogin = myLogin_pattern.test(myLogin);
 
@@ -82,6 +82,9 @@ define([
                     if (result.status === 200)
                     {
                         $('.autorizationLabel').show();
+                        $('a.signin__href').addClass('disabled');
+                        $('a.login__href').addClass('disabled');
+                        $('a.start-game__href').removeClass('disabled');
                         window.location.href = '#'
                     } 
                     else 

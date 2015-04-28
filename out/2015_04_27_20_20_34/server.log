@@ -467,3 +467,148 @@
 [04-27 20:35:07,528, 876628] frontend.SignOutServlet Request params {}
 [04-27 20:35:07,528, 876628] frontend.SignOutServlet User:qwerty2 logged out
 [04-27 20:35:07,528, 876628] frontend.SignOutServlet doPost Success
+[04-27 20:38:49,975, 1099075] frontend.SignInServlet doPost Start
+[04-27 20:38:49,976, 1099076] frontend.SignInServlet Request params {}
+[04-27 20:38:50,000, 1099100] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty","login":"qwerty"}
+[04-27 20:38:50,017, 1099117] frontend.SignInServlet User:qwerty has Authorised
+[04-27 20:38:50,018, 1099118] frontend.SignInServlet doPost Success
+[04-27 20:38:59,638, 1108738] frontend.SignInServlet doPost Start
+[04-27 20:38:59,639, 1108739] frontend.SignInServlet Request params {}
+[04-27 20:38:59,642, 1108742] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty2","login":"qwerty2"}
+[04-27 20:38:59,642, 1108742] frontend.SignInServlet User:qwerty2 has Authorised
+[04-27 20:38:59,642, 1108742] frontend.SignInServlet doPost Success
+[04-27 20:40:24,983, 1194083] frontend.game.GameWebSocket Start creating New socket 
+[04-27 20:40:24,985, 1194085] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 20:40:25,049, 1194149] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 20:40:25,049, 1194149] Interface.GameMechanics Second player
+[04-27 20:40:25,049, 1194149] Interface.GameMechanics Start game
+[04-27 20:40:25,049, 1194149] Interface.GameMechanics null
+[04-27 20:40:25,049, 1194149] Interface.GameMechanics null
+[04-27 20:40:25,256, 1194356] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 20:40:40,086, 1209186] Interface.GameMechanics Draw between qwerty2, qwerty
+[04-27 20:40:40,214, 1209314] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 20:40:40,415, 1209515] Interface.GameMechanics Session finished
+[04-27 20:40:44,551, 1213651] frontend.game.GameWebSocket Start creating New socket 
+[04-27 20:40:44,551, 1213651] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 20:40:44,559, 1213659] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 20:40:44,559, 1213659] Interface.GameMechanics First player
+[04-27 20:40:49,846, 1218946] frontend.SignOutServlet doPost Start
+[04-27 20:40:49,846, 1218946] frontend.SignOutServlet Request params {}
+[04-27 20:40:49,846, 1218946] frontend.SignOutServlet User:qwerty logged out
+[04-27 20:40:49,849, 1218949] frontend.SignOutServlet doPost Success
+[04-27 20:40:52,245, 1221345] frontend.SignOutServlet doPost Start
+[04-27 20:40:52,245, 1221345] frontend.SignOutServlet Request params {}
+[04-27 20:40:52,245, 1221345] frontend.SignOutServlet User:qwerty2 logged out
+[04-27 20:40:52,245, 1221345] frontend.SignOutServlet doPost Success
+[04-27 20:41:00,372, 1229472] frontend.SignInServlet doPost Start
+[04-27 20:41:00,372, 1229472] frontend.SignInServlet Request params {}
+[04-27 20:41:00,373, 1229473] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty","login":"qwerty"}
+[04-27 20:41:00,374, 1229474] frontend.SignInServlet User:qwerty has Authorised
+[04-27 20:41:00,406, 1229506] frontend.SignInServlet doPost Success
+[04-27 20:41:02,587, 1231687] frontend.SignInServlet doPost Start
+[04-27 20:41:02,587, 1231687] frontend.SignInServlet Request params {}
+[04-27 20:41:02,588, 1231688] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty2","login":"qwerty2"}
+[04-27 20:41:02,588, 1231688] frontend.SignInServlet User:qwerty2 has Authorised
+[04-27 20:41:02,589, 1231689] frontend.SignInServlet doPost Success
+[04-27 20:41:05,370, 1234470] frontend.game.GameWebSocket Start creating New socket 
+[04-27 20:41:05,371, 1234471] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 20:41:05,379, 1234479] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 20:41:05,379, 1234479] Interface.GameMechanics Second player
+[04-27 20:41:05,379, 1234479] Interface.GameMechanics Start game
+[04-27 20:41:05,379, 1234479] Interface.GameMechanics null
+[04-27 20:41:05,379, 1234479] Interface.GameMechanics null
+[04-27 20:41:10,675, 1239775] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,675, 1239775] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,680, 1239780] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,680, 1239780] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,696, 1239796] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,696, 1239796] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,720, 1239820] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,721, 1239821] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,740, 1239840] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,740, 1239840] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,743, 1239843] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,743, 1239843] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,809, 1239909] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,809, 1239909] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,826, 1239926] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,826, 1239926] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,856, 1239956] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,857, 1239957] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,860, 1239960] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,860, 1239960] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,862, 1239962] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,862, 1239962] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,894, 1239994] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,895, 1239995] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,929, 1240029] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,929, 1240029] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,947, 1240047] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,947, 1240047] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,948, 1240048] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,948, 1240048] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:10,988, 1240088] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"2","action":"3"}
+[04-27 20:41:10,989, 1240089] utils.JsonInterpreterFromRequest JSON from request: {"Player":"2","action":"3"}
+[04-27 20:41:20,435, 1249535] Interface.GameMechanics Draw between qwerty, qwerty
+[04-27 20:41:20,436, 1249536] Interface.GameMechanics Session finished
+[04-27 20:41:40,427, 1269527] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-27 20:41:44,560, 1273660] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-27 20:42:20,441, 1309541] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-27 20:56:09,010, 2138110] frontend.SignInServlet doPost Start
+[04-27 20:56:09,082, 2138182] frontend.SignInServlet Request params {}
+[04-27 20:56:09,284, 2138384] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty","login":"qwerty"}
+[04-27 20:56:09,284, 2138384] frontend.SignInServlet User:qwerty is already Logged In
+[04-27 20:56:09,381, 2138481] frontend.SignInServlet doPost Success
+[04-27 20:56:23,674, 2152774] frontend.SignOutServlet doPost Start
+[04-27 20:56:23,674, 2152774] frontend.SignOutServlet Request params {}
+[04-27 20:56:23,708, 2152808] frontend.SignOutServlet User:qwerty logged out
+[04-27 20:56:23,709, 2152809] frontend.SignOutServlet doPost Success
+[04-27 20:56:28,578, 2157678] frontend.SignOutServlet doPost Start
+[04-27 20:56:28,578, 2157678] frontend.SignOutServlet Request params {}
+[04-27 20:56:28,578, 2157678] frontend.SignOutServlet User:qwerty2 logged out
+[04-27 20:56:28,581, 2157681] frontend.SignOutServlet doPost Success
+[04-27 20:56:38,609, 2167709] frontend.SignInServlet doPost Start
+[04-27 20:56:38,609, 2167709] frontend.SignInServlet Request params {}
+[04-27 20:56:38,615, 2167715] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty","login":"qwerty"}
+[04-27 20:56:38,615, 2167715] frontend.SignInServlet User:qwerty has Authorised
+[04-27 20:56:38,615, 2167715] frontend.SignInServlet doPost Success
+[04-27 20:56:50,980, 2180080] frontend.SignInServlet doPost Start
+[04-27 20:56:50,980, 2180080] frontend.SignInServlet Request params {}
+[04-27 20:56:50,981, 2180081] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty2","login":"qwerty2"}
+[04-27 20:56:50,981, 2180081] frontend.SignInServlet User:qwerty2 has Authorised
+[04-27 20:56:50,982, 2180082] frontend.SignInServlet doPost Success
+[04-27 20:57:58,458, 2247558] frontend.game.GameWebSocket Start creating New socket 
+[04-27 20:57:58,459, 2247559] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 20:57:58,957, 2248057] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 20:57:58,958, 2248058] Interface.GameMechanics First player
+[04-27 20:58:03,759, 2252859] frontend.game.GameWebSocket Start creating New socket 
+[04-27 20:58:03,759, 2252859] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 20:58:03,763, 2252863] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-27 20:58:03,763, 2252863] Interface.GameMechanics Second player
+[04-27 20:58:03,763, 2252863] Interface.GameMechanics Start game
+[04-27 20:58:03,763, 2252863] Interface.GameMechanics null
+[04-27 20:58:03,763, 2252863] Interface.GameMechanics null
+[04-27 20:58:18,796, 2267896] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-27 20:58:18,943, 2268043] Interface.GameMechanics Session finished
+[04-27 20:58:29,077, 2278177] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,079, 2278179] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:58:29,092, 2278192] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,092, 2278192] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:58:29,093, 2278193] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,093, 2278193] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:58:29,094, 2278194] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,094, 2278194] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:58:29,223, 2278323] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,223, 2278323] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:58:29,251, 2278351] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,251, 2278351] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:58:29,275, 2278375] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,275, 2278375] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:58:29,648, 2278748] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,649, 2278749] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:58:29,650, 2278750] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,652, 2278752] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:58:29,660, 2278760] frontend.game.GameWebSocket User:qwerty has sent Message:{"Player":"1","action":"1"}
+[04-27 20:58:29,661, 2278761] utils.JsonInterpreterFromRequest JSON from request: {"Player":"1","action":"1"}
+[04-27 20:59:33,388, 2342488] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-27 20:59:33,388, 2342488] frontend.game.GameWebSocket User:qwerty has closed connection

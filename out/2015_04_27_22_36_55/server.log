@@ -1,0 +1,334 @@
+[04-27 22:36:56,871, 8628] resource.ResourceFactory ResourceFactory was created
+[04-27 22:36:57,042, 8799] sax.SaxHandler Start Document
+[04-27 22:36:57,054, 8811] sax.SaxHandler Class name: resource.ServerSettings
+[04-27 22:36:57,056, 8813] sax.SaxHandler port = 8080
+[04-27 22:36:57,080, 8837] sax.SaxHandler End document
+[04-27 22:36:57,096, 8853] resource.ResourceFactory Resource serverSettings was parsed
+[04-27 22:36:57,122, 8879] sax.SaxHandler Start Document
+[04-27 22:36:57,122, 8879] sax.SaxHandler Class name: resource.LoggerMessages
+[04-27 22:36:57,123, 8880] sax.SaxHandler doPostStart = doPost Start
+[04-27 22:36:57,123, 8880] sax.SaxHandler doPostFinish = doPost Success
+[04-27 22:36:57,123, 8880] sax.SaxHandler doGetStart = doGet Start
+[04-27 22:36:57,123, 8880] sax.SaxHandler doGetFinish = doGet Success
+[04-27 22:36:57,123, 8880] sax.SaxHandler isAdmin = User:{} is admin
+[04-27 22:36:57,123, 8880] sax.SaxHandler isNotAdmin = User:{} is not admin
+[04-27 22:36:57,124, 8881] sax.SaxHandler wrongAction = Wrong action
+[04-27 22:36:57,124, 8881] sax.SaxHandler statistic = Getting Statistic
+[04-27 22:36:57,124, 8881] sax.SaxHandler stop = Stopping server
+[04-27 22:36:57,124, 8881] sax.SaxHandler notAuthorised = Not Authorised
+[04-27 22:36:57,124, 8881] sax.SaxHandler authorised = User:{} is Authorised
+[04-27 22:36:57,124, 8881] sax.SaxHandler hasAuthorised = User:{} has Authorised
+[04-27 22:36:57,124, 8881] sax.SaxHandler lackOfParam = No param "{}" in request
+[04-27 22:36:57,125, 8882] sax.SaxHandler paramHasWrongType = Param:"{}" has wrong type
+[04-27 22:36:57,125, 8882] sax.SaxHandler signUp = New user is signing up
+[04-27 22:36:57,126, 8883] sax.SaxHandler signIn = User is signing in
+[04-27 22:36:57,126, 8883] sax.SaxHandler alreadyLoggedIn = User:{} is already Logged In
+[04-27 22:36:57,126, 8883] sax.SaxHandler block = Authorization and signing up is blocked
+[04-27 22:36:57,126, 8883] sax.SaxHandler wrongPasOrLogin = Wrong password:"{}" or login:"{}"
+[04-27 22:36:57,126, 8883] sax.SaxHandler loggedOut = User:{} logged out
+[04-27 22:36:57,126, 8883] sax.SaxHandler loginIsAlreadyExist = User with such login "{}" is already exist
+[04-27 22:36:57,127, 8884] sax.SaxHandler wrongSignUpData = Wrong login:"{}" or email:"{}" or password:"{}"
+[04-27 22:36:57,127, 8884] sax.SaxHandler onMessage = User:{} has sent Message:{}
+[04-27 22:36:57,127, 8884] sax.SaxHandler onOpen = User:{} is opening connection
+[04-27 22:36:57,127, 8884] sax.SaxHandler onClose = User:{} has closed connection
+[04-27 22:36:57,127, 8884] sax.SaxHandler configure = Configure
+[04-27 22:36:57,130, 8887] sax.SaxHandler setBlock = Signing in and Signing up are blocked
+[04-27 22:36:57,130, 8887] sax.SaxHandler unsetBlock = Signing in and Signing up are released
+[04-27 22:36:57,130, 8887] sax.SaxHandler startGame = Start game
+[04-27 22:36:57,130, 8887] sax.SaxHandler firstPlayer = First player
+[04-27 22:36:57,130, 8887] sax.SaxHandler secondPlayer = Second player
+[04-27 22:36:57,130, 8887] sax.SaxHandler sessionFinished = Session finished
+[04-27 22:36:57,130, 8887] sax.SaxHandler draw = Draw between {}, {}
+[04-27 22:36:57,130, 8887] sax.SaxHandler isWinner = {} is winner
+[04-27 22:36:57,131, 8888] sax.SaxHandler isLoser = {} is loser
+[04-27 22:36:57,131, 8888] sax.SaxHandler signUpSuccess = User {} was successfully signed up
+[04-27 22:36:57,131, 8888] sax.SaxHandler newSocket = Start creating New socket 
+[04-27 22:36:57,131, 8888] sax.SaxHandler newSocketSuccess = New Socket Successfully constructed
+[04-27 22:36:57,131, 8888] sax.SaxHandler requestGetParams = Request params {}
+[04-27 22:36:57,131, 8888] sax.SaxHandler jsonGotFromRequest = JSON from request: {}
+[04-27 22:36:57,192, 8949] sax.SaxHandler errorXML = Error while reading XML
+[04-27 22:36:57,192, 8949] sax.SaxHandler startXML = Start Document
+[04-27 22:36:57,193, 8950] sax.SaxHandler endXML = End document
+[04-27 22:36:57,193, 8950] sax.SaxHandler className = Class name: {}
+[04-27 22:36:57,193, 8950] sax.SaxHandler aEqualB = {} = {}
+[04-27 22:36:57,193, 8950] sax.SaxHandler resourceWasParsed = Resource {} was parsed
+[04-27 22:36:57,193, 8950] sax.SaxHandler End document
+[04-27 22:36:57,194, 8951] resource.ResourceFactory Resource loggerMessages was parsed
+[04-27 22:36:57,194, 8951] main.Main Starting at port: 8080
+
+[04-27 22:36:59,007, 10764] sax.SaxHandler Start Document
+[04-27 22:36:59,008, 10765] sax.SaxHandler Class name: resource.Messages
+[04-27 22:36:59,011, 10768] sax.SaxHandler adminPage = Admin page
+[04-27 22:36:59,012, 10769] sax.SaxHandler notFound = 404: Not Found.
+[04-27 22:36:59,013, 10770] sax.SaxHandler wrongParamAction = Wrong 'action'
+[04-27 22:36:59,014, 10771] sax.SaxHandler notAuthorised = Not Authorised
+[04-27 22:36:59,015, 10772] sax.SaxHandler logInStatus = Log In:
+[04-27 22:36:59,016, 10773] sax.SaxHandler alreadyLoggedIn = You has already Logged In
+[04-27 22:36:59,020, 10777] sax.SaxHandler block = Authorization and signing up is blocked
+[04-27 22:36:59,023, 10780] sax.SaxHandler wrongPasOrLogin = Wrong password or login
+[04-27 22:36:59,025, 10782] sax.SaxHandler fillAllTheGaps = Fill all the gaps, please:
+[04-27 22:36:59,029, 10786] sax.SaxHandler logOutFirst = You have to logout before signing up.
+[04-27 22:36:59,032, 10789] sax.SaxHandler exist = Such user already exists
+[04-27 22:36:59,036, 10793] sax.SaxHandler wrongSignUpData = Wrong sign Up data
+[04-27 22:36:59,038, 10795] sax.SaxHandler wrongLimit = WrongLimit
+[04-27 22:36:59,039, 10796] sax.SaxHandler End document
+[04-27 22:36:59,041, 10798] resource.ResourceFactory Resource messages was parsed
+[04-27 22:36:59,114, 10871] sax.SaxHandler Start Document
+[04-27 22:36:59,116, 10873] sax.SaxHandler Class name: resource.GameMechanicsSettings
+[04-27 22:36:59,147, 10904] sax.SaxHandler timeLimit = 15
+[04-27 22:36:59,149, 10906] sax.SaxHandler numAmount = 10
+[04-27 22:36:59,151, 10908] sax.SaxHandler weight = 10
+[04-27 22:36:59,151, 10908] sax.SaxHandler minDelta = 10
+[04-27 22:36:59,152, 10909] sax.SaxHandler End document
+[04-27 22:36:59,156, 10913] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[04-27 22:36:59,777, 11534] frontend.game.WebSocketGameServlet Configure
+[04-27 22:37:00,066, 11823] main.AppServer Start
+[04-27 22:37:00,067, 11824] main.AppServer With resending actions
+[04-27 22:37:26,161, 37918] frontend.SignUpServlet doPost Start
+[04-27 22:37:26,177, 37934] frontend.SignUpServlet Request params {}
+[04-27 22:37:26,209, 37966] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty","login":"qwerty","email":"qwerty@mail.ru"}
+[04-27 22:37:26,384, 38141] frontend.SignUpServlet User qwerty was successfully signed up
+[04-27 22:37:26,384, 38141] frontend.SignUpServlet User:qwerty has Authorised
+[04-27 22:37:26,387, 38144] frontend.SignUpServlet doPost Success
+[04-27 22:37:43,918, 55675] frontend.SignUpServlet doPost Start
+[04-27 22:37:43,918, 55675] frontend.SignUpServlet Request params {}
+[04-27 22:37:43,921, 55678] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty3","login":"qwerty3","email":"qwerty3@mail.ru"}
+[04-27 22:37:43,928, 55685] frontend.SignUpServlet User qwerty3 was successfully signed up
+[04-27 22:37:43,928, 55685] frontend.SignUpServlet User:qwerty3 has Authorised
+[04-27 22:37:43,929, 55686] frontend.SignUpServlet doPost Success
+[04-27 22:37:48,387, 60144] frontend.game.GameWebSocket Start creating New socket 
+[04-27 22:37:48,388, 60145] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 22:37:48,502, 60259] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-27 22:37:48,502, 60259] Interface.GameMechanics First player
+[04-27 22:38:08,663, 80420] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-27 22:40:01,834, 193591] frontend.game.GameWebSocket Start creating New socket 
+[04-27 22:40:01,835, 193592] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-27 22:40:01,847, 193604] frontend.game.GameWebSocket User:qwerty3 is opening connection
+[04-27 22:40:01,847, 193604] Interface.GameMechanics Second player
+[04-27 22:40:01,848, 193605] Interface.GameMechanics Start game
+[04-27 22:40:01,875, 193632] Interface.GameMechanics null
+[04-27 22:40:01,875, 193632] Interface.GameMechanics null
+[04-27 22:40:01,875, 193632] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:07,500, 199257] frontend.game.GameWebSocket Start creating New socket 
+[04-27 22:40:16,885, 208642] Interface.GameMechanics Draw between qwerty, qwerty3
+[04-27 22:40:16,908, 208665] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:16,957, 208714] Interface.GameMechanics Session finished
+[04-27 22:40:22,026, 213783] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,027, 213784] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,028, 213785] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,031, 213788] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,031, 213788] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,031, 213788] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,034, 213791] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,034, 213791] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,034, 213791] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,036, 213793] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,037, 213794] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,037, 213794] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,057, 213814] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,058, 213815] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,058, 213815] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,068, 213825] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,068, 213825] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,069, 213826] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,083, 213840] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,084, 213841] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,084, 213841] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,100, 213857] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,101, 213858] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,101, 213858] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,118, 213875] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,118, 213875] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,119, 213876] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,135, 213892] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,135, 213892] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,136, 213893] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,150, 213907] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,150, 213907] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,151, 213908] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,168, 213925] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,168, 213925] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,169, 213926] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,184, 213941] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,185, 213942] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,185, 213942] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,201, 213958] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,201, 213958] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,201, 213958] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,217, 213974] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,218, 213975] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,219, 213976] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,235, 213992] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,235, 213992] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,236, 213993] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,251, 214008] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,251, 214008] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,252, 214009] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,267, 214024] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,267, 214024] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,268, 214025] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,284, 214041] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,284, 214041] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,285, 214042] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,300, 214057] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,301, 214058] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,301, 214058] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,318, 214075] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,318, 214075] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,319, 214076] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,335, 214092] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,335, 214092] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,336, 214093] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,351, 214108] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,352, 214109] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,353, 214110] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,367, 214124] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,368, 214125] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,368, 214125] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,385, 214142] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,386, 214143] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,386, 214143] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,401, 214158] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,401, 214158] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,401, 214158] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,417, 214174] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,418, 214175] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,418, 214175] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,434, 214191] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,435, 214192] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,436, 214193] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,450, 214207] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,451, 214208] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,451, 214208] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,468, 214225] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,469, 214226] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,469, 214226] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,485, 214242] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,485, 214242] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,486, 214243] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,501, 214258] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,501, 214258] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,502, 214259] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,518, 214275] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,518, 214275] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,518, 214275] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,545, 214302] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,546, 214303] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,546, 214303] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,551, 214308] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,551, 214308] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,551, 214308] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,567, 214324] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,568, 214325] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,568, 214325] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,584, 214341] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,585, 214342] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,585, 214342] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,602, 214359] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,602, 214359] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,603, 214360] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,618, 214375] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,619, 214376] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,619, 214376] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,634, 214391] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,634, 214391] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,635, 214392] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,652, 214409] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,652, 214409] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,652, 214409] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,668, 214425] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,668, 214425] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,669, 214426] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,685, 214442] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,685, 214442] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,686, 214443] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,701, 214458] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,701, 214458] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,702, 214459] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,718, 214475] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,719, 214476] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,719, 214476] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,735, 214492] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,735, 214492] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,736, 214493] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,751, 214508] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,751, 214508] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,752, 214509] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,768, 214525] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,768, 214525] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,768, 214525] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,784, 214541] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,785, 214542] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,785, 214542] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,801, 214558] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,801, 214558] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,802, 214559] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,818, 214575] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,819, 214576] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,819, 214576] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,834, 214591] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,834, 214591] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,835, 214592] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,852, 214609] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,852, 214609] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,853, 214610] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,868, 214625] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,868, 214625] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,868, 214625] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,885, 214642] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,886, 214643] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,886, 214643] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,901, 214658] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,901, 214658] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,901, 214658] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,919, 214676] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,919, 214676] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,920, 214677] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,935, 214692] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,935, 214692] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,936, 214693] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,957, 214714] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,958, 214715] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,958, 214715] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,968, 214725] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,968, 214725] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,969, 214726] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:22,985, 214742] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:22,985, 214742] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:22,986, 214743] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,002, 214759] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,002, 214759] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,003, 214760] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,018, 214775] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,019, 214776] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,019, 214776] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,035, 214792] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,036, 214793] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,037, 214794] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,052, 214809] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,052, 214809] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,053, 214810] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,069, 214826] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,069, 214826] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,069, 214826] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,086, 214843] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,086, 214843] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,087, 214844] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,102, 214859] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,102, 214859] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,103, 214860] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,118, 214875] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,119, 214876] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,119, 214876] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,135, 214892] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,135, 214892] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,136, 214893] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,151, 214908] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,151, 214908] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,152, 214909] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,168, 214925] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,168, 214925] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,169, 214926] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]
+[04-27 22:40:23,185, 214942] frontend.game.GameWebSocket User:qwerty3 has sent Message:{"player":2,"action":3}
+[04-27 22:40:23,185, 214942] utils.JsonInterpreterFromRequest JSON from request: {"action":3,"player":2}
+[04-27 22:40:23,185, 214942] frontend.game.GameWebSocket org.eclipse.jetty.websocket.api.WebSocketException: RemoteEndpoint unavailable, current state [CLOSED], expecting [OPEN or CONNECTED]

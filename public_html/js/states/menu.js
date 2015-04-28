@@ -12,7 +12,7 @@ define([
     GameOver
 ){
 	var game;
-
+	var ws
 	return {
 		create: function(el){
 			game =  new Phaser.Game(800,480, Phaser.AUTO,el);   
@@ -22,7 +22,7 @@ define([
 			game.state.add('Boot', Boot.init(game), false);
 			game.state.add('PreLoader',PreLoader.init(game),false);
             
-            var ws = new WebSocket("ws://127.0.0.1:8080/gameplay");
+            ws = new WebSocket("ws://127.0.0.1:8080/gameplay");
 			    console.log("Create");
 		    ws.onopen = function (event) {
 		        console.log("open");
@@ -40,6 +40,10 @@ define([
 			/*Without server*/
 			
             
+		},
+		finished: function(){
+			Game.stopScores();
+			ws.close();
 		},
 		get: function(){
 			//console.log("Get game");

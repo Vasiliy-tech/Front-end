@@ -14,7 +14,11 @@ define([
         template: tmpl,
         tagName: 'div',
         className: 'gamefield',
-        initialize: function () {    
+        events: { 
+            "click .backButton__inGame": "finished",                 
+        },
+        initialize: function () {
+
         },
         render: function () {     
             this.$el.html(this.template());
@@ -34,6 +38,9 @@ define([
         },
         hide: function () {
             this.$el.hide();
+        },
+        finished:function(){
+            game.finished();
         }
     });
 

@@ -1,0 +1,426 @@
+[04-28 00:30:55,701, 4823] resource.ResourceFactory ResourceFactory was created
+[04-28 00:30:55,828, 4950] sax.SaxHandler Start Document
+[04-28 00:30:55,841, 4963] sax.SaxHandler Class name: resource.ServerSettings
+[04-28 00:30:55,843, 4965] sax.SaxHandler port = 8080
+[04-28 00:30:55,864, 4986] sax.SaxHandler End document
+[04-28 00:30:55,864, 4986] resource.ResourceFactory Resource serverSettings was parsed
+[04-28 00:30:55,869, 4991] sax.SaxHandler Start Document
+[04-28 00:30:55,870, 4992] sax.SaxHandler Class name: resource.LoggerMessages
+[04-28 00:30:55,870, 4992] sax.SaxHandler doPostStart = doPost Start
+[04-28 00:30:55,870, 4992] sax.SaxHandler doPostFinish = doPost Success
+[04-28 00:30:55,870, 4992] sax.SaxHandler doGetStart = doGet Start
+[04-28 00:30:55,870, 4992] sax.SaxHandler doGetFinish = doGet Success
+[04-28 00:30:55,871, 4993] sax.SaxHandler isAdmin = User:{} is admin
+[04-28 00:30:55,871, 4993] sax.SaxHandler isNotAdmin = User:{} is not admin
+[04-28 00:30:55,871, 4993] sax.SaxHandler wrongAction = Wrong action
+[04-28 00:30:55,871, 4993] sax.SaxHandler statistic = Getting Statistic
+[04-28 00:30:55,871, 4993] sax.SaxHandler stop = Stopping server
+[04-28 00:30:55,871, 4993] sax.SaxHandler notAuthorised = Not Authorised
+[04-28 00:30:55,871, 4993] sax.SaxHandler authorised = User:{} is Authorised
+[04-28 00:30:55,871, 4993] sax.SaxHandler hasAuthorised = User:{} has Authorised
+[04-28 00:30:55,871, 4993] sax.SaxHandler lackOfParam = No param "{}" in request
+[04-28 00:30:55,872, 4994] sax.SaxHandler paramHasWrongType = Param:"{}" has wrong type
+[04-28 00:30:55,872, 4994] sax.SaxHandler signUp = New user is signing up
+[04-28 00:30:55,872, 4994] sax.SaxHandler signIn = User is signing in
+[04-28 00:30:55,872, 4994] sax.SaxHandler alreadyLoggedIn = User:{} is already Logged In
+[04-28 00:30:55,872, 4994] sax.SaxHandler block = Authorization and signing up is blocked
+[04-28 00:30:55,872, 4994] sax.SaxHandler wrongPasOrLogin = Wrong password:"{}" or login:"{}"
+[04-28 00:30:55,873, 4995] sax.SaxHandler loggedOut = User:{} logged out
+[04-28 00:30:55,873, 4995] sax.SaxHandler loginIsAlreadyExist = User with such login "{}" is already exist
+[04-28 00:30:55,873, 4995] sax.SaxHandler wrongSignUpData = Wrong login:"{}" or email:"{}" or password:"{}"
+[04-28 00:30:55,873, 4995] sax.SaxHandler onMessage = User:{} has sent Message:{}
+[04-28 00:30:55,873, 4995] sax.SaxHandler onOpen = User:{} is opening connection
+[04-28 00:30:55,873, 4995] sax.SaxHandler onClose = User:{} has closed connection
+[04-28 00:30:55,873, 4995] sax.SaxHandler configure = Configure
+[04-28 00:30:55,873, 4995] sax.SaxHandler setBlock = Signing in and Signing up are blocked
+[04-28 00:30:55,873, 4995] sax.SaxHandler unsetBlock = Signing in and Signing up are released
+[04-28 00:30:55,874, 4996] sax.SaxHandler startGame = Start game
+[04-28 00:30:55,874, 4996] sax.SaxHandler firstPlayer = First player
+[04-28 00:30:55,874, 4996] sax.SaxHandler secondPlayer = Second player
+[04-28 00:30:55,874, 4996] sax.SaxHandler sessionFinished = Session finished
+[04-28 00:30:55,874, 4996] sax.SaxHandler draw = Draw between {}, {}
+[04-28 00:30:55,874, 4996] sax.SaxHandler isWinner = {} is winner
+[04-28 00:30:55,874, 4996] sax.SaxHandler isLoser = {} is loser
+[04-28 00:30:55,874, 4996] sax.SaxHandler signUpSuccess = User {} was successfully signed up
+[04-28 00:30:55,874, 4996] sax.SaxHandler newSocket = Start creating New socket 
+[04-28 00:30:55,874, 4996] sax.SaxHandler newSocketSuccess = New Socket Successfully constructed
+[04-28 00:30:55,874, 4996] sax.SaxHandler requestGetParams = Request params {}
+[04-28 00:30:55,875, 4997] sax.SaxHandler jsonGotFromRequest = JSON from request: {}
+[04-28 00:30:55,875, 4997] sax.SaxHandler errorXML = Error while reading XML
+[04-28 00:30:55,875, 4997] sax.SaxHandler startXML = Start Document
+[04-28 00:30:55,875, 4997] sax.SaxHandler endXML = End document
+[04-28 00:30:55,876, 4998] sax.SaxHandler className = Class name: {}
+[04-28 00:30:55,876, 4998] sax.SaxHandler aEqualB = {} = {}
+[04-28 00:30:55,876, 4998] sax.SaxHandler resourceWasParsed = Resource {} was parsed
+[04-28 00:30:55,876, 4998] sax.SaxHandler End document
+[04-28 00:30:55,876, 4998] resource.ResourceFactory Resource loggerMessages was parsed
+[04-28 00:30:55,876, 4998] main.Main Starting at port: 8080
+
+[04-28 00:30:56,249, 5371] sax.SaxHandler Start Document
+[04-28 00:30:56,251, 5373] sax.SaxHandler Class name: resource.Messages
+[04-28 00:30:56,253, 5375] sax.SaxHandler adminPage = Admin page
+[04-28 00:30:56,255, 5377] sax.SaxHandler notFound = 404: Not Found.
+[04-28 00:30:56,255, 5377] sax.SaxHandler wrongParamAction = Wrong 'action'
+[04-28 00:30:56,256, 5378] sax.SaxHandler notAuthorised = Not Authorised
+[04-28 00:30:56,258, 5380] sax.SaxHandler logInStatus = Log In:
+[04-28 00:30:56,259, 5381] sax.SaxHandler alreadyLoggedIn = You has already Logged In
+[04-28 00:30:56,260, 5382] sax.SaxHandler block = Authorization and signing up is blocked
+[04-28 00:30:56,262, 5384] sax.SaxHandler wrongPasOrLogin = Wrong password or login
+[04-28 00:30:56,263, 5385] sax.SaxHandler fillAllTheGaps = Fill all the gaps, please:
+[04-28 00:30:56,263, 5385] sax.SaxHandler logOutFirst = You have to logout before signing up.
+[04-28 00:30:56,265, 5387] sax.SaxHandler exist = Such user already exists
+[04-28 00:30:56,266, 5388] sax.SaxHandler wrongSignUpData = Wrong sign Up data
+[04-28 00:30:56,267, 5389] sax.SaxHandler wrongLimit = WrongLimit
+[04-28 00:30:56,268, 5390] sax.SaxHandler End document
+[04-28 00:30:56,269, 5391] resource.ResourceFactory Resource messages was parsed
+[04-28 00:30:56,293, 5415] sax.SaxHandler Start Document
+[04-28 00:30:56,295, 5417] sax.SaxHandler Class name: resource.GameMechanicsSettings
+[04-28 00:30:56,301, 5423] sax.SaxHandler timeLimit = 15
+[04-28 00:30:56,303, 5425] sax.SaxHandler numAmount = 10
+[04-28 00:30:56,313, 5435] sax.SaxHandler weight = 10
+[04-28 00:30:56,314, 5436] sax.SaxHandler minDelta = 10
+[04-28 00:30:56,314, 5436] sax.SaxHandler End document
+[04-28 00:30:56,315, 5437] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[04-28 00:30:56,737, 5859] frontend.game.WebSocketGameServlet Configure
+[04-28 00:30:56,884, 6006] main.AppServer Start
+[04-28 00:30:56,886, 6008] main.AppServer With resending actions
+[04-28 00:31:49,385, 58507] frontend.SignUpServlet doPost Start
+[04-28 00:31:49,390, 58512] frontend.SignUpServlet Request params {}
+[04-28 00:31:49,437, 58559] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty","login":"qwerty","email":"qwerty@mail.ru"}
+[04-28 00:31:49,686, 58808] frontend.SignUpServlet User qwerty was successfully signed up
+[04-28 00:31:49,687, 58809] frontend.SignUpServlet User:qwerty has Authorised
+[04-28 00:31:49,690, 58812] frontend.SignUpServlet doPost Success
+[04-28 00:32:05,904, 75026] frontend.SignUpServlet doPost Start
+[04-28 00:32:05,904, 75026] frontend.SignUpServlet Request params {}
+[04-28 00:32:05,910, 75032] utils.JsonInterpreterFromRequest JSON from request: {"password":"qwerty2","login":"qwerty2","email":"qwerty2@mail.ru"}
+[04-28 00:32:05,926, 75048] frontend.SignUpServlet User qwerty2 was successfully signed up
+[04-28 00:32:05,926, 75048] frontend.SignUpServlet User:qwerty2 has Authorised
+[04-28 00:32:05,927, 75049] frontend.SignUpServlet doPost Success
+[04-28 00:32:09,271, 78393] frontend.game.GameWebSocket Start creating New socket 
+[04-28 00:32:09,271, 78393] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 00:32:09,436, 78558] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 00:32:09,437, 78559] Interface.GameMechanics First player
+[04-28 00:32:11,800, 80922] frontend.game.GameWebSocket Start creating New socket 
+[04-28 00:32:11,800, 80922] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 00:32:11,812, 80934] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 00:32:11,812, 80934] Interface.GameMechanics Second player
+[04-28 00:32:11,812, 80934] Interface.GameMechanics Start game
+[04-28 00:32:11,823, 80945] Interface.GameMechanics null
+[04-28 00:32:11,823, 80945] Interface.GameMechanics null
+[04-28 00:32:16,295, 85417] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,295, 85417] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,298, 85420] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,299, 85421] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,301, 85423] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,301, 85423] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,315, 85437] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,315, 85437] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,332, 85454] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,332, 85454] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,344, 85466] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,344, 85466] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,384, 85506] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,384, 85506] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,385, 85507] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,386, 85508] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,442, 85564] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,442, 85564] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,462, 85584] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,463, 85585] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,481, 85603] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,481, 85603] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,512, 85634] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,512, 85634] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,520, 85642] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,520, 85642] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,563, 85685] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,563, 85685] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,593, 85715] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,593, 85715] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,614, 85736] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,614, 85736] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,657, 85779] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,657, 85779] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,658, 85780] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,659, 85781] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,669, 85791] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,670, 85792] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,712, 85834] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,712, 85834] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,731, 85853] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,732, 85854] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,758, 85880] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,759, 85881] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,761, 85883] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,761, 85883] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,806, 85928] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,806, 85928] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,822, 85944] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,823, 85945] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,851, 85973] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,851, 85973] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,873, 85995] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,873, 85995] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,889, 86011] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,889, 86011] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,895, 86017] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,895, 86017] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,939, 86061] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,939, 86061] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,972, 86094] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,973, 86095] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,978, 86100] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,979, 86101] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:16,987, 86109] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:16,988, 86110] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,022, 86144] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,022, 86144] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,044, 86166] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,044, 86166] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,048, 86170] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,048, 86170] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,090, 86212] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,091, 86213] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,106, 86228] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,106, 86228] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,109, 86231] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,110, 86232] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,126, 86248] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,126, 86248] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,853, 86975] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,853, 86975] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,869, 86991] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,870, 86992] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,904, 87026] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,904, 87026] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,908, 87030] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,908, 87030] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,936, 87058] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,937, 87059] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,942, 87064] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,942, 87064] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,955, 87077] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,956, 87078] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,993, 87115] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,994, 87116] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:17,997, 87119] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:17,998, 87120] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,024, 87146] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,024, 87146] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,042, 87164] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,042, 87164] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,061, 87183] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,061, 87183] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,103, 87225] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,103, 87225] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,107, 87229] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,107, 87229] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,110, 87232] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,111, 87233] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,141, 87263] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,141, 87263] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,143, 87265] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,144, 87266] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,155, 87277] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,155, 87277] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,172, 87294] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,172, 87294] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,204, 87326] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,204, 87326] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,207, 87329] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,207, 87329] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,224, 87346] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,225, 87347] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,244, 87366] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,244, 87366] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,272, 87394] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,272, 87394] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,276, 87398] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,276, 87398] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,288, 87410] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,288, 87410] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,300, 87422] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,300, 87422] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,318, 87440] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,318, 87440] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,335, 87457] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,335, 87457] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,351, 87473] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,351, 87473] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,374, 87496] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,374, 87496] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,405, 87527] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,405, 87527] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,410, 87532] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,410, 87532] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,436, 87558] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,436, 87558] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,440, 87562] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,440, 87562] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,460, 87582] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,460, 87582] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,468, 87590] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,468, 87590] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,485, 87607] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,485, 87607] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,502, 87624] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,502, 87624] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,516, 87638] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,517, 87639] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,535, 87657] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,535, 87657] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,552, 87674] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,552, 87674] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,569, 87691] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,569, 87691] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,586, 87708] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,586, 87708] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,606, 87728] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,606, 87728] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,618, 87740] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,618, 87740] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,632, 87754] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,633, 87755] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,649, 87771] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,649, 87771] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,666, 87788] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,667, 87789] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,682, 87804] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,682, 87804] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,699, 87821] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,700, 87822] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,722, 87844] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,722, 87844] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,739, 87861] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,739, 87861] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,753, 87875] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,753, 87875] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,770, 87892] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,770, 87892] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,782, 87904] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,783, 87905] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,810, 87932] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,810, 87932] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,814, 87936] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,815, 87937] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,837, 87959] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,837, 87959] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,851, 87973] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,851, 87973] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,865, 87987] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,865, 87987] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,883, 88005] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,883, 88005] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,905, 88027] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,906, 88028] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,943, 88065] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,943, 88065] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,948, 88070] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:18,948, 88070] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:18,984, 88106] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,001, 88123] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,010, 88132] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,011, 88133] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,771, 88893] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,772, 88894] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,805, 88927] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,806, 88928] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,810, 88932] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,810, 88932] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,821, 88943] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,821, 88943] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,835, 88957] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,835, 88957] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,874, 88996] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,874, 88996] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,877, 88999] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,878, 89000] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,903, 89025] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,903, 89025] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,921, 89043] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,922, 89044] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,942, 89064] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,942, 89064] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,956, 89078] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,957, 89079] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:19,960, 89082] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:19,961, 89083] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,142, 89264] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,143, 89265] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,156, 89278] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,157, 89279] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,160, 89282] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,160, 89282] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,215, 89337] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,215, 89337] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,232, 89354] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,234, 89356] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,249, 89371] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,249, 89371] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,255, 89377] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,255, 89377] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,481, 89603] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,482, 89604] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,499, 89621] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,499, 89621] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,514, 89636] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,515, 89637] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,530, 89652] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,531, 89653] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,552, 89674] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,552, 89674] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,557, 89679] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,557, 89679] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,585, 89707] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,585, 89707] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,602, 89724] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,602, 89724] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,802, 89924] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,803, 89925] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,822, 89944] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,823, 89945] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,841, 89963] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,841, 89963] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,849, 89971] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,851, 89973] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:20,877, 89999] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:20,877, 89999] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,133, 90255] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,133, 90255] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,138, 90260] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,138, 90260] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,163, 90285] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,164, 90286] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,181, 90303] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,181, 90303] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,202, 90324] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,203, 90325] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,453, 90575] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,453, 90575] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,464, 90586] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,465, 90587] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,483, 90605] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,483, 90605] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,486, 90608] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,486, 90608] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,731, 90853] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,731, 90853] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,752, 90874] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,752, 90874] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:21,766, 90888] frontend.game.GameWebSocket User:qwerty has sent Message:{"player":1,"action":1}
+[04-28 00:32:21,767, 90889] utils.JsonInterpreterFromRequest JSON from request: {"action":1,"player":1}
+[04-28 00:32:26,911, 96033] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 00:32:26,913, 96035] Interface.GameMechanics Session finished
+[04-28 00:33:26,926, 156048] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 00:33:26,926, 156048] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 00:44:50,836, 839958] frontend.game.GameWebSocket Start creating New socket 
+[04-28 00:44:50,836, 839958] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 00:44:50,839, 839961] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 00:44:50,840, 839962] Interface.GameMechanics First player
+[04-28 00:44:51,050, 840172] frontend.game.GameWebSocket Start creating New socket 
+[04-28 00:44:51,050, 840172] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 00:44:51,056, 840178] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 00:44:51,056, 840178] Interface.GameMechanics Second player
+[04-28 00:44:51,056, 840178] Interface.GameMechanics Start game
+[04-28 00:44:51,056, 840178] Interface.GameMechanics null
+[04-28 00:44:51,056, 840178] Interface.GameMechanics null
