@@ -1,0 +1,40 @@
+$font-family : 'Open Sans',monospace;
+$font-size : 20px;
+
+.scoreboard {
+	font-family: $font-family;
+	font-size: $font-size;
+	color: #FFFFFF;
+	border-radius: 5px;
+	position: relative;
+	text-decoration:none;
+
+}
+.scoreboard__name {
+	@extend .scoreboard;
+	left: 5%;
+	top: 25%;
+	margin: 0px;
+	width: 240px;
+	height: 30px;
+	
+}
+.scoreboard__scores {
+	@extend .scoreboard;
+	text-align: right;
+	right: 5%;
+	top: -115%;
+	width: 240px;
+	height: 30px;
+}
+.scoreboard__button {
+	@extend .scoreboard;
+	background-color: rgba(120,160,240,0.9);
+    width: 240px;
+    height: 35px;
+    margin: auto;
+    margin-bottom: 20px;
+    position:relative;
+    bottom: 10px;
+    border-radius: 5px;
+}

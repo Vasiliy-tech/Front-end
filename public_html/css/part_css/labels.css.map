@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAO;EACN,KAAK,EAAE,IAAI;EACX,WAAW,EAAE,qBAAqB;EAClC,SAAS,EAAE,IAAI;EACf,YAAY,EAAE,IAAI;EAClB,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,IAAI",
+"sources": ["../scss/labels.scss"],
+"names": [],
+"file": "labels.css"
+}

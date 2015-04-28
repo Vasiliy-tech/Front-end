@@ -1,0 +1,33 @@
+.scoreboard, .scoreboard__name, .scoreboard__scores, .scoreboard__button {
+  font-family: "Open Sans", monospace;
+  font-size: 20px;
+  color: #FFFFFF;
+  border-radius: 5px;
+  position: relative;
+  text-decoration: none; }
+
+.scoreboard__name {
+  left: 5%;
+  top: 25%;
+  margin: 0px;
+  width: 240px;
+  height: 30px; }
+
+.scoreboard__scores {
+  text-align: right;
+  right: 5%;
+  top: -115%;
+  width: 240px;
+  height: 30px; }
+
+.scoreboard__button {
+  background-color: rgba(120, 160, 240, 0.9);
+  width: 240px;
+  height: 35px;
+  margin: auto;
+  margin-bottom: 20px;
+  position: relative;
+  bottom: 10px;
+  border-radius: 5px; }
+
+/*# sourceMappingURL=scoreboards.css.map */

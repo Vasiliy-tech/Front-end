@@ -99,3 +99,56 @@
 [04-28 14:26:57,101, 107628] frontend.SignOutServlet Request params {}
 [04-28 14:26:57,101, 107628] frontend.SignOutServlet Not Authorised
 [04-28 14:26:57,102, 107629] frontend.SignOutServlet doPost Success
+[04-28 14:36:34,265, 684792] frontend.SignInServlet doPost Start
+[04-28 14:36:34,265, 684792] frontend.SignInServlet Request params {}
+[04-28 14:36:34,279, 684806] frontend.SignInServlet JSON from request: {"password":"qwerty","login":"qwerty"}
+[04-28 14:36:34,279, 684806] frontend.SignInServlet User:qwerty has Authorised
+[04-28 14:36:34,280, 684807] frontend.SignInServlet doPost Success
+[04-28 14:37:03,884, 714411] frontend.SignUpServlet doPost Start
+[04-28 14:37:03,884, 714411] frontend.SignUpServlet Request params {}
+[04-28 14:37:03,885, 714412] frontend.SignUpServlet JSON from request: {"password":"qwerty2","login":"qwerty2","email":"qwerty2@mail.ru"}
+[04-28 14:37:04,137, 714664] frontend.SignUpServlet User qwerty2 was successfully signed up
+[04-28 14:37:04,137, 714664] frontend.SignUpServlet User:qwerty2 has Authorised
+[04-28 14:37:04,139, 714666] frontend.SignUpServlet doPost Success
+[04-28 14:37:08,829, 719356] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 14:37:08,848, 719375] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 14:37:09,059, 719586] frontend.game.GameWebSocket User:qwerty is opening connection
+[04-28 14:37:09,059, 719586] Interface.GameMechanics First player
+[04-28 14:37:12,277, 722804] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 14:37:12,277, 722804] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 14:37:12,284, 722811] frontend.game.GameWebSocket User:qwerty2 is opening connection
+[04-28 14:37:12,285, 722812] Interface.GameMechanics Second player
+[04-28 14:37:12,285, 722812] Interface.GameMechanics Start game
+[04-28 14:37:12,297, 722824] Interface.GameMechanics User qwerty is the 1
+[04-28 14:37:12,297, 722824] Interface.GameMechanics User qwerty2 is the 2
+[04-28 14:37:27,327, 737854] Interface.GameMechanics Draw between qwerty, qwerty2
+[04-28 14:37:27,328, 737855] Interface.GameMechanics Session finished
+[04-28 14:38:27,364, 797891] frontend.game.GameWebSocket User:qwerty has closed connection
+[04-28 14:38:27,365, 797892] frontend.game.GameWebSocket User:qwerty2 has closed connection
+[04-28 14:53:51,837, 1722364] frontend.ProfileServlet doGet Start
+[04-28 14:53:51,838, 1722365] frontend.ProfileServlet Request params {}
+[04-28 14:53:51,839, 1722366] frontend.ProfileServlet User:qwerty has Authorised
+[04-28 14:53:51,843, 1722370] frontend.ProfileServlet doGet Success
+[04-28 14:57:42,996, 1953523] frontend.SignInServlet doPost Start
+[04-28 14:57:43,017, 1953544] frontend.SignInServlet Request params {}
+[04-28 14:57:43,020, 1953547] frontend.SignInServlet JSON from request: {"password":"admin","login":"admin"}
+[04-28 14:57:43,020, 1953547] frontend.SignInServlet User:admin has Authorised
+[04-28 14:57:43,021, 1953548] frontend.SignInServlet doPost Success
+[04-28 14:57:51,375, 1961902] frontend.SignOutServlet doPost Start
+[04-28 14:57:51,375, 1961902] frontend.SignOutServlet Request params {}
+[04-28 14:57:51,375, 1961902] frontend.SignOutServlet User:qwerty logged out
+[04-28 14:57:51,376, 1961903] frontend.SignOutServlet doPost Success
+[04-28 14:58:09,358, 1979885] frontend.SignInServlet doPost Start
+[04-28 14:58:09,358, 1979885] frontend.SignInServlet Request params {}
+[04-28 14:58:09,360, 1979887] frontend.SignInServlet JSON from request: {"password":"admin","login":"admin"}
+[04-28 14:58:09,360, 1979887] frontend.SignInServlet User:admin has Authorised
+[04-28 14:58:09,360, 1979887] frontend.SignInServlet doPost Success
+[04-28 14:58:14,778, 1985305] frontend.game.GameWebSocketCreator Start creating New socket 
+[04-28 14:58:14,779, 1985306] frontend.game.GameWebSocket New Socket Successfully constructed
+[04-28 14:58:14,789, 1985316] frontend.game.GameWebSocket User:admin is opening connection
+[04-28 14:58:14,789, 1985316] Interface.GameMechanics First player
+[04-28 14:58:28,387, 1998914] frontend.SignOutServlet doPost Start
+[04-28 14:58:28,388, 1998915] frontend.SignOutServlet Request params {}
+[04-28 14:58:28,388, 1998915] frontend.SignOutServlet User:admin logged out
+[04-28 14:58:28,388, 1998915] frontend.SignOutServlet doPost Success
+[04-28 14:59:14,794, 2045321] frontend.game.GameWebSocket User:admin has closed connection

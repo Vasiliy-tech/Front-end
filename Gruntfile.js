@@ -41,8 +41,8 @@ module.exports = function(grunt) {
 				}
 			},
 			sass:{
-				files: ['public_html/css/*.scss'],
-				tasks: ['sass'],
+				files: ['public_html/css/scss/*.scss'],
+				tasks: ['sass','concat'],
 				options:{
 					livereload: true
 				}
@@ -58,11 +58,19 @@ module.exports = function(grunt) {
 			css:{
 				files: [{
 		        expand: true,
-		        cwd: 'public_html/css',
-		        src: '*.scss',
-		        dest: 'public_html/css', 
+		        cwd: 'public_html/css/scss', /* исходная директория */
+		        src: '*.scss', /* имена шаблонов */
+		        dest: 'public_html/css/part_css', /* результирующая директория */
 		        ext:  '.css'
 		    }]}
+		},
+		concat: {
+		    dist: {
+		        src: [
+		            'public_html/css/part_css/*.css', // Все css в папке 
+		        ],
+		        dest: 'public_html/css/main.css',
+		    }
 		}
 	});
 	grunt.loadNpmTasks('grunt-shell');
@@ -70,5 +78,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.registerTask('default', ['concurrent',]);
   };
