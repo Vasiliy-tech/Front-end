@@ -1,0 +1,9 @@
+.message, .message_error {
+  color: #333;
+  background: #eee;
+  padding: 823px; }
+
+.message_error {
+  background: #e33; }
+
+/*# sourceMappingURL=my2.scss.map */

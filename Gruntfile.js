@@ -39,18 +39,43 @@ module.exports = function(grunt) {
 			    options: {
 			        livereload: true /* автоматическая перезагрузка */
 				}
-			}	
+			},
+			sas: {
+				    files: ['public_html/css/scss/*.scss'], // следить за изменениями любых файлов с разширениями .scss
+				    tasks: ['sass','concat'] // и запускать такую задачу при их изменении
+		    }	
 		},
 		concurrent:{
 			target: ['watch', 'shell'], /* Подзадача */
 			options: {
 			        logConcurrentOutput: true, /* Вывод процесса */
 			}
+		},
+		sass: {  /* grunt-contrib-sass */
+			css: { /* Подзадача */
+		        files: [{
+		        expand: true,
+		        cwd: 'public_html/css/scss', /* исходная директория */
+		        src: '*.scss', /* имена шаблонов */
+		        dest: 'public_html/css/part_css', /* результирующая директория */
+		        ext:  '.css'
+		        }]
+		    }
+		},
+		concat: {
+		    dist: {
+		        src: [
+		            'public_html/css/part_css/*.css', // Все css в папке 
+		        ],
+		        dest: 'public_html/css/main.css',
+		    }
 		}
 	});
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-fest');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
-	grunt.registerTask('default', ['concurrent',]);
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.registerTask('default', ['concurrent','sass','concat',]);
   };

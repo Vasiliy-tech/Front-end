@@ -1,0 +1,7 @@
+$font-family: 'PT Serif', serif;
+$font-size: 48px;
+$line-height: $font-size * 1.5;
+$color: #333;
+body {
+    font: normal #{$font-size}/#{$line-height} $font-family;
+    color: $color; }
