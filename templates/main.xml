@@ -1,24 +1,24 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
 	
-		<div class="button button__top">
+		<div class="button__top">
 			<p class="logo"> PvPTowerDefence </p>
 		</div>
 		<p class="hend">
 			MAIN MENU
 		</p>
-		<div class="js-scoreboard button button__menu ">
+		<div class="js-scoreboard button__menu ">
 			<a href="#scoreboard" class="textButton ">Score Board</a>
 		</div>
-		<div class="js-start-game button button__menu">
+		<div class="js-start-game button__menu">
 				<a href="#game" class="textButton start-game__href disabled">Start Game</a>
 		</div>
-		<div class="js-login button button__menu">
+		<div class="js-login button__menu">
 			<a href="#login" class="textButton login__href">Registration</a>
 		</div>
-		<div class="js-signin button button__menu">
+		<div class="js-signin button__menu">
 			<a href="#signin" class="textButton signin__href">Authorization</a>
 		</div>
-		<div class="js-exit button button__menu ">
+		<div class="js-exit button__menu ">
 			<a href="#" class="textButton exit__href">Exit</a>
 		</div>
 	

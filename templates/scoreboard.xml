@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-		<div class="button button__top">
+		<div class="button__top">
 				<p class="logo"> PvPTowerDefence </p>
 		</div>
 		<p class="hend">
@@ -10,8 +10,8 @@
 		</div>
 		<fest:each iterate="json.temp" index="i">
 			<div class="scoreboard__button" name="player">
-				<p class="scoreboard scoreboard__name"><fest:value>json.temp[i].name</fest:value></p>
-				<p class="scoreboard scoreboard__scores"><fest:value>json.temp[i].score</fest:value></p>
+				<p class=" scoreboard__name"><fest:value>json.temp[i].name</fest:value></p>
+				<p class=" scoreboard__scores"><fest:value>json.temp[i].score</fest:value></p>
 			</div>
 		</fest:each>
 </fest:template>

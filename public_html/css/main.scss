@@ -2,19 +2,23 @@
 	margin: auto;
 	position: relative;
     border-radius: 5px;
-	.button__top {
-	    background-color:#000000;
-	    margin-bottom: 40px;
-	    top: 5px;
-	    width: 240px;
-	    height: 60px;
-    }
-    .button__menu {
-		background-color:#4A4947;
-	    margin-bottom: 15px;
-	    width: 180px;
-	    height: 50px;
-	}
+}
+.button__top {
+	@extend .button;
+    background-color:#000000;
+    margin-bottom: 40px;
+    top: 5px;
+    width: 240px;
+    height: 60px;
+    
+}
+
+.button__menu {
+	@extend .button;
+	background-color:#4A4947;
+    margin-bottom: 15px;
+    width: 180px;
+    height: 50px;
 }
 
 .bg {
@@ -51,7 +55,6 @@
 	margin-bottom: 25px;
 
 }
-
 .textButton {
 	color: #fff;
 	font-family: 'Open Sans',monospace;
@@ -95,30 +98,33 @@
 	border-radius: 5px;
 	position: relative;
 	text-decoration:none;
-	.scoreboard__name {
-		left: 5%;
-		top: 25%;
-		margin: 0px;
-		width: 240px;
-		height: 30px;
-	}
-	.scoreboard__scores {
-		text-align: right;
-		right: 5%;
-		top: -115%;
-		width: 240px;
-		height: 30px;
-	}
-	.scoreboard__button {
-		background-color: rgba(120,160,240,0.9);
-	    width: 240px;
-	    height: 35px;
-	    margin: auto;
-	    margin-bottom: 20px;
-	    position:relative;
-	    bottom: 10px;
-	    border-radius: 5px;
-	}
+}
+.scoreboard__name {
+	@extend .scoreboard;
+	left: 5%;
+	top: 25%;
+	margin: 0px;
+	width: 240px;
+	height: 30px;
+}
+.scoreboard__scores {
+	@extend .scoreboard;
+	text-align: right;
+	right: 5%;
+	top: -115%;
+	width: 240px;
+	height: 30px;
+}
+.scoreboard__button {
+	@extend .scoreboard;
+	background-color: rgba(120,160,240,0.9);
+    width: 240px;
+    height: 35px;
+    margin: auto;
+    margin-bottom: 20px;
+    position:relative;
+    bottom: 10px;
+    border-radius: 5px;
 }
 .backButton{
 	background-color:#7C0708;
@@ -128,9 +134,10 @@
     bottom: 50px;
     left: 5%;
     border-radius: 5px;
-	.backButton__inGame{
-		left: -130px;
-	}
+}
+.backButton__inGame{
+	@extend .backButton;
+	left: -130px;
 }
 
 

@@ -5,6 +5,8 @@ define([
 ){
 
     var Score = Backbone.Model.extend({
+    	/*url: 'auth',
+    	sync: apiSync,*/
     	defaults: {
     		"name" : '',
     		"score": 0
