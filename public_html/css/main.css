@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .textButton {
   color: #fff;
   font-family: 'Open Sans',monospace;
@@ -23,9 +24,6 @@
 .butMy {
   color: #800000; }
 
-/*# sourceMappingURL=buttons.css.map */
-
-@charset "UTF-8";
 .bg {
   background-image: url("../bg.jpg"); }
 
@@ -52,8 +50,6 @@
   /* устанавливаем курсор в виде стрелки */
   color: #999; }
 
-/*# sourceMappingURL=elements.css.map */
-
 .label {
   color: #FFF;
   font-family: 'Open Sans',monospace;
@@ -61,8 +57,6 @@
   margin-right: 10px;
   position: relative;
   top: 10px; }
-
-/*# sourceMappingURL=labels.css.map */
 
 .menu {
   background-color: rgba(143, 137, 124, 0.5);
@@ -111,8 +105,6 @@
   width: 180px;
   height: 50px; }
 
-/*# sourceMappingURL=menu_parts.css.map */
-
 .scoreboard, .scoreboard__name, .scoreboard__scores, .scoreboard__button {
   font-family: "Open Sans", monospace;
   font-size: 20px;
@@ -145,4 +137,4 @@
   bottom: 10px;
   border-radius: 5px; }
 
-/*# sourceMappingURL=scoreboards.css.map */
+/*# sourceMappingURL=main.css.map */

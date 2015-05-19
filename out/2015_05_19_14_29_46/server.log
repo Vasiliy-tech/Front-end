@@ -1,0 +1,104 @@
+[05-19 14:29:46,861, 872] resource.ResourceFactory ResourceFactory was created
+[05-19 14:29:46,881, 892] sax.SaxHandler Start Document
+[05-19 14:29:46,884, 895] sax.SaxHandler Class name: resource.ServerSettings
+[05-19 14:29:46,885, 896] sax.SaxHandler port = 8080
+[05-19 14:29:46,886, 897] sax.SaxHandler End document
+[05-19 14:29:46,886, 897] resource.ResourceFactory Resource serverSettings was parsed
+[05-19 14:29:46,894, 905] sax.SaxHandler Start Document
+[05-19 14:29:46,898, 909] sax.SaxHandler Class name: resource.LoggerMessages
+[05-19 14:29:46,898, 909] sax.SaxHandler doPostStart = doPost Start
+[05-19 14:29:46,898, 909] sax.SaxHandler doPostFinish = doPost Success
+[05-19 14:29:46,899, 910] sax.SaxHandler doGetStart = doGet Start
+[05-19 14:29:46,899, 910] sax.SaxHandler doGetFinish = doGet Success
+[05-19 14:29:46,900, 911] sax.SaxHandler isAdmin = User:{} is admin
+[05-19 14:29:46,900, 911] sax.SaxHandler isNotAdmin = User:{} is not admin
+[05-19 14:29:46,900, 911] sax.SaxHandler wrongAction = Wrong action
+[05-19 14:29:46,900, 911] sax.SaxHandler statistic = Getting Statistic
+[05-19 14:29:46,902, 913] sax.SaxHandler stop = Stopping server
+[05-19 14:29:46,902, 913] sax.SaxHandler notAuthorised = Not Authorised
+[05-19 14:29:46,909, 920] sax.SaxHandler authorised = User:{} is Authorised
+[05-19 14:29:46,910, 921] sax.SaxHandler hasAuthorised = User:{} has Authorised
+[05-19 14:29:46,911, 922] sax.SaxHandler lackOfParam = No param "{}" in request
+[05-19 14:29:46,912, 923] sax.SaxHandler paramHasWrongType = Param:"{}" has wrong type
+[05-19 14:29:46,913, 924] sax.SaxHandler signUp = New user is signing up
+[05-19 14:29:46,913, 924] sax.SaxHandler signIn = User is signing in
+[05-19 14:29:46,914, 925] sax.SaxHandler alreadyLoggedIn = User:{} is already Logged In
+[05-19 14:29:46,914, 925] sax.SaxHandler block = Authorization and signing up is blocked
+[05-19 14:29:46,914, 925] sax.SaxHandler wrongPasOrLogin = Wrong password:"{}" or login:"{}"
+[05-19 14:29:46,914, 925] sax.SaxHandler loggedOut = User:{} logged out
+[05-19 14:29:46,915, 926] sax.SaxHandler loginIsAlreadyExist = User with such login "{}" is already exist
+[05-19 14:29:46,915, 926] sax.SaxHandler wrongSignUpData = Wrong login:"{}" or email:"{}" or password:"{}"
+[05-19 14:29:46,915, 926] sax.SaxHandler onMessage = User:{} has sent Message:{}
+[05-19 14:29:46,915, 926] sax.SaxHandler onOpen = User:{} is opening connection
+[05-19 14:29:46,915, 926] sax.SaxHandler onClose = User:{} has closed connection
+[05-19 14:29:46,916, 927] sax.SaxHandler configure = Configure
+[05-19 14:29:46,916, 927] sax.SaxHandler setBlock = Signing in and Signing up are blocked
+[05-19 14:29:46,916, 927] sax.SaxHandler unsetBlock = Signing in and Signing up are released
+[05-19 14:29:46,916, 927] sax.SaxHandler startGame = Start game
+[05-19 14:29:46,916, 927] sax.SaxHandler firstPlayer = First player
+[05-19 14:29:46,916, 927] sax.SaxHandler secondPlayer = Second player
+[05-19 14:29:46,916, 927] sax.SaxHandler sessionFinished = Session finished
+[05-19 14:29:46,918, 929] sax.SaxHandler errorInReadingJSON = Error while getting the JSON: {}
+[05-19 14:29:46,920, 931] sax.SaxHandler draw = Draw between {}, {}
+[05-19 14:29:46,921, 932] sax.SaxHandler isWinner = {} is winner
+[05-19 14:29:46,922, 933] sax.SaxHandler isLoser = {} is loser
+[05-19 14:29:46,930, 941] sax.SaxHandler signUpSuccess = User {} was successfully signed up
+[05-19 14:29:46,931, 942] sax.SaxHandler gameUserPosition = User {} is the {}
+[05-19 14:29:46,931, 942] sax.SaxHandler newSocket = Start creating New socket 
+[05-19 14:29:46,932, 943] sax.SaxHandler newSocketSuccess = New Socket Successfully constructed
+[05-19 14:29:46,932, 943] sax.SaxHandler requestGetParams = Request params {}
+[05-19 14:29:46,932, 943] sax.SaxHandler jsonGotFromRequest = JSON from request: {}
+[05-19 14:29:46,933, 944] sax.SaxHandler errorXML = Error while reading XML
+[05-19 14:29:46,934, 945] sax.SaxHandler startXML = Start Document
+[05-19 14:29:46,934, 945] sax.SaxHandler endXML = End document
+[05-19 14:29:46,934, 945] sax.SaxHandler className = Class name: {}
+[05-19 14:29:46,935, 946] sax.SaxHandler aEqualB = {} = {}
+[05-19 14:29:46,935, 946] sax.SaxHandler resourceWasParsed = Resource {} was parsed
+[05-19 14:29:46,935, 946] sax.SaxHandler End document
+[05-19 14:29:46,936, 947] resource.ResourceFactory Resource loggerMessages was parsed
+[05-19 14:29:46,939, 950] main.Main Starting at port: 8080
+
+[05-19 14:29:47,043, 1054] sax.SaxHandler Start Document
+[05-19 14:29:47,044, 1055] sax.SaxHandler Class name: resource.Messages
+[05-19 14:29:47,045, 1056] sax.SaxHandler adminPage = Admin page
+[05-19 14:29:47,052, 1063] sax.SaxHandler notFound = 404: Not Found.
+[05-19 14:29:47,053, 1064] sax.SaxHandler wrongParamAction = Wrong 'action'
+[05-19 14:29:47,055, 1066] sax.SaxHandler notAuthorised = Not Authorised
+[05-19 14:29:47,056, 1067] sax.SaxHandler logInStatus = Log In:
+[05-19 14:29:47,056, 1067] sax.SaxHandler alreadyLoggedIn = You has already Logged In
+[05-19 14:29:47,059, 1070] sax.SaxHandler block = Authorization and signing up is blocked
+[05-19 14:29:47,060, 1071] sax.SaxHandler wrongPasOrLogin = Wrong password or login
+[05-19 14:29:47,062, 1073] sax.SaxHandler fillAllTheGaps = Fill all the gaps, please:
+[05-19 14:29:47,062, 1073] sax.SaxHandler logOutFirst = You have to logout before signing up.
+[05-19 14:29:47,062, 1073] sax.SaxHandler exist = Such user already exists
+[05-19 14:29:47,062, 1073] sax.SaxHandler wrongSignUpData = Wrong sign Up data
+[05-19 14:29:47,063, 1074] sax.SaxHandler wrongLimit = WrongLimit
+[05-19 14:29:47,063, 1074] sax.SaxHandler End document
+[05-19 14:29:47,064, 1075] resource.ResourceFactory Resource messages was parsed
+[05-19 14:29:47,080, 1091] sax.SaxHandler Start Document
+[05-19 14:29:47,081, 1092] sax.SaxHandler Class name: resource.GameMechanicsSettings
+[05-19 14:29:47,082, 1093] sax.SaxHandler timeLimit = 15
+[05-19 14:29:47,084, 1095] sax.SaxHandler numAmount = 10
+[05-19 14:29:47,084, 1095] sax.SaxHandler weight = 10
+[05-19 14:29:47,085, 1096] sax.SaxHandler minDelta = 10
+[05-19 14:29:47,085, 1096] sax.SaxHandler End document
+[05-19 14:29:47,085, 1096] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[05-19 14:29:47,325, 1336] frontend.game.WebSocketGameServlet Configure
+[05-19 14:29:47,357, 1368] main.AppServer Start
+[05-19 14:29:47,357, 1368] main.AppServer Tuesday night version
+[05-19 14:30:05,039, 19050] frontend.SignInServlet doPost Start
+[05-19 14:30:05,041, 19052] frontend.SignInServlet Request params {}
+[05-19 14:30:05,052, 19063] frontend.SignInServlet JSON from request: {"password":"admin","login":"admin"}
+[05-19 14:30:05,056, 19067] frontend.SignInServlet User:admin has Authorised
+[05-19 14:30:05,058, 19069] frontend.SignInServlet doPost Success
+[05-19 14:30:20,153, 34164] frontend.SignInServlet doPost Start
+[05-19 14:30:20,154, 34165] frontend.SignInServlet Request params {}
+[05-19 14:30:20,155, 34166] frontend.SignInServlet JSON from request: {"password":"qwerty","login":"qwerty"}
+[05-19 14:30:20,155, 34166] frontend.SignInServlet User:qwerty has Authorised
+[05-19 14:30:20,156, 34167] frontend.SignInServlet doPost Success
+[05-19 14:30:24,044, 38055] frontend.game.GameWebSocketCreator Start creating New socket 
+[05-19 14:30:24,044, 38055] frontend.game.GameWebSocketCreator Not Authorised
+[05-19 14:30:25,446, 39457] frontend.game.GameWebSocketCreator Start creating New socket 
+[05-19 14:30:25,446, 39457] frontend.game.GameWebSocketCreator Not Authorised
+[05-19 14:30:50,223, 64234] frontend.game.GameWebSocketCreator Start creating New socket 
+[05-19 14:30:50,223, 64234] frontend.game.GameWebSocketCreator Not Authorised
