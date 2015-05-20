@@ -50,6 +50,11 @@
   /* устанавливаем курсор в виде стрелки */
   color: #999; }
 
+.page__autorizationLabel {
+  color: #FFF;
+  font-family: 'Open Sans',monospace;
+  font-size: 15px; }
+
 .label {
   color: #FFF;
   font-family: 'Open Sans',monospace;

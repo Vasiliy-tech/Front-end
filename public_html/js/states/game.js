@@ -13,7 +13,7 @@ define([
 	var timer;
 	var timerEvent;
 	return {
-		init: function(game, position,ws) {
+		init: function(game, position, ws) {
 			gameState = new Phaser.State();
 			function minusScore(){
 			    	score -= 1;

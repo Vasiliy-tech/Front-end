@@ -11,10 +11,11 @@ define([
         tagName: 'div',
         className: 'menu',
         events: { 
-                  "click .js-exit": "exitLogin",                 
+                  "click .js-exit": "exitLogin",                
         },
         initialize: function () {
-            $('.autorizationLabel').hide();
+            //alert('i reload');
+            //$('.autorizationLabel').hide();
         },
         render: function () {
             this.$el.html(this.template());
@@ -28,7 +29,6 @@ define([
             this.$el.hide();
         },
         exitLogin: function () {
-            //alert('1');
             $.ajax({
                 type: 'POST',
                 url: '/api/v1/auth/signout',
@@ -43,18 +43,18 @@ define([
                         $('a.signin__href').removeClass('disabled');
                         $('a.login__href').removeClass('disabled');
                         $('a.start-game__href').addClass('disabled');
-                        //
+                    
                     } 
                     else 
                     {
-                       alert("You are not autorization, maybe!")              
+                       alert(result.data.message);          
                     }
                 },
                 error:  function(xhr, str){
                      $('.content').html('Критическая ошибка'); 
                 },
             });
-        }
+        },
 
     });
     

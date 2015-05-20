@@ -61,6 +61,7 @@ define([
         },
         submitForm: function(e){
             e.preventDefault();
+            $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('#signin_form').attr('method');
             var m_action = $('#signin_form').attr('action');
             var sendData = {
@@ -81,7 +82,7 @@ define([
                     console.log(result);
                     if (result.status === 200)
                     {
-                        $('.autorizationLabel').show();
+                        $('.autorizationLabel').text("Hello " + result.data.login + "!");
                         $('a.signin__href').addClass('disabled');
                         $('a.login__href').addClass('disabled');
                         $('a.start-game__href').removeClass('disabled');
@@ -89,7 +90,7 @@ define([
                     } 
                     else 
                     {
-                       alert("Check password or login!")
+                       alert(result.data.message);
                        $("#password-signin").val('');
                        $("#login-signin").val('');               
                     }

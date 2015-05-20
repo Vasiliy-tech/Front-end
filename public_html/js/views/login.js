@@ -17,7 +17,7 @@ define([
         initialize: function () {
             var sendData ={
                 login: '',
-                email: ''
+                email: '',
             }
             sendData.login="";
             sendData.email="";
@@ -94,9 +94,9 @@ define([
         },
         submitForm: function(e){
             e.preventDefault();
+            $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('#login_form').attr('method');
             var m_action = $('#login_form').attr('action');
-            //var m_data=$('#test_form').serialize();
             var sendData = {
                 login: '',
                 email: '',
@@ -120,19 +120,19 @@ define([
                     console.log(result);
                     if (result.status === 200)
                     {
+                        $('.autorizationLabel').text("Hello " + result.data.login + "!");
                         $('.autorizationLabel').show();
                         $('a.signin__href').addClass('disabled');
                         $('a.login__href').addClass('disabled');
                         $('a.start-game__href').removeClass('disabled');
-                        //$('a.exit__href').removeClass('disabled__href');
                         window.location.href = '#'
                     } 
                     else 
                     {
-                       alert("This user name or password already exists!")
+                       alert(result.data.message);
                        $("#email").val('');
                        $("input:password").val('');
-                       $("#login").val('');               
+                       $("#login").val('');
                     }
                 },
                 error:  function(xhr, str){
