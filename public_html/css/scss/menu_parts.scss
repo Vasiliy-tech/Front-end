@@ -9,6 +9,16 @@ $font-size : 26px;
 	position: relative;
 }
 
+@media screen and (max-width: 600px) {
+    .menu {
+        background-color: rgba(143,137,124,0.5);
+		width: auto;
+		height: 500px;
+		margin: auto;
+		position: relative;
+    }
+ }
+
 
 .gamefield{
 	width: 800px;
