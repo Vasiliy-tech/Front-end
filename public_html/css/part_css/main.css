@@ -1,0 +1,30 @@
+/*
+Error: Invalid CSS after "@import "buttons"": expected selector or at-rule, was "@import "elements""
+        on line 2 of public_html/css/scss/main.scss
+
+1: @import "buttons"
+2: @import "elements"
+3: @import "labels"
+4: @import "menu_parts"
+5: @import "scoreboards"
+
+Backtrace:
+public_html/css/scss/main.scss:2
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1165:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1101:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:43:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:393:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:407:in `run'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/bin/sass:13:in `<top (required)>'
+/usr/bin/sass:23:in `load'
+/usr/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"@import \"buttons\"\": expected selector or at-rule, was \"@import \"elements\"\"\A         on line 2 of public_html/css/scss/main.scss\A \A 1: @import \"buttons\"\A 2: @import \"elements\"\A 3: @import \"labels\"\A 4: @import \"menu_parts\"\A 5: @import \"scoreboards\""; }

@@ -239,7 +239,7 @@ define([
 	        	}
 	        	 ws.onmessage = function(event){
 		    		data = JSON.parse(event.data);
-		    		//console.log(data);
+		    		// console.log(data);
 		    	}
 		    	//console.log(data);
 	        	if(data !== undefined){
@@ -256,6 +256,13 @@ define([
 							this.player.body.velocity.x = -this.MAX_SPEED;
 		           			this.player.animations.play('left');
 						}
+	        		} else if (data.status == "sync"){
+	        			score = Math.round((/*timerEvent.delay - timer.ms*/data.time) / 1000);
+			    			
+		    			var minutes = "0" + Math.floor(score / 60);
+				        var seconds = "0" + (score - minutes * 60);
+				        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
+		    			this.game.debug.text(str,2, 18, "#ff0");
 	        		} else {
 	        			if(data.action == 0){	    
 		    			//console.log(this.player);			
@@ -268,9 +275,8 @@ define([
 			    			this.enemy.body.velocity.y = this.MAX_SPEED;
 						} else if (data.action == 3){
 							this.enemy.body.velocity.x = -this.MAX_SPEED;
-						}
-						
-	        		}
+						}	
+	        		} 
 	        		data=undefined;
 	        	} else {
 	        		this.enemy.body.velocity.x=0;
@@ -282,20 +288,24 @@ define([
 		            bullet.rotation = Math.atan2(bullet.body.velocity.y, bullet.body.velocity.x);
 		        }, this);
 		        
-		    	
+		    	/*if(data !== undefined)
+			    		if(data.status == "sync"){
+			    			score = Math.round((timerEvent.delay - timer.ms/data.time) / 1000);
+			    			
+			    			var minutes = "0" + Math.floor(score / 60);
+					        var seconds = "0" + (score - minutes * 60);
+					        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
+			    			this.game.debug.text(str,2, 18, "#ff0");
+		    			}*/
 		    };
 		   
 		    gameState.render = function(){
-		    	if (timer.running){
-	    			score = Math.round((timerEvent.delay - timer.ms) / 1000);
-	    			
-	    			var minutes = "0" + Math.floor(score / 60);
-			        var seconds = "0" + (score - minutes * 60);
-			        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
-	    			this.game.debug.text(str,2, 18, "#ff0");
-		    	}  else {
-		    		timer.stop();
-		    	}
+
+		    	// if (timer.running){
+		    		
+		    	// }  else {
+		    		// timer.stop();
+		    	// }
 		    };
 		    gameState.getExplosion = function(x,y){
 		        var explosion = this.explosionGroup.getFirstDead();

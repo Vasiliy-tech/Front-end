@@ -1,0 +1,101 @@
+[05-27 16:38:45,743, 8886] resource.ResourceFactory ResourceFactory was created
+[05-27 16:38:45,926, 9069] resource.sax.SaxHandler Start Document
+[05-27 16:38:45,937, 9080] resource.sax.SaxHandler Class name: resource.ServerSettings
+[05-27 16:38:45,948, 9091] resource.sax.SaxHandler port = 8080
+[05-27 16:38:45,975, 9118] resource.sax.SaxHandler mode = Development
+[05-27 16:38:45,975, 9118] resource.sax.SaxHandler ASType = Database
+[05-27 16:38:45,975, 9118] resource.sax.SaxHandler End document
+[05-27 16:38:45,996, 9139] resource.ResourceFactory Resource serverSettings was parsed
+[05-27 16:38:46,049, 9192] resource.sax.SaxHandler Start Document
+[05-27 16:38:46,049, 9192] resource.sax.SaxHandler Class name: resource.DbServerSettings
+[05-27 16:38:46,050, 9193] resource.sax.SaxHandler dialect = org.hibernate.dialect.MySQLDialect
+[05-27 16:38:46,050, 9193] resource.sax.SaxHandler driverClass = com.mysql.jdbc.Driver
+[05-27 16:38:46,050, 9193] resource.sax.SaxHandler connectionUrl = jdbc:mysql://localhost:3306/gameDB
+[05-27 16:38:46,050, 9193] resource.sax.SaxHandler username = gameAdmin
+[05-27 16:38:46,050, 9193] resource.sax.SaxHandler password = rfrltkf
+[05-27 16:38:46,050, 9193] resource.sax.SaxHandler showSql = false
+[05-27 16:38:46,050, 9193] resource.sax.SaxHandler mode = validate
+[05-27 16:38:46,051, 9194] resource.sax.SaxHandler End document
+[05-27 16:38:46,051, 9194] resource.ResourceFactory Resource dbServerSettings was parsed
+[05-27 16:38:53,523, 16666] main.Main Starting at port: 8080
+[05-27 16:38:54,281, 17424] frontend.game.WebSocketGameServlet Configure
+[05-27 16:38:54,470, 17613] resource.sax.SaxHandler Start Document
+[05-27 16:38:54,475, 17618] resource.sax.SaxHandler Class name: resource.GameMechanicsSettings
+[05-27 16:38:54,476, 17619] resource.sax.SaxHandler timeLimit = 9
+[05-27 16:38:54,477, 17620] resource.sax.SaxHandler numAmount = 10
+[05-27 16:38:54,477, 17620] resource.sax.SaxHandler weight = 10
+[05-27 16:38:54,478, 17621] resource.sax.SaxHandler minDelta = 10
+[05-27 16:38:54,479, 17622] resource.sax.SaxHandler End document
+[05-27 16:38:54,495, 17638] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[05-27 16:38:54,520, 17663] main.Main version: Threads in process
+[05-27 16:38:54,521, 17664] main.Main Start
+[05-27 16:40:17,012, 100155] frontend.SignInServlet doPost Start
+[05-27 16:40:17,017, 100160] frontend.SignInServlet Request params {}
+[05-27 16:40:17,119, 100262] frontend.SignInServlet JSON from request: {"password":"qwerty","login":"qwerty"}
+[05-27 16:40:17,209, 100352] frontend.SignInServlet User:qwerty has Authorised
+[05-27 16:40:17,210, 100353] frontend.SignInServlet doPost Success
+[05-27 16:40:37,366, 120509] frontend.SignInServlet doPost Start
+[05-27 16:40:37,366, 120509] frontend.SignInServlet Request params {}
+[05-27 16:40:37,367, 120510] frontend.SignInServlet JSON from request: {"password":"admin","login":"admin"}
+[05-27 16:40:37,375, 120518] frontend.SignInServlet User:admin has Authorised
+[05-27 16:40:37,376, 120519] frontend.SignInServlet doPost Success
+[05-27 16:40:39,606, 122749] frontend.game.GameWebSocketCreator Start creating New socket
+[05-27 16:40:39,614, 122757] frontend.game.GameWebSocket New Socket Successfully constructed
+[05-27 16:40:40,049, 123192] frontend.game.GameWebSocket User:qwerty is opening connection
+[05-27 16:40:41,469, 124612] frontend.game.GameWebSocketCreator Start creating New socket
+[05-27 16:40:41,469, 124612] frontend.game.GameWebSocket New Socket Successfully constructed
+[05-27 16:40:41,483, 124626] frontend.game.GameWebSocket User:admin is opening connection
+[05-27 16:40:41,625, 124768] mechanics.GameMechanics User qwerty is the 1
+[05-27 16:40:41,625, 124768] mechanics.GameMechanics User admin is the 2
+[05-27 16:40:41,625, 124768] mechanics.GameMechanics First player
+[05-27 16:40:41,625, 124768] mechanics.GameMechanics Second player
+[05-27 16:40:41,625, 124768] mechanics.GameMechanics Map Number: 0
+[05-27 16:40:41,625, 124768] mechanics.GameMechanics Start game
+[05-27 16:40:50,721, 133864] mechanics.GameMechanics qwerty is winner
+[05-27 16:40:50,722, 133865] mechanics.GameMechanics admin is loser
+[05-27 16:40:50,723, 133866] mechanics.GameMechanics Session finished
+[05-27 16:41:46,436, 189579] frontend.game.GameWebSocket User:admin has closed connection
+[05-27 16:41:47,811, 190954] frontend.game.GameWebSocket User:qwerty has closed connection
+[05-27 16:44:08,302, 331445] frontend.SignOutServlet doPost Start
+[05-27 16:44:08,303, 331446] frontend.SignOutServlet Request params {}
+[05-27 16:44:08,303, 331446] frontend.SignOutServlet User:qwerty logged out
+[05-27 16:44:08,304, 331447] frontend.SignOutServlet doPost Success
+[05-27 16:44:08,596, 331739] frontend.SignOutServlet doPost Start
+[05-27 16:44:08,597, 331740] frontend.SignOutServlet Request params {}
+[05-27 16:44:08,597, 331740] frontend.SignOutServlet Not Authorised
+[05-27 16:44:08,607, 331750] frontend.SignOutServlet doPost Success
+[05-27 16:44:10,380, 333523] frontend.SignOutServlet doPost Start
+[05-27 16:44:10,380, 333523] frontend.SignOutServlet Request params {}
+[05-27 16:44:10,380, 333523] frontend.SignOutServlet User:admin logged out
+[05-27 16:44:10,380, 333523] frontend.SignOutServlet doPost Success
+[05-27 16:44:12,305, 335448] frontend.SignOutServlet doPost Start
+[05-27 16:44:12,305, 335448] frontend.SignOutServlet Request params {}
+[05-27 16:44:12,305, 335448] frontend.SignOutServlet Not Authorised
+[05-27 16:44:12,307, 335450] frontend.SignOutServlet doPost Success
+[05-27 16:44:20,404, 343547] frontend.SignInServlet doPost Start
+[05-27 16:44:20,404, 343547] frontend.SignInServlet Request params {}
+[05-27 16:44:20,405, 343548] frontend.SignInServlet JSON from request: {"password":"qwerty","login":"qwerty"}
+[05-27 16:44:20,464, 343607] frontend.SignInServlet User:qwerty has Authorised
+[05-27 16:44:20,464, 343607] frontend.SignInServlet doPost Success
+[05-27 16:44:27,258, 350401] frontend.SignInServlet doPost Start
+[05-27 16:44:27,258, 350401] frontend.SignInServlet Request params {}
+[05-27 16:44:27,259, 350402] frontend.SignInServlet JSON from request: {"password":"admin","login":"admin"}
+[05-27 16:44:27,262, 350405] frontend.SignInServlet User:admin has Authorised
+[05-27 16:44:27,262, 350405] frontend.SignInServlet doPost Success
+[05-27 16:44:29,137, 352280] frontend.game.GameWebSocketCreator Start creating New socket
+[05-27 16:44:29,137, 352280] frontend.game.GameWebSocket New Socket Successfully constructed
+[05-27 16:44:29,140, 352283] frontend.game.GameWebSocket User:qwerty is opening connection
+[05-27 16:44:33,781, 356924] frontend.game.GameWebSocketCreator Start creating New socket
+[05-27 16:44:33,781, 356924] frontend.game.GameWebSocket New Socket Successfully constructed
+[05-27 16:44:33,783, 356926] frontend.game.GameWebSocket User:admin is opening connection
+[05-27 16:44:33,923, 357066] mechanics.GameMechanics User qwerty is the 1
+[05-27 16:44:33,923, 357066] mechanics.GameMechanics User admin is the 2
+[05-27 16:44:33,923, 357066] mechanics.GameMechanics First player
+[05-27 16:44:33,923, 357066] mechanics.GameMechanics Second player
+[05-27 16:44:33,923, 357066] mechanics.GameMechanics Map Number: 0
+[05-27 16:44:33,923, 357066] mechanics.GameMechanics Start game
+[05-27 16:44:43,023, 366166] mechanics.GameMechanics qwerty is winner
+[05-27 16:44:43,023, 366166] mechanics.GameMechanics admin is loser
+[05-27 16:44:43,024, 366167] mechanics.GameMechanics Session finished
+[05-27 16:44:58,852, 381995] frontend.game.GameWebSocket User:qwerty has closed connection
+[05-27 16:45:02,305, 385448] frontend.game.GameWebSocket User:admin has closed connection

@@ -28,11 +28,11 @@ define([
         },
         chekLogin: function () {
 
-            var password = $(this.el).find("#password-signin").val();
+            var password = $(this.el).find(".password-signin").val();
             var password_pattern = /[\W]/;
             var isItCorrectlyPassword = password_pattern.test(password);
 
-            var myLogin = $(this.el).find("#login-signin").val()
+            var myLogin = $(this.el).find(".login-signin").val()
             var myLogin_pattern = /[\W]/; 
             var isItCorrectlyLogin = myLogin_pattern.test(myLogin);
 
@@ -61,14 +61,14 @@ define([
         },
         submitForm: function(e){
             e.preventDefault();
-            var m_method = $('#signin_form').attr('method');
-            var m_action = $('#signin_form').attr('action');
+            var m_method = $('.signin_form').attr('method');
+            var m_action = $('.signin_form').attr('action');
             var sendData = {
                 login: '',
                 password: ''
             };
-            sendData.login = $('#login-signin').val();
-            sendData.password = $('#password-signin').val();
+            sendData.login = $('.login-signin').val();
+            sendData.password = $('.password-signin').val();
             var strSendData = JSON.stringify(sendData);
 
             $.ajax({
@@ -90,8 +90,8 @@ define([
                     else 
                     {
                        alert("Check password or login!")
-                       $("#password-signin").val('');
-                       $("#login-signin").val('');               
+                       $(".password-signin").val('');
+                       $(".login-signin").val('');               
                     }
                 },
                 error:  function(xhr, str){

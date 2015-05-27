@@ -63,7 +63,45 @@ module.exports = function(grunt) {
 		        src: 'main.scss', /* имена шаблонов */
 		        dest: 'public_html/css', /* результирующая директория */
 		        ext:  '.css'
-		    }]}
+		    }]},
+		    compress:{
+		    	options:{
+		    		style: 'compressed'
+		    	},
+		    	files: {
+		    		'public_html/css/main.min.css' : 'public_html/css/scss/main.scss'
+		    	}
+		    }
+		},
+		requirejs:{
+			build:{
+				options: {
+					almond: true,
+					baseUrl: "public_html/js",
+					mainConfigFile: "public_html/js/main2.js",
+					name: "main",
+					optimize: "none",
+					out: "public_html/js/build/main.js"
+				}
+			}
+		},
+		concat: {
+			build: {
+				separator: ';\n',
+				src: [
+					'public_html/js/lib/almond.js',
+					'public_html/js/build/main.js'
+				],
+				dest: 'public_html/js/build.js'
+			}
+		},
+		uglify:{
+			build: {
+				files: {
+					'public_html/js/build.min.js':
+						['public_html/js/build.js']
+				}
+			}
 		}
 	});
 	grunt.loadNpmTasks('grunt-shell');
@@ -71,6 +109,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.registerTask('default', ['concurrent',]);
+	grunt.registerTask('default', 'build',['concurrent','fest','requirejs:build','concat:build','uglify:build']);
   };
