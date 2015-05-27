@@ -1,0 +1,20 @@
+[05-28 01:26:54,549, 1571] resource.ResourceFactory ResourceFactory was created
+[05-28 01:26:54,573, 1595] resource.sax.SaxHandler Start Document
+[05-28 01:26:54,576, 1598] resource.sax.SaxHandler Class name: resource.ServerSettings
+[05-28 01:26:54,579, 1601] resource.sax.SaxHandler port = 8080
+[05-28 01:26:54,581, 1603] resource.sax.SaxHandler mode = Development
+[05-28 01:26:54,583, 1605] resource.sax.SaxHandler ASType = ok
+[05-28 01:26:54,587, 1609] resource.sax.SaxHandler End document
+[05-28 01:26:54,591, 1613] resource.ResourceFactory Resource serverSettings was parsed
+[05-28 01:26:54,610, 1632] main.Main Starting at port: 8080
+[05-28 01:26:54,971, 1993] frontend.game.WebSocketGameServlet Configure
+[05-28 01:26:54,990, 2012] resource.sax.SaxHandler Start Document
+[05-28 01:26:54,990, 2012] resource.sax.SaxHandler Class name: resource.GameMechanicsSettings
+[05-28 01:26:54,991, 2013] resource.sax.SaxHandler timeLimit = 90
+[05-28 01:26:54,991, 2013] resource.sax.SaxHandler numAmount = 10
+[05-28 01:26:54,991, 2013] resource.sax.SaxHandler weight = 10
+[05-28 01:26:54,991, 2013] resource.sax.SaxHandler minDelta = 10
+[05-28 01:26:54,992, 2014] resource.sax.SaxHandler End document
+[05-28 01:26:54,993, 2015] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[05-28 01:26:55,015, 2037] main.Main version: Threads in process
+[05-28 01:26:55,015, 2037] main.Main Start
