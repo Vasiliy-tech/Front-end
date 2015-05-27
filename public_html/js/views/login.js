@@ -96,10 +96,12 @@ define([
                 password: ''
             };
             sendData.login = $(".input .login").val();
+
             sendData.email = $(".email").val();
             sendData.password = $(".password").val();
             var strSendData = JSON.stringify(sendData);
-
+            console.log("TADA");
+            console.log(strSendData);
             $.ajax({
                 type: m_method,
                 url: m_action,
@@ -119,6 +121,7 @@ define([
                         $('a.start-game__href').removeClass('disabled');
                         //$('a.exit__href').removeClass('disabled__href');
                         window.location.href = '#'
+                        localStorage.clear();
                     } 
                     else 
                     {
