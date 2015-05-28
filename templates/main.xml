@@ -18,6 +18,9 @@
 		<div class="js-signin button__menu">
 			<a href="#signin" class="textButton signin__href">Authorization</a>
 		</div>
+		<div class="js-gamepad button__menu">
+			<a href="#gamepad" class="textButton gamepad__href">Gamepad</a>
+		</div>
 		<div class="js-exit button__menu ">
 			<a href="#" class="textButton exit__href">Exit</a>
 		</div>

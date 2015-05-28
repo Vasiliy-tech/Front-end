@@ -14,8 +14,23 @@ define([
                   "click .js-exit": "exitLogin",                
         },
         initialize: function () {
-            //alert('i reload');
-            //$('.autorizationLabel').hide();
+            function isTouchDevice() {
+              try {
+                document.createEvent('TouchEvent');
+                return true;
+              }
+              catch(e) {
+                return false;
+              }
+            }
+
+            if ( isTouchDevice() === true ) {
+                ////// TO DO: поменяй
+                window.location.href = '#touchDevice';
+                //window.location.href = '#gamepad';
+            } else {
+
+            }         
         },
         render: function () {
             this.$el.html(this.template());

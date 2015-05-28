@@ -55,6 +55,28 @@
   font-family: 'Open Sans',monospace;
   font-size: 15px; }
 
+.gamepad__button {
+  border-radius: 5px;
+  position: relative;
+  text-decoration: none;
+  width: 240px;
+  height: 35px;
+  margin: auto;
+  margin-bottom: 20px;
+  position: relative;
+  bottom: 10px;
+  border-radius: 5px; }
+
+@media screen and (orientation: portrait) {
+  #container {
+    -ms-transform: rotate(-90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-90deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    width: auto;
+    height: auto;
+    overflow: scroll; } }
 .label {
   color: #FFF;
   font-family: 'Open Sans',monospace;
@@ -66,7 +88,7 @@
 .menu {
   background-color: rgba(143, 137, 124, 0.5);
   width: 400px;
-  height: 500px;
+  height: 600px;
   margin: auto;
   position: relative; }
 
@@ -74,7 +96,14 @@
   .menu {
     background-color: rgba(143, 137, 124, 0.5);
     width: auto;
-    height: 500px;
+    height: 600px;
+    margin: auto;
+    position: relative; } }
+@media screen and (max-width: 800px) and (orientation: landscape) {
+  .menu {
+    background-color: rgba(143, 137, 124, 0.5);
+    width: auto;
+    height: 100%;
     margin: auto;
     position: relative; } }
 .gamefield {
@@ -148,5 +177,39 @@
   position: relative;
   bottom: 10px;
   border-radius: 5px; }
+
+.circle, .circle__up, .circle__down, .circle__left, .circle__right, .circle__fire {
+  width: 90px;
+  height: 90px;
+  background: green;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px; }
+
+.circle__up {
+  position: absolute;
+  left: 20%;
+  top: 10%; }
+
+.circle__down {
+  position: absolute;
+  left: 20%;
+  top: 60%; }
+
+.circle__left {
+  position: absolute;
+  left: 5%;
+  top: 35%; }
+
+.circle__right {
+  position: absolute;
+  left: 35%;
+  top: 35%; }
+
+.circle__fire {
+  position: absolute;
+  left: 75%;
+  top: 35%;
+  background: red; }
 
 /*# sourceMappingURL=main.css.map */

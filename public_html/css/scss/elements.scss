@@ -34,3 +34,29 @@
 	font-size: 15px;
 	
 }
+
+
+.gamepad__button {
+	border-radius: 5px;
+	position: relative;
+	text-decoration:none;
+    width: 240px;
+    height: 35px;
+    margin: auto;
+    margin-bottom: 20px;
+    position:relative;
+    bottom: 10px;
+    border-radius: 5px;
+}
+
+@media screen and (orientation:portrait) {
+
+  #container {
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    width: auto ;
+    height: auto ;
+    overflow: scroll;
+  }
+}

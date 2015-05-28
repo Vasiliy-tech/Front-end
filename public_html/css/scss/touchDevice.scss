@@ -1,0 +1,44 @@
+
+.circle {
+	width: 90px;
+    height: 90px;
+    background: green;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+.circle__up {
+	position: absolute;
+	left: 20%;
+	top: 10%;
+	@extend .circle;
+}
+
+.circle__down {
+	position: absolute;
+	left: 20%;
+	top: 60%;
+    @extend .circle;
+}
+
+.circle__left {
+	position: absolute;
+	left: 5%;
+	top: 35%;
+    @extend .circle;
+}
+
+.circle__right {
+	position: absolute;
+	left: 35%;
+	top: 35%;
+    @extend .circle;
+}
+
+.circle__fire {
+	position: absolute;
+	left: 75%;
+	top: 35%;
+    @extend .circle;
+    background: red;
+}

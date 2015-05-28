@@ -1,0 +1,7 @@
+<fest:template xmlns:fest="http://fest.mail.ru">
+	<div class = "circle__up"></div>
+	<div class = "circle__down"></div>
+	<div class = "circle__left"></div>
+	<div class = "circle__right"></div>
+	<div class = "circle__fire"></div>
+</fest:template>
