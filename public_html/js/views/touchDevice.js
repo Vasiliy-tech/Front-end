@@ -5,18 +5,37 @@ define([
     Backbone,
     tmpl
 ){
+    var ws;
+    ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                console.log("touch socket create");
+            ws.onopen = function (event) {
+                console.log("touch socket open");
+            };
     var TouchDevice = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
         className: 'touchDevice',
         events: { 
                   "touchstart .circle__up" : "touchUp",
+                  "touchend .circle__up" : "touchUp",
+                  "touchmove .circle__up" : "touchUp",
+
                   "touchstart .circle__down" : "touchDown",
+                  "touchend .circle__down" : "touchDown",
+                  "touchmove .circle__down" : "touchDown",
+
                   "touchstart .circle__left" : "touchLeft",
+                  "touchend .circle__left" : "touchLeft",
+                  "touchmove .circle__left" : "touchLeft",
+
                   "touchstart .circle__right" : "touchRight",
+                  "touchend .circle__right" : "touchRight",
+                  "touchmove .circle__right" : "touchRight",
+
                   "touchstart .circle__fire" : "touchFire",
-                  "input input": "chekLogin",
-                  "submit form": "submitForm"                  
+                  "touchend .circle__fire" : "touchFire",
+                  "touchmove .circle__fire" : "touchFire",
+                                 
         },
         initialize: function () {
             this.$el.removeClass('menu');
@@ -34,65 +53,46 @@ define([
             this.$el.hide();
         },
         touchUp: function (event) {
-            console.log(event);
+            console.log('up');
+            var sendData = {
+                action : '1'
+            };
+            var strSendData = JSON.stringify(sendData);
+            ws.send(strSendData);
         },
         touchRight: function (event) {
-            //console.log('up');
-            alert("R!");
+            console.log('r');
+            var sendData = {
+                action : '2'
+            };
+            var strSendData = JSON.stringify(sendData);
+            ws.send(strSendData);
         },
         touchDown: function (event) {
-            //console.log('up');
-            alert("D!");
+            console.log('d');
+            var sendData = {
+                action : '3'
+            };
+            var strSendData = JSON.stringify(sendData);
+            ws.send(strSendData);
+          
         },
         touchLeft: function (event) {
-            //console.log('up');
-            alert("L!");
+            console.log('l');
+            var sendData = {
+                action : '4'
+            };
+            var strSendData = JSON.stringify(sendData);
+            ws.send(strSendData);
         },
         touchFire: function (event) {
-            //console.log('up');
-            alert("Fi!");
-        },
-        submitForm: function(e){
-            e.preventDefault();
-            $(this.el).find('input[type=submit]').prop('disabled', true);
-            var m_method = $('#signin_form').attr('method');
-            var m_action = $('#signin_form').attr('action');
+            console.log('f');
             var sendData = {
-                login: '',
-                password: ''
+                action : '5'
             };
-            sendData.login = $('#login-signin').val();
-            sendData.password = $('#password-signin').val();
             var strSendData = JSON.stringify(sendData);
-
-            $.ajax({
-                type: m_method,
-                url: m_action,
-                contentType:'json', 
-                data: strSendData,
-                dataType:'json',
-                success: function(result, code){
-                    console.log(result);
-                    if (result.status === 200)
-                    {
-                        $('.autorizationLabel').text("Hello " + result.data.login + "!");
-                        $('a.signin__href').addClass('disabled');
-                        $('a.login__href').addClass('disabled');
-                        $('a.start-game__href').removeClass('disabled');
-                        window.location.href = '#'
-                    } 
-                    else 
-                    {
-                       alert(result.data.message);
-                       $("#password-signin").val('');
-                       $("#login-signin").val('');               
-                    }
-                },
-                error:  function(xhr, str){
-                     $('.content').html('Критическая ошибка'); 
-                },
-            });
-        }
+            ws.send(strSendData);
+        },
 
     });
     return new TouchDevice();

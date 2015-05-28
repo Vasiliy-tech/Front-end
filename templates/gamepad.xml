@@ -6,7 +6,7 @@
 		<p class="hend">
 				Connect your device!
 		</p>
-		<form  method="POST" action="/api/v1/auth/gamepad">
+		<form  class = "gamepad__form" method="POST" action="/api/v1/auth/gamepad">
 			<div class="cusInput">
 				<label class="label label__login">
 					Login

@@ -71,31 +71,28 @@ define([
         submitForm: function(e){
             e.preventDefault();
             $(this.el).find('input[type=submit]').prop('disabled', true);
-            var m_method = $('#login_form').attr('method');
-            var m_action = $('#login_form').attr('action');
+            var m_method = $('.gamepad__form').attr('method');
+            var m_action = $('.gamepad__form').attr('action');
             var sendData = {
                 login: '',
-                email: '',
                 password: ''
             };
-            sendData.login = $('#login').val();
-            sendData.email = $('#email').val();
-            sendData.password = $('#password').val();
+            sendData.login = $('.input__loginGamepad').val();
+            sendData.password = $('.input__passwordGamepad').val();
             var strSendData = JSON.stringify(sendData);
+            console.log(strSendData)
 
             $.ajax({
                 type: m_method,
                 url: m_action,
                 contentType:'json', 
                 data: strSendData,
-                //contentType: 'application/json; charset=utf-8',
-                //converters:{"text json":jQuery.parseJSON},
                 dataType:'json',
-                //processData: false,
                 success: function(result, code){
                     console.log(result);
                     if (result.status === 200)
                     {
+                        console.log(strSendData)
                         $('.autorizationLabel').text("Hello " + result.data.login + "!");
                         $('.autorizationLabel').show();
                         $('a.signin__href').addClass('disabled');
@@ -110,10 +107,9 @@ define([
 
                        alert(result.data.message);
                        ////// TO DO: удали!!!!!!!
-                       window.location.href = '#touchDevice';
-                       $("#email").val('');
-                       $("input:password").val('');
-                       $("#login").val('');
+                       //window.location.href = '#touchDevice';
+                       $(".input__passwordGamepad").val('');
+                       $(".input__loginGamepad").val('');
                     }
 
                 },
