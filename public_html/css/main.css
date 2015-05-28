@@ -77,6 +77,13 @@
     width: auto;
     height: auto;
     overflow: scroll; } }
+.loader_bg {
+  background-color: 'white';
+  position: absolute;
+  font-size: 30px;
+  top: 45%;
+  left: 45%; }
+
 .label {
   color: #FFF;
   font-family: 'Open Sans',monospace;
