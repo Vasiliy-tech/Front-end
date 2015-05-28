@@ -1,0 +1,12 @@
+[05-28 00:54:58,286, 4875] resource.ResourceFactory ResourceFactory was created
+[05-28 00:54:58,360, 4949] resource.sax.SaxHandler Start Document
+[05-28 00:54:58,377, 4966] resource.sax.SaxHandler Class name: resource.ServerSettings
+[05-28 00:54:58,386, 4975] resource.sax.SaxHandler port = 8080
+[05-28 00:54:58,407, 4996] resource.sax.SaxHandler mode = Development
+[05-28 00:54:58,409, 4998] resource.sax.SaxHandler ASType = ok
+[05-28 00:54:58,410, 4999] resource.sax.SaxHandler End document
+[05-28 00:54:58,411, 5000] resource.ResourceFactory Resource serverSettings was parsed
+[05-28 00:54:58,414, 5003] main.Main Starting at port: 8080
+[05-28 00:54:58,868, 5457] frontend.game.WebSocketGameServlet Configure
+[05-28 00:54:58,918, 5507] main.AppServer There is an error in Server.Start()
+[05-28 00:54:58,922, 5511] main.AppServer java.net.BindException: Address already in use

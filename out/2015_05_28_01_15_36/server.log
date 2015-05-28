@@ -1,0 +1,258 @@
+[05-28 01:15:37,274, 2485] resource.ResourceFactory ResourceFactory was created
+[05-28 01:15:37,339, 2550] resource.sax.SaxHandler Start Document
+[05-28 01:15:37,348, 2559] resource.sax.SaxHandler Class name: resource.ServerSettings
+[05-28 01:15:37,357, 2568] resource.sax.SaxHandler port = 8080
+[05-28 01:15:37,358, 2569] resource.sax.SaxHandler mode = Development
+[05-28 01:15:37,360, 2571] resource.sax.SaxHandler ASType = ok
+[05-28 01:15:37,362, 2573] resource.sax.SaxHandler End document
+[05-28 01:15:37,364, 2575] resource.ResourceFactory Resource serverSettings was parsed
+[05-28 01:15:37,374, 2585] main.Main Starting at port: 8080
+[05-28 01:15:38,043, 3254] frontend.game.WebSocketGameServlet Configure
+[05-28 01:15:38,138, 3349] resource.sax.SaxHandler Start Document
+[05-28 01:15:38,138, 3349] resource.sax.SaxHandler Class name: resource.GameMechanicsSettings
+[05-28 01:15:38,141, 3352] resource.sax.SaxHandler timeLimit = 90
+[05-28 01:15:38,143, 3354] resource.sax.SaxHandler numAmount = 10
+[05-28 01:15:38,144, 3355] resource.sax.SaxHandler weight = 10
+[05-28 01:15:38,145, 3356] resource.sax.SaxHandler minDelta = 10
+[05-28 01:15:38,146, 3357] resource.sax.SaxHandler End document
+[05-28 01:15:38,154, 3365] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[05-28 01:15:38,162, 3373] main.Main version: Threads in process
+[05-28 01:15:38,162, 3373] main.Main Start
+[05-28 01:16:15,886, 41097] frontend.SignInServlet doPost Start
+[05-28 01:16:15,890, 41101] frontend.SignInServlet Request params {}
+[05-28 01:16:15,900, 41111] frontend.SignInServlet JSON from request: {"password":"qwerty","login":"qwerty"}
+[05-28 01:16:15,905, 41116] frontend.SignInServlet User:qwerty has Authorised
+[05-28 01:16:15,922, 41133] frontend.SignInServlet doPost Success
+[05-28 01:16:20,298, 45509] frontend.SignInServlet doPost Start
+[05-28 01:16:20,299, 45510] frontend.SignInServlet Request params {}
+[05-28 01:16:20,300, 45511] frontend.SignInServlet JSON from request: {"password":"admin","login":"admin"}
+[05-28 01:16:20,301, 45512] frontend.SignInServlet User:admin has Authorised
+[05-28 01:16:20,306, 45517] frontend.SignInServlet doPost Success
+[05-28 01:16:22,019, 47230] frontend.game.GameWebSocketCreator Start creating New socket
+[05-28 01:16:22,038, 47249] frontend.game.GameWebSocket New Socket Successfully constructed
+[05-28 01:16:22,241, 47452] frontend.game.GameWebSocket User:qwerty is opening connection
+[05-28 01:16:23,206, 48417] frontend.game.GameWebSocketCreator Start creating New socket
+[05-28 01:16:23,207, 48418] frontend.game.GameWebSocket New Socket Successfully constructed
+[05-28 01:16:23,207, 48418] frontend.game.GameWebSocket User:admin is opening connection
+[05-28 01:16:23,364, 48575] mechanics.GameMechanics User qwerty is the 1
+[05-28 01:16:23,364, 48575] mechanics.GameMechanics User admin is the 2
+[05-28 01:16:23,364, 48575] mechanics.GameMechanics First player
+[05-28 01:16:23,364, 48575] mechanics.GameMechanics Second player
+[05-28 01:16:23,364, 48575] mechanics.GameMechanics Map Number: 0
+[05-28 01:16:23,364, 48575] mechanics.GameMechanics Start game
+[05-28 01:16:48,950, 74161] frontend.game.GameWebSocket User:qwerty has closed connection
+[05-28 01:16:49,364, 74575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:49,867, 75078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:50,373, 75584] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:50,865, 76076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:51,373, 76584] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:51,867, 77078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:52,204, 77415] frontend.game.GameWebSocket User:admin has closed connection
+[05-28 01:16:52,365, 77576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:52,365, 77576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:52,865, 78076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:52,876, 78087] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:53,366, 78577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:53,369, 78580] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:53,868, 79079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:53,870, 79081] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:54,369, 79580] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:54,371, 79582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:54,870, 80081] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:54,871, 80082] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:55,371, 80582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:55,374, 80585] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:55,866, 81077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:55,866, 81077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:56,363, 81574] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:56,363, 81574] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:56,872, 82083] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:56,872, 82083] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:57,370, 82581] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:57,370, 82581] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:57,868, 83079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:57,868, 83079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:58,367, 83578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:58,367, 83578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:58,864, 84075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:58,865, 84076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:59,365, 84576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:59,365, 84576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:59,864, 85075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:16:59,866, 85077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:00,365, 85576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:00,366, 85577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:00,863, 86074] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:00,864, 86075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:01,371, 86582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:01,372, 86583] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:01,869, 87080] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:01,872, 87083] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:02,369, 87580] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:02,369, 87580] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:02,867, 88078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:02,868, 88079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:03,366, 88577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:03,366, 88577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:03,863, 89074] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:03,863, 89074] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:04,362, 89573] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:04,363, 89574] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:04,872, 90083] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:04,873, 90084] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:05,371, 90582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:05,372, 90583] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:05,871, 91082] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:05,871, 91082] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:06,370, 91581] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:06,371, 91582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:06,868, 92079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:06,868, 92079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:07,368, 92579] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:07,374, 92585] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:07,866, 93077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:07,867, 93078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:08,364, 93575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:08,366, 93577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:08,864, 94075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:08,869, 94080] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:09,368, 94579] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:09,368, 94579] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:09,864, 95075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:09,867, 95078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:10,367, 95578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:10,372, 95583] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:10,869, 96080] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:10,869, 96080] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:11,367, 96578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:11,368, 96579] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:11,864, 97075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:11,867, 97078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:12,366, 97577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:12,367, 97578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:12,866, 98077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:12,866, 98077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:13,364, 98575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:13,365, 98576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:13,872, 99083] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:13,875, 99086] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:14,364, 99575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:14,364, 99575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:14,871, 100082] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:14,872, 100083] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:15,372, 100583] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:15,372, 100583] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:15,869, 101080] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:15,870, 101081] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:16,370, 101581] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:16,370, 101581] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:16,866, 102077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:16,868, 102079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:17,364, 102575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:17,366, 102577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:17,864, 103075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:17,864, 103075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:18,363, 103574] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:18,365, 103576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:18,863, 104074] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:18,866, 104077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:19,365, 104576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:19,366, 104577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:19,872, 105083] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:19,873, 105084] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:20,371, 105582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:20,371, 105582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:20,867, 106078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:20,867, 106078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:21,364, 106575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:21,365, 106576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:21,864, 107075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:21,864, 107075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:22,371, 107582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:22,372, 107583] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:22,868, 108079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:22,868, 108079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:23,364, 108575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:23,364, 108575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:23,872, 109083] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:23,872, 109083] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:24,371, 109582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:24,374, 109585] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:24,862, 110073] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:24,863, 110074] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:25,371, 110582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:25,371, 110582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:25,867, 111078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:25,868, 111079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:26,363, 111574] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:26,363, 111574] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:26,862, 112073] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:26,863, 112074] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:27,371, 112582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:27,374, 112585] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:27,871, 113082] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:27,871, 113082] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:28,368, 113579] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:28,369, 113580] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:28,865, 114076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:28,867, 114078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:29,364, 114575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:29,366, 114577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:29,865, 115076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:29,866, 115077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:30,364, 115575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:30,364, 115575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:30,871, 116082] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:30,876, 116087] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:31,365, 116576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:31,365, 116576] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:31,862, 117073] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:31,862, 117073] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:32,370, 117581] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:32,371, 117582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:32,868, 118079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:32,868, 118079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:33,366, 118577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:33,367, 118578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:33,865, 119076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:33,868, 119079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:34,368, 119579] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:34,369, 119580] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:34,868, 120079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:34,868, 120079] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:35,367, 120578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:35,368, 120579] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:35,865, 121076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:35,866, 121077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:36,367, 121578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:36,368, 121579] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:36,867, 122078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:36,867, 122078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:37,364, 122575] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:37,366, 122577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:37,864, 123075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:37,865, 123076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:38,367, 123578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:38,368, 123579] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:38,866, 124077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:38,866, 124077] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:39,366, 124577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:39,367, 124578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:39,864, 125075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:39,865, 125076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:40,363, 125574] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:40,363, 125574] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:40,871, 126082] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:40,871, 126082] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:41,371, 126582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:41,371, 126582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:41,867, 127078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:41,867, 127078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:42,366, 127577] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:42,367, 127578] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:42,864, 128075] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:42,865, 128076] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:43,371, 128582] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:43,374, 128585] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:43,867, 129078] frontend.game.GameWebSocket Socket has been already closed
+[05-28 01:17:43,869, 129080] frontend.game.GameWebSocket Socket has been already closed

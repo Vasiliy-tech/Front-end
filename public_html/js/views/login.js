@@ -21,15 +21,8 @@ define([
             }
             sendData.login="";
             sendData.email="";
-        if(localStorage["signup"] === undefined)
-            localStorage["signup"]=JSON.stringify(sendData);
-        /*else {
-            var currentData = this.getJSON("signup");
-            console.log(currentData);    
-            $('#login').val(currentData.login);
-            $('#email').val(currentData.email);
-            debugger;
-        }*/
+            if(localStorage["signup"] === undefined)
+                localStorage["signup"]=JSON.stringify(sendData);
 
         },
         render: function () {
@@ -41,8 +34,8 @@ define([
             console.log(localStorage);
             var currentData = this.getJSON("signup");
             console.log(currentData);    
-            $('#login').val(currentData.login);
-            $('#email').val(currentData.email);
+            $(".input .login").val(currentData.login);
+            $(".email").val(currentData.email);
             this.$el.show();
         },
         hide: function () {
@@ -50,15 +43,15 @@ define([
         },
         chekLogin: function () {
 
-            var mail = $(this.el).find("#email").val()
+            var mail = $(this.el).find(".email").val()
             var mail_pattern = /[0-9a-z_]+@[0-9a-z_]+\.[a-z]{2,5}/i; 
             var isItCorrectlyMail =mail_pattern.test(mail);
 
-            var password = $(this.el).find("input:password").val();
+            var password = $(this.el).find(".password").val();
             var password_pattern = /[\W]/;
             var isItCorrectlyPassword = password_pattern.test(password);
 
-            var myLogin = $(this.el).find("#login").val()
+            var myLogin = $(this.el).find(".input .login").val()
             var myLogin_pattern = /[\W]/; 
             var isItCorrectlyLogin = myLogin_pattern.test(myLogin);
 
@@ -95,18 +88,22 @@ define([
         submitForm: function(e){
             e.preventDefault();
             $(this.el).find('input[type=submit]').prop('disabled', true);
-            var m_method = $('#login_form').attr('method');
-            var m_action = $('#login_form').attr('action');
+            var m_method = $('.login_form').attr('method');
+            var m_action = $('.login_form').attr('action');
+            //console.log(m_action, m_method);
             var sendData = {
                 login: '',
                 email: '',
                 password: ''
             };
-            sendData.login = $('#login').val();
-            sendData.email = $('#email').val();
-            sendData.password = $('#password').val();
-            var strSendData = JSON.stringify(sendData);
+            sendData.login = $(".input.login").val();
 
+            sendData.email = $(".email").val();
+            sendData.password = $(".password").val();
+            //console.log(sendData);
+            var strSendData = JSON.stringify(sendData);
+            console.log("TADA");
+            console.log(strSendData);
             $.ajax({
                 type: m_method,
                 url: m_action,
@@ -126,13 +123,14 @@ define([
                         $('a.login__href').addClass('disabled');
                         $('a.start-game__href').removeClass('disabled');
                         window.location.href = '#'
+                        localStorage.clear();
                     } 
                     else 
                     {
                        alert(result.data.message);
-                       $("#email").val('');
+                       $(".email").val('');
                        $("input:password").val('');
-                       $("#login").val('');
+                       $(".login").val('');
                     }
                 },
                 error:  function(xhr, str){
@@ -153,8 +151,8 @@ define([
                 login:'',
                 email:''
             }
-            sendData.login=$('#login').val();
-            sendData.email=$('#email').val();
+            sendData.login=$(".input .login").val();
+            sendData.email=$(".email").val();
             this.setJSON("signup",sendData);
         }
 

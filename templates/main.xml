@@ -1,7 +1,7 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
 	
 		<div class="button__top">
-			<p class="logo"> PvPTowerDefence </p>
+			<p class="logo"> NotPvPTowerDefence </p>
 		</div>
 		<p class="hend">
 			MAIN MENU

@@ -6,16 +6,32 @@
 		    maximum-scale = 1,
 		    minimum-scale = 1		    
 		">
-
-	    <link rel="stylesheet" href="/css/main.css"/>
+	    <link rel="stylesheet" href="/css/main.min.css"/>
 	</head>
 	<body class="bg">
+		<style>
+			position: absolute;
+		    width: 30px;
+		    height: 30px;
+		    background: #3498db;
+		    border-radius: 50px;
+		    animation: preloader 5 s infinite linear;
+		    top: 40%;
+		    left: 50%;
+		    margin-left: -15px;
+		    z-index: 999;
+		</style>
+		<div id="loader"/>
+	<script src="js/build.min.js"></script>
+	<script>
+	    require(['main2'], function(){});
+	</script>
 		<div class="page">
 			<div class = "page__autorizationLabel">
 		    	<div class = "autorizationLabel"> </div>
 		    </div>
 	    </div>
-	    <script data-main="js/main2" src="js/lib/require.js"></script>
+	     <script data-main="js/main2" src="js/lib/require.js"></script>
 	    <script src="//localhost:35729/livereload.js"></script>
 	</body>
 </html>
