@@ -25,9 +25,9 @@ define([
             }
 
             if ( isTouchDevice() === true ) {
-                ////// TO DO: поменяй
-                window.location.href = '#touchDevice';
-                //window.location.href = '#gamepad';
+                ////// TO DO: удали
+                //window.location.href = '#touchDevice';
+                window.location.href = '#gamepad';
             } else {
 
             }         

@@ -5,12 +5,8 @@ define([
     Backbone,
     tmpl
 ){
+    var isItNotOpen = true;
     var ws;
-    ws = new WebSocket("ws://127.0.0.1:8080/touch");
-                console.log("touch socket create");
-            ws.onopen = function (event) {
-                console.log("touch socket open");
-            };
     var TouchDevice = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
@@ -54,6 +50,16 @@ define([
         },
         touchUp: function (event) {
             console.log('up');
+
+            if (isItNotOpen === true) {
+                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                console.log("touch socket create");
+                ws.onopen = function (event) {
+                console.log("touch socket open");
+                isItNotOpen = false;
+               }
+            }
+
             var sendData = {
                 action : '1'
             };
@@ -62,6 +68,16 @@ define([
         },
         touchRight: function (event) {
             console.log('r');
+
+            if (isItNotOpen === true) {
+                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                console.log("touch socket create");
+                ws.onopen = function (event) {
+                console.log("touch socket open");
+                isItNotOpen = false;
+               }
+            }
+
             var sendData = {
                 action : '2'
             };
@@ -70,6 +86,16 @@ define([
         },
         touchDown: function (event) {
             console.log('d');
+
+            if (isItNotOpen === true) {
+                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                console.log("touch socket create");
+                ws.onopen = function (event) {
+                console.log("touch socket open");
+                isItNotOpen = false;
+               }
+            }
+
             var sendData = {
                 action : '3'
             };
@@ -79,6 +105,16 @@ define([
         },
         touchLeft: function (event) {
             console.log('l');
+
+            if (isItNotOpen === true) {
+                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                console.log("touch socket create");
+                ws.onopen = function (event) {
+                console.log("touch socket open");
+                isItNotOpen = false;
+               }
+            }
+
             var sendData = {
                 action : '4'
             };
@@ -87,6 +123,16 @@ define([
         },
         touchFire: function (event) {
             console.log('f');
+
+            if (isItNotOpen === true) {
+                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                console.log("touch socket create");
+                ws.onopen = function (event) {
+                console.log("touch socket open");
+                isItNotOpen = false;
+               }
+            }
+            
             var sendData = {
                 action : '5'
             };
