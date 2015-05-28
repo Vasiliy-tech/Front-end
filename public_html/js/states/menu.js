@@ -12,7 +12,7 @@ define([
     GameOver
 ){
 	var game;
-	var ws
+	var ws;
 	return {
 		create: function(el){
 			game =  new Phaser.Game(800,480, Phaser.AUTO,el);   
@@ -43,6 +43,7 @@ define([
 		},
 		finished: function(){
 			Game.stopScores();
+			console.log("Close socket");
 			ws.close();
 		},
 		get: function(){

@@ -1,0 +1,148 @@
+[05-21 16:02:31,053, 7189] resource.ResourceFactory ResourceFactory was created
+[05-21 16:02:31,152, 7288] sax.SaxHandler Start Document
+[05-21 16:02:31,182, 7318] sax.SaxHandler Class name: resource.ServerSettings
+[05-21 16:02:31,184, 7320] sax.SaxHandler port = 8080
+[05-21 16:02:31,199, 7335] sax.SaxHandler End document
+[05-21 16:02:31,200, 7336] resource.ResourceFactory Resource serverSettings was parsed
+[05-21 16:02:31,203, 7339] sax.SaxHandler Start Document
+[05-21 16:02:31,203, 7339] sax.SaxHandler Class name: resource.LoggerMessages
+[05-21 16:02:31,204, 7340] sax.SaxHandler doPostStart = doPost Start
+[05-21 16:02:31,204, 7340] sax.SaxHandler doPostFinish = doPost Success
+[05-21 16:02:31,204, 7340] sax.SaxHandler doGetStart = doGet Start
+[05-21 16:02:31,204, 7340] sax.SaxHandler doGetFinish = doGet Success
+[05-21 16:02:31,204, 7340] sax.SaxHandler isAdmin = User:{} is admin
+[05-21 16:02:31,205, 7341] sax.SaxHandler isNotAdmin = User:{} is not admin
+[05-21 16:02:31,205, 7341] sax.SaxHandler wrongAction = Wrong action
+[05-21 16:02:31,205, 7341] sax.SaxHandler statistic = Getting Statistic
+[05-21 16:02:31,205, 7341] sax.SaxHandler stop = Stopping server
+[05-21 16:02:31,205, 7341] sax.SaxHandler notAuthorised = Not Authorised
+[05-21 16:02:31,205, 7341] sax.SaxHandler authorised = User:{} is Authorised
+[05-21 16:02:31,205, 7341] sax.SaxHandler hasAuthorised = User:{} has Authorised
+[05-21 16:02:31,205, 7341] sax.SaxHandler lackOfParam = No param "{}" in request
+[05-21 16:02:31,205, 7341] sax.SaxHandler paramHasWrongType = Param:"{}" has wrong type
+[05-21 16:02:31,205, 7341] sax.SaxHandler signUp = New user is signing up
+[05-21 16:02:31,206, 7342] sax.SaxHandler signIn = User is signing in
+[05-21 16:02:31,206, 7342] sax.SaxHandler alreadyLoggedIn = User:{} is already Logged In
+[05-21 16:02:31,206, 7342] sax.SaxHandler block = Authorization and signing up is blocked
+[05-21 16:02:31,206, 7342] sax.SaxHandler wrongPasOrLogin = Wrong password:"{}" or login:"{}"
+[05-21 16:02:31,206, 7342] sax.SaxHandler loggedOut = User:{} logged out
+[05-21 16:02:31,206, 7342] sax.SaxHandler loginIsAlreadyExist = User with such login "{}" is already exist
+[05-21 16:02:31,206, 7342] sax.SaxHandler wrongSignUpData = Wrong login:"{}" or email:"{}" or password:"{}"
+[05-21 16:02:31,206, 7342] sax.SaxHandler onMessage = User:{} has sent Message:{}
+[05-21 16:02:31,206, 7342] sax.SaxHandler onOpen = User:{} is opening connection
+[05-21 16:02:31,206, 7342] sax.SaxHandler onClose = User:{} has closed connection
+[05-21 16:02:31,207, 7343] sax.SaxHandler configure = Configure
+[05-21 16:02:31,207, 7343] sax.SaxHandler setBlock = Signing in and Signing up are blocked
+[05-21 16:02:31,207, 7343] sax.SaxHandler unsetBlock = Signing in and Signing up are released
+[05-21 16:02:31,207, 7343] sax.SaxHandler startGame = Start game
+[05-21 16:02:31,207, 7343] sax.SaxHandler firstPlayer = First player
+[05-21 16:02:31,207, 7343] sax.SaxHandler secondPlayer = Second player
+[05-21 16:02:31,207, 7343] sax.SaxHandler sessionFinished = Session finished
+[05-21 16:02:31,207, 7343] sax.SaxHandler errorInReadingJSON = Error while getting the JSON: {}
+[05-21 16:02:31,207, 7343] sax.SaxHandler draw = Draw between {}, {}
+[05-21 16:02:31,207, 7343] sax.SaxHandler isWinner = {} is winner
+[05-21 16:02:31,208, 7344] sax.SaxHandler isLoser = {} is loser
+[05-21 16:02:31,208, 7344] sax.SaxHandler signUpSuccess = User {} was successfully signed up
+[05-21 16:02:31,208, 7344] sax.SaxHandler gameUserPosition = User {} is the {}
+[05-21 16:02:31,208, 7344] sax.SaxHandler newSocket = Start creating New socket 
+[05-21 16:02:31,208, 7344] sax.SaxHandler newSocketSuccess = New Socket Successfully constructed
+[05-21 16:02:31,208, 7344] sax.SaxHandler requestGetParams = Request params {}
+[05-21 16:02:31,208, 7344] sax.SaxHandler jsonGotFromRequest = JSON from request: {}
+[05-21 16:02:31,214, 7350] sax.SaxHandler errorXML = Error while reading XML
+[05-21 16:02:31,214, 7350] sax.SaxHandler startXML = Start Document
+[05-21 16:02:31,214, 7350] sax.SaxHandler endXML = End document
+[05-21 16:02:31,214, 7350] sax.SaxHandler className = Class name: {}
+[05-21 16:02:31,214, 7350] sax.SaxHandler aEqualB = {} = {}
+[05-21 16:02:31,214, 7350] sax.SaxHandler resourceWasParsed = Resource {} was parsed
+[05-21 16:02:31,214, 7350] sax.SaxHandler End document
+[05-21 16:02:31,214, 7350] resource.ResourceFactory Resource loggerMessages was parsed
+[05-21 16:02:31,215, 7351] main.Main Starting at port: 8080
+
+[05-21 16:02:31,618, 7754] sax.SaxHandler Start Document
+[05-21 16:02:31,618, 7754] sax.SaxHandler Class name: resource.Messages
+[05-21 16:02:31,619, 7755] sax.SaxHandler adminPage = Admin page
+[05-21 16:02:31,619, 7755] sax.SaxHandler notFound = 404: Not Found.
+[05-21 16:02:31,619, 7755] sax.SaxHandler wrongParamAction = Wrong 'action'
+[05-21 16:02:31,620, 7756] sax.SaxHandler notAuthorised = Not Authorised
+[05-21 16:02:31,620, 7756] sax.SaxHandler logInStatus = Log In:
+[05-21 16:02:31,620, 7756] sax.SaxHandler alreadyLoggedIn = You has already Logged In
+[05-21 16:02:31,620, 7756] sax.SaxHandler block = Authorization and signing up is blocked
+[05-21 16:02:31,620, 7756] sax.SaxHandler wrongPasOrLogin = Wrong password or login
+[05-21 16:02:31,621, 7757] sax.SaxHandler fillAllTheGaps = Fill all the gaps, please:
+[05-21 16:02:31,621, 7757] sax.SaxHandler logOutFirst = You have to logout before signing up.
+[05-21 16:02:31,621, 7757] sax.SaxHandler exist = Such user already exists
+[05-21 16:02:31,621, 7757] sax.SaxHandler wrongSignUpData = Wrong sign Up data
+[05-21 16:02:31,621, 7757] sax.SaxHandler wrongLimit = WrongLimit
+[05-21 16:02:31,621, 7757] sax.SaxHandler End document
+[05-21 16:02:31,621, 7757] resource.ResourceFactory Resource messages was parsed
+[05-21 16:02:31,639, 7775] sax.SaxHandler Start Document
+[05-21 16:02:31,639, 7775] sax.SaxHandler Class name: resource.GameMechanicsSettings
+[05-21 16:02:31,640, 7776] sax.SaxHandler timeLimit = 15
+[05-21 16:02:31,640, 7776] sax.SaxHandler numAmount = 10
+[05-21 16:02:31,640, 7776] sax.SaxHandler weight = 10
+[05-21 16:02:31,640, 7776] sax.SaxHandler minDelta = 10
+[05-21 16:02:31,640, 7776] sax.SaxHandler End document
+[05-21 16:02:31,640, 7776] resource.ResourceFactory Resource gameMechanicsSettings was parsed
+[05-21 16:02:32,091, 8227] frontend.game.WebSocketGameServlet Configure
+[05-21 16:02:32,305, 8441] main.AppServer Start
+[05-21 16:02:32,305, 8441] main.AppServer Tuesday night version
+[05-21 16:14:09,734, 705870] frontend.SignUpServlet doPost Start
+[05-21 16:14:09,738, 705874] frontend.SignUpServlet Request params {}
+[05-21 16:14:09,772, 705908] frontend.SignUpServlet JSON from request: {"password":"qazswxde","email":"qazswxde@mail.ru"}
+[05-21 16:14:21,855, 717991] frontend.SignUpServlet doPost Start
+[05-21 16:14:21,855, 717991] frontend.SignUpServlet Request params {}
+[05-21 16:14:21,858, 717994] frontend.SignUpServlet JSON from request: {"password":"qazswxde","email":"qazswxde@mail.ru"}
+[05-21 16:14:27,193, 723329] frontend.SignUpServlet doPost Start
+[05-21 16:14:27,193, 723329] frontend.SignUpServlet Request params {}
+[05-21 16:14:27,196, 723332] frontend.SignUpServlet JSON from request: {"password":"qazswxde","email":"qazswxde@mail.ru"}
+[05-21 16:14:58,401, 754537] frontend.SignUpServlet doPost Start
+[05-21 16:14:58,402, 754538] frontend.SignUpServlet Request params {}
+[05-21 16:14:58,402, 754538] frontend.SignUpServlet JSON from request: {"password":"qwerty123","email":"qwerty@mail.ru"}
+[05-21 16:15:00,632, 756768] frontend.SignUpServlet doPost Start
+[05-21 16:15:00,633, 756769] frontend.SignUpServlet Request params {}
+[05-21 16:15:00,638, 756774] frontend.SignUpServlet JSON from request: {"password":"qwerty123","email":"qwerty@mail.ru"}
+[05-21 16:15:00,682, 756818] frontend.SignUpServlet doPost Start
+[05-21 16:15:00,682, 756818] frontend.SignUpServlet Request params {}
+[05-21 16:15:00,682, 756818] frontend.SignUpServlet JSON from request: {"password":"qwerty123","email":"qwerty@mail.ru"}
+[05-21 16:15:00,683, 756819] frontend.SignUpServlet doPost Start
+[05-21 16:15:00,684, 756820] frontend.SignUpServlet Request params {}
+[05-21 16:15:00,684, 756820] frontend.SignUpServlet JSON from request: {"password":"qwerty123","email":"qwerty@mail.ru"}
+[05-21 16:15:48,516, 804652] frontend.SignUpServlet doPost Start
+[05-21 16:15:48,516, 804652] frontend.SignUpServlet Request params {}
+[05-21 16:15:48,519, 804655] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:48,533, 804669] frontend.SignUpServlet doPost Start
+[05-21 16:15:48,533, 804669] frontend.SignUpServlet Request params {}
+[05-21 16:15:48,533, 804669] frontend.SignUpServlet doPost Start
+[05-21 16:15:48,533, 804669] frontend.SignUpServlet Request params {}
+[05-21 16:15:48,537, 804673] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:48,537, 804673] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:49,919, 806055] frontend.SignUpServlet doPost Start
+[05-21 16:15:49,919, 806055] frontend.SignUpServlet Request params {}
+[05-21 16:15:49,920, 806056] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:50,175, 806311] frontend.SignUpServlet doPost Start
+[05-21 16:15:50,176, 806312] frontend.SignUpServlet Request params {}
+[05-21 16:15:50,177, 806313] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:50,327, 806463] frontend.SignUpServlet doPost Start
+[05-21 16:15:50,327, 806463] frontend.SignUpServlet Request params {}
+[05-21 16:15:50,329, 806465] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:50,456, 806592] frontend.SignUpServlet doPost Start
+[05-21 16:15:50,456, 806592] frontend.SignUpServlet Request params {}
+[05-21 16:15:50,459, 806595] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:50,574, 806710] frontend.SignUpServlet doPost Start
+[05-21 16:15:50,574, 806710] frontend.SignUpServlet Request params {}
+[05-21 16:15:50,575, 806711] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:50,704, 806840] frontend.SignUpServlet doPost Start
+[05-21 16:15:50,704, 806840] frontend.SignUpServlet Request params {}
+[05-21 16:15:50,705, 806841] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:50,815, 806951] frontend.SignUpServlet doPost Start
+[05-21 16:15:50,815, 806951] frontend.SignUpServlet Request params {}
+[05-21 16:15:50,819, 806955] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:50,948, 807084] frontend.SignUpServlet doPost Start
+[05-21 16:15:50,948, 807084] frontend.SignUpServlet Request params {}
+[05-21 16:15:50,950, 807086] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:51,173, 807309] frontend.SignUpServlet doPost Start
+[05-21 16:15:51,173, 807309] frontend.SignUpServlet Request params {}
+[05-21 16:15:51,174, 807310] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}
+[05-21 16:15:51,437, 807573] frontend.SignUpServlet doPost Start
+[05-21 16:15:51,437, 807573] frontend.SignUpServlet Request params {}
+[05-21 16:15:51,439, 807575] frontend.SignUpServlet JSON from request: {"password":"mailmail","email":"mailmail@mail.eu"}

@@ -1,0 +1,19 @@
+[05-27 16:23:59,359, 6614] resource.ResourceFactory ResourceFactory was created
+[05-27 16:23:59,466, 6721] resource.sax.SaxHandler Start Document
+[05-27 16:23:59,477, 6732] resource.sax.SaxHandler Class name: resource.ServerSettings
+[05-27 16:23:59,487, 6742] resource.sax.SaxHandler port = 8080
+[05-27 16:23:59,504, 6759] resource.sax.SaxHandler mode = Development
+[05-27 16:23:59,504, 6759] resource.sax.SaxHandler ASType = Database
+[05-27 16:23:59,504, 6759] resource.sax.SaxHandler End document
+[05-27 16:23:59,504, 6759] resource.ResourceFactory Resource serverSettings was parsed
+[05-27 16:23:59,520, 6775] resource.sax.SaxHandler Start Document
+[05-27 16:23:59,521, 6776] resource.sax.SaxHandler Class name: resource.DbServerSettings
+[05-27 16:23:59,521, 6776] resource.sax.SaxHandler dialect = org.hibernate.dialect.MySQLDialect
+[05-27 16:23:59,522, 6777] resource.sax.SaxHandler driverClass = com.mysql.jdbc.Driver
+[05-27 16:23:59,522, 6777] resource.sax.SaxHandler connectionUrl = jdbc:mysql://localhost:3306/gameDB
+[05-27 16:23:59,522, 6777] resource.sax.SaxHandler username = gameAdmin
+[05-27 16:23:59,522, 6777] resource.sax.SaxHandler password = rfrltkf
+[05-27 16:23:59,522, 6777] resource.sax.SaxHandler showSql = false
+[05-27 16:23:59,522, 6777] resource.sax.SaxHandler mode = validate
+[05-27 16:23:59,522, 6777] resource.sax.SaxHandler End document
+[05-27 16:23:59,522, 6777] resource.ResourceFactory Resource dbServerSettings was parsed

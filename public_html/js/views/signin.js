@@ -28,11 +28,11 @@ define([
         },
         chekLogin: function () {
 
-            var password = $(this.el).find("#password-signin").val();
+            var password = $(this.el).find(".password-signin").val();
             var password_pattern = /[\W]/;
             var isItCorrectlyPassword = password_pattern.test(password);
 
-            var myLogin = $(this.el).find("#login-signin").val()
+            var myLogin = $(this.el).find(".login-signin").val()
             var myLogin_pattern = /[\W]/; 
             var isItCorrectlyLogin = myLogin_pattern.test(myLogin);
 
@@ -68,8 +68,8 @@ define([
                 login: '',
                 password: ''
             };
-            sendData.login = $('#login-signin').val();
-            sendData.password = $('#password-signin').val();
+            sendData.login = $('.login-signin').val();
+            sendData.password = $('.password-signin').val();
             var strSendData = JSON.stringify(sendData);
 
             $.ajax({

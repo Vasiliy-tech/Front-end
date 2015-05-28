@@ -12,6 +12,7 @@ define([
 	var scoreText;
 	var timer;
 	var timerEvent;
+	var queue = [];  
 	return {
 		init: function(game, position, ws) {
 			gameState = new Phaser.State();
@@ -136,6 +137,7 @@ define([
 		    };
 
 		    gameState.update = function() {
+		    	var currentMessage = queue.shift();
 		    	var sendData = {
 		    		player:'',
 		    		action:''
@@ -158,40 +160,40 @@ define([
 
 
 		        if (this.leftInputIsActive()) {
-		        	sendData.player=position;
+		        	// sendData.player=position;
 		        	sendData.action=3;
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
 		            
 		        } else if (this.rightInputIsActive()) {
-		        	sendData.player=position;
+		        	// sendData.player=position;
 		        	sendData.action=1;
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
 		            
 
 		        } else if(onTheGround && this.upInputIsActive()){
-		        	sendData.player=position;
+		        	// sendData.player=position;
 		        	sendData.action=0;
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
 		            
 		           
 		        } else if(this.downInputIsActive()){
-		        	sendData.player=position;
+		        	// sendData.player=position;
 		        	sendData.action=2;
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
 		            
 		            
 		        } else if (this.spaceInputIsActive()){
-		        	sendData.player=position;
+		        	// sendData.player=position;
 		        	sendData.action=5;
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
-		            this.shootBullet();
+		            
 		        } else { 
-		        	if( (data === undefined) || (data.player != position)){
+		        	if( (currentMessage === undefined) || (currentMessage.player != position)){
 
 		        		this.player.animations.stop();
 		            	this.player.body.velocity.x = 0;
@@ -237,41 +239,50 @@ define([
 			           		this.player.frame = 4;
 	        		}*/
 	        	}
-	        	 ws.onmessage = function(event){
+	        	ws.onmessage = function(event){
 		    		data = JSON.parse(event.data);
-		    		//console.log(data);
+		    		queue.push(data);
 		    	}
 		    	//console.log(data);
-	        	if(data !== undefined){
-		        	if(data.player == position){
-        				if(data.action == 0){	    
+	        	if(currentMessage !== undefined){
+		        	if(currentMessage.player == position){
+        				if(currentMessage.action == 0){	    
 			    			//console.log(this.player);			
 			    			this.player.body.velocity.y = -this.MAX_SPEED*1.3;
-			    		} else if (data.action == 1){
+			    		} else if (currentMessage.action == 1){
 			    			this.player.body.velocity.x = this.MAX_SPEED;
 		            		this.player.animations.play('right');
-			    		} else if (data.action == 2){
+			    		} else if (currentMessage.action == 2){
 			    			this.player.body.velocity.y = this.MAX_SPEED;
-						} else if (data.action == 3){
+						} else if (currentMessage.action == 3){
 							this.player.body.velocity.x = -this.MAX_SPEED;
 		           			this.player.animations.play('left');
+						} else if (currentMessage.action == 5){
+							this.shootBullet();
 						}
+	        		} else if (currentMessage.status == "sync"){
+	        			score = Math.round((/*timerEvent.delay - timer.ms*/currentMessage.time) / 1000);
+			    			
+		    			var minutes = "0" + Math.floor(score / 60);
+				        var seconds = "0" + (score - minutes * 60);
+				        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
+		    			this.game.debug.text(str,2, 18, "#ff0");
 	        		} else {
-	        			if(data.action == 0){	    
+	        			if(currentMessage.action == 0){	 
+	        				console.log("Enemy action");   
 		    			//console.log(this.player);			
 			    			this.enemy.body.velocity.y = -this.MAX_SPEED*1.3;
 	
-			    		} else if (data.action == 1){
+			    		} else if (currentMessage.action == 1){
 			    			this.enemy.body.velocity.x = this.MAX_SPEED;
 
-			    		} else if (data.action == 2){
+			    		} else if (currentMessage.action == 2){
 			    			this.enemy.body.velocity.y = this.MAX_SPEED;
-						} else if (data.action == 3){
+						} else if (currentMessage.action == 3){
 							this.enemy.body.velocity.x = -this.MAX_SPEED;
-						}
-						
-	        		}
-	        		data=undefined;
+						}	
+	        		} 
+	        		console.log(currentMessage);
 	        	} else {
 	        		this.enemy.body.velocity.x=0;
 	        	}
@@ -282,20 +293,24 @@ define([
 		            bullet.rotation = Math.atan2(bullet.body.velocity.y, bullet.body.velocity.x);
 		        }, this);
 		        
-		    	
+		    	/*if(data !== undefined)
+			    		if(data.status == "sync"){
+			    			score = Math.round((timerEvent.delay - timer.ms/data.time) / 1000);
+			    			
+			    			var minutes = "0" + Math.floor(score / 60);
+					        var seconds = "0" + (score - minutes * 60);
+					        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
+			    			this.game.debug.text(str,2, 18, "#ff0");
+		    			}*/
 		    };
 		   
 		    gameState.render = function(){
-		    	if (timer.running){
-	    			score = Math.round((timerEvent.delay - timer.ms) / 1000);
-	    			
-	    			var minutes = "0" + Math.floor(score / 60);
-			        var seconds = "0" + (score - minutes * 60);
-			        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
-	    			this.game.debug.text(str,2, 18, "#ff0");
-		    	}  else {
-		    		timer.stop();
-		    	}
+
+		    	// if (timer.running){
+		    		
+		    	// }  else {
+		    		// timer.stop();
+		    	// }
 		    };
 		    gameState.getExplosion = function(x,y){
 		        var explosion = this.explosionGroup.getFirstDead();

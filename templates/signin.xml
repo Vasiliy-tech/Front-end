@@ -1,26 +1,26 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
 		<div class="button__top">
-				<p class="logo"> PvPTowerDefence </p>
+				<p class="logo"> NotPvPTowerDefence </p>
 		</div>
 		<p class="hend">
 				Authorization
 		</p>
-		<form method="POST" action="/api/v1/auth/signin" id = "signin_form">
+		<form method="POST" action="/api/v1/auth/signin" class="signin_form">
 			<div class="cusInput">
 				<label class="label label__login">
 					Login
 				</label>
-				<input  id = "login-signin" class="input" type="text" name="login" value=""></input>
+				<input  class="input login-signin" type="text" name="login" value=""></input>
 			</div>
 			<div class="cusInput">
 				<label class="label label__password">
 					Password
 				</label>
 				<!--<input class="input" type="password" name="password" required="" value=""></input>-->
-				<input id = "password-signin" class="input" type="password" name="password" value=""></input>
+				<input  class="input password-signin" type="password" name="password" value=""></input>
 			</div>
 			<div class="cusInput">
-				<input id = "buts-signin" class="input" type="submit" value="Submit" disabled = "true"></input>
+				<input  class="input buts-signin" type="submit" value="Submit" disabled = "true"></input>
 			</div>
 			<div class="js-back backButton">
 				<a href="#" class="textButton">&#9668; Back</a>

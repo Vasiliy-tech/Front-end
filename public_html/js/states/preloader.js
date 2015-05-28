@@ -25,6 +25,7 @@ define([
 		        }, 1000, Phaser.Easing.Linear.None, true);
 
 		        tween.onComplete.add(function() {
+		        	//this.startButton = this.game.add.button(this.game.width/2, 300, 'startButton', this.startClick, this);
 		            game.state.start('Game', false, false);
 		        }, this);
 		    };
