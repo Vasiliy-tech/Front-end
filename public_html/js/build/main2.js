@@ -103663,23 +103663,16 @@ define('views/main',[
                   "click .js-exit": "exitLogin",                
         },
         initialize: function () {
-            function isTouchDevice() {
-              try {
-                document.createEvent('TouchEvent');
-                return true;
-              }
-              catch(e) {
-                return false;
-              }
-            }
 
-            if ( isTouchDevice() === true ) {
+            
+            if ( isTouchDevice() && isItSmallWindow() ) {
                 ////// TO DO: удали
                 //window.location.href = '#touchDevice';
-                window.location.href = '#gamepad';
+                window.location.href = '#gamepad';   
             } else {
 
-            }         
+            }  
+
         },
         render: function () {
             this.$el.html(this.template());
@@ -103721,6 +103714,25 @@ define('views/main',[
         },
 
     });
+
+    function isItSmallWindow() {
+        var screenWidth = screen.width;
+        if (screenWidth < 1000) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function isTouchDevice() {
+          try {
+            document.createEvent('TouchEvent');
+            return true;
+          }
+          catch(e) {
+            return false;
+          }
+    }
     
     return new Main();
 });
