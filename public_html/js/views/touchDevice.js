@@ -5,7 +5,10 @@ define([
     Backbone,
     tmpl
 ){
+    // my phone IP change it
+    var socketAdress = "ws://192.168.43.123:8080/gameplay";
     var isItNotOpen = true;
+    var socketIsOpen = false;
     var ws;
     var TouchDevice = Backbone.View.extend({
         template: tmpl,
@@ -52,11 +55,19 @@ define([
             console.log('up');
 
             if (isItNotOpen === true) {
-                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                isItNotOpen = false;
+
+                function sleep(ms) {
+                    ms += new Date().getTime();
+                    while (new Date() < ms) {}
+                }
+                
+                ws = new WebSocket(socketAdress);
                 console.log("touch socket create");
+                var slp = sleep(300);
                 ws.onopen = function (event) {
                 console.log("touch socket open");
-                isItNotOpen = false;
+                socketIsOpen = true;
                }
             }
 
@@ -64,17 +75,27 @@ define([
                 action : '1'
             };
             var strSendData = JSON.stringify(sendData);
-            ws.send(strSendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
         },
         touchRight: function (event) {
             console.log('r');
 
             if (isItNotOpen === true) {
-                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                isItNotOpen = false;
+
+                function sleep(ms) {
+                    ms += new Date().getTime();
+                    while (new Date() < ms) {}
+                }
+                
+                ws = new WebSocket(socketAdress);
                 console.log("touch socket create");
+                var slp = sleep(300);
                 ws.onopen = function (event) {
                 console.log("touch socket open");
-                isItNotOpen = false;
+                socketIsOpen = true;
                }
             }
 
@@ -82,17 +103,27 @@ define([
                 action : '2'
             };
             var strSendData = JSON.stringify(sendData);
-            ws.send(strSendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
         },
         touchDown: function (event) {
             console.log('d');
 
             if (isItNotOpen === true) {
-                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                isItNotOpen = false;
+
+                function sleep(ms) {
+                    ms += new Date().getTime();
+                    while (new Date() < ms) {}
+                }
+                
+                ws = new WebSocket(socketAdress);
                 console.log("touch socket create");
+                var slp = sleep(300);
                 ws.onopen = function (event) {
                 console.log("touch socket open");
-                isItNotOpen = false;
+                socketIsOpen = true;
                }
             }
 
@@ -100,18 +131,28 @@ define([
                 action : '3'
             };
             var strSendData = JSON.stringify(sendData);
-            ws.send(strSendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
           
         },
         touchLeft: function (event) {
             console.log('l');
 
             if (isItNotOpen === true) {
-                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+                isItNotOpen = false;
+
+                function sleep(ms) {
+                    ms += new Date().getTime();
+                    while (new Date() < ms) {}
+                }
+                
+                ws = new WebSocket(socketAdress);
                 console.log("touch socket create");
+                var slp = sleep(300);
                 ws.onopen = function (event) {
                 console.log("touch socket open");
-                isItNotOpen = false;
+                socketIsOpen = true;
                }
             }
 
@@ -119,25 +160,37 @@ define([
                 action : '4'
             };
             var strSendData = JSON.stringify(sendData);
-            ws.send(strSendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
         },
         touchFire: function (event) {
             console.log('f');
 
-            if (isItNotOpen === true) {
-                ws = new WebSocket("ws://127.0.0.1:8080/touch");
+          if (isItNotOpen === true) {
+                isItNotOpen = false;
+
+                function sleep(ms) {
+                    ms += new Date().getTime();
+                    while (new Date() < ms) {}
+                }
+                
+                ws = new WebSocket(socketAdress);
                 console.log("touch socket create");
+                var slp = sleep(300);
                 ws.onopen = function (event) {
                 console.log("touch socket open");
-                isItNotOpen = false;
+                socketIsOpen = true;
                }
             }
-            
+
             var sendData = {
                 action : '5'
             };
             var strSendData = JSON.stringify(sendData);
-            ws.send(strSendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
         },
 
     });
