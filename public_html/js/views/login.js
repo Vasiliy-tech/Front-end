@@ -5,6 +5,7 @@ define([
     Backbone,
     tmpl
 ){
+    var isItShow;
     var Login = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
@@ -90,7 +91,7 @@ define([
             $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('.login_form').attr('method');
             var m_action = $('.login_form').attr('action');
-            //console.log(m_action, m_method);
+        
             var sendData = {
                 login: '',
                 email: '',
@@ -100,7 +101,7 @@ define([
 
             sendData.email = $(".email").val();
             sendData.password = $(".password").val();
-            //console.log(sendData);
+    
             var strSendData = JSON.stringify(sendData);
             console.log("TADA");
             console.log(strSendData);
@@ -109,10 +110,7 @@ define([
                 url: m_action,
                 contentType:'json', 
                 data: strSendData,
-                //contentType: 'application/json; charset=utf-8',
-                //converters:{"text json":jQuery.parseJSON},
                 dataType:'json',
-                //processData: false,
                 success: function(result, code){
                     console.log(result);
                     if (result.status === 200)
@@ -127,10 +125,22 @@ define([
                     } 
                     else 
                     {
-                       alert(result.data.message);
+                       isItShow = true;
+                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
+                       $('div.login.menu').hide();
+                       $(".informationBg").show();
+
+                       $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg").hide();
+                                $('div.login.menu').show();
+                                isItShow = false;
+                            }
+                       });
+
                        $(".email").val('');
                        $("input:password").val('');
-                       $(".login").val('');
+                       $(".login").val('');              
                     }
                 },
                 error:  function(xhr, str){

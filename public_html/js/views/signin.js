@@ -5,6 +5,8 @@ define([
     Backbone,
     tmpl
 ){
+
+    var isItShow;
     var Signin = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
@@ -59,7 +61,7 @@ define([
                 $(this.el).find(".label__login").css({'color' : "#FF0000"});
             }
         },
-        submitForm: function(e){
+        submitForm: function(e) {
             e.preventDefault();
             $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('.signin_form').attr('method');
@@ -79,6 +81,7 @@ define([
                 data: strSendData,
                 dataType:'json',
                 success: function(result, code){
+                    isItShow = true;
                     console.log(result);
                     if (result.status === 200)
                     {
@@ -90,17 +93,30 @@ define([
                     } 
                     else 
                     {
-                       alert(result.data.message);
+                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
+                       $('div.signin.menu').hide();
+                       $(".informationBg").show();
+
+                       $('body').click(function () {
+                            if ( isItShow ) {
+                                $(".informationBg").hide();
+                                $('div.signin.menu').show();
+                                isItShow = false; 
+                            }
+                        }); 
+
                        $(".password-signin").val('');
-                       $(".login-signin").val('');               
+                       $(".login-signin").val('');
+                             
                     }
                 },
                 error:  function(xhr, str){
                      $('.content').html('Критическая ошибка'); 
                 },
             });
-        }
+        },
 
     });
+
     return new Signin();
 });

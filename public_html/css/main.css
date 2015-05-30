@@ -84,6 +84,26 @@
   top: 45%;
   left: 45%; }
 
+.informationMessage {
+  font-family: 'Open Sans',monospace;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 40%;
+  left: 0; }
+
+.informationBg {
+  display: none;
+  background-color: rgba(0, 0, 255, 0.5);
+  position: absolute;
+  top: 40%;
+  left: 0%;
+  width: 100%;
+  height: 20%;
+  border-radius: 15px; }
+
 .label {
   color: #FFF;
   font-family: 'Open Sans',monospace;
