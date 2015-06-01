@@ -5,11 +5,11 @@ define([
     Backbone,
     tmpl
 ){
-
+    var isItShow;
     var Main = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
-        className: 'menu',
+        className: 'main menu',
         events: { 
                   "click .js-exit": "exitLogin",                
         },
@@ -55,7 +55,19 @@ define([
                     } 
                     else 
                     {
-                       alert(result.data.message);          
+                        isItShow = true;
+                        $('.informationMessage').text(result.data.message+'!');
+                        $('div.main.menu').hide();
+                        $(".informationBg").show();
+
+                        $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg").hide();
+                                $('div.main.menu').show();
+                                isItShow = false;
+                            }
+                        });
+          
                     }
                 },
                 error:  function(xhr, str){

@@ -42,3 +42,33 @@
     @extend .circle;
     background: red;
 }
+
+.informationDevice {
+	@extend .informationBg;
+	display: none;
+}
+
+@media screen and (orientation:portrait) {
+    .circle {
+    }
+
+    .circle__up {
+    	display: none;
+    }
+    .circle__down {
+    	display: none;
+    }
+    .circle__left {
+    	display: none;
+    }
+    .circle__right{
+    	display: none;
+    }
+    .circle__fire{
+    	display: none;
+    }
+
+    .informationDevice {
+    	display: block;
+    }
+}

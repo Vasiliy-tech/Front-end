@@ -94,13 +94,13 @@
   top: 40%;
   left: 0; }
 
-.informationBg {
+.informationBg, .informationDevice {
   display: none;
   background-color: rgba(0, 0, 255, 0.5);
   position: absolute;
   top: 40%;
-  left: 0%;
-  width: 100%;
+  left: 20%;
+  width: 60%;
   height: 20%;
   border-radius: 15px; }
 
@@ -241,5 +241,27 @@
   left: 75%;
   top: 35%;
   background: red; }
+
+.informationDevice {
+  display: none; }
+
+@media screen and (orientation: portrait) {
+  .circle__up {
+    display: none; }
+
+  .circle__down {
+    display: none; }
+
+  .circle__left {
+    display: none; }
+
+  .circle__right {
+    display: none; }
+
+  .circle__fire {
+    display: none; }
+
+  .informationDevice {
+    display: block; } }
 
 /*# sourceMappingURL=main.css.map */

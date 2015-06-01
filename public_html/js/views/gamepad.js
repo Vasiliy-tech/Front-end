@@ -104,8 +104,19 @@ define([
                     } 
                     else 
                     {
+                       isItShow = true;
+                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
+                       $('div.gamepad.menu').hide();
+                       $(".informationBg").show();
 
-                       alert(result.data.message);
+                       $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg").hide();
+                                $('div.gamepad.menu').show();
+                                isItShow = false;
+                            }
+                       });
+                       //alert(result.data.message);
                        ////// TO DO: удали!!!!!!!
                        //window.location.href = '#touchDevice';
                        $(".input__passwordGamepad").val('');

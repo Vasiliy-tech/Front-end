@@ -53,6 +53,7 @@ define([
         },
         touchUp: function (event) {
             console.log('up');
+            //console.log(event.originalEvent);
 
             if (isItNotOpen === true) {
                 isItNotOpen = false;
