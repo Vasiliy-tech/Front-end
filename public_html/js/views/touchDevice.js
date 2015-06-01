@@ -7,6 +7,7 @@ define([
 ){
     // my phone IP change it
     var socketAdress = "ws://192.168.43.123:8080/gameplay";
+    //var socketAdress = "ws://127.0.0.1:8080/gameplay";
     var isItNotOpen = true;
     var socketIsOpen = false;
     var ws;
@@ -73,10 +74,11 @@ define([
             }
 
             var sendData = {
-                action : '1'
+                action : '0'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
+                console.log('send on socket');
                 ws.send(strSendData);
             }
         },
@@ -101,7 +103,7 @@ define([
             }
 
             var sendData = {
-                action : '2'
+                action : '1'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -129,7 +131,7 @@ define([
             }
 
             var sendData = {
-                action : '3'
+                action : '2'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -158,7 +160,7 @@ define([
             }
 
             var sendData = {
-                action : '4'
+                action : '3'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
