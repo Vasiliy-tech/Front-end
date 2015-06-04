@@ -104085,11 +104085,11 @@ define('views/main',[
     Backbone,
     tmpl
 ){
-
+    var isItShow;
     var Main = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
-        className: 'menu',
+        className: 'main menu',
         events: { 
                   "click .js-exit": "exitLogin",                
         },
@@ -104135,7 +104135,19 @@ define('views/main',[
                     } 
                     else 
                     {
-                       alert(result.data.message);          
+                        isItShow = true;
+                        $('.informationMessage').text(result.data.message+'!');
+                        $('div.main.menu').hide();
+                        $(".informationBg").show();
+
+                        $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg").hide();
+                                $('div.main.menu').show();
+                                isItShow = false;
+                            }
+                        });
+          
                     }
                 },
                 error:  function(xhr, str){
@@ -104175,6 +104187,7 @@ define('views/login',[
     Backbone,
     tmpl
 ){
+    var isItShow;
     var Login = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
@@ -104260,7 +104273,7 @@ define('views/login',[
             $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('.login_form').attr('method');
             var m_action = $('.login_form').attr('action');
-            //console.log(m_action, m_method);
+        
             var sendData = {
                 login: '',
                 email: '',
@@ -104270,7 +104283,7 @@ define('views/login',[
 
             sendData.email = $(".email").val();
             sendData.password = $(".password").val();
-            //console.log(sendData);
+    
             var strSendData = JSON.stringify(sendData);
             console.log("TADA");
             console.log(strSendData);
@@ -104279,10 +104292,7 @@ define('views/login',[
                 url: m_action,
                 contentType:'json', 
                 data: strSendData,
-                //contentType: 'application/json; charset=utf-8',
-                //converters:{"text json":jQuery.parseJSON},
                 dataType:'json',
-                //processData: false,
                 success: function(result, code){
                     console.log(result);
                     if (result.status === 200)
@@ -104297,10 +104307,22 @@ define('views/login',[
                     } 
                     else 
                     {
-                       alert(result.data.message);
+                       isItShow = true;
+                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
+                       $('div.login.menu').hide();
+                       $(".informationBg").show();
+
+                       $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg").hide();
+                                $('div.login.menu').show();
+                                isItShow = false;
+                            }
+                       });
+
                        $(".email").val('');
                        $("input:password").val('');
-                       $(".login").val('');
+                       $(".login").val('');              
                     }
                 },
                 error:  function(xhr, str){
@@ -104452,6 +104474,8 @@ define('views/signin',[
     Backbone,
     tmpl
 ){
+
+    var isItShow;
     var Signin = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
@@ -104506,7 +104530,7 @@ define('views/signin',[
                 $(this.el).find(".label__login").css({'color' : "#FF0000"});
             }
         },
-        submitForm: function(e){
+        submitForm: function(e) {
             e.preventDefault();
             $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('.signin_form').attr('method');
@@ -104526,6 +104550,7 @@ define('views/signin',[
                 data: strSendData,
                 dataType:'json',
                 success: function(result, code){
+                    isItShow = true;
                     console.log(result);
                     if (result.status === 200)
                     {
@@ -104537,18 +104562,31 @@ define('views/signin',[
                     } 
                     else 
                     {
-                       alert(result.data.message);
+                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
+                       $('div.signin.menu').hide();
+                       $(".informationBg").show();
+
+                       $('body').click(function () {
+                            if ( isItShow ) {
+                                $(".informationBg").hide();
+                                $('div.signin.menu').show();
+                                isItShow = false; 
+                            }
+                        }); 
+
                        $(".password-signin").val('');
-                       $(".login-signin").val('');               
+                       $(".login-signin").val('');
+                             
                     }
                 },
                 error:  function(xhr, str){
                      $('.content').html('Критическая ошибка'); 
                 },
             });
-        }
+        },
 
     });
+
     return new Signin();
 });
 
@@ -104659,8 +104697,19 @@ define('views/gamepad',[
                     } 
                     else 
                     {
+                       isItShow = true;
+                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
+                       $('div.gamepad.menu').hide();
+                       $(".informationBg").show();
 
-                       alert(result.data.message);
+                       $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg").hide();
+                                $('div.gamepad.menu').show();
+                                isItShow = false;
+                            }
+                       });
+                       //alert(result.data.message);
                        ////// TO DO: удали!!!!!!!
                        //window.location.href = '#touchDevice';
                        $(".input__passwordGamepad").val('');
@@ -104679,7 +104728,7 @@ define('views/gamepad',[
 
     return new Gamepad();
 });
-define('tmpl/touchDevice',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}__fest_buf+=("<div class=\"circle__up\"></div><div class=\"circle__down\"></div><div class=\"circle__left\"></div><div class=\"circle__right\"></div><div class=\"circle__fire\"></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('tmpl/touchDevice',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}__fest_buf+=("<div class=\"informationDevice\"><div class=\"informationMessage\">Flip your device on 90°, please.</div></div><div class=\"circle__up\"></div><div class=\"circle__down\"></div><div class=\"circle__left\"></div><div class=\"circle__right\"></div><div class=\"circle__fire\"></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
 define('views/touchDevice',[
     'backbone',
     'tmpl/touchDevice'
@@ -104689,6 +104738,7 @@ define('views/touchDevice',[
 ){
     // my phone IP change it
     var socketAdress = "ws://192.168.43.123:8080/gameplay";
+    //var socketAdress = "ws://127.0.0.1:8080/gameplay";
     var isItNotOpen = true;
     var socketIsOpen = false;
     var ws;
@@ -104735,6 +104785,7 @@ define('views/touchDevice',[
         },
         touchUp: function (event) {
             console.log('up');
+            //console.log(event.originalEvent);
 
             if (isItNotOpen === true) {
                 isItNotOpen = false;
@@ -104754,10 +104805,11 @@ define('views/touchDevice',[
             }
 
             var sendData = {
-                action : '1'
+                action : '0'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
+                console.log('send on socket');
                 ws.send(strSendData);
             }
         },
@@ -104782,7 +104834,7 @@ define('views/touchDevice',[
             }
 
             var sendData = {
-                action : '2'
+                action : '1'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -104810,7 +104862,7 @@ define('views/touchDevice',[
             }
 
             var sendData = {
-                action : '3'
+                action : '2'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -104839,7 +104891,7 @@ define('views/touchDevice',[
             }
 
             var sendData = {
-                action : '4'
+                action : '3'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {

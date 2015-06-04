@@ -12,7 +12,12 @@ define([
 	var scoreText;
 	var timer;
 	var timerEvent;
-	var queue = [];  
+	var queuePlayer = [];  
+	var queueEnemy = [];  
+	var queueTimer = [];
+	var currentMessageForPlayer;
+	var currentMessageForEnemy;
+	var currentMessageForTimer;  
 	return {
 		init: function(game, position, ws) {
 			gameState = new Phaser.State();
@@ -52,10 +57,16 @@ define([
 				    this.player.animations.add('left', [4,3,2,1,0],10,true);
 				    this.player.animations.add('right', [5,6,7,8,9],10, true);
 				    this.enemy = this.game.add.sprite(this.game.width-32, this.game.height-100,'myhero');
+				    this.enemy.animations.add('right', [5,6,7,8,9],10, true);
+				    this.enemy.animations.add('left', [4,3,2,1,0],10,true);
 			    } else {
-			    	this.player.animations.add('right', [5,6,7,8,9],10, true);
+			    	/*this.player.animations.add('right', [5,6,7,8,9],10, true);
+			    	this.player.animations.add('left', [4,3,2,1,0],10,true);*/
 			    	this.player.animations.add('left', [4,3,2,1,0],10,true);
+				    this.player.animations.add('right', [5,6,7,8,9],10, true);
 			    	this.enemy = this.game.add.sprite(32, this.game.height-100, 'myhero');
+			    	this.enemy.animations.add('left', [4,3,2,1,0],10,true);
+			    	this.enemy.animations.add('right', [5,6,7,8,9],10, true);
 			    }
 			      
 			    this.game.physics.arcade.enable(this.enemy);
@@ -135,16 +146,54 @@ define([
 			    bullet.body.velocity.x = Math.cos(bullet.rotation) * this.BULLET_SPEED;
 			    bullet.body.velocity.y = Math.sin(bullet.rotation) * this.BULLET_SPEED;
 		    };
-
+		    gameState.shootBulletForEnemy = function() {
+		    	if (this.lastBulletForEnemyShotAt === undefined) 
+			        this.lastBulletForEnemyShotAt = 0;
+			    if (this.game.time.now - this.lastBulletForEnemyShotAt < this.SHOT_DELAY) 
+			        return;
+			    this.lastBulletForEnemyShotAt = this.game.time.now;
+			    var bullet = this.bulletPool.getFirstDead();
+			    if (bullet === null || bullet === undefined) 
+			        return;
+			    bullet.revive();
+			    bullet.checkWorldBounds = true;
+			    bullet.outOfBoundsKill = true;           
+			   
+			    if(this.enemy.animations.name == "right") {
+			    	bullet.reset(this.enemy.x+this.enemy.width, this.enemy.y+this.enemy.height/10);
+			    	bullet.rotation = -0.2;
+			    } else {
+			    	bullet.reset(this.enemy.x-this.enemy.width, this.enemy.y+this.enemy.height/10);
+			    	bullet.rotation = Math.PI + 0.2;
+			    }
+			    bullet.body.velocity.x = Math.cos(bullet.rotation) * this.BULLET_SPEED;
+			    bullet.body.velocity.y = Math.sin(bullet.rotation) * this.BULLET_SPEED;
+		    };
+		    ws.onmessage = function(event){
+	    		data = JSON.parse(event.data);
+	    		if(data.status == "sync"){
+	    			queueTimer.push(data);
+	    		} else{
+	    			if ( data.player == position ){
+	    				queuePlayer.push(data);
+	    			} else {
+	    				queueEnemy.push(data);
+	    			}
+	    		}
+	    	}
 		    gameState.update = function() {
-		    	var currentMessage = queue.shift();
+		    	
+		    	
 		    	var sendData = {
 		    		player:'',
-		    		action:''
+		    		action:'',
+		    		x:'',
+		    		y:''
 		    	};
 		    	
 		        this.game.physics.arcade.collide(this.player, this.ground);
 		        this.game.physics.arcade.collide(this.enemy, this.ground);
+		        this.game.physics.arcade.collide(this.player, this.enemy);
 		        this.game.physics.arcade.collide(this.bulletPool, this.ground, function(bullet, ground) {
 		        	this.getExplosion(bullet.x, bullet.y);
 					bullet.kill();
@@ -160,157 +209,105 @@ define([
 
 
 		        if (this.leftInputIsActive()) {
-		        	// sendData.player=position;
-		        	sendData.action=3;
+		        	sendData.action = 3;
+		      		sendData.x = this.player.x;
+		      		sendData.y = this.player.y;
 		        	var jsonData = JSON.stringify(sendData);
-		        	ws.send(jsonData);
-		            
+		        	ws.send(jsonData);     
 		        } else if (this.rightInputIsActive()) {
-		        	// sendData.player=position;
-		        	sendData.action=1;
+		        	sendData.action = 1;
+		        	sendData.x = this.player.x;
+		      		sendData.y = this.player.y;
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
-		            
-
 		        } else if(onTheGround && this.upInputIsActive()){
-		        	// sendData.player=position;
-		        	sendData.action=0;
+		        	sendData.action = 0;
+		        	sendData.x = this.player.x;
+		      		sendData.y = this.player.y;
 		        	var jsonData = JSON.stringify(sendData);
-		        	ws.send(jsonData);
-		            
-		           
+		        	ws.send(jsonData);   
 		        } else if(this.downInputIsActive()){
-		        	// sendData.player=position;
-		        	sendData.action=2;
+		        	sendData.action = 2;
+		        	sendData.x = this.player.x;
+		      		sendData.y = this.player.y;
 		        	var jsonData = JSON.stringify(sendData);
-		        	ws.send(jsonData);
-		            
-		            
+		        	ws.send(jsonData);    
 		        } else if (this.spaceInputIsActive()){
-		        	// sendData.player=position;
-		        	sendData.action=5;
+		        	sendData.action = 5;
+		        	sendData.x = this.player.x;
+		      		sendData.y = this.player.y;
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
-		            
-		        } else { 
-		        	if( (currentMessage === undefined) || (currentMessage.player != position)){
+		        } else {
 
-		        		this.player.animations.stop();
-		            	this.player.body.velocity.x = 0;
-		            	if(this.player.animations.name == "right")
-			           		this.player.frame = 5;
-			           	else
-			           		this.player.frame = 4;
-		        	}
-	        		/*if(data !== undefined){
-	        			if(data.player == position){
-	        				if(data.action == 0){	    
-				    			//console.log(this.player);			
-				    			this.player.body.velocity.y = -this.MAX_SPEED*1.3;
-				    		} else if (data.action == 1){
-				    			this.player.body.velocity.x = this.MAX_SPEED;
-			            		this.player.animations.play('right');
-				    		} else if (data.action == 2){
-				    			this.player.body.velocity.y = this.MAX_SPEED;
-							} else if (data.action == 3){
-								this.player.body.velocity.x = -this.MAX_SPEED;
-			           			this.player.animations.play('left');
-							}
-	        			} else {
-	        				if(data.action == 0){	    
-			    			//console.log(this.player);			
-				    			this.enemy.body.velocity.y=-this.MAX_SPEED*1.3;
-				    		} else if (data.action == 1){
-				    			this.enemy.body.velocity.x = this.MAX_SPEED;
-				    		} else if (data.action == 2){
-				    			this.enemy.body.velocity.y = this.MAX_SPEED;
-							} else if (data.action == 3){
-								this.enemy.body.velocity.x = -this.MAX_SPEED;
-							}
-	        			}
-	        			data=undefined;
-	        		} else {
-	        			this.player.animations.stop();
-		            	this.player.body.velocity.x = 0;
-		            	this.enemy.body.velocity.x = 0;
-		            	if(this.player.animations.name == "right")
-			           		this.player.frame = 5;
-			           	else
-			           		this.player.frame = 4;
-	        		}*/
-	        	}
-	        	ws.onmessage = function(event){
-		    		data = JSON.parse(event.data);
-		    		queue.push(data);
-		    	}
-		    	//console.log(data);
-	        	if(currentMessage !== undefined){
-		        	if(currentMessage.player == position){
-        				if(currentMessage.action == 0){	    
-			    			//console.log(this.player);			
-			    			this.player.body.velocity.y = -this.MAX_SPEED*1.3;
-			    		} else if (currentMessage.action == 1){
-			    			this.player.body.velocity.x = this.MAX_SPEED;
-		            		this.player.animations.play('right');
-			    		} else if (currentMessage.action == 2){
-			    			this.player.body.velocity.y = this.MAX_SPEED;
-						} else if (currentMessage.action == 3){
-							this.player.body.velocity.x = -this.MAX_SPEED;
-		           			this.player.animations.play('left');
-						} else if (currentMessage.action == 5){
-							this.shootBullet();
-						}
-	        		} else if (currentMessage.status == "sync"){
-	        			score = Math.round((/*timerEvent.delay - timer.ms*/currentMessage.time) / 1000);
-			    			
-		    			var minutes = "0" + Math.floor(score / 60);
-				        var seconds = "0" + (score - minutes * 60);
-				        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
-		    			this.game.debug.text(str,2, 18, "#ff0");
-	        		} else {
-	        			if(currentMessage.action == 0){	 
-	        				console.log("Enemy action");   
-		    			//console.log(this.player);			
-			    			this.enemy.body.velocity.y = -this.MAX_SPEED*1.3;
-	
-			    		} else if (currentMessage.action == 1){
-			    			this.enemy.body.velocity.x = this.MAX_SPEED;
-
-			    		} else if (currentMessage.action == 2){
-			    			this.enemy.body.velocity.y = this.MAX_SPEED;
-						} else if (currentMessage.action == 3){
-							this.enemy.body.velocity.x = -this.MAX_SPEED;
-						}	
-	        		} 
-	        		console.log(currentMessage);
-	        	} else {
-	        		this.enemy.body.velocity.x=0;
-	        	}
-
-		    	//console.log(data);
+		        }
+	        	
 		    	
 		        this.bulletPool.forEachAlive(function(bullet) {
 		            bullet.rotation = Math.atan2(bullet.body.velocity.y, bullet.body.velocity.x);
 		        }, this);
 		        
-		    	/*if(data !== undefined)
-			    		if(data.status == "sync"){
-			    			score = Math.round((timerEvent.delay - timer.ms/data.time) / 1000);
-			    			
-			    			var minutes = "0" + Math.floor(score / 60);
-					        var seconds = "0" + (score - minutes * 60);
-					        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
-			    			this.game.debug.text(str,2, 18, "#ff0");
-		    			}*/
+		       
 		    };
 		   
 		    gameState.render = function(){
+		    	currentMessageForPlayer = queuePlayer.shift();
+		    	currentMessageForEnemy = queueEnemy.shift();
+		    	currentMessageForTimer = queueTimer.shift();
 
-		    	// if (timer.running){
-		    		
-		    	// }  else {
-		    		// timer.stop();
-		    	// }
+
+		    	 if(currentMessageForPlayer !== undefined){
+		        	if(currentMessageForPlayer.action == 0){	    		
+		    			this.player.body.velocity.y = -this.MAX_SPEED*1.3;
+		    		} else if (currentMessageForPlayer.action == 1){
+		    			this.player.body.velocity.x = this.MAX_SPEED;
+	            		this.player.animations.play('right');
+		    		} else if (currentMessageForPlayer.action == 2){
+		    			this.player.body.velocity.y = this.MAX_SPEED;
+					} else if (currentMessageForPlayer.action == 3){
+						this.player.body.velocity.x = -this.MAX_SPEED;
+	           			this.player.animations.play('left');
+					} else if (currentMessageForPlayer.action == 5){
+						this.shootBullet();
+					}
+		        } else {
+		        	this.player.animations.stop();
+		            this.player.body.velocity.x = 0;
+	            	if(this.player.animations.name == "right")
+		           		this.player.frame = 5;
+		           	else
+		           		this.player.frame = 4;
+		        }
+		        if(currentMessageForEnemy !== undefined){
+		        	if(currentMessageForEnemy.action == 0){	  		
+		    			this.enemy.body.velocity.y = -this.MAX_SPEED*1.3;
+		    		} else if (currentMessageForEnemy.action == 1){
+		    			this.enemy.body.velocity.x = this.MAX_SPEED;
+		    			this.enemy.animations.play('right');
+		    		} else if (currentMessageForEnemy.action == 2){
+		    			this.enemy.body.velocity.y = this.MAX_SPEED;
+					} else if (currentMessageForEnemy.action == 3){
+						this.enemy.body.velocity.x = -this.MAX_SPEED;
+						this.enemy.animations.play('left');
+					} else if (currentMessageForEnemy.action == 5){
+						this.shootBulletForEnemy();
+					}
+		        } else {
+		        	this.enemy.animations.stop();
+		            this.enemy.body.velocity.x = 0;
+	            	if(this.enemy.animations.name == "right")
+		           		this.enemy.frame = 5;
+		           	else
+		           		this.enemy.frame = 4;
+		        }
+		    	if(currentMessageForTimer !== undefined){
+		    		score = Math.round((currentMessageForTimer.time) / 1000);
+			    			
+	    			var minutes = "0" + Math.floor(score / 60);
+			        var seconds = "0" + (score - minutes * 60);
+			        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
+	    			this.game.debug.text(str,2, 18, "#ff0");
+		    	}
 		    };
 		    gameState.getExplosion = function(x,y){
 		        var explosion = this.explosionGroup.getFirstDead();
