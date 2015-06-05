@@ -19,24 +19,24 @@ define([
         
                   "touchstart .circle__up" : "touchUpStart",
                   "touchend .circle__up" : "touchUpEnd",
-                  "touchmove .circle__up" : "touchUpStart",
-                  "touchcancel .circle__up" : "touchUpStart",
+                  //"touchmove .circle__up" : "touchUpStart",
+                  //"touchcancel .circle__up" : "touchUpStart",
 
                   "touchstart .circle__down" : "touchDownStart",
                   "touchend .circle__down" : "touchDownEnd",
-                  "touchmove .circle__down" : "touchDownStart",
+                  //"touchmove .circle__down" : "touchDownStart",
 
                   "touchstart .circle__left" : "touchLeftStart",
                   "touchend .circle__left" : "touchLeftEnd",
-                  "touchmove .circle__left" : "touchLeftStart",
+                  //"touchmove .circle__left" : "touchLeftStart",
 
                   "touchstart .circle__right" : "touchRightStart",
                   "touchend .circle__right" : "touchRightEnd",
-                  "touchmove .circle__right" : "touchRightStart",
+                  //"touchmove .circle__right" : "touchRightStart",
 
                   "touchstart .circle__fire" : "touchFireStart",
                   "touchend .circle__fire" : "touchFireEnd",
-                  "touchmove .circle__fire" : "touchFireStart",
+                  //"touchmove .circle__fire" : "touchFireStart",
                                  
         },
         initialize: function () {
@@ -80,7 +80,8 @@ define([
             //console.log(event.originalEvent);
 
             var sendData = {
-                action : '0'
+                action : '0',
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -90,13 +91,23 @@ define([
         },
         touchUpEnd: function(event) {
             this.$el.find('div.circle__up').css({'background': 'green'});
+            var sendData = {
+                action : '0',
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                console.log('send on socket');
+                ws.send(strSendData);
+            }
         },
         touchRightStart: function (event) {
             this.$el.find('div.circle__right').css({'background': '#1BF840'});
             console.log('r');
 
             var sendData = {
-                action : '1'
+                action : '1',
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -105,13 +116,22 @@ define([
         },
         touchRightEnd: function(event) {
             this.$el.find('div.circle__right').css({'background': 'green'});
+            var sendData = {
+                action : '1',
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
         },
         touchDownStart: function (event) {
             this.$el.find('div.circle__down').css({'background': '#1BF840'});
             console.log('d');
 
             var sendData = {
-                action : '2'
+                action : '2',
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -121,13 +141,22 @@ define([
         },
         touchDownEnd: function(event) {
             this.$el.find('div.circle__down').css({'background': 'green'});
+            var sendData = {
+                action : '2',
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
         },
         touchLeftStart: function (event) {
             this.$el.find('div.circle__left').css({'background': '#1BF840'});
             console.log('l');
 
             var sendData = {
-                action : '3'
+                action : '3',
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -136,13 +165,22 @@ define([
         },
         touchLeftEnd: function(event) {
             this.$el.find('div.circle__left').css({'background': 'green'});
+            var sendData = {
+                action : '3',
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
         },
         touchFireStart: function (event) {
             this.$el.find('div.circle__fire').css({'background': '#520A05'});
             console.log('f');
 
             var sendData = {
-                action : '5'
+                action : '5',
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -151,6 +189,14 @@ define([
         },
         touchFireEnd: function(event) {
             this.$el.find('div.circle__fire').css({'background': 'red'});
+            var sendData = {
+                action : '5',
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
         }
 
     });
