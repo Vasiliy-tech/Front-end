@@ -42,7 +42,7 @@ define([
             
 		},
 		finished: function(){
-			Game.stopScores();
+			game.state.destroy();
 			console.log("Close socket");
 			ws.close();
 		},
