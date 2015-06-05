@@ -112,7 +112,7 @@ define([
                        $('body').click( function () {
                             if (isItShow) {
                                 $(".informationBg_gamepad").hide();
-                                $('div.alGamepad').show();
+                                $('div.allGamepad').show();
                                 isItShow = false;
                             }
                        });
