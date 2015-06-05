@@ -1,0 +1,5 @@
+<fest:template xmlns:fest="http://fest.mail.ru">
+			<div class="gamepadButton__menu">
+				<a class="gamepadButton__text ">Start Game!</a>
+			</div>
+</fest:template>

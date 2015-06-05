@@ -99,7 +99,8 @@ define([
                         $('a.login__href').addClass('disabled');
                         $('a.start-game__href').removeClass('disabled');
                         ////// TO DO: в случае успеха
-                        window.location.href = '#touchDevice';
+                        //window.location.href = '#touchDevice';
+                        window.location.href = '#gamepadStart';
                         
                     } 
                     else 

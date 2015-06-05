@@ -16,28 +16,27 @@ define([
         tagName: 'div',
         className: 'touchDevice',
         events: { 
-                  "touchstart .touchDevice__button": "showGamepad",
-                  "click .touchDevice__button": "showGamepad",
+        
+                  "touchstart .circle__up" : "touchUpStart",
+                  "touchend .circle__up" : "touchUpEnd",
+                  "touchmove .circle__up" : "touchUpStart",
+                  "touchcancel .circle__up" : "touchUpStart",
 
-                  "touchstart .circle__up" : "touchUp",
-                  "touchend .circle__up" : "touchUp",
-                  "touchmove .circle__up" : "touchUp",
+                  "touchstart .circle__down" : "touchDownStart",
+                  "touchend .circle__down" : "touchDownEnd",
+                  "touchmove .circle__down" : "touchDownStart",
 
-                  "touchstart .circle__down" : "touchDown",
-                  "touchend .circle__down" : "touchDown",
-                  "touchmove .circle__down" : "touchDown",
+                  "touchstart .circle__left" : "touchLeftStart",
+                  "touchend .circle__left" : "touchLeftEnd",
+                  "touchmove .circle__left" : "touchLeftStart",
 
-                  "touchstart .circle__left" : "touchLeft",
-                  "touchend .circle__left" : "touchLeft",
-                  "touchmove .circle__left" : "touchLeft",
+                  "touchstart .circle__right" : "touchRightStart",
+                  "touchend .circle__right" : "touchRightEnd",
+                  "touchmove .circle__right" : "touchRightStart",
 
-                  "touchstart .circle__right" : "touchRight",
-                  "touchend .circle__right" : "touchRight",
-                  "touchmove .circle__right" : "touchRight",
-
-                  "touchstart .circle__fire" : "touchFire",
-                  "touchend .circle__fire" : "touchFire",
-                  "touchmove .circle__fire" : "touchFire",
+                  "touchstart .circle__fire" : "touchFireStart",
+                  "touchend .circle__fire" : "touchFireEnd",
+                  "touchmove .circle__fire" : "touchFireStart",
                                  
         },
         initialize: function () {
@@ -52,13 +51,6 @@ define([
            
             this.trigger('show',this);
             this.$el.show();
-        },
-        hide: function () {
-            this.$el.hide();
-        },
-        touchUp: function (event) {
-            console.log('up');
-            //console.log(event.originalEvent);
 
             if (isItNotOpen === true) {
                 isItNotOpen = false;
@@ -76,6 +68,16 @@ define([
                 socketIsOpen = true;
                }
             }
+
+        },
+        hide: function () {
+            this.$el.hide();
+        },
+        touchUpStart: function (event) {
+            
+            this.$el.find('div.circle__up').css({'background': '#1BF840'});
+            console.log('up');
+            //console.log(event.originalEvent);
 
             var sendData = {
                 action : '0'
@@ -86,25 +88,12 @@ define([
                 ws.send(strSendData);
             }
         },
-        touchRight: function (event) {
+        touchUpEnd: function(event) {
+            this.$el.find('div.circle__up').css({'background': 'green'});
+        },
+        touchRightStart: function (event) {
+            this.$el.find('div.circle__right').css({'background': '#1BF840'});
             console.log('r');
-
-            if (isItNotOpen === true) {
-                isItNotOpen = false;
-
-                function sleep(ms) {
-                    ms += new Date().getTime();
-                    while (new Date() < ms) {}
-                }
-                
-                ws = new WebSocket(socketAdress);
-                console.log("touch socket create");
-                var slp = sleep(300);
-                ws.onopen = function (event) {
-                console.log("touch socket open");
-                socketIsOpen = true;
-               }
-            }
 
             var sendData = {
                 action : '1'
@@ -114,25 +103,12 @@ define([
                 ws.send(strSendData);
             }
         },
-        touchDown: function (event) {
+        touchRightEnd: function(event) {
+            this.$el.find('div.circle__right').css({'background': 'green'});
+        },
+        touchDownStart: function (event) {
+            this.$el.find('div.circle__down').css({'background': '#1BF840'});
             console.log('d');
-
-            if (isItNotOpen === true) {
-                isItNotOpen = false;
-
-                function sleep(ms) {
-                    ms += new Date().getTime();
-                    while (new Date() < ms) {}
-                }
-                
-                ws = new WebSocket(socketAdress);
-                console.log("touch socket create");
-                var slp = sleep(300);
-                ws.onopen = function (event) {
-                console.log("touch socket open");
-                socketIsOpen = true;
-               }
-            }
 
             var sendData = {
                 action : '2'
@@ -143,25 +119,12 @@ define([
             }
           
         },
-        touchLeft: function (event) {
+        touchDownEnd: function(event) {
+            this.$el.find('div.circle__down').css({'background': 'green'});
+        },
+        touchLeftStart: function (event) {
+            this.$el.find('div.circle__left').css({'background': '#1BF840'});
             console.log('l');
-
-            if (isItNotOpen === true) {
-                isItNotOpen = false;
-
-                function sleep(ms) {
-                    ms += new Date().getTime();
-                    while (new Date() < ms) {}
-                }
-                
-                ws = new WebSocket(socketAdress);
-                console.log("touch socket create");
-                var slp = sleep(300);
-                ws.onopen = function (event) {
-                console.log("touch socket open");
-                socketIsOpen = true;
-               }
-            }
 
             var sendData = {
                 action : '3'
@@ -171,25 +134,12 @@ define([
                 ws.send(strSendData);
             }
         },
-        touchFire: function (event) {
+        touchLeftEnd: function(event) {
+            this.$el.find('div.circle__left').css({'background': 'green'});
+        },
+        touchFireStart: function (event) {
+            this.$el.find('div.circle__fire').css({'background': '#520A05'});
             console.log('f');
-
-          if (isItNotOpen === true) {
-                isItNotOpen = false;
-
-                function sleep(ms) {
-                    ms += new Date().getTime();
-                    while (new Date() < ms) {}
-                }
-                
-                ws = new WebSocket(socketAdress);
-                console.log("touch socket create");
-                var slp = sleep(300);
-                ws.onopen = function (event) {
-                console.log("touch socket open");
-                socketIsOpen = true;
-               }
-            }
 
             var sendData = {
                 action : '5'
@@ -199,9 +149,9 @@ define([
                 ws.send(strSendData);
             }
         },
-
-        showGamepad: function(event) {
-        },
+        touchFireEnd: function(event) {
+            this.$el.find('div.circle__fire').css({'background': 'red'});
+        }
 
     });
     return new TouchDevice();
