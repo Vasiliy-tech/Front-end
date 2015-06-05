@@ -1,5 +1,8 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-	<div >
+	<div class = "informationBg_gamepad">
+		<div class = "informationMessage_gamepad"> ds</div>
+    </div>
+	<div class = "allGamepad">
 		<div class="button__top">
 				<p class="logo"> PvPTowerDefence </p>
 		</div>

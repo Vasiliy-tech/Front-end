@@ -44,7 +44,14 @@
 }
 
 .informationDevice {
-	@extend .informationBg;
+	display: none;
+    background-color: rgba(0,0,255,0.5);
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    height: 20%;
+    border-radius: 15px;
 	display: none;
 }
 
@@ -71,4 +78,41 @@
     .informationDevice {
     	display: block;
     }
+
+    .touchDevice__button {
+        display: block;
+    }    
+}
+
+
+.touchDevice__button {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    width: 30%;
+    height: 20%;
+    border-radius: 15px;
+    
+}
+
+.touchDevice__button_textButton{
+    font-family: 'Open Sans',monospace;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 40%;
+    left: 0;
+}
+
+.informationDevice__informationMessage {
+    font-family: 'Open Sans',monospace;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 40%;
+    left: 0;
 }

@@ -16,6 +16,9 @@ define([
         tagName: 'div',
         className: 'touchDevice',
         events: { 
+                  "touchstart .touchDevice__button": "showGamepad",
+                  "click .touchDevice__button": "showGamepad",
+
                   "touchstart .circle__up" : "touchUp",
                   "touchend .circle__up" : "touchUp",
                   "touchmove .circle__up" : "touchUp",
@@ -46,6 +49,7 @@ define([
             return this;
         },
         show: function () {
+           
             this.trigger('show',this);
             this.$el.show();
         },
@@ -194,6 +198,9 @@ define([
             if (socketIsOpen === true) {
                 ws.send(strSendData);
             }
+        },
+
+        showGamepad: function(event) {
         },
 
     });

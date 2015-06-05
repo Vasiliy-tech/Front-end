@@ -56,14 +56,14 @@ define([
                     else 
                     {
                         isItShow = true;
-                        $('.informationMessage').text(result.data.message+'!');
-                        $('div.main.menu').hide();
-                        $(".informationBg").show();
+                        $('.informationMessage_main').text(result.data.message+'!');
+                        $('div.allMain').hide();
+                        $(".informationBg_main").show();
 
                         $('body').click( function () {
                             if (isItShow) {
-                                $(".informationBg").hide();
-                                $('div.main.menu').show();
+                                $(".informationBg_main").hide();
+                                $('div.allMain').show();
                                 isItShow = false;
                             }
                         });

@@ -93,14 +93,14 @@ define([
                     } 
                     else 
                     {
-                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
-                       $('div.signin.menu').hide();
-                       $(".informationBg").show();
+                       $('.informationMessage_signin').text(result.data.message+'!'+' Please try again!');
+                       $('div.allSignin').hide();
+                       $(".informationBg_signin").show();
 
                        $('body').click(function () {
                             if ( isItShow ) {
-                                $(".informationBg").hide();
-                                $('div.signin.menu').show();
+                                $(".informationBg_signin").hide();
+                                $('div.allSignin').show();
                                 isItShow = false; 
                             }
                         }); 

@@ -94,14 +94,14 @@
   top: 40%;
   left: 0; }
 
-.informationBg, .informationDevice {
+.informationBg {
   display: none;
   background-color: rgba(0, 0, 255, 0.5);
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 20%;
   width: 60%;
-  height: 20%;
+  height: 40%;
   border-radius: 15px; }
 
 .label {
@@ -243,6 +243,14 @@
   background: red; }
 
 .informationDevice {
+  display: none;
+  background-color: rgba(0, 0, 255, 0.5);
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  width: 80%;
+  height: 20%;
+  border-radius: 15px;
   display: none; }
 
 @media screen and (orientation: portrait) {
@@ -262,6 +270,116 @@
     display: none; }
 
   .informationDevice {
+    display: block; }
+
+  .touchDevice__button {
     display: block; } }
+.touchDevice__button {
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  width: 30%;
+  height: 20%;
+  border-radius: 15px; }
+
+.touchDevice__button_textButton {
+  font-family: 'Open Sans',monospace;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 40%;
+  left: 0; }
+
+.informationDevice__informationMessage {
+  font-family: 'Open Sans',monospace;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 40%;
+  left: 0; }
+
+.informationMessage_login {
+  font-family: 'Open Sans',monospace;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 40%;
+  left: 0; }
+
+.informationBg_login {
+  display: none;
+  background-color: rgba(0, 0, 255, 0.5);
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 40%;
+  border-radius: 15px; }
+
+.informationMessage_signin {
+  font-family: 'Open Sans',monospace;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 40%;
+  left: 0; }
+
+.informationBg_signin {
+  display: none;
+  background-color: rgba(0, 0, 255, 0.5);
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 40%;
+  border-radius: 15px; }
+
+.informationMessage_main {
+  font-family: 'Open Sans',monospace;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 40%;
+  left: 0; }
+
+.informationBg_main {
+  display: none;
+  background-color: rgba(0, 0, 255, 0.5);
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 40%;
+  border-radius: 15px; }
+
+.informationMessage_gamepad {
+  font-family: 'Open Sans',monospace;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 40%;
+  left: 0; }
+
+.informationBg_gamepad {
+  display: none;
+  background-color: rgba(0, 0, 255, 0.5);
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 40%;
+  border-radius: 15px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -126,14 +126,14 @@ define([
                     else 
                     {
                        isItShow = true;
-                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
-                       $('div.login.menu').hide();
-                       $(".informationBg").show();
+                       $('.informationMessage_login').text(result.data.message+'!'+' Please try again!');
+                       $('div.allLogin').hide();
+                       $(".informationBg_login").show();
 
                        $('body').click( function () {
                             if (isItShow) {
-                                $(".informationBg").hide();
-                                $('div.login.menu').show();
+                                $(".informationBg_login").hide();
+                                $('div.allLogin').show();
                                 isItShow = false;
                             }
                        });

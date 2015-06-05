@@ -1,5 +1,9 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<div class = "informationBg_main">
+		<div class = "informationMessage_main"> ds</div>
+    </div>
 	
+	<div class = "allMain">
 		<div class="button__top">
 			<p class="logo"> NotPvPTowerDefence </p>
 		</div>
@@ -21,5 +25,5 @@
 		<div class="js-exit button__menu ">
 			<a href="#" class="textButton exit__href">Exit</a>
 		</div>
-	
+	</div>
 </fest:template>

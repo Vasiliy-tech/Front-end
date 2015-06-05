@@ -105,14 +105,14 @@ define([
                     else 
                     {
                        isItShow = true;
-                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
-                       $('div.gamepad.menu').hide();
-                       $(".informationBg").show();
+                       $('.informationMessage_gamepad').text(result.data.message+'!'+' Please try again!');
+                       $('div.allGamepad').hide();
+                       $(".informationBg_gamepad").show();
 
                        $('body').click( function () {
                             if (isItShow) {
-                                $(".informationBg").hide();
-                                $('div.gamepad.menu').show();
+                                $(".informationBg_gamepad").hide();
+                                $('div.alGamepad').show();
                                 isItShow = false;
                             }
                        });
