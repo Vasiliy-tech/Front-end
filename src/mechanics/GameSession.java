@@ -58,21 +58,16 @@ public class GameSession {
         return countStep;
     }
 
+    public void counterToZero() {
+        countStep = 0;
+    }
+
     public int makeStep() {
         return ++countStep;
     }
 
     public GameResult getWinner() {
-/*
-        // Заглушка
-        Random rand = new Random();
-        int nextMap = rand.nextInt(1);
-        if (nextMap == 0) {
-            winner = GameResult.FirstWon;
-        } else {
-            winner = GameResult.SecondWon;
-        }
-*/
+
         if (first.getHealth() > second.getHealth())
             winner = GameResult.FirstWon;
         if (second.getHealth() > first.getHealth())

@@ -25,12 +25,12 @@ public final class GameMechanicsImpl implements GameMechanics {
     private final MessageSystem messageSystem;
 
     private final int stepTime;
-
+    final private int syncFrequency;
     final private int gameTime;
     final private int weight;
     final private int minDelta;
-
-    final private int damage = 10;
+    final private long deltaPressed;
+    final private int damage;
     final private ArrayList<GameMap> maps;
 
     final private Map<Id <GameUser>, GameSession> nameToGame = new HashMap<>();
@@ -51,6 +51,9 @@ public final class GameMechanicsImpl implements GameMechanics {
         weight = settings.getWeight();
         minDelta = settings.getMinDelta();
         maps = settings.getMaps();
+        syncFrequency = settings.getSyncFrequency();
+        deltaPressed = settings.getDeltaPressed();
+        damage = settings.getDamage();
         stepTime = ((ThreadsSettings)ResourceFactory.instance().getResource("threadsSettings")).getGMTimeStep();
     }
 
@@ -58,12 +61,18 @@ public final class GameMechanicsImpl implements GameMechanics {
     public void run() {
         long startTime = (new Date()).getTime();
         while (true){
-            createSessions();
-            gmStep();
-            messageSystem.execForAbonent(this);
             try {
-                Thread.sleep(stepTime - (new Date().getTime() - startTime) % stepTime);
-            } catch (InterruptedException e) {
+                createSessions();
+                gmStep();
+                messageSystem.execForAbonent(this);
+                try {
+                    Thread.sleep(stepTime - (new Date().getTime() - startTime) % stepTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } catch (Exception e) {
+                logger.error("I'll never die!");
+                logger.error(e);
                 e.printStackTrace();
             }
         }
@@ -113,27 +122,54 @@ public final class GameMechanicsImpl implements GameMechanics {
             return;
         }
 
-        if (message.containsKey("action")) {
-            myUser.getCoordinate().setXY((double)message.get("x"), (double)message.get("y"));
+        try {
+            if (message.containsKey("action")) {
+                GameUser opponent = myGameSession.getEnemy(myUser.getMyPosition());
 
-            GameUser opponent = myGameSession.getEnemy(myUser.getMyPosition());
+                if (message.containsKey("touchEvent")) {
+                    String touchEvent = (String) message.get("touchEvent");
+                    if (touchEvent.equals("touchStart")) {
+                        myUser.press(((Number) message.get("action")).intValue());
+                        message.remove("touchEvent");
+                    } else {
+                        myUser.release();
+                    }
+                }
 
-            message.put("player", myUser.getMyPosition());
+                message.put("player", myUser.getMyPosition());
 
-            message.remove("x");
-            message.remove("y");
+                Address to = messageSystem.getAddressService().getWebSocketServiceAddress();
+                messageSystem.sendMessage(new MessageAction(address, to, id, message));
+                messageSystem.sendMessage(new MessageAction(address, to, opponent.getId(), message));
+            }
+
+            if (message.containsKey("check")) {
+                myUser.getCoordinate().setXY(((Number) message.get("x")).doubleValue(), ((Number) message.get("y")).doubleValue());
+            }
+
+            if (message.containsKey("fire")) {
+                if (myUser.reduceHealth(damage) <= 0) {
+                    finishGame(myGameSession);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("Bad json");
+        }
+    }
+
+    private void sendPressedForUser(GameUser first, GameUser second) {
+        GameDirection temp;
+        if ((temp = first.getDirection()) != GameDirection.None && (new Date().getTime() - first.getTime()) > deltaPressed) {
+            first.appendTime(deltaPressed);
+
+            JSONObject message = new JSONObject();
+            message.put("action", temp.ordinal());
+            message.put("player", first.getMyPosition());
 
             Address to = messageSystem.getAddressService().getWebSocketServiceAddress();
-            messageSystem.sendMessage(new MessageAction(address, to, id, message));
-            messageSystem.sendMessage(new MessageAction(address, to, opponent.getId(), message));
-        } else {
-            logger.info(LoggerMessages.onMessage(), id, message.toString());
-        }
-
-        if (message.containsKey("fire")) {
-            if (myUser.reduceHealth(damage) <= 0) {
-                finishGame(myGameSession);
-            }
+            messageSystem.sendMessage(new MessageAction(address, to, first.getId(), message));
+            messageSystem.sendMessage(new MessageAction(address, to, second.getId(), message));
         }
     }
 
@@ -141,8 +177,17 @@ public final class GameMechanicsImpl implements GameMechanics {
         for (GameSession session : allSessions) {
             if (!session.isFinished()) {
                 session.makeStep();
-                if (session.getCountStep() % 5 == 0)
+
+                GameUser first = session.getFirst();
+                GameUser second = session.getSecond();
+
+                sendPressedForUser(first, second);
+                sendPressedForUser(second, first);
+
+                if (session.getCountStep() == (syncFrequency / stepTime) ) {
                     sendSync(session);
+                    session.counterToZero();
+                }
                 if (session.getSessionTime() > gameTime) {
                     finishGame(session);
                 }

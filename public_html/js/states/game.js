@@ -15,9 +15,16 @@ define([
 	var queuePlayer = [];  
 	var queueEnemy = [];  
 	var queueTimer = [];
+	var shootingPlayer = [];
+	var shootingEnemy = [];
 	var currentMessageForPlayer;
 	var currentMessageForEnemy;
-	var currentMessageForTimer;  
+	var currentMessageForTimer; 
+	var sendCoord = {
+		check: '',
+ 		x: '',
+ 		y:'',
+	};
 	return {
 		init: function(game, position, ws) {
 			gameState = new Phaser.State();
@@ -184,11 +191,14 @@ define([
 		    gameState.update = function() {
 		    	
 		    	
+		    	sendCoord.x = this.player.x;
+		    	sendCoord.y = this.player.y;
+
+		    	var jsonCoord = JSON.stringify(sendCoord);
+		    	ws.send(jsonCoord);
+
 		    	var sendData = {
-		    		player:'',
 		    		action:'',
-		    		x:'',
-		    		y:''
 		    	};
 		    	
 		        this.game.physics.arcade.collide(this.player, this.ground);
@@ -210,32 +220,27 @@ define([
 
 		        if (this.leftInputIsActive()) {
 		        	sendData.action = 3;
-		      		sendData.x = this.player.x;
-		      		sendData.y = this.player.y;
+		      		
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);     
 		        } else if (this.rightInputIsActive()) {
 		        	sendData.action = 1;
-		        	sendData.x = this.player.x;
-		      		sendData.y = this.player.y;
+		        	
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
 		        } else if(onTheGround && this.upInputIsActive()){
 		        	sendData.action = 0;
-		        	sendData.x = this.player.x;
-		      		sendData.y = this.player.y;
+		        	
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);   
 		        } else if(this.downInputIsActive()){
 		        	sendData.action = 2;
-		        	sendData.x = this.player.x;
-		      		sendData.y = this.player.y;
+		        	
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);    
 		        } else if (this.spaceInputIsActive()){
 		        	sendData.action = 5;
-		        	sendData.x = this.player.x;
-		      		sendData.y = this.player.y;
+		        	
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
 		        } else {
@@ -307,6 +312,19 @@ define([
 			        var seconds = "0" + (score - minutes * 60);
 			        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
 	    			this.game.debug.text(str,2, 18, "#ff0");
+	    			console.log(currentMessageForTimer.firstPlayer);
+	    			console.log(currentMessageForTimer.secondPlayer);
+	    			if (position == currentMessageForTimer.firstPlayer.position){
+	    				this.player.x  = currentMessageForTimer.firstPlayer.x;
+	    				this.player.y  = currentMessageForTimer.firstPlayer.y;
+	    				this.enemy.x  = currentMessageForTimer.secondPlayer.x;
+	    				this.enemy.y  = currentMessageForTimer.secondPlayer.y;
+	    			} else {
+	    				this.player.x  = currentMessageForTimer.secondPlayer.x;
+	    				this.player.y  = currentMessageForTimer.secondPlayer.y;
+	    				this.enemy.x  = currentMessageForTimer.firstPlayer.x;
+	    				this.enemy.y  = currentMessageForTimer.firstPlayer.y;
+	    			}
 		    	}
 		    };
 		    gameState.getExplosion = function(x,y){
