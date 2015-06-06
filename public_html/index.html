@@ -34,7 +34,11 @@
 
 		
 	    </div>
-	     <script data-main="js/main2" src="js/lib/require.js"></script>
-	    <script src="//localhost:35729/livereload.js"></script>
+	     <!--<script data-main="js/main2" src="js/lib/require.js"></script>
+	    <script src="//localhost:35729/livereload.js"></script> -->
+	    <script src="js/build.min.js"></script>
+	     <script>
+	    require(['main2'], function(){});
+	    </script>
 	</body>
 </html>
