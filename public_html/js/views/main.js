@@ -30,6 +30,30 @@ define([
             return this;
         },
         show: function () {
+            $.ajax({
+                type: 'GET',
+                url: '/api/v1/auth/check',
+                success: function(result, code){
+                    console.log(result);
+                    if (result.status === 200)
+                    {
+                        $('.autorizationLabel').text("Hello " + result.data.login + "!");
+                        $('.autorizationLabel').show();
+                        $('a.signin__href').addClass('disabled');
+                        $('a.login__href').addClass('disabled');
+                        $('a.start-game__href').removeClass('disabled');
+                        localStorage.clear();
+                    
+                    } 
+                    else 
+                    {
+          
+                    }
+                },
+                error:  function(xhr, str){
+                     $('.content').html('Критическая ошибка'); 
+                },
+            });
             this.trigger('show',this);
             this.$el.show();
         },

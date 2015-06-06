@@ -52,7 +52,8 @@ define([
             var password_pattern = /[\W]/;
             var isItCorrectlyPassword = password_pattern.test(password);
 
-            var myLogin = $(this.el).find(".input .login").val()
+            var myLogin = $(this.el).find(".input.login").val()
+            //alert(myLogin);
             var myLogin_pattern = /[\W]/; 
             var isItCorrectlyLogin = myLogin_pattern.test(myLogin);
 
@@ -161,7 +162,7 @@ define([
                 login:'',
                 email:''
             }
-            sendData.login=$(".input .login").val();
+            sendData.login=$(".input.login").val();
             sendData.email=$(".email").val();
             this.setJSON("signup",sendData);
         }

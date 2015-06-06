@@ -80,24 +80,24 @@ define([
             //console.log(event.originalEvent);
 
             var sendData = {
-                action : '0',
+                action : 0,
                 touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
-                console.log('send on socket');
+                console.log('send on socket start');
                 ws.send(strSendData);
             }
         },
         touchUpEnd: function(event) {
             this.$el.find('div.circle__up').css({'background': 'green'});
             var sendData = {
-                action : '0',
+                action : 0,
                 touchEvent: "touchEnd"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
-                console.log('send on socket');
+                console.log('send on socket end');
                 ws.send(strSendData);
             }
         },
@@ -106,7 +106,7 @@ define([
             console.log('r');
 
             var sendData = {
-                action : '1',
+                action : 1,
                 touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
@@ -117,7 +117,7 @@ define([
         touchRightEnd: function(event) {
             this.$el.find('div.circle__right').css({'background': 'green'});
             var sendData = {
-                action : '1',
+                action : 1,
                 touchEvent: "touchEnd"
             };
             var strSendData = JSON.stringify(sendData);
@@ -130,7 +130,7 @@ define([
             console.log('d');
 
             var sendData = {
-                action : '2',
+                action : 2,
                 touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
@@ -142,7 +142,7 @@ define([
         touchDownEnd: function(event) {
             this.$el.find('div.circle__down').css({'background': 'green'});
             var sendData = {
-                action : '2',
+                action : 2,
                 touchEvent: "touchEnd"
             };
             var strSendData = JSON.stringify(sendData);
@@ -155,7 +155,7 @@ define([
             console.log('l');
 
             var sendData = {
-                action : '3',
+                action : 3,
                 touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
@@ -166,7 +166,7 @@ define([
         touchLeftEnd: function(event) {
             this.$el.find('div.circle__left').css({'background': 'green'});
             var sendData = {
-                action : '3',
+                action : 3,
                 touchEvent: "touchEnd"
             };
             var strSendData = JSON.stringify(sendData);
@@ -179,7 +179,7 @@ define([
             console.log('f');
 
             var sendData = {
-                action : '5',
+                action : 5,
                 touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
@@ -190,7 +190,7 @@ define([
         touchFireEnd: function(event) {
             this.$el.find('div.circle__fire').css({'background': 'red'});
             var sendData = {
-                action : '5',
+                action : 5,
                 touchEvent: "touchEnd"
             };
             var strSendData = JSON.stringify(sendData);

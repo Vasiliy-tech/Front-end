@@ -282,7 +282,7 @@ define([
 							this.enemy.body.velocity.x = -this.MAX_SPEED;
 						}	
 	        		} 
-	        		console.log(currentMessage);
+	        		//console.log(currentMessage);
 	        	} else {
 	        		this.enemy.body.velocity.x=0;
 	        	}

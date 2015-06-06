@@ -34,7 +34,9 @@
 }
 
 .gamepadButton__menu {
-	@extend .gamepadButton;
+	margin: auto;
+	position: absolute;
+    border-radius: 5px;
 	background-color:#4A4947;
     margin-bottom: 15px;
     top: 32.5%;
