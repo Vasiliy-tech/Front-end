@@ -103598,14 +103598,28 @@ define('states/game',[
 	var scoreText;
 	var timer;
 	var timerEvent;
-	var queue = [];  
+	var flag = false;
+	var queuePlayer = [];  
+	var queueEnemy = [];  
+	var queueTimer = [];
+	var shootingPlayer = [];
+	var shootingEnemy = [];
+	var currentMessageForPlayer;
+	var currentMessageForEnemy;
+	var currentMessageForTimer; 
+	var sendCoord = {
+		check: '',
+ 		x: '',
+ 		y:'',
+	};
+	var sendShoot = {
+		fire:'success'
+	}
 	return {
 		init: function(game, position, ws) {
 			gameState = new Phaser.State();
 			function minusScore(){
-			    	score -= 1;
-	    			scoreText.text = 'Score: ' + score;
-	    			console.log(score);
+			   
 			 }
 			gameState.create = function() {
 		        this.game.add.sprite(0,0,'background');
@@ -103638,10 +103652,14 @@ define('states/game',[
 				    this.player.animations.add('left', [4,3,2,1,0],10,true);
 				    this.player.animations.add('right', [5,6,7,8,9],10, true);
 				    this.enemy = this.game.add.sprite(this.game.width-32, this.game.height-100,'myhero');
+				    this.enemy.animations.add('right', [5,6,7,8,9],10, true);
+				    this.enemy.animations.add('left', [4,3,2,1,0],10,true);
 			    } else {
-			    	this.player.animations.add('right', [5,6,7,8,9],10, true);
 			    	this.player.animations.add('left', [4,3,2,1,0],10,true);
+				    this.player.animations.add('right', [5,6,7,8,9],10, true);
 			    	this.enemy = this.game.add.sprite(32, this.game.height-100, 'myhero');
+			    	this.enemy.animations.add('left', [4,3,2,1,0],10,true);
+			    	this.enemy.animations.add('right', [5,6,7,8,9],10, true);
 			    }
 			      
 			    this.game.physics.arcade.enable(this.enemy);
@@ -103721,187 +103739,202 @@ define('states/game',[
 			    bullet.body.velocity.x = Math.cos(bullet.rotation) * this.BULLET_SPEED;
 			    bullet.body.velocity.y = Math.sin(bullet.rotation) * this.BULLET_SPEED;
 		    };
-
+		    gameState.shootBulletForEnemy = function() {
+		    	if (this.lastBulletForEnemyShotAt === undefined) 
+			        this.lastBulletForEnemyShotAt = 0;
+			    if (this.game.time.now - this.lastBulletForEnemyShotAt < this.SHOT_DELAY) 
+			        return;
+			    this.lastBulletForEnemyShotAt = this.game.time.now;
+			    var bullet = this.bulletPool.getFirstDead();
+			    if (bullet === null || bullet === undefined) 
+			        return;
+			    bullet.revive();
+			    bullet.checkWorldBounds = true;
+			    bullet.outOfBoundsKill = true;           
+			   
+			    if(this.enemy.animations.name == "right") {
+			    	bullet.reset(this.enemy.x+this.enemy.width, this.enemy.y+this.enemy.height/10);
+			    	bullet.rotation = -0.2;
+			    } else {
+			    	bullet.reset(this.enemy.x-this.enemy.width, this.enemy.y+this.enemy.height/10);
+			    	bullet.rotation = Math.PI + 0.2;
+			    }
+			    bullet.body.velocity.x = Math.cos(bullet.rotation) * this.BULLET_SPEED;
+			    bullet.body.velocity.y = Math.sin(bullet.rotation) * this.BULLET_SPEED;
+		    };
+		    ws.onmessage = function(event){
+	    		data = JSON.parse(event.data);
+	    		if(data.status == "sync"){
+	    			queueTimer.push(data);
+	    		} else if(data.status == "finish"){
+	    			game.state.start('GameOver',true,false,ws,position,data.result);
+	    			
+	    		} else {
+	    			if ( data.player == position ){
+	    				queuePlayer.push(data);
+	    			} else {
+	    				queueEnemy.push(data);
+	    			}
+	    		}
+	    	}
 		    gameState.update = function() {
-		    	var currentMessage = queue.shift();
+		    	
+		    	
+		    	sendCoord.x = this.player.x;
+		    	sendCoord.y = this.player.y;
+
+		    	var jsonCoord = JSON.stringify(sendCoord);
+		    	ws.send(jsonCoord);
+
 		    	var sendData = {
-		    		player:'',
-		    		action:''
+		    		action:'',
 		    	};
 		    	
 		        this.game.physics.arcade.collide(this.player, this.ground);
 		        this.game.physics.arcade.collide(this.enemy, this.ground);
+		        this.game.physics.arcade.collide(this.player, this.enemy);
 		        this.game.physics.arcade.collide(this.bulletPool, this.ground, function(bullet, ground) {
 		        	this.getExplosion(bullet.x, bullet.y);
 					bullet.kill();
 		   		}, null, this);
 		        this.game.physics.arcade.collide(this.bulletPool, this.enemy, function(bullet, enemy) {
 		          	this.getExplosion(bullet.x, bullet.y);
-		            bullet.kill();
-		            enemy.kill();
+		            //bullet.kill();
+		            //enemy.kill();
+		        }, null, this);
+		        this.game.physics.arcade.collide(this.bulletPool, this.player, function(bullet, player) {
+		          	
+		          	this.getExplosion(bullet.x, bullet.y);
+		          	if (flag){
+		          		var jsonShoot = JSON.stringify(sendShoot);
+		          		console.log(jsonShoot);
+		            	ws.send(jsonShoot);
+		            	flag = false;
+		          	}
+		            //bullet.kill();
+		  
 		        }, null, this);
 		        var onTheGround = this.player.body.touching.down;
-		        
 
 
 
 		        if (this.leftInputIsActive()) {
-		        	// sendData.player=position;
-		        	sendData.action=3;
+		        	sendData.action = 3;
+		      		
 		        	var jsonData = JSON.stringify(sendData);
-		        	ws.send(jsonData);
-		            
+		        	ws.send(jsonData);     
 		        } else if (this.rightInputIsActive()) {
-		        	// sendData.player=position;
-		        	sendData.action=1;
+		        	sendData.action = 1;
+		        	
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
-		            
-
 		        } else if(onTheGround && this.upInputIsActive()){
-		        	// sendData.player=position;
-		        	sendData.action=0;
+		        	sendData.action = 0;
+		        	
 		        	var jsonData = JSON.stringify(sendData);
-		        	ws.send(jsonData);
-		            
-		           
+		        	ws.send(jsonData);   
 		        } else if(this.downInputIsActive()){
-		        	// sendData.player=position;
-		        	sendData.action=2;
+		        	sendData.action = 2;
+		        	
 		        	var jsonData = JSON.stringify(sendData);
-		        	ws.send(jsonData);
-		            
-		            
+		        	ws.send(jsonData);    
 		        } else if (this.spaceInputIsActive()){
-		        	// sendData.player=position;
-		        	sendData.action=5;
+		        	sendData.action = 5;
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
-		            
-		        } else { 
-		        	if( (currentMessage === undefined) || (currentMessage.player != position)){
+		        } else {
 
-		        		this.player.animations.stop();
-		            	this.player.body.velocity.x = 0;
-		            	if(this.player.animations.name == "right")
-			           		this.player.frame = 5;
-			           	else
-			           		this.player.frame = 4;
-		        	}
-	        		/*if(data !== undefined){
-	        			if(data.player == position){
-	        				if(data.action == 0){	    
-				    			//console.log(this.player);			
-				    			this.player.body.velocity.y = -this.MAX_SPEED*1.3;
-				    		} else if (data.action == 1){
-				    			this.player.body.velocity.x = this.MAX_SPEED;
-			            		this.player.animations.play('right');
-				    		} else if (data.action == 2){
-				    			this.player.body.velocity.y = this.MAX_SPEED;
-							} else if (data.action == 3){
-								this.player.body.velocity.x = -this.MAX_SPEED;
-			           			this.player.animations.play('left');
-							}
-	        			} else {
-	        				if(data.action == 0){	    
-			    			//console.log(this.player);			
-				    			this.enemy.body.velocity.y=-this.MAX_SPEED*1.3;
-				    		} else if (data.action == 1){
-				    			this.enemy.body.velocity.x = this.MAX_SPEED;
-				    		} else if (data.action == 2){
-				    			this.enemy.body.velocity.y = this.MAX_SPEED;
-							} else if (data.action == 3){
-								this.enemy.body.velocity.x = -this.MAX_SPEED;
-							}
-	        			}
-	        			data=undefined;
-	        		} else {
-	        			this.player.animations.stop();
-		            	this.player.body.velocity.x = 0;
-		            	this.enemy.body.velocity.x = 0;
-		            	if(this.player.animations.name == "right")
-			           		this.player.frame = 5;
-			           	else
-			           		this.player.frame = 4;
-	        		}*/
-	        	}
-	        	ws.onmessage = function(event){
-		    		data = JSON.parse(event.data);
-		    		queue.push(data);
-		    	}
-		    	//console.log(data);
-	        	if(currentMessage !== undefined){
-		        	if(currentMessage.player == position){
-        				if(currentMessage.action == 0){	    
-			    			//console.log(this.player);			
-			    			this.player.body.velocity.y = -this.MAX_SPEED*1.3;
-			    		} else if (currentMessage.action == 1){
-			    			this.player.body.velocity.x = this.MAX_SPEED;
-		            		this.player.animations.play('right');
-			    		} else if (currentMessage.action == 2){
-			    			this.player.body.velocity.y = this.MAX_SPEED;
-						} else if (currentMessage.action == 3){
-							this.player.body.velocity.x = -this.MAX_SPEED;
-		           			this.player.animations.play('left');
-						} else if (currentMessage.action == 5){
-							this.shootBullet();
-						}
-	        		} else if (currentMessage.status == "sync"){
-	        			score = Math.round((/*timerEvent.delay - timer.ms*/currentMessage.time) / 1000);
-			    			
-		    			var minutes = "0" + Math.floor(score / 60);
-				        var seconds = "0" + (score - minutes * 60);
-				        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
-		    			this.game.debug.text(str,2, 18, "#ff0");
-	        		} else {
-	        			if(currentMessage.action == 0){	 
-	        				console.log("Enemy action");   
-		    			//console.log(this.player);			
-			    			this.enemy.body.velocity.y = -this.MAX_SPEED*1.3;
-	
-			    		} else if (currentMessage.action == 1){
-			    			this.enemy.body.velocity.x = this.MAX_SPEED;
-
-			    		} else if (currentMessage.action == 2){
-			    			this.enemy.body.velocity.y = this.MAX_SPEED;
-						} else if (currentMessage.action == 3){
-							this.enemy.body.velocity.x = -this.MAX_SPEED;
-						}	
-	        		} 
-	        		console.log(currentMessage);
-	        	} else {
-	        		this.enemy.body.velocity.x=0;
-	        	}
-
-		    	//console.log(data);
+		        }
+	        	
 		    	
 		        this.bulletPool.forEachAlive(function(bullet) {
 		            bullet.rotation = Math.atan2(bullet.body.velocity.y, bullet.body.velocity.x);
 		        }, this);
 		        
-		    	/*if(data !== undefined)
-			    		if(data.status == "sync"){
-			    			score = Math.round((timerEvent.delay - timer.ms/data.time) / 1000);
-			    			
-			    			var minutes = "0" + Math.floor(score / 60);
-					        var seconds = "0" + (score - minutes * 60);
-					        var str = minutes.substr(-2) + ":" + seconds.substr(-2);   
-			    			this.game.debug.text(str,2, 18, "#ff0");
-		    			}*/
+		       
 		    };
 		   
 		    gameState.render = function(){
+		    	currentMessageForPlayer = queuePlayer.shift();
+		    	currentMessageForEnemy = queueEnemy.shift();
+		    	currentMessageForTimer = queueTimer.shift();
 
-		    	// if (timer.running){
-		    		
-		    	// }  else {
-		    		// timer.stop();
-		    	// }
+
+		    	 if(currentMessageForPlayer !== undefined){
+		        	if(currentMessageForPlayer.action == 0){	    		
+		    			this.player.body.velocity.y = -this.MAX_SPEED*1.3;
+		    		} else if (currentMessageForPlayer.action == 1){
+		    			this.player.body.velocity.x = this.MAX_SPEED;
+	            		this.player.animations.play('right');
+		    		} else if (currentMessageForPlayer.action == 2){
+		    			this.player.body.velocity.y = this.MAX_SPEED;
+					} else if (currentMessageForPlayer.action == 3){
+						this.player.body.velocity.x = -this.MAX_SPEED;
+	           			this.player.animations.play('left');
+					} else if (currentMessageForPlayer.action == 5){
+						this.shootBullet();
+					}
+		        } else {
+		        	this.player.animations.stop();
+		            this.player.body.velocity.x = 0;
+	            	if(this.player.animations.name == "right")
+		           		this.player.frame = 5;
+		           	else
+		           		this.player.frame = 4;
+		        }
+		        if(currentMessageForEnemy !== undefined){
+		        	if(currentMessageForEnemy.action == 0){	  		
+		    			this.enemy.body.velocity.y = -this.MAX_SPEED*1.3;
+		    		} else if (currentMessageForEnemy.action == 1){
+		    			this.enemy.body.velocity.x = this.MAX_SPEED;
+		    			this.enemy.animations.play('right');
+		    		} else if (currentMessageForEnemy.action == 2){
+		    			this.enemy.body.velocity.y = this.MAX_SPEED;
+					} else if (currentMessageForEnemy.action == 3){
+						this.enemy.body.velocity.x = -this.MAX_SPEED;
+						this.enemy.animations.play('left');
+					} else if (currentMessageForEnemy.action == 5){
+						this.shootBulletForEnemy();
+						flag=true;
+					}
+		        } else {
+		        	this.enemy.animations.stop();
+		            this.enemy.body.velocity.x = 0;
+	            	if(this.enemy.animations.name == "right")
+		           		this.enemy.frame = 5;
+		           	else
+		           		this.enemy.frame = 4;
+		        }
+		    	if(currentMessageForTimer !== undefined){
+		    		score = Math.round((currentMessageForTimer.time) / 1000);
+			    			
+	    			var minutes = "0" + Math.floor(score / 60);
+			        var seconds = "0" + (score - minutes * 60);
+			        var str = minutes.substr(-2) + ":" + seconds.substr(-2);
+			        var healtLeft = currentMessageForTimer.firstPlayer.health;
+			        var healtRight = currentMessageForTimer.secondPlayer.health;
+	    			this.game.debug.text(str,2, 18, "#ff0");
+					this.game.debug.text(healtLeft,10, 40, "#FF0000");
+					this.game.debug.text(healtRight,750, 40, "#FF0000");
+	    			if (position == currentMessageForTimer.firstPlayer.position){
+	    				this.player.x  = currentMessageForTimer.firstPlayer.x;
+	    				this.player.y  = currentMessageForTimer.firstPlayer.y;
+	    				this.enemy.x  = currentMessageForTimer.secondPlayer.x;
+	    				this.enemy.y  = currentMessageForTimer.secondPlayer.y;
+	    				
+	    			} else {
+	    				this.player.x  = currentMessageForTimer.secondPlayer.x;
+	    				this.player.y  = currentMessageForTimer.secondPlayer.y;
+	    				this.enemy.x  = currentMessageForTimer.firstPlayer.x;
+	    				this.enemy.y  = currentMessageForTimer.firstPlayer.y;
+	    			}
+		    	}
 		    };
 		    gameState.getExplosion = function(x,y){
 		        var explosion = this.explosionGroup.getFirstDead();
 
 		        if (explosion === null){
+		        	
 		            explosion = this.game.add.sprite(0, 0, 'explosion');
 		            explosion.anchor.setTo(0.5, 0.5);
 		            var animation = explosion.animations.add('boom', [0,1], 60, false);
@@ -103971,7 +104004,31 @@ define('states/gameover',[
     game
 ){
 	var gameOverState = new Phaser.State();
-    return gameOverState;
+	var socket;
+	var positionPlayer;
+	var win;
+    return {
+    	init: function (ws,position,winner) {
+    		
+    		win = winner;
+    		socket=ws;
+    		positionPlayer=position;
+    			
+    		return gameOverState;
+    	},
+    	create: function() {
+    		if (positionPlayer == win){
+	    		// var tween = game.debug.text("YOU WIN!","#FFFFFF");
+	    		console.log("YOU WIN")
+	    		this.game.add.text("YOU WIN!","#FFFFFF");
+				gameOverTitle.anchor.setTo(0.5,0.5);
+	    	} else {
+	    			var tween = game.add.text("YOU LOSE!");
+	    			console.log("YOU close")
+	    	}
+	    	socket.close();	
+    	}
+    };
 });
 define('states/menu',[
     'phaser',
@@ -103997,7 +104054,7 @@ define('states/menu',[
 			game.state.add('Boot', Boot.init(game), false);
 			game.state.add('PreLoader',PreLoader.init(game),false);
             
-            ws = new WebSocket("ws://127.0.0.1:8080/gameplay");
+            ws = new WebSocket("ws://"+window.location.host+"/gameplay");
 			    console.log("Create");
 		    ws.onopen = function (event) {
 		        console.log("open");
@@ -104007,7 +104064,7 @@ define('states/menu',[
 				if(data.status == "start"){
 					console.log(data);
 					game.state.add('Game', Game.init(game, data.position, ws), false);
-					game.state.add('GameOver', GameOver.init(game), false);
+					game.state.add('GameOver',GameOver);
           			game.state.start('Boot');
 				}
 				
@@ -104016,8 +104073,14 @@ define('states/menu',[
 			
             
 		},
-		finished: function(){
-			Game.stopScores();
+		finished: function(winner,position){
+			if (winner !== undefined){
+				if(winner == position)
+					console.log("WIN");
+				else
+					console.log("LOSE");
+			}
+			game.state.destroy();
 			console.log("Close socket");
 			ws.close();
 		},
@@ -104031,7 +104094,8 @@ define('views/game',[
     'backbone',
     'tmpl/game',
     'phaser',
-    'states/menu'
+    'states/menu',
+    'states/game'
 ], function(
     Backbone,
     tmpl,
@@ -104085,11 +104149,11 @@ define('views/main',[
     Backbone,
     tmpl
 ){
-
+    var isItShow;
     var Main = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
-        className: 'menu',
+        className: 'main menu',
         events: { 
                   "click .js-exit": "exitLogin",                
         },
@@ -104135,7 +104199,19 @@ define('views/main',[
                     } 
                     else 
                     {
-                       alert(result.data.message);          
+                        isItShow = true;
+                        $('.informationMessage').text(result.data.message+'!');
+                        $('div.main.menu').hide();
+                        $(".informationBg").show();
+
+                        $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg").hide();
+                                $('div.main.menu').show();
+                                isItShow = false;
+                            }
+                        });
+          
                     }
                 },
                 error:  function(xhr, str){
@@ -104175,6 +104251,7 @@ define('views/login',[
     Backbone,
     tmpl
 ){
+    var isItShow;
     var Login = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
@@ -104260,7 +104337,7 @@ define('views/login',[
             $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('.login_form').attr('method');
             var m_action = $('.login_form').attr('action');
-            //console.log(m_action, m_method);
+        
             var sendData = {
                 login: '',
                 email: '',
@@ -104270,7 +104347,7 @@ define('views/login',[
 
             sendData.email = $(".email").val();
             sendData.password = $(".password").val();
-            //console.log(sendData);
+    
             var strSendData = JSON.stringify(sendData);
             console.log("TADA");
             console.log(strSendData);
@@ -104279,10 +104356,7 @@ define('views/login',[
                 url: m_action,
                 contentType:'json', 
                 data: strSendData,
-                //contentType: 'application/json; charset=utf-8',
-                //converters:{"text json":jQuery.parseJSON},
                 dataType:'json',
-                //processData: false,
                 success: function(result, code){
                     console.log(result);
                     if (result.status === 200)
@@ -104297,10 +104371,22 @@ define('views/login',[
                     } 
                     else 
                     {
-                       alert(result.data.message);
+                       isItShow = true;
+                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
+                       $('div.login.menu').hide();
+                       $(".informationBg").show();
+
+                       $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg").hide();
+                                $('div.login.menu').show();
+                                isItShow = false;
+                            }
+                       });
+
                        $(".email").val('');
                        $("input:password").val('');
-                       $(".login").val('');
+                       $(".login").val('');              
                     }
                 },
                 error:  function(xhr, str){
@@ -104452,6 +104538,8 @@ define('views/signin',[
     Backbone,
     tmpl
 ){
+
+    var isItShow;
     var Signin = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
@@ -104506,7 +104594,7 @@ define('views/signin',[
                 $(this.el).find(".label__login").css({'color' : "#FF0000"});
             }
         },
-        submitForm: function(e){
+        submitForm: function(e) {
             e.preventDefault();
             $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('.signin_form').attr('method');
@@ -104526,6 +104614,7 @@ define('views/signin',[
                 data: strSendData,
                 dataType:'json',
                 success: function(result, code){
+                    isItShow = true;
                     console.log(result);
                     if (result.status === 200)
                     {
@@ -104537,18 +104626,31 @@ define('views/signin',[
                     } 
                     else 
                     {
-                       alert(result.data.message);
+                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
+                       $('div.signin.menu').hide();
+                       $(".informationBg").show();
+
+                       $('body').click(function () {
+                            if ( isItShow ) {
+                                $(".informationBg").hide();
+                                $('div.signin.menu').show();
+                                isItShow = false; 
+                            }
+                        }); 
+
                        $(".password-signin").val('');
-                       $(".login-signin").val('');               
+                       $(".login-signin").val('');
+                             
                     }
                 },
                 error:  function(xhr, str){
                      $('.content').html('Критическая ошибка'); 
                 },
             });
-        }
+        },
 
     });
+
     return new Signin();
 });
 
@@ -104659,8 +104761,19 @@ define('views/gamepad',[
                     } 
                     else 
                     {
+                       isItShow = true;
+                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
+                       $('div.gamepad.menu').hide();
+                       $(".informationBg").show();
 
-                       alert(result.data.message);
+                       $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg").hide();
+                                $('div.gamepad.menu').show();
+                                isItShow = false;
+                            }
+                       });
+                       //alert(result.data.message);
                        ////// TO DO: удали!!!!!!!
                        //window.location.href = '#touchDevice';
                        $(".input__passwordGamepad").val('');
@@ -104679,7 +104792,7 @@ define('views/gamepad',[
 
     return new Gamepad();
 });
-define('tmpl/touchDevice',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}__fest_buf+=("<div class=\"circle__up\"></div><div class=\"circle__down\"></div><div class=\"circle__left\"></div><div class=\"circle__right\"></div><div class=\"circle__fire\"></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('tmpl/touchDevice',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}__fest_buf+=("<div class=\"informationDevice\"><div class=\"informationMessage\">Flip your device on 90°, please.</div></div><div class=\"circle__up\"></div><div class=\"circle__down\"></div><div class=\"circle__left\"></div><div class=\"circle__right\"></div><div class=\"circle__fire\"></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
 define('views/touchDevice',[
     'backbone',
     'tmpl/touchDevice'
@@ -104689,6 +104802,7 @@ define('views/touchDevice',[
 ){
     // my phone IP change it
     var socketAdress = "ws://192.168.43.123:8080/gameplay";
+    //var socketAdress = "ws://127.0.0.1:8080/gameplay";
     var isItNotOpen = true;
     var socketIsOpen = false;
     var ws;
@@ -104735,6 +104849,7 @@ define('views/touchDevice',[
         },
         touchUp: function (event) {
             console.log('up');
+            //console.log(event.originalEvent);
 
             if (isItNotOpen === true) {
                 isItNotOpen = false;
@@ -104754,10 +104869,11 @@ define('views/touchDevice',[
             }
 
             var sendData = {
-                action : '1'
+                action : '0'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
+                console.log('send on socket');
                 ws.send(strSendData);
             }
         },
@@ -104782,7 +104898,7 @@ define('views/touchDevice',[
             }
 
             var sendData = {
-                action : '2'
+                action : '1'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -104810,7 +104926,7 @@ define('views/touchDevice',[
             }
 
             var sendData = {
-                action : '3'
+                action : '2'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -104839,7 +104955,7 @@ define('views/touchDevice',[
             }
 
             var sendData = {
-                action : '4'
+                action : '3'
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {

@@ -2,7 +2,8 @@ define([
     'backbone',
     'tmpl/game',
     'phaser',
-    'states/menu'
+    'states/menu',
+    'states/game'
 ], function(
     Backbone,
     tmpl,
