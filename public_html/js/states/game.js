@@ -94,15 +94,36 @@ define([
 			            groundBlock.body.allowGravity = false;
 			            this.ground.add(groundBlock);
 			         }
-			        for(var x = 32; x < this.game.width/2.5; x += 32) {  
+			        for(var x = 32; x < this.game.width/1.5; x += 32) {  
 			            var groundBlock = this.game.add.sprite(x, this.game.height - 132, 'ground');
 			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
 			            groundBlock.body.immovable = true;
 			            groundBlock.body.allowGravity = false;
 			            this.ground.add(groundBlock);
 			         }
-			         for(var x = 0; x < this.game.width/3.5; x += 32) {
+			         for(var x = 0; x < this.game.width/2.5; x += 32) {
 			            var groundBlock = this.game.add.sprite(x, this.game.height - 232, 'ground');
+			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
+			            groundBlock.body.immovable = true;
+			            groundBlock.body.allowGravity = false;
+			            this.ground.add(groundBlock);
+			         }
+			         for(var x = 400; x < this.game.width/1.0; x += 32) {
+			            var groundBlock = this.game.add.sprite(x, this.game.height - 232, 'ground');
+			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
+			            groundBlock.body.immovable = true;
+			            groundBlock.body.allowGravity = false;
+			            this.ground.add(groundBlock);
+			         }
+			         for(var x = 64; x < this.game.width/2.0; x += 32) {
+			            var groundBlock = this.game.add.sprite(x, this.game.height - 332, 'ground');
+			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
+			            groundBlock.body.immovable = true;
+			            groundBlock.body.allowGravity = false;
+			            this.ground.add(groundBlock);
+			         }
+			         for(var x = 128; x < this.game.width/1.2; x += 32) {
+			            var groundBlock = this.game.add.sprite(x, this.game.height - 432, 'ground');
 			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
 			            groundBlock.body.immovable = true;
 			            groundBlock.body.allowGravity = false;
@@ -192,6 +213,8 @@ define([
 	    				gameState.player.kill();
 	    				str = "You LOSE!";
 	    				//game.gamePaused();
+	    			} else {
+	    				str = "DRAW!";
 	    			}
 	    			LoadingText = game.add.text(game.world.width / 2, game.world.height / 2, str, {
 				            font: '32px "Press Start 2P"',
