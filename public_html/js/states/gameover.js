@@ -10,15 +10,13 @@ define([
 	var positionPlayer;
 	var win;
     return {
-    	init: function (ws,position,winner) {
-    		
-    		win = winner;
-    		socket=ws;
-    		positionPlayer=position;
+    	init: function () {
+
     			
     		return gameOverState;
     	},
-    	create: function() {
+    	create: function(ws,position,winner) {
+            
     		if (positionPlayer == win){
 	    		// var tween = game.debug.text("YOU WIN!","#FFFFFF");
 	    		console.log("YOU WIN")

@@ -1,9 +1,11 @@
 define([
     'phaser',
-    'states/menu'
+    'states/menu',
+    'states/gameover'
 ], function(
     Phaser,
-    game
+    game,
+    GameOver
 ){
 	var gameState;
 	var data;
@@ -181,8 +183,26 @@ define([
 	    		if(data.status == "sync"){
 	    			queueTimer.push(data);
 	    		} else if(data.status == "finish"){
-	    			game.state.start('GameOver',true,false,ws,position,data.result);
-	    			
+	    			var str; 
+	    			if(data.result == position){
+	    				console.log("TADA");
+	    				gameState.enemy.kill();
+	    				str = "You WIN!";
+	    			} else {
+	    				gameState.player.kill();
+	    				str = "You LOSE!";
+	    				//game.gamePaused();
+	    			}
+	    			LoadingText = game.add.text(game.world.width / 2, game.world.height / 2, str, {
+				            font: '32px "Press Start 2P"',
+				            fill: '#FFFFFF',
+				            stroke: '#000000',
+				            strokeThickness: 3,
+				            align: 'center'
+				        });
+			        LoadingText.anchor.setTo(0.5, 0.5);
+			        /*game.gamePaused();
+			        ws.close;*/
 	    		} else {
 	    			if ( data.player == position ){
 	    				queuePlayer.push(data);
@@ -203,7 +223,7 @@ define([
 		    	var sendData = {
 		    		action:'',
 		    	};
-		    	
+
 		        this.game.physics.arcade.collide(this.player, this.ground);
 		        this.game.physics.arcade.collide(this.enemy, this.ground);
 		        this.game.physics.arcade.collide(this.player, this.enemy);

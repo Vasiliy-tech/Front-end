@@ -32,7 +32,7 @@ define([
 				if(data.status == "start"){
 					console.log(data);
 					game.state.add('Game', Game.init(game, data.position, ws), false);
-					game.state.add('GameOver',GameOver);
+					//game.state.add('GameOver',GameOver.init(),false);
           			game.state.start('Boot');
 				}
 				
@@ -42,13 +42,8 @@ define([
             
 		},
 		finished: function(winner,position){
-			if (winner !== undefined){
-				if(winner == position)
-					console.log("WIN");
-				else
-					console.log("LOSE");
-			}
-			game.state.destroy();
+
+			game.destroy();
 			console.log("Close socket");
 			ws.close();
 		},
