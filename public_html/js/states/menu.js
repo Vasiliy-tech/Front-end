@@ -18,7 +18,7 @@ define([
 			game =  new Phaser.Game(800,480, Phaser.AUTO,el);   
 			//console.log(game);
 		},
-		start: function(){
+		start: function() {
 			game.state.add('Boot', Boot.init(game), false);
 			game.state.add('PreLoader',PreLoader.init(game),false);
             

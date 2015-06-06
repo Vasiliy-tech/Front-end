@@ -214,7 +214,7 @@ define([
 		        this.game.physics.arcade.collide(this.bulletPool, this.enemy, function(bullet, enemy) {
 		          	this.getExplosion(bullet.x, bullet.y);
 		            //bullet.kill();
-		            //enemy.kill();
+		            enemy.kill();
 		        }, null, this);
 		        this.game.physics.arcade.collide(this.bulletPool, this.player, function(bullet, player) {
 		          	

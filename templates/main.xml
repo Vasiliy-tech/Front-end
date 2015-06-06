@@ -16,6 +16,9 @@
 		<div class="js-start-game button__menu">
 				<a href="#game" class="textButton start-game__href disabled">Start Game</a>
 		</div>
+		<div class="js-Gamepad button__menu">
+				<a href="#gamepadRule" class="textButton start-game__href disabled">Gamepad</a>
+		</div>
 		<div class="js-login button__menu">
 			<a href="#login" class="textButton login__href">Registration</a>
 		</div>

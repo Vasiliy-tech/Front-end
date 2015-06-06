@@ -9,6 +9,7 @@ define([
     'views/gamepad',
     'views/touchDevice',
     'views/gamepadStart',
+    'views/gamepadRule',
 ], function(
     Backbone,
     game,
@@ -19,7 +20,8 @@ define([
     signin,
     gamepad,
     touchDevice,
-    gamepadStart
+    gamepadStart,
+    gamepadRule
 ){
     manager.addViews({
         'main'  : main,
@@ -30,6 +32,7 @@ define([
         'gamepad' : gamepad,
         'touchDevice' : touchDevice,
         'gamepadStart' : gamepadStart,
+        'gamepadRule' : gamepadRule,
     });
     var Router = Backbone.Router.extend({
         routes: {
@@ -40,6 +43,7 @@ define([
             'gamepad' : 'gamepadAction',
             'touchDevice' : 'touchDeviceAction',
             'gamepadStart' : 'gamepadStartAction',
+            'gamepadRule' : 'gamepadRuleAction',
             '*default': 'defaultActions'
         },
         defaultActions: function () {
@@ -65,6 +69,9 @@ define([
         },
         gamepadStartAction: function() {
             gamepadStart.show();
+        },
+        gamepadRuleAction: function() {
+            gamepadRule.show();
         }
     });
 
