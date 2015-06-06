@@ -6,7 +6,8 @@ define([
     tmpl
 ){
     // my phone IP change it
-    var socketAdress = "ws://192.168.43.123:8080/gameplay";
+    var socketAdress = "ws://g09.javaprojects.tp-dev.ru/gameplay";
+    //var socketAdress = "ws://192.168.43.123:8080/gameplay";
     //var socketAdress = "ws://127.0.0.1:8080/gameplay";
     var isItNotOpen = true;
     var socketIsOpen = false;

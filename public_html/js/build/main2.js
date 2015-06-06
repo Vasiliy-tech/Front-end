@@ -103667,7 +103667,7 @@ define('states/menu',[
 			game.state.add('Boot', Boot.init(game), false);
 			game.state.add('PreLoader',PreLoader.init(game),false);
             
-            ws = new WebSocket("ws://"+window.location.host+"/gameplay");
+            ws = new WebSocket("ws://g09.javaprojects.tp-dev.ru/gameplay");
 			    console.log("Create");
 		    ws.onopen = function (event) {
 		        console.log("open");
@@ -104466,7 +104466,8 @@ define('views/touchDevice',[
     tmpl
 ){
     // my phone IP change it
-    var socketAdress = "ws://192.168.43.123:8080/gameplay";
+    var socketAdress = "ws://g09.javaprojects.tp-dev.ru/gameplay";
+    //var socketAdress = "ws://192.168.43.123:8080/gameplay";
     //var socketAdress = "ws://127.0.0.1:8080/gameplay";
     var isItNotOpen = true;
     var socketIsOpen = false;

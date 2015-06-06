@@ -22,7 +22,7 @@ define([
 			game.state.add('Boot', Boot.init(game), false);
 			game.state.add('PreLoader',PreLoader.init(game),false);
             
-            ws = new WebSocket("ws://"+window.location.host+"/gameplay");
+            ws = new WebSocket("ws://g09.javaprojects.tp-dev.ru/gameplay");
 			    console.log("Create");
 		    ws.onopen = function (event) {
 		        console.log("open");
