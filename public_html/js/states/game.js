@@ -1,9 +1,11 @@
 define([
     'phaser',
-    'states/menu'
+    'states/menu',
+    'states/gameover'
 ], function(
     Phaser,
-    game
+    game,
+    GameOver
 ){
 	var gameState;
 	var data;
@@ -92,15 +94,36 @@ define([
 			            groundBlock.body.allowGravity = false;
 			            this.ground.add(groundBlock);
 			         }
-			        for(var x = 32; x < this.game.width/2.5; x += 32) {  
+			        for(var x = 32; x < this.game.width/1.5; x += 32) {  
 			            var groundBlock = this.game.add.sprite(x, this.game.height - 132, 'ground');
 			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
 			            groundBlock.body.immovable = true;
 			            groundBlock.body.allowGravity = false;
 			            this.ground.add(groundBlock);
 			         }
-			         for(var x = 0; x < this.game.width/3.5; x += 32) {
+			         for(var x = 0; x < this.game.width/2.5; x += 32) {
 			            var groundBlock = this.game.add.sprite(x, this.game.height - 232, 'ground');
+			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
+			            groundBlock.body.immovable = true;
+			            groundBlock.body.allowGravity = false;
+			            this.ground.add(groundBlock);
+			         }
+			         for(var x = 400; x < this.game.width/1.0; x += 32) {
+			            var groundBlock = this.game.add.sprite(x, this.game.height - 232, 'ground');
+			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
+			            groundBlock.body.immovable = true;
+			            groundBlock.body.allowGravity = false;
+			            this.ground.add(groundBlock);
+			         }
+			         for(var x = 64; x < this.game.width/2.0; x += 32) {
+			            var groundBlock = this.game.add.sprite(x, this.game.height - 332, 'ground');
+			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
+			            groundBlock.body.immovable = true;
+			            groundBlock.body.allowGravity = false;
+			            this.ground.add(groundBlock);
+			         }
+			         for(var x = 128; x < this.game.width/1.2; x += 32) {
+			            var groundBlock = this.game.add.sprite(x, this.game.height - 432, 'ground');
 			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
 			            groundBlock.body.immovable = true;
 			            groundBlock.body.allowGravity = false;
@@ -181,8 +204,29 @@ define([
 	    		if(data.status == "sync"){
 	    			queueTimer.push(data);
 	    		} else if(data.status == "finish"){
-	    			game.state.start('GameOver',true,false,ws,position,data.result);
-	    			
+	    			var str; 
+	    			if(data.result == position){
+	    				console.log("TADA");
+	    				gameState.enemy.kill();
+	    				str = "You WIN!";
+	    			} else if (data.result == 0){
+	    				str = "DRAW!";
+	    				
+	    				//game.gamePaused();
+	    			} else {
+	    				gameState.player.kill();
+	    				str = "You LOSE!";
+	    			}
+	    			LoadingText = game.add.text(game.world.width / 2, game.world.height / 2, str, {
+				            font: '32px "Press Start 2P"',
+				            fill: '#FFFFFF',
+				            stroke: '#000000',
+				            strokeThickness: 3,
+				            align: 'center'
+				        });
+			        LoadingText.anchor.setTo(0.5, 0.5);
+			        /*game.gamePaused();
+			        ws.close;*/
 	    		} else {
 	    			if ( data.player == position ){
 	    				queuePlayer.push(data);
@@ -203,7 +247,7 @@ define([
 		    	var sendData = {
 		    		action:'',
 		    	};
-		    	
+
 		        this.game.physics.arcade.collide(this.player, this.ground);
 		        this.game.physics.arcade.collide(this.enemy, this.ground);
 		        this.game.physics.arcade.collide(this.player, this.enemy);

@@ -103584,12 +103584,46 @@ define('states/preloader',[
 	   	}
 	};
 });
-define('states/game',[
+define('states/gameover',[
     'phaser',
     'states/menu'
 ], function(
     Phaser,
     game
+){
+	var gameOverState = new Phaser.State();
+	var socket;
+	var positionPlayer;
+	var win;
+    return {
+    	init: function () {
+
+    			
+    		return gameOverState;
+    	},
+    	create: function(ws,position,winner) {
+            
+    		if (positionPlayer == win){
+	    		// var tween = game.debug.text("YOU WIN!","#FFFFFF");
+	    		console.log("YOU WIN")
+	    		this.game.add.text("YOU WIN!","#FFFFFF");
+				gameOverTitle.anchor.setTo(0.5,0.5);
+	    	} else {
+	    			var tween = game.add.text("YOU LOSE!");
+	    			console.log("YOU close")
+	    	}
+	    	socket.close();	
+    	}
+    };
+});
+define('states/game',[
+    'phaser',
+    'states/menu',
+    'states/gameover'
+], function(
+    Phaser,
+    game,
+    GameOver
 ){
 	var gameState;
 	var data;
@@ -103678,15 +103712,36 @@ define('states/game',[
 			            groundBlock.body.allowGravity = false;
 			            this.ground.add(groundBlock);
 			         }
-			        for(var x = 32; x < this.game.width/2.5; x += 32) {  
+			        for(var x = 32; x < this.game.width/1.5; x += 32) {  
 			            var groundBlock = this.game.add.sprite(x, this.game.height - 132, 'ground');
 			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
 			            groundBlock.body.immovable = true;
 			            groundBlock.body.allowGravity = false;
 			            this.ground.add(groundBlock);
 			         }
-			         for(var x = 0; x < this.game.width/3.5; x += 32) {
+			         for(var x = 0; x < this.game.width/2.5; x += 32) {
 			            var groundBlock = this.game.add.sprite(x, this.game.height - 232, 'ground');
+			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
+			            groundBlock.body.immovable = true;
+			            groundBlock.body.allowGravity = false;
+			            this.ground.add(groundBlock);
+			         }
+			         for(var x = 400; x < this.game.width/1.0; x += 32) {
+			            var groundBlock = this.game.add.sprite(x, this.game.height - 232, 'ground');
+			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
+			            groundBlock.body.immovable = true;
+			            groundBlock.body.allowGravity = false;
+			            this.ground.add(groundBlock);
+			         }
+			         for(var x = 64; x < this.game.width/2.0; x += 32) {
+			            var groundBlock = this.game.add.sprite(x, this.game.height - 332, 'ground');
+			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
+			            groundBlock.body.immovable = true;
+			            groundBlock.body.allowGravity = false;
+			            this.ground.add(groundBlock);
+			         }
+			         for(var x = 128; x < this.game.width/1.2; x += 32) {
+			            var groundBlock = this.game.add.sprite(x, this.game.height - 432, 'ground');
 			            this.game.physics.enable(groundBlock, Phaser.Physics.ARCADE);
 			            groundBlock.body.immovable = true;
 			            groundBlock.body.allowGravity = false;
@@ -103767,8 +103822,29 @@ define('states/game',[
 	    		if(data.status == "sync"){
 	    			queueTimer.push(data);
 	    		} else if(data.status == "finish"){
-	    			game.state.start('GameOver',true,false,ws,position,data.result);
-	    			
+	    			var str; 
+	    			if(data.result == position){
+	    				console.log("TADA");
+	    				gameState.enemy.kill();
+	    				str = "You WIN!";
+	    			} else if (data.result == 0){
+	    				str = "DRAW!";
+	    				
+	    				//game.gamePaused();
+	    			} else {
+	    				gameState.player.kill();
+	    				str = "You LOSE!";
+	    			}
+	    			LoadingText = game.add.text(game.world.width / 2, game.world.height / 2, str, {
+				            font: '32px "Press Start 2P"',
+				            fill: '#FFFFFF',
+				            stroke: '#000000',
+				            strokeThickness: 3,
+				            align: 'center'
+				        });
+			        LoadingText.anchor.setTo(0.5, 0.5);
+			        /*game.gamePaused();
+			        ws.close;*/
 	    		} else {
 	    			if ( data.player == position ){
 	    				queuePlayer.push(data);
@@ -103789,7 +103865,7 @@ define('states/game',[
 		    	var sendData = {
 		    		action:'',
 		    	};
-		    	
+
 		        this.game.physics.arcade.collide(this.player, this.ground);
 		        this.game.physics.arcade.collide(this.enemy, this.ground);
 		        this.game.physics.arcade.collide(this.player, this.enemy);
@@ -103800,7 +103876,7 @@ define('states/game',[
 		        this.game.physics.arcade.collide(this.bulletPool, this.enemy, function(bullet, enemy) {
 		          	this.getExplosion(bullet.x, bullet.y);
 		            //bullet.kill();
-		            //enemy.kill();
+		            enemy.kill();
 		        }, null, this);
 		        this.game.physics.arcade.collide(this.bulletPool, this.player, function(bullet, player) {
 		          	
@@ -103842,7 +103918,9 @@ define('states/game',[
 		        	sendData.action = 5;
 		        	var jsonData = JSON.stringify(sendData);
 		        	ws.send(jsonData);
+
 		        } else {
+
 
 		        }
 	        	
@@ -103996,40 +104074,6 @@ define('states/game',[
 		}
 	};   
 });
-define('states/gameover',[
-    'phaser',
-    'states/menu'
-], function(
-    Phaser,
-    game
-){
-	var gameOverState = new Phaser.State();
-	var socket;
-	var positionPlayer;
-	var win;
-    return {
-    	init: function (ws,position,winner) {
-    		
-    		win = winner;
-    		socket=ws;
-    		positionPlayer=position;
-    			
-    		return gameOverState;
-    	},
-    	create: function() {
-    		if (positionPlayer == win){
-	    		// var tween = game.debug.text("YOU WIN!","#FFFFFF");
-	    		console.log("YOU WIN")
-	    		this.game.add.text("YOU WIN!","#FFFFFF");
-				gameOverTitle.anchor.setTo(0.5,0.5);
-	    	} else {
-	    			var tween = game.add.text("YOU LOSE!");
-	    			console.log("YOU close")
-	    	}
-	    	socket.close();	
-    	}
-    };
-});
 define('states/menu',[
     'phaser',
     'states/boot',
@@ -104050,7 +104094,7 @@ define('states/menu',[
 			game =  new Phaser.Game(800,480, Phaser.AUTO,el);   
 			//console.log(game);
 		},
-		start: function(){
+		start: function() {
 			game.state.add('Boot', Boot.init(game), false);
 			game.state.add('PreLoader',PreLoader.init(game),false);
             
@@ -104064,7 +104108,7 @@ define('states/menu',[
 				if(data.status == "start"){
 					console.log(data);
 					game.state.add('Game', Game.init(game, data.position, ws), false);
-					game.state.add('GameOver',GameOver);
+					//game.state.add('GameOver',GameOver.init(),false);
           			game.state.start('Boot');
 				}
 				
@@ -104074,13 +104118,8 @@ define('states/menu',[
             
 		},
 		finished: function(winner,position){
-			if (winner !== undefined){
-				if(winner == position)
-					console.log("WIN");
-				else
-					console.log("LOSE");
-			}
-			game.state.destroy();
+
+			game.destroy();
 			console.log("Close socket");
 			ws.close();
 		},
@@ -104115,14 +104154,14 @@ define('views/game',[
         },
         render: function () {     
             this.$el.html(this.template());
-            game.create(this.el); 
+            
             console.log(game);
             console.log(game.get());
             return this;
         },
         show: function () {
             this.trigger('show',this);
-            
+            game.create(this.el); 
             game.start();
             console.log(game.get());
             this.$el.show();
@@ -104141,7 +104180,7 @@ define('views/game',[
 });
 
 
-define('tmpl/main',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"button__top\"><p class=\"logo\">NotPvPTowerDefence</p></div><p class=\"hend\">MAIN MENU</p><div class=\"js-scoreboard button__menu \"><a href=\"#scoreboard\" class=\"textButton \">Score Board</a></div><div class=\"js-start-game button__menu\"><a href=\"#game\" class=\"textButton start-game__href disabled\">Start Game</a></div><div class=\"js-login button__menu\"><a href=\"#login\" class=\"textButton login__href\">Registration</a></div><div class=\"js-signin button__menu\"><a href=\"#signin\" class=\"textButton signin__href\">Authorization</a></div><div class=\"js-exit button__menu \"><a href=\"#\" class=\"textButton exit__href\">Exit</a></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('tmpl/main',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"informationBg_main\"><div class=\"informationMessage_main\">ds</div></div><div class=\"allMain\"><div class=\"button__top\"><p class=\"logo\">Contra1x1</p></div><p class=\"hend\">MAIN MENU</p><div class=\"js-scoreboard button__menu \"><a href=\"#scoreboard\" class=\"textButton \">Score Board</a></div><div class=\"js-start-game button__menu\"><a href=\"#game\" class=\"textButton start-game__href disabled\">Start Game</a></div><div class=\"js-Gamepad button__menu\"><a href=\"#gamepadRule\" class=\"textButton start-game__href disabled\">Gamepad</a></div><div class=\"js-login button__menu\"><a href=\"#login\" class=\"textButton login__href\">Registration</a></div><div class=\"js-signin button__menu\"><a href=\"#signin\" class=\"textButton signin__href\">Authorization</a></div><div class=\"js-exit button__menu \"><a href=\"#\" class=\"textButton exit__href\">Exit</a></div></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
 define('views/main',[
     'backbone',
     'tmpl/main'
@@ -104174,6 +104213,30 @@ define('views/main',[
             return this;
         },
         show: function () {
+            $.ajax({
+                type: 'GET',
+                url: '/api/v1/auth/check',
+                success: function(result, code){
+                    console.log(result);
+                    if (result.status === 200)
+                    {
+                        $('.autorizationLabel').text("Hello " + result.data.login + "!");
+                        $('.autorizationLabel').show();
+                        $('a.signin__href').addClass('disabled');
+                        $('a.login__href').addClass('disabled');
+                        $('a.start-game__href').removeClass('disabled');
+                        localStorage.clear();
+                    
+                    } 
+                    else 
+                    {
+          
+                    }
+                },
+                error:  function(xhr, str){
+                     $('.content').html('Критическая ошибка'); 
+                },
+            });
             this.trigger('show',this);
             this.$el.show();
         },
@@ -104200,14 +104263,14 @@ define('views/main',[
                     else 
                     {
                         isItShow = true;
-                        $('.informationMessage').text(result.data.message+'!');
-                        $('div.main.menu').hide();
-                        $(".informationBg").show();
+                        $('.informationMessage_main').text(result.data.message+'!');
+                        $('div.allMain').hide();
+                        $(".informationBg_main").show();
 
                         $('body').click( function () {
                             if (isItShow) {
-                                $(".informationBg").hide();
-                                $('div.main.menu').show();
+                                $(".informationBg_main").hide();
+                                $('div.allMain').show();
                                 isItShow = false;
                             }
                         });
@@ -104243,7 +104306,7 @@ define('views/main',[
     
     return new Main();
 });
-define('tmpl/login',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"button__top\"><p class=\"logo\">NotPvPTowerDefence</p></div><p class=\"hend\">LOGIN</p><form method=\"POST\" action=\"\/api\/v1\/auth\/signup\" class=\"login_form\"><div class=\"cusInput\"><label class=\"label label__login\">Login</label><input class=\"input login\" type=\"text\" name=\"login\" value=\"\"/></div><div class=\"cusInput\"><label class=\"label label__email\">E-mail</label><input class=\"input email\" type=\"text\" name=\"email\" value=\"\"/></div><div class=\"cusInput\"><label class=\"label label__password\">Password</label><input class=\"input password\" type=\"password\" name=\"password\" value=\"\"/></div><div class=\"cusInput\"><input class=\"input buts\" type=\"submit\" value=\"Submit\" disabled=\"true\"/></div><div class=\"js-back backButton\"><a href=\"#\" class=\"textButton\">◄ Back</a></div></form>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('tmpl/login',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"informationBg_login\"><div class=\"informationMessage_login\">ds</div></div><div class=\"allLogin\"><div class=\"button__top\"><p class=\"logo\">Contra1x1</p></div><p class=\"hend\">SIGNUP</p><form method=\"POST\" action=\"\/api\/v1\/auth\/signup\" class=\"login_form\"><div class=\"cusInput\"><label class=\"label label__login\">Login</label><input class=\"input login\" type=\"text\" name=\"login\" value=\"\"/></div><div class=\"cusInput\"><label class=\"label label__email\">E-mail</label><input class=\"input email\" type=\"text\" name=\"email\" value=\"\"/></div><div class=\"cusInput\"><label class=\"label label__password\">Password</label><input class=\"input password\" type=\"password\" name=\"password\" value=\"\"/></div><div class=\"cusInput\"><input class=\"input buts\" type=\"submit\" value=\"Submit\" disabled=\"true\"/></div><div class=\"js-back backButton\"><a href=\"#\" class=\"textButton\">◄ Back</a></div></form></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
 define('views/login',[
     'backbone',
     'tmpl/login'
@@ -104281,7 +104344,7 @@ define('views/login',[
             console.log(localStorage);
             var currentData = this.getJSON("signup");
             console.log(currentData);    
-            $(".input .login").val(currentData.login);
+            $(".input.login").val(currentData.login);
             $(".email").val(currentData.email);
             this.$el.show();
         },
@@ -104298,7 +104361,8 @@ define('views/login',[
             var password_pattern = /[\W]/;
             var isItCorrectlyPassword = password_pattern.test(password);
 
-            var myLogin = $(this.el).find(".input .login").val()
+            var myLogin = $(this.el).find(".input.login").val()
+            //alert(myLogin);
             var myLogin_pattern = /[\W]/; 
             var isItCorrectlyLogin = myLogin_pattern.test(myLogin);
 
@@ -104372,14 +104436,14 @@ define('views/login',[
                     else 
                     {
                        isItShow = true;
-                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
-                       $('div.login.menu').hide();
-                       $(".informationBg").show();
+                       $('.informationMessage_login').text(result.data.message+'!'+' Please try again!');
+                       $('div.allLogin').hide();
+                       $(".informationBg_login").show();
 
                        $('body').click( function () {
                             if (isItShow) {
-                                $(".informationBg").hide();
-                                $('div.login.menu').show();
+                                $(".informationBg_login").hide();
+                                $('div.allLogin').show();
                                 isItShow = false;
                             }
                        });
@@ -104407,7 +104471,7 @@ define('views/login',[
                 login:'',
                 email:''
             }
-            sendData.login=$(".input .login").val();
+            sendData.login=$(".input.login").val();
             sendData.email=$(".email").val();
             this.setJSON("signup",sendData);
         }
@@ -104417,7 +104481,7 @@ define('views/login',[
     return new Login();
 });
 
-define('tmpl/scoreboard',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"button__top\"><p class=\"logo\">NotPvPTowerDefence</p></div><p class=\"hend\">SCORE BOARD</p><div class=\"js-back backButton\"><a href=\"#\" class=\"textButton\">◄ Back</a></div>");var i,__fest_iterator0;try{__fest_iterator0=json.temp || {};}catch(e){__fest_iterator={};__fest_log_error(e.message);}for(i in __fest_iterator0){__fest_buf+=("<div class=\"scoreboard__button\" name=\"player\"><p class=\" scoreboard__name\">");try{__fest_buf+=(__fest_escapeHTML(json.temp[i].name))}catch(e){__fest_log_error(e.message + "12");}__fest_buf+=("</p><p class=\" scoreboard__scores\">");try{__fest_buf+=(__fest_escapeHTML(json.temp[i].score))}catch(e){__fest_log_error(e.message + "13");}__fest_buf+=("</p></div>");}__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('tmpl/scoreboard',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"button__top\"><p class=\"logo\">Contra1x1</p></div><p class=\"hend\">SCORE BOARD</p><div class=\"js-back backButton\"><a href=\"#\" class=\"textButton\">◄ Back</a></div>");var i,__fest_iterator0;try{__fest_iterator0=json.temp || {};}catch(e){__fest_iterator={};__fest_log_error(e.message);}for(i in __fest_iterator0){__fest_buf+=("<div class=\"scoreboard__button\" name=\"player\"><p class=\" scoreboard__name\">");try{__fest_buf+=(__fest_escapeHTML(json.temp[i].name))}catch(e){__fest_log_error(e.message + "12");}__fest_buf+=("</p><p class=\" scoreboard__scores\">");try{__fest_buf+=(__fest_escapeHTML(json.temp[i].score))}catch(e){__fest_log_error(e.message + "13");}__fest_buf+=("</p></div>");}__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
 define('models/score',[
     'backbone'
 ], function(
@@ -104464,15 +104528,16 @@ define('views/scoreboard',[
     tmpl,
     Scores
 ){
-
+    var limit;
+    var data = [];
+    var name;
+    var score;
     var Scoreboard = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
         className: 'scoreboard menu',
         collection: Scores,
         initialize: function () {
-            Scores.add([{name:'Vasya', score:5}, {name:'Petya', score:11}, {name:'Boria', score:2}]);
-            Scores.add({name:'Vasya', score:0});
         },
         render: function () {
 
@@ -104481,10 +104546,40 @@ define('views/scoreboard',[
             return this;
         },
         show: function () {
+            $.ajax({
+                type: 'GET',
+                url: '/api/v1/score?limit=5',
+                async: false,
+                success: function(result, code){
+                    console.log(result);
+
+                    if (result.status === 200)
+                    {
+                        limit = result.data.scoreList.length;
+                        data = result.data.scoreList;                   
+                    } 
+                    else 
+                    {
+                                  
+                    }
+                },
+                error:  function(xhr, str){
+                     $('.content').html('Критическая ошибка'); 
+                },
+            });
+            var i = 0;
+            while (i < limit && i < 4) {
+                name = data[i].login;
+                score = data[i].score;
+                Scores.add({name: name, score: score});
+                i = i + 1;
+            }
+            this.$el.html(this.template({temp: this.collection.toJSON()}));
             this.trigger('show',this);
             this.$el.show();
         },
         hide: function () {
+            Scores.reset();
             this.$el.hide();
         },
         destroy: function() {
@@ -104530,7 +104625,7 @@ define('views/viewManager',[
 	});
 	return new ViewManager();
 });
-define('tmpl/signin',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"button__top\"><p class=\"logo\">NotPvPTowerDefence</p></div><p class=\"hend\">Authorization</p><form method=\"POST\" action=\"\/api\/v1\/auth\/signin\" class=\"signin_form\"><div class=\"cusInput\"><label class=\"label label__login\">Login</label><input class=\"input login-signin\" type=\"text\" name=\"login\" value=\"\"/></div><div class=\"cusInput\"><label class=\"label label__password\">Password</label><input class=\"input password-signin\" type=\"password\" name=\"password\" value=\"\"/></div><div class=\"cusInput\"><input class=\"input buts-signin\" type=\"submit\" value=\"Submit\" disabled=\"true\"/></div><div class=\"js-back backButton\"><a href=\"#\" class=\"textButton\">◄ Back</a></div></form>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('tmpl/signin',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"informationBg_signin\"><div class=\"informationMessage_signin\">ds</div></div><div class=\"allSignin\"><div class=\"button__top\"><p class=\"logo\">Contra1x1</p></div><p class=\"hend\">Authorization</p><form method=\"POST\" action=\"\/api\/v1\/auth\/signin\" class=\"signin_form\"><div class=\"cusInput\"><label class=\"label label__login\">Login</label><input class=\"input login-signin\" type=\"text\" name=\"login\" value=\"\"/></div><div class=\"cusInput\"><label class=\"label label__password\">Password</label><input class=\"input password-signin\" type=\"password\" name=\"password\" value=\"\"/></div><div class=\"cusInput\"><input class=\"input buts-signin\" type=\"submit\" value=\"Submit\" disabled=\"true\"/></div><div class=\"js-back backButton\"><a href=\"#\" class=\"textButton\">◄ Back</a></div></form></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
 define('views/signin',[
     'backbone',
     'tmpl/signin'
@@ -104626,14 +104721,14 @@ define('views/signin',[
                     } 
                     else 
                     {
-                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
-                       $('div.signin.menu').hide();
-                       $(".informationBg").show();
+                       $('.informationMessage_signin').text(result.data.message+'!'+' Please try again!');
+                       $('div.allSignin').hide();
+                       $(".informationBg_signin").show();
 
                        $('body').click(function () {
                             if ( isItShow ) {
-                                $(".informationBg").hide();
-                                $('div.signin.menu').show();
+                                $(".informationBg_signin").hide();
+                                $('div.allSignin').show();
                                 isItShow = false; 
                             }
                         }); 
@@ -104654,7 +104749,7 @@ define('views/signin',[
     return new Signin();
 });
 
-define('tmpl/gamepad',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div><div class=\"button__top\"><p class=\"logo\">PvPTowerDefence</p></div><p class=\"hend\">Connect your device!</p><form class=\"gamepad__form\" method=\"POST\" action=\"\/api\/v1\/auth\/gamepad\"><div class=\"cusInput\"><label class=\"label label__login\">Login</label><input class=\"input input__loginGamepad\" type=\"input\" name=\"login\" value=\"\"/></div><div class=\"cusInput\"><label class=\"label label__password\">Parole</label><input class=\"input input__passwordGamepad\" type=\"password\" name=\"password\" value=\"\"/></div><div class=\"cusInput\"><input class=\"input submit__Gamepad\" type=\"submit\" value=\"Submit\" disabled=\"true\"/></div></form></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('tmpl/gamepad',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"informationBg_gamepad\"><div class=\"informationMessage_gamepad\">ds</div></div><div class=\"allGamepad\"><div class=\"button__top\"><p class=\"logo\">Contra1x1</p></div><p class=\"hend\">Connect your device!</p><form class=\"gamepad__form\" method=\"POST\" action=\"\/api\/v1\/auth\/gamepad\"><div class=\"cusInput\"><label class=\"label label__login\">Login</label><input class=\"input input__loginGamepad\" type=\"input\" name=\"login\" value=\"\"/></div><div class=\"cusInput\"><label class=\"label label__password\">Parole</label><input class=\"input input__passwordGamepad\" type=\"password\" name=\"password\" value=\"\"/></div><div class=\"cusInput\"><input class=\"input submit__Gamepad\" type=\"submit\" value=\"Submit\" disabled=\"true\"/></div></form></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
 define('views/gamepad',[
     'backbone',
     'tmpl/gamepad'
@@ -104756,20 +104851,21 @@ define('views/gamepad',[
                         $('a.login__href').addClass('disabled');
                         $('a.start-game__href').removeClass('disabled');
                         ////// TO DO: в случае успеха
-                        window.location.href = '#touchDevice';
+                        //window.location.href = '#touchDevice';
+                        window.location.href = '#gamepadStart';
                         
                     } 
                     else 
                     {
                        isItShow = true;
-                       $('.informationMessage').text(result.data.message+'!'+' Please try again!');
-                       $('div.gamepad.menu').hide();
-                       $(".informationBg").show();
+                       $('.informationMessage_gamepad').text(result.data.message+'!'+' Please try again!');
+                       $('div.allGamepad').hide();
+                       $(".informationBg_gamepad").show();
 
                        $('body').click( function () {
                             if (isItShow) {
-                                $(".informationBg").hide();
-                                $('div.gamepad.menu').show();
+                                $(".informationBg_gamepad").hide();
+                                $('div.allGamepad').show();
                                 isItShow = false;
                             }
                        });
@@ -104792,7 +104888,7 @@ define('views/gamepad',[
 
     return new Gamepad();
 });
-define('tmpl/touchDevice',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}__fest_buf+=("<div class=\"informationDevice\"><div class=\"informationMessage\">Flip your device on 90°, please.</div></div><div class=\"circle__up\"></div><div class=\"circle__down\"></div><div class=\"circle__left\"></div><div class=\"circle__right\"></div><div class=\"circle__fire\"></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('tmpl/touchDevice',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}__fest_buf+=("<div class=\"informationDevice button__menu\"><div class=\"informationDevice__informationMessage\">Flip your device on 90°, please.</div></div><div class=\"circle__up\"></div><div class=\"circle__down\"></div><div class=\"circle__left\"></div><div class=\"circle__right\"></div><div class=\"circle__fire\"></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
 define('views/touchDevice',[
     'backbone',
     'tmpl/touchDevice'
@@ -104811,25 +104907,27 @@ define('views/touchDevice',[
         tagName: 'div',
         className: 'touchDevice',
         events: { 
-                  "touchstart .circle__up" : "touchUp",
-                  "touchend .circle__up" : "touchUp",
-                  "touchmove .circle__up" : "touchUp",
+        
+                  "touchstart .circle__up" : "touchUpStart",
+                  "touchend .circle__up" : "touchUpEnd",
+                  //"touchmove .circle__up" : "touchUpStart",
+                  //"touchcancel .circle__up" : "touchUpStart",
 
-                  "touchstart .circle__down" : "touchDown",
-                  "touchend .circle__down" : "touchDown",
-                  "touchmove .circle__down" : "touchDown",
+                  "touchstart .circle__down" : "touchDownStart",
+                  "touchend .circle__down" : "touchDownEnd",
+                  //"touchmove .circle__down" : "touchDownStart",
 
-                  "touchstart .circle__left" : "touchLeft",
-                  "touchend .circle__left" : "touchLeft",
-                  "touchmove .circle__left" : "touchLeft",
+                  "touchstart .circle__left" : "touchLeftStart",
+                  "touchend .circle__left" : "touchLeftEnd",
+                  //"touchmove .circle__left" : "touchLeftStart",
 
-                  "touchstart .circle__right" : "touchRight",
-                  "touchend .circle__right" : "touchRight",
-                  "touchmove .circle__right" : "touchRight",
+                  "touchstart .circle__right" : "touchRightStart",
+                  "touchend .circle__right" : "touchRightEnd",
+                  //"touchmove .circle__right" : "touchRightStart",
 
-                  "touchstart .circle__fire" : "touchFire",
-                  "touchend .circle__fire" : "touchFire",
-                  "touchmove .circle__fire" : "touchFire",
+                  "touchstart .circle__fire" : "touchFireStart",
+                  "touchend .circle__fire" : "touchFireEnd",
+                  //"touchmove .circle__fire" : "touchFireStart",
                                  
         },
         initialize: function () {
@@ -104841,92 +104939,90 @@ define('views/touchDevice',[
             return this;
         },
         show: function () {
+           
             this.trigger('show',this);
             this.$el.show();
+
+            if (isItNotOpen === true) {
+                isItNotOpen = false;
+
+                function sleep(ms) {
+                    ms += new Date().getTime();
+                    while (new Date() < ms) {}
+                }
+                
+                ws = new WebSocket(socketAdress);
+                console.log("touch socket create");
+                var slp = sleep(300);
+                ws.onopen = function (event) {
+                console.log("touch socket open");
+                socketIsOpen = true;
+               }
+            }
+
         },
         hide: function () {
             this.$el.hide();
         },
-        touchUp: function (event) {
+        touchUpStart: function (event) {
+            
+            this.$el.find('div.circle__up').css({'background': '#1BF840'});
             console.log('up');
             //console.log(event.originalEvent);
 
-            if (isItNotOpen === true) {
-                isItNotOpen = false;
-
-                function sleep(ms) {
-                    ms += new Date().getTime();
-                    while (new Date() < ms) {}
-                }
-                
-                ws = new WebSocket(socketAdress);
-                console.log("touch socket create");
-                var slp = sleep(300);
-                ws.onopen = function (event) {
-                console.log("touch socket open");
-                socketIsOpen = true;
-               }
-            }
-
             var sendData = {
-                action : '0'
+                action : 0,
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
-                console.log('send on socket');
+                console.log('send on socket start');
                 ws.send(strSendData);
             }
         },
-        touchRight: function (event) {
+        touchUpEnd: function(event) {
+            this.$el.find('div.circle__up').css({'background': 'green'});
+            var sendData = {
+                action : 0,
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                console.log('send on socket end');
+                ws.send(strSendData);
+            }
+        },
+        touchRightStart: function (event) {
+            this.$el.find('div.circle__right').css({'background': '#1BF840'});
             console.log('r');
 
-            if (isItNotOpen === true) {
-                isItNotOpen = false;
-
-                function sleep(ms) {
-                    ms += new Date().getTime();
-                    while (new Date() < ms) {}
-                }
-                
-                ws = new WebSocket(socketAdress);
-                console.log("touch socket create");
-                var slp = sleep(300);
-                ws.onopen = function (event) {
-                console.log("touch socket open");
-                socketIsOpen = true;
-               }
-            }
-
             var sendData = {
-                action : '1'
+                action : 1,
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
                 ws.send(strSendData);
             }
         },
-        touchDown: function (event) {
+        touchRightEnd: function(event) {
+            this.$el.find('div.circle__right').css({'background': 'green'});
+            var sendData = {
+                action : 1,
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
+        },
+        touchDownStart: function (event) {
+            this.$el.find('div.circle__down').css({'background': '#1BF840'});
             console.log('d');
 
-            if (isItNotOpen === true) {
-                isItNotOpen = false;
-
-                function sleep(ms) {
-                    ms += new Date().getTime();
-                    while (new Date() < ms) {}
-                }
-                
-                ws = new WebSocket(socketAdress);
-                console.log("touch socket create");
-                var slp = sleep(300);
-                ws.onopen = function (event) {
-                console.log("touch socket open");
-                socketIsOpen = true;
-               }
-            }
-
             var sendData = {
-                action : '2'
+                action : 2,
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
@@ -104934,62 +105030,145 @@ define('views/touchDevice',[
             }
           
         },
-        touchLeft: function (event) {
+        touchDownEnd: function(event) {
+            this.$el.find('div.circle__down').css({'background': 'green'});
+            var sendData = {
+                action : 2,
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
+        },
+        touchLeftStart: function (event) {
+            this.$el.find('div.circle__left').css({'background': '#1BF840'});
             console.log('l');
 
-            if (isItNotOpen === true) {
-                isItNotOpen = false;
-
-                function sleep(ms) {
-                    ms += new Date().getTime();
-                    while (new Date() < ms) {}
-                }
-                
-                ws = new WebSocket(socketAdress);
-                console.log("touch socket create");
-                var slp = sleep(300);
-                ws.onopen = function (event) {
-                console.log("touch socket open");
-                socketIsOpen = true;
-               }
-            }
-
             var sendData = {
-                action : '3'
+                action : 3,
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
                 ws.send(strSendData);
             }
         },
-        touchFire: function (event) {
+        touchLeftEnd: function(event) {
+            this.$el.find('div.circle__left').css({'background': 'green'});
+            var sendData = {
+                action : 3,
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
+        },
+        touchFireStart: function (event) {
+            this.$el.find('div.circle__fire').css({'background': '#520A05'});
             console.log('f');
 
-          if (isItNotOpen === true) {
-                isItNotOpen = false;
-
-                function sleep(ms) {
-                    ms += new Date().getTime();
-                    while (new Date() < ms) {}
-                }
-                
-                ws = new WebSocket(socketAdress);
-                console.log("touch socket create");
-                var slp = sleep(300);
-                ws.onopen = function (event) {
-                console.log("touch socket open");
-                socketIsOpen = true;
-               }
-            }
-
             var sendData = {
-                action : '5'
+                action : 5,
+                touchEvent: "touchStart"
             };
             var strSendData = JSON.stringify(sendData);
             if (socketIsOpen === true) {
                 ws.send(strSendData);
             }
         },
+        touchFireEnd: function(event) {
+            this.$el.find('div.circle__fire').css({'background': 'red'});
+            var sendData = {
+                action : 5,
+                touchEvent: "touchEnd"
+            };
+            var strSendData = JSON.stringify(sendData);
+            if (socketIsOpen === true) {
+                ws.send(strSendData);
+            }
+        }
+
+    });
+    return new TouchDevice();
+});
+define('tmpl/gamepadStart',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}__fest_buf+=("<div class=\"gamepadButton__menu\"><a class=\"gamepadButton__text \">Start Game!</a></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('views/gamepadStart',[
+    'backbone',
+    'tmpl/gamepadStart'
+], function(
+    Backbone,
+    tmpl
+){
+    // my phone IP change it
+    var socketAdress = "ws://192.168.43.123:8080/gameplay";
+    //var socketAdress = "ws://127.0.0.1:8080/gameplay";
+    var isItNotOpen = true;
+    var socketIsOpen = false;
+    var ws;
+    var TouchDevice = Backbone.View.extend({
+        template: tmpl,
+        tagName: 'div',
+        className: 'gamepadStart',
+        events: { 
+                  "touchstart div.gamepadButton__menu": "showGamepad",                                            
+        },
+        initialize: function () {
+            //this.$el.removeClass('menu');
+            //$(this.el).find('.circle').css({'height' : '10px'});
+        },
+        render: function () {
+            this.$el.html(this.template(this.attributes));
+            return this;
+        },
+        show: function () {    
+            this.trigger('show',this);
+            this.$el.show();
+        },
+        hide: function () {
+            this.$el.hide();
+        },
+        showGamepad: function () {
+            window.location.href = '#touchDevice';
+        }
+
+    });
+    return new TouchDevice();
+});
+define('tmpl/gamepadRule',[],function () { return function (__fest_context){"use strict";var __fest_self=this,__fest_buf="",__fest_chunks=[],__fest_chunk,__fest_attrs=[],__fest_select,__fest_if,__fest_iterator,__fest_to,__fest_fn,__fest_html="",__fest_blocks={},__fest_params,__fest_element,__fest_debug_file="",__fest_debug_line="",__fest_debug_block="",__fest_htmlchars=/[&<>"]/g,__fest_htmlchars_test=/[&<>"]/,__fest_short_tags = {"area":true,"base":true,"br":true,"col":true,"command":true,"embed":true,"hr":true,"img":true,"input":true,"keygen":true,"link":true,"meta":true,"param":true,"source":true,"wbr":true},__fest_element_stack = [],__fest_htmlhash={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"},__fest_jschars=/[\\'"\/\n\r\t\b\f<>]/g,__fest_jschars_test=/[\\'"\/\n\r\t\b\f<>]/,__fest_jshash={"\"":"\\\"","\\":"\\\\","/":"\\/","\n":"\\n","\r":"\\r","\t":"\\t","\b":"\\b","\f":"\\f","'":"\\'","<":"\\u003C",">":"\\u003E"},___fest_log_error;if(typeof __fest_error === "undefined"){___fest_log_error = (typeof console !== "undefined" && console.error) ? function(){return Function.prototype.apply.call(console.error, console, arguments)} : function(){};}else{___fest_log_error=__fest_error};function __fest_log_error(msg){___fest_log_error(msg+"\nin block \""+__fest_debug_block+"\" at line: "+__fest_debug_line+"\nfile: "+__fest_debug_file)}function __fest_replaceHTML(chr){return __fest_htmlhash[chr]}function __fest_replaceJS(chr){return __fest_jshash[chr]}function __fest_extend(dest, src){for(var i in src)if(src.hasOwnProperty(i))dest[i]=src[i];}function __fest_param(fn){fn.param=true;return fn}function __fest_call(fn, params,cp){if(cp)for(var i in params)if(typeof params[i]=="function"&&params[i].param)params[i]=params[i]();return fn.call(__fest_self,params)}function __fest_escapeJS(s){if (typeof s==="string") {if (__fest_jschars_test.test(s))return s.replace(__fest_jschars,__fest_replaceJS);} else if (typeof s==="undefined")return "";return s;}function __fest_escapeHTML(s){if (typeof s==="string") {if (__fest_htmlchars_test.test(s))return s.replace(__fest_htmlchars,__fest_replaceHTML);} else if (typeof s==="undefined")return "";return s;}var json=__fest_context;__fest_buf+=("<div class=\"informationBg_Rule\"><div class=\"informationMessage_Rule\">If you wont to connect your device, you must enter\n\t\t\ton game host from your device and input your login and password. When the game will begin\n\t\t\ton computer screnn press the button \"Start Game\" on device.</div></div><div class=\"button__top\"><p class=\"logo\">Contra1x1</p></div><p class=\"hend\">HOW CONNECT YOUR DEVICE</p><div class=\"js-back backButton\"><a href=\"#\" class=\"textButton\">◄ Back</a></div>");__fest_to=__fest_chunks.length;if (__fest_to) {__fest_iterator = 0;for (;__fest_iterator<__fest_to;__fest_iterator++) {__fest_chunk=__fest_chunks[__fest_iterator];if (typeof __fest_chunk==="string") {__fest_html+=__fest_chunk;} else {__fest_fn=__fest_blocks[__fest_chunk.name];if (__fest_fn) __fest_html+=__fest_call(__fest_fn,__fest_chunk.params,__fest_chunk.cp);}}return __fest_html+__fest_buf;} else {return __fest_buf;}} ; });
+define('views/gamepadRule',[
+    'backbone',
+    'tmpl/gamepadRule'
+], function(
+    Backbone,
+    tmpl
+){
+    var TouchDevice = Backbone.View.extend({
+        template: tmpl,
+        tagName: 'div',
+        className: 'gamepadRule menu',
+        events: { 
+                                                            
+        },
+        initialize: function () {
+            //this.$el.removeClass('menu');
+            //$(this.el).find('.circle').css({'height' : '10px'});
+        },
+        render: function () {
+            this.$el.html(this.template(this.attributes));
+            return this;
+        },
+        show: function () {    
+            this.trigger('show',this);
+            this.$el.show();
+        },
+        hide: function () {
+            this.$el.hide();
+        },
+        showGamepad: function () {
+            window.location.href = '#touchDevice';
+        }
 
     });
     return new TouchDevice();
@@ -105003,7 +105182,9 @@ define('router',[
     'views/viewManager',
     'views/signin',
     'views/gamepad',
-    'views/touchDevice'
+    'views/touchDevice',
+    'views/gamepadStart',
+    'views/gamepadRule',
 ], function(
     Backbone,
     game,
@@ -105013,7 +105194,9 @@ define('router',[
     manager,
     signin,
     gamepad,
-    touchDevice
+    touchDevice,
+    gamepadStart,
+    gamepadRule
 ){
     manager.addViews({
         'main'  : main,
@@ -105022,7 +105205,9 @@ define('router',[
         'scoreboard' : scoreboard,
         'signin' : signin,
         'gamepad' : gamepad,
-        'touchDevice' : touchDevice
+        'touchDevice' : touchDevice,
+        'gamepadStart' : gamepadStart,
+        'gamepadRule' : gamepadRule,
     });
     var Router = Backbone.Router.extend({
         routes: {
@@ -105032,6 +105217,8 @@ define('router',[
             'signin' : 'signinAction',
             'gamepad' : 'gamepadAction',
             'touchDevice' : 'touchDeviceAction',
+            'gamepadStart' : 'gamepadStartAction',
+            'gamepadRule' : 'gamepadRuleAction',
             '*default': 'defaultActions'
         },
         defaultActions: function () {
@@ -105054,6 +105241,12 @@ define('router',[
         },
         touchDeviceAction: function() {
             touchDevice.show();
+        },
+        gamepadStartAction: function() {
+            gamepadStart.show();
+        },
+        gamepadRuleAction: function() {
+            gamepadRule.show();
         }
     });
 

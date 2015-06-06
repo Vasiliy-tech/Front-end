@@ -23,14 +23,14 @@ define([
         },
         render: function () {     
             this.$el.html(this.template());
-            game.create(this.el); 
+            
             console.log(game);
             console.log(game.get());
             return this;
         },
         show: function () {
             this.trigger('show',this);
-            
+            game.create(this.el); 
             game.start();
             console.log(game.get());
             this.$el.show();

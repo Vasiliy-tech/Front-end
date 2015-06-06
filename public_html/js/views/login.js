@@ -35,7 +35,7 @@ define([
             console.log(localStorage);
             var currentData = this.getJSON("signup");
             console.log(currentData);    
-            $(".input .login").val(currentData.login);
+            $(".input.login").val(currentData.login);
             $(".email").val(currentData.email);
             this.$el.show();
         },

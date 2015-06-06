@@ -5,10 +5,10 @@
 	</div>
 	<div class = "allLogin">
 		<div class="button__top">
-				<p class="logo"> NotPvPTowerDefence </p>
+				<p class="logo"> Contra1x1 </p>
 		</div>
 		<p class="hend">
-				LOGIN
+				SIGNUP
 		</p>
 		<form method="POST" action="/api/v1/auth/signup" class="login_form">
 			<div class="cusInput">
