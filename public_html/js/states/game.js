@@ -180,7 +180,10 @@ define([
 	    		data = JSON.parse(event.data);
 	    		if(data.status == "sync"){
 	    			queueTimer.push(data);
-	    		} else{
+	    		} else if(data.status == "finish"){
+	    			game.state.start('GameOver',true,false,ws,position,data.result);
+	    			
+	    		} else {
 	    			if ( data.player == position ){
 	    				queuePlayer.push(data);
 	    			} else {
@@ -211,7 +214,7 @@ define([
 		        this.game.physics.arcade.collide(this.bulletPool, this.enemy, function(bullet, enemy) {
 		          	this.getExplosion(bullet.x, bullet.y);
 		            //bullet.kill();
-		            enemy.kill();
+		            //enemy.kill();
 		        }, null, this);
 		        this.game.physics.arcade.collide(this.bulletPool, this.player, function(bullet, player) {
 		          	
