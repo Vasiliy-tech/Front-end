@@ -5,6 +5,8 @@ define([
     Backbone,
     tmpl
 ){
+
+    var isItShow;
     var Signin = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
@@ -59,8 +61,9 @@ define([
                 $(this.el).find(".label__login").css({'color' : "#FF0000"});
             }
         },
-        submitForm: function(e){
+        submitForm: function(e) {
             e.preventDefault();
+            $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('.signin_form').attr('method');
             var m_action = $('.signin_form').attr('action');
             var sendData = {
@@ -78,10 +81,11 @@ define([
                 data: strSendData,
                 dataType:'json',
                 success: function(result, code){
+                    isItShow = true;
                     console.log(result);
                     if (result.status === 200)
                     {
-                        $('.autorizationLabel').show();
+                        $('.autorizationLabel').text("Hello " + result.data.login + "!");
                         $('a.signin__href').addClass('disabled');
                         $('a.login__href').addClass('disabled');
                         $('a.start-game__href').removeClass('disabled');
@@ -89,17 +93,30 @@ define([
                     } 
                     else 
                     {
-                       alert("Check password or login!")
+                       $('.informationMessage_signin').text(result.data.message+'!'+' Please try again!');
+                       $('div.allSignin').hide();
+                       $(".informationBg_signin").show();
+
+                       $('body').click(function () {
+                            if ( isItShow ) {
+                                $(".informationBg_signin").hide();
+                                $('div.allSignin').show();
+                                isItShow = false; 
+                            }
+                        }); 
+
                        $(".password-signin").val('');
-                       $(".login-signin").val('');               
+                       $(".login-signin").val('');
+                             
                     }
                 },
                 error:  function(xhr, str){
                      $('.content').html('Критическая ошибка'); 
                 },
             });
-        }
+        },
 
     });
+
     return new Signin();
 });

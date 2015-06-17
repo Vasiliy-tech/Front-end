@@ -1,9 +1,14 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+
+	<div class = "informationBg_login">
+		<div class = "informationMessage_login"> ds</div>
+	</div>
+	<div class = "allLogin">
 		<div class="button__top">
-				<p class="logo"> NotPvPTowerDefence </p>
+				<p class="logo"> Contra1x1 </p>
 		</div>
 		<p class="hend">
-				LOGIN
+				SIGNUP
 		</p>
 		<form method="POST" action="/api/v1/auth/signup" class="login_form">
 			<div class="cusInput">
@@ -33,4 +38,5 @@
 				<a href="#" class="textButton">&#9668; Back</a>
 			</div>
 		</form>
+	</div>
 </fest:template>

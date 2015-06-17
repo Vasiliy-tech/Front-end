@@ -1,0 +1,31 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<div class = "informationBg_gamepad">
+		<div class = "informationMessage_gamepad"> ds</div>
+    </div>
+	<div class = "allGamepad">
+		<div class="button__top">
+				<p class="logo"> Contra1x1 </p>
+		</div>
+		<p class="hend">
+				Connect your device!
+		</p>
+		<form  class = "gamepad__form" method="POST" action="/api/v1/auth/gamepad">
+			<div class="cusInput">
+				<label class="label label__login">
+					Login
+				</label>
+				<!--<input class="input" type="password" name="password" required="" value=""></input>-->
+				<input  class="input input__loginGamepad" type="input" name="login" value=""></input>
+			</div>
+			<div class="cusInput">
+				<label class="label label__password">
+					Parole
+				</label>
+				<input  class="input input__passwordGamepad" type="password" name="password" value=""></input>
+			</div>
+			<div class="cusInput">
+				<input class="input submit__Gamepad" type="submit" value="Submit" disabled = "true"></input>
+			</div>
+		</form>
+	</div>
+</fest:template>

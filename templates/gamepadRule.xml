@@ -1,0 +1,17 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<div class = "informationBg_Rule">
+		<div class = "informationMessage_Rule"> If you wont to connect your device, you must enter
+			on game host from your device and input your login and password. When the game will begin
+			on computer screnn press the button "Start Game" on device. </div>
+	</div>
+		<div class="button__top">
+				<p class="logo"> Contra1x1 </p>
+		</div>
+		<p class="hend">
+				HOW CONNECT YOUR DEVICE
+		</p>
+
+		<div class="js-back backButton">
+			<a href="#" class="textButton">&#9668; Back</a>
+		</div>
+</fest:template>

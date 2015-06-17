@@ -18,11 +18,11 @@ define([
 			game =  new Phaser.Game(800,480, Phaser.AUTO,el);   
 			//console.log(game);
 		},
-		start: function(){
+		start: function() {
 			game.state.add('Boot', Boot.init(game), false);
 			game.state.add('PreLoader',PreLoader.init(game),false);
             
-            ws = new WebSocket("ws://127.0.0.1:8080/gameplay");
+            ws = new WebSocket("ws://g09.javaprojects.tp-dev.ru/gameplay");
 			    console.log("Create");
 		    ws.onopen = function (event) {
 		        console.log("open");
@@ -32,7 +32,7 @@ define([
 				if(data.status == "start"){
 					console.log(data);
 					game.state.add('Game', Game.init(game, data.position, ws), false);
-					game.state.add('GameOver', GameOver.init(game), false);
+					//game.state.add('GameOver',GameOver.init(),false);
           			game.state.start('Boot');
 				}
 				
@@ -41,8 +41,9 @@ define([
 			
             
 		},
-		finished: function(){
-			Game.stopScores();
+		finished: function(winner,position){
+
+			game.destroy();
 			console.log("Close socket");
 			ws.close();
 		},

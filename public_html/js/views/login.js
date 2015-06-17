@@ -5,6 +5,7 @@ define([
     Backbone,
     tmpl
 ){
+    var isItShow;
     var Login = Backbone.View.extend({
         template: tmpl,
         tagName: 'div',
@@ -17,7 +18,7 @@ define([
         initialize: function () {
             var sendData ={
                 login: '',
-                email: ''
+                email: '',
             }
             sendData.login="";
             sendData.email="";
@@ -34,7 +35,7 @@ define([
             console.log(localStorage);
             var currentData = this.getJSON("signup");
             console.log(currentData);    
-            $(".input .login").val(currentData.login);
+            $(".input.login").val(currentData.login);
             $(".email").val(currentData.email);
             this.$el.show();
         },
@@ -51,7 +52,8 @@ define([
             var password_pattern = /[\W]/;
             var isItCorrectlyPassword = password_pattern.test(password);
 
-            var myLogin = $(this.el).find(".input .login").val()
+            var myLogin = $(this.el).find(".input.login").val()
+            //alert(myLogin);
             var myLogin_pattern = /[\W]/; 
             var isItCorrectlyLogin = myLogin_pattern.test(myLogin);
 
@@ -87,18 +89,20 @@ define([
         },
         submitForm: function(e){
             e.preventDefault();
+            $(this.el).find('input[type=submit]').prop('disabled', true);
             var m_method = $('.login_form').attr('method');
             var m_action = $('.login_form').attr('action');
-            //var m_data=$('#test_form').serialize();
+        
             var sendData = {
                 login: '',
                 email: '',
                 password: ''
             };
-            sendData.login = $(".input .login").val();
+            sendData.login = $(".input.login").val();
 
             sendData.email = $(".email").val();
             sendData.password = $(".password").val();
+    
             var strSendData = JSON.stringify(sendData);
             console.log("TADA");
             console.log(strSendData);
@@ -107,28 +111,37 @@ define([
                 url: m_action,
                 contentType:'json', 
                 data: strSendData,
-                //contentType: 'application/json; charset=utf-8',
-                //converters:{"text json":jQuery.parseJSON},
                 dataType:'json',
-                //processData: false,
                 success: function(result, code){
                     console.log(result);
                     if (result.status === 200)
                     {
+                        $('.autorizationLabel').text("Hello " + result.data.login + "!");
                         $('.autorizationLabel').show();
                         $('a.signin__href').addClass('disabled');
                         $('a.login__href').addClass('disabled');
                         $('a.start-game__href').removeClass('disabled');
-                        //$('a.exit__href').removeClass('disabled__href');
                         window.location.href = '#'
                         localStorage.clear();
                     } 
                     else 
                     {
-                       alert("This user name or password already exists!")
+                       isItShow = true;
+                       $('.informationMessage_login').text(result.data.message+'!'+' Please try again!');
+                       $('div.allLogin').hide();
+                       $(".informationBg_login").show();
+
+                       $('body').click( function () {
+                            if (isItShow) {
+                                $(".informationBg_login").hide();
+                                $('div.allLogin').show();
+                                isItShow = false;
+                            }
+                       });
+
                        $(".email").val('');
-                       $(".password").val('');
-                       $(".input .login").val('');               
+                       $("input:password").val('');
+                       $(".login").val('');              
                     }
                 },
                 error:  function(xhr, str){
@@ -149,7 +162,7 @@ define([
                 login:'',
                 email:''
             }
-            sendData.login=$(".input .login").val();
+            sendData.login=$(".input.login").val();
             sendData.email=$(".email").val();
             this.setJSON("signup",sendData);
         }

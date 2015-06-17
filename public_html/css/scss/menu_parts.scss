@@ -4,10 +4,32 @@ $font-size : 22px;
 .menu {
 	background-color: rgba(143,137,124,0.5);
 	width: 400px;
-	height: 500px;
+	height: 600px;
 	margin: auto;
 	position: relative;
 }
+
+@media screen and (max-width: 600px) {
+    .menu {
+        background-color: rgba(143,137,124,0.5);
+		width: auto;
+		height: 400px;
+		margin: auto;
+		position: relative;
+    }
+ }
+
+ @media screen and (max-width: 800px) and (orientation:landscape) {
+    .menu {
+        background-color: rgba(143,137,124,0.5);
+		width: auto;
+		height: 100%;
+		margin: auto;
+		position: relative;
+    }
+ }
+
+
 .gamefield{
 	width: 800px;
 	height: 480px;

@@ -1,7 +1,11 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<div class = "informationBg_main">
+		<div class = "informationMessage_main"> ds</div>
+    </div>
 	
+	<div class = "allMain">
 		<div class="button__top">
-			<p class="logo"> NotPvPTowerDefence </p>
+			<p class="logo"> Contra1x1 </p>
 		</div>
 		<p class="hend">
 			MAIN MENU
@@ -12,6 +16,9 @@
 		<div class="js-start-game button__menu">
 				<a href="#game" class="textButton start-game__href disabled">Start Game</a>
 		</div>
+		<div class="js-Gamepad button__menu">
+				<a href="#gamepadRule" class="textButton start-game__href disabled">Gamepad</a>
+		</div>
 		<div class="js-login button__menu">
 			<a href="#login" class="textButton login__href">Registration</a>
 		</div>
@@ -21,5 +28,5 @@
 		<div class="js-exit button__menu ">
 			<a href="#" class="textButton exit__href">Exit</a>
 		</div>
-	
+	</div>
 </fest:template>

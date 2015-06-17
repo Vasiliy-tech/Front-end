@@ -1,0 +1,118 @@
+
+.circle {
+	width: 90px;
+    height: 90px;
+    background: green;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+.circle__up {
+	position: absolute;
+	left: 20%;
+	top: 10%;
+	@extend .circle;
+}
+
+.circle__down {
+	position: absolute;
+	left: 20%;
+	top: 60%;
+    @extend .circle;
+}
+
+.circle__left {
+	position: absolute;
+	left: 5%;
+	top: 35%;
+    @extend .circle;
+}
+
+.circle__right {
+	position: absolute;
+	left: 35%;
+	top: 35%;
+    @extend .circle;
+}
+
+.circle__fire {
+	position: absolute;
+	left: 75%;
+	top: 35%;
+    @extend .circle;
+    background: red;
+}
+
+.informationDevice {
+	display: none;
+    background-color: rgba(0,0,255,0.5);
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    width: 80%;
+    height: 30%;
+    border-radius: 15px;
+	display: none;
+}
+
+@media screen and (orientation:portrait) {
+    .circle {
+    }
+
+    .circle__up {
+    	display: none;
+    }
+    .circle__down {
+    	display: none;
+    }
+    .circle__left {
+    	display: none;
+    }
+    .circle__right{
+    	display: none;
+    }
+    .circle__fire{
+    	display: none;
+    }
+
+    .informationDevice {
+    	display: block;
+    }
+
+    .touchDevice__button {
+        display: block;
+    }    
+}
+
+
+.touchDevice__button {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    width: 30%;
+    height: 20%;
+    border-radius: 15px;
+    
+}
+
+.touchDevice__button_textButton{
+    font-family: 'Open Sans',monospace;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 40%;
+    left: 0;
+}
+
+.informationDevice__informationMessage {
+    font-family: 'Open Sans',monospace;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 40%;
+    left: 0;
+}

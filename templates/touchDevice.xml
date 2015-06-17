@@ -1,0 +1,13 @@
+<fest:template xmlns:fest="http://fest.mail.ru">
+	<!--<div class="touchDevice__button button__menu ">
+		<div class="touchDevice__button_textButton">Start Game!</div>
+	</div>-->
+	<div class = 'informationDevice button__menu'>
+		<div class = 'informationDevice__informationMessage'>Flip your device on 90°, please.</div>
+	</div>
+	<div class = "circle__up"></div>
+	<div class = "circle__down"></div>
+	<div class = "circle__left"></div>
+	<div class = "circle__right"></div>
+	<div class = "circle__fire"></div>
+</fest:template>

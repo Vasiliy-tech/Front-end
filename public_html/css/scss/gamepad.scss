@@ -1,0 +1,60 @@
+.gamepadButton {
+	margin: auto;
+	position: absolute;
+    border-radius: 5px;
+}
+
+.gamepadButton__menu {
+	@extend .gamepadButton;
+	background-color:#4A4947;
+    margin-bottom: 15px;
+    top: 42.5%;
+    left: 20%;
+    width: 60%;
+    height: 15%;
+    display: block;
+}
+
+.gamepadButton__text {
+	font-family: 'Open Sans',monospace;
+	font-size: 20px;
+	text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 40%;
+    left: 0;
+}
+
+@media screen and (orientation:landscape) {
+.gamepadButton {
+	margin: auto;
+	position: absolute;
+    border-radius: 5px;
+}
+
+.gamepadButton__menu {
+	margin: auto;
+	position: absolute;
+    border-radius: 5px;
+	background-color:#4A4947;
+    margin-bottom: 15px;
+    top: 32.5%;
+    left: 30%;
+    width: 40%;
+    height: 35%;
+    display: block;
+}
+
+.gamepadButton__text {
+	font-family: 'Open Sans',monospace;
+	font-size: 20px;
+	text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 40%;
+    left: 0;
+}
+
+	}

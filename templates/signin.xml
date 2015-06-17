@@ -1,6 +1,10 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<div class = "informationBg_signin">
+		<div class = "informationMessage_signin"> ds</div>
+	</div>
+	<div class = "allSignin">
 		<div class="button__top">
-				<p class="logo"> NotPvPTowerDefence </p>
+				<p class="logo"> Contra1x1 </p>
 		</div>
 		<p class="hend">
 				Authorization
@@ -26,4 +30,5 @@
 				<a href="#" class="textButton">&#9668; Back</a>
 			</div>
 		</form>
+	</div>
 </fest:template>

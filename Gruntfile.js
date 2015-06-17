@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 					mainConfigFile: "public_html/js/main2.js",
 					name: "main2",
 					optimize: "none",
-					out: "public_html/js/build/main.js"
+					out: "public_html/js/build/main2.js"
 				}
 			}
 		},
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
 				separator: ';\n',
 				src: [
 					'public_html/js/lib/almond.js',
-					'public_html/js/build/main.js'
+					'public_html/js/build/main2.js'
 				],
 				dest: 'public_html/js/build.js'
 			}
@@ -112,5 +112,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.registerTask('build',['concurrent','fest','requirejs:build','concat:build','uglify:build']);
+	grunt.registerTask('default', ['concurrent','sass','concat',]);
+	grunt.registerTask(
+	    'build',
+	    [
+		'fest', 'requirejs:build',
+		'concat:build', 'uglify:build'
+	    ]
+	);
   };
